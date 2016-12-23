@@ -683,63 +683,38 @@ Last Updated 2016-12-13 Tue 19:11.<br>Render by <a href="https://github.com/Code
     <entry>
       <title><![CDATA[404 Not Found：该页无法显示]]></title>
       <url>http://yyangdid.github.io//404.html</url>
-      <content type="html"><![CDATA[<style type="text/css">
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 2.1em;
-    }
-    strong a {
-        color: #747474;
-    }
-    .article-meta {
-        display: none;
-    }
-    .share {
-        display: none;
-    }
-    .ds-meta {
-        display: none;
-    }
-    .player {
-        margin-left: -10px;
-    }
-    .sign {
-        text-align: right;
-        font-style: italic;
-    }
-      #page-visit {
-        display: none;
-    }
-    .center {
-        text-align: center;
-        height: 2.5em;
-        font-weight: bold;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    .pic {
-        text-align: center;
-        margin: 0;
-    }
-    .pic br {
-          display: none;
-      }
-    #container .article-info-post.article-info {
+      <content type="html"><![CDATA[<p><style type="text/css"><br>    .article-header {<br>        padding: 0;<br>        padding-top: 26px;<br>        border-left: none;<br>        text-align: center;<br>    }<br>    .article-header:hover {<br>        border-left: none;<br>    }<br>    .article-title {<br>        font-size: 2.1em;<br>    }<br>    strong a {<br>        color: #747474;<br>    }<br>    .article-meta {<br>        display: none;<br>    }<br>    .share {<br>        display: none;<br>    }<br>    .ds-meta {<br>        display: none;<br>    }<br>    .player {<br>        margin-left: -10px;<br>    }<br>    .sign {<br>        text-align: right;<br>        font-style: italic;<br>    }</p>
+<pre><code>  #page-visit {
+    display: none;
+}
+.center {
+    text-align: center;
+    height: 2.5em;
+    font-weight: bold;
+}
+.article-entry hr {
+    margin: 0;
+}
+.pic {
+    text-align: center;
+    margin: 0;
+}
+.pic br {
       display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+  }
+#container .article-info-post.article-info {
+  display: none;
+  }
+#container .article .article-title {
+padding: 0;
+}
+</code></pre><p></style></p>
+<hr>
+<p class="center">&#x5F88;&#x62B1;&#x6B49;&#xFF0C;&#x60A8;&#x6240;&#x8BBF;&#x95EE;&#x7684;&#x5730;&#x5740;&#x5E76;&#x4E0D;&#x5B58;&#x5728;: </p>
+
+<p class="center"><a href="/">&#x56DE;&#x4E3B;&#x9875;</a> &#xB7; <a href="/archives">&#x6240;&#x6709;&#x6587;&#x7AE0;</a></p>
+
+<p class="center">&#x53EF;&#x5728;&#x8FB9;&#x680F;&#x641C;&#x7D22;&#x6846;&#x4E2D;&#x5BF9;&#x672C;&#x7AD9;&#x8FDB;&#x884C;&#x68C0;&#x7D22;&#xFF0C;&#x4EE5;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;</p>
 ]]></content>
     </entry>
     
