@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="yyangdid" />
+
+
+
+<meta name="description" content="vimtutor &amp;#x548C; gvimtutor &amp;#x662F; vim &amp;#x548C; gvim &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x7B80;&amp;#x5355;&amp;#x6559;&amp;#x7A0B;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; vim &amp;#x548C; gvim &amp;#x5728;&amp;#x7F16;
+&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习 vimtutor、gvimtutor 重点记录">
+<meta property="og:url" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/index.html">
+<meta property="og:site_name" content="yyangdid">
+<meta property="og:description" content="vimtutor &amp;#x548C; gvimtutor &amp;#x662F; vim &amp;#x548C; gvim &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x7B80;&amp;#x5355;&amp;#x6559;&amp;#x7A0B;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; vim &amp;#x548C; gvim &amp;#x5728;&amp;#x7F16;
+&amp;#x">
+<meta property="og:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/1_2016-12-24_17-18-22.png">
+<meta property="og:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/1_2016-12-24_17-29-24.png">
+<meta property="og:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/1_2016-12-24_17-37-05.png">
+<meta property="og:updated_time" content="2016-12-26T12:17:36.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习 vimtutor、gvimtutor 重点记录">
+<meta name="twitter:description" content="vimtutor &amp;#x548C; gvimtutor &amp;#x662F; vim &amp;#x548C; gvim &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x7B80;&amp;#x5355;&amp;#x6559;&amp;#x7A0B;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; vim &amp;#x548C; gvim &amp;#x5728;&amp;#x7F16;
+&amp;#x">
+<meta name="twitter:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/1_2016-12-24_17-18-22.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/optimus.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/iconfont/css/iconfont.css">
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+<title>学习 vimtutor、gvimtutor 重点记录 | yyangdid</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/optimus.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">yyangdid</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸟博客</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/clang/">clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/emacs/">emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/llvm/">llvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">yyangdid</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/optimus.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">yyangdid</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸟博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2016-12-24.学习vimtutor、gvimtutor重点记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/" class="article-date">
+      <time datetime="2016-12-24T09:03:16.000Z" itemprop="datePublished">2016-12-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习 vimtutor、gvimtutor 重点记录
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/vim/">vim</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+
+<blockquote>
+<p>
+vimtutor &#x548C; gvimtutor &#x662F; vim &#x548C; gvim &#x5B98;&#x65B9;&#x7684;&#x7B80;&#x5355;&#x6559;&#x7A0B;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; vim &#x548C; gvim &#x5728;&#x7F16;
+&#x8F91;&#x65F6;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x6309;&#x952E;&#xFF0C;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x7684;&#x8BF4;&#x660E;&#x3002;vimtutor &#x548C; gvimtutor &#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;vimtutor &#x662F;
+&#x5728;&#x7EC8;&#x7AEF;&#x4E0B;&#xFF0C;gvimtutor &#x662F;&#x5728; GUI &#x4E0B;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x6587;&#x4EF6;&#x662F;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x6D4B;
+&#x8BD5;&#x3001;&#x66F4;&#x6539;&#x3002;
+</p>
+</blockquote>
+<a id="more"></a>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">&#x5982;&#x4F55;&#x6253;&#x5F00; vimtutor&#x3001;gvimtutor</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">&#x4F7F;&#x7528;&#x7EC8;&#x7AEF;&#x6253;&#x5F00;</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">&#x6253;&#x5F00; vimtutor</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+&#x6267;&#x884C; <code>vimtutor</code> &#x547D;&#x4EE4;&#x5373;&#x53EF;&#xFF0C;&#x6B64;&#x547D;&#x4EE4;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x5F00;&#x542F;&#x7A97;&#x53E3;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x7EC8;&#x7AEF;&#x91CC;&#x3002;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x6309;&#x952E;
+&#x4F1A;&#x88AB;&#x7EC8;&#x7AEF;&#x5360;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x65B9;&#x6CD5;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-18-22.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">&#x6253;&#x5F00; gvimtutor</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+&#x6267;&#x884C; <code>gvimtutor</code> &#x547D;&#x4EE4;&#x5373;&#x53EF;&#xFF0C;&#x4F1A;&#x5F00;&#x542F; gvim &#x7A97;&#x53E3;&#xFF0C;&#x63A8;&#x8350;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-29-24.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">&#x5728; gvim &#x4E2D;&#x6253;&#x5F00;</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+&#x5728; gvim &#x4E2D;&#x8F93;&#x5165; <code>:e $VIMRUNTIME/tutor/tutor.zh_cn.utf-8</code> &#x5373;&#x53EF;,&#x63A8;&#x8350;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-37-05.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">&#x5E38;&#x7528;&#x6309;&#x952E;</h2>
+<div class="outline-text-2" id="text-2">
+<blockquote>
+<ul class="org-ul">
+<li><code>()</code> &#x8868;&#x793A;&#x6A21;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982; <code>(N)</code> &#x8868;&#x793A; <code>Normal</code> &#x6A21;&#x5F0F;&#x3002;
+<ul class="org-ul">
+<li><code>N</code> <b>Normal</b> &#x6B63;&#x5E38;&#x6A21;&#x5F0F;
+</li>
+<li><code>V</code> <b>Visual</b> &#x53EF;&#x89C6;&#x6A21;&#x5F0F;
+</li>
+</ul>
+</li>
+<li><code>[]</code> &#x8868;&#x793A;&#x53EF;&#x9009;&#xFF0C; <code>&lt;&gt;</code> &#x8868;&#x793A;&#x5FC5;&#x9009;&#x3002;&#x4F8B;&#x5982; <code>[n]</code> &#x8868;&#x793A;&#x53EF;&#x9009;&#x5230;&#x8F93;&#x5165;&#x6570;&#x5B57;&#xFF0C; <code>&lt;n&gt;</code> &#x8868;&#x793A;&#x5FC5;&#x9009;
+&#x8F93;&#x5165;&#x6570;&#x5B57;&#x3002;
+<ul class="org-ul">
+<li><code>n</code> <b>number</b> &#x6570;&#x5B57;
+</li>
+<li><code>e</code> <b>Enter</b> &#x56DE;&#x8F66;
+</li>
+<li><code>s</code> <b>string</b> &#x5B57;&#x7B26;&#x4E32;
+</li>
+<li><code>sold</code> <b>string-old</b> &#x65E7;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x914D;&#x5408; <code>snew</code> &#x4F7F;&#x7528;
+</li>
+<li><code>snew</code> <b>string-new</b> &#x65B0;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x914D;&#x5408; <code>sold</code> &#x4F7F;&#x7528;
+</li>
+<li><code>sh</code> <b>shell</b> shell&#x547D;&#x4EE4;
+</li>
+<li><code>f</code> <b>filename</b> &#x6587;&#x4EF6;&#x540D;
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">&#x79FB;&#x52A8;</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><code>(N)[n]l</code> &#x5411;&#x53F3;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]h</code> &#x5411;&#x5DE6;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]k</code> &#x5411;&#x4E0A;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]j</code> &#x5411;&#x4E0B;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)0</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;&#xFF0C;&#x5305;&#x62EC;&#x7A7A;&#x683C;
+</li>
+<li><code>(N)^</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)$</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)[n]w</code> &#x8DF3;&#x8F6C;&#x5230;&#x53F3;&#x4FA7;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;
+</li>
+<li><code>(N)[n]e</code> &#x82E5;&#x5149;&#x6807;&#x5F53;&#x524D;&#x5728;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230;&#x53F3;&#x4FA7;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;&#xFF0C;&#x5426;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x5F53;&#x524D;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;
+</li>
+<li><code>(N)[n]b</code> &#x8DF3;&#x8F6C;&#x5230;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;
+</li>
+<li><code>(N)&lt;n&gt;G</code> &#x8DF3;&#x8F6C;&#x5230;&#x7B2C; <code>&lt;n&gt;</code> &#x884C;
+</li>
+<li><code>(N)G</code> &#x8DF3;&#x8F6C;&#x5230;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4E00;&#x884C;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)gg</code> &#x8DF3;&#x8F6C;&#x5230;&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x884C;&#x9996;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><code>(N)i</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x540E;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)I</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x9996;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)a</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x524D;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)A</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x5C3E;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)o</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x4E0B;&#x9762;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)O</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x4E0A;&#x9762;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">&#x4FDD;&#x5B58;&#x3001;&#x9000;&#x51FA;</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><code>(N):w</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x6587;&#x4EF6;
+</li>
+<li><code>(N):q</code> &#x9000;&#x51FA; vim&#x3001;gvim
+</li>
+<li><code>(N):wq</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5E76;&#x9000;&#x51FA; vim&#x3001;gvim
+</li>
+<li><code>(N):q!</code> &#x5F3A;&#x5236;&#x9000;&#x51FA;&#xFF0C;&#x653E;&#x5F03;&#x6240;&#x6709;&#x6539;&#x52A8;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">&#x5220;&#x9664;</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><code>(N)[n]x</code> &#x5220;&#x9664;&#x5149;&#x6807;&#x6240;&#x5728;&#x7684;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)d[n]w</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x8BCD;&#x9996;&#xFF0C;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x8BCD;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x540E;&#x4E00;&#x4E2A;
+&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)d[n]e</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x8BCD;&#x5C3E;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x7A7A;&#x683C;
+</li>
+<li><code>(N)d$</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)D</code> &#x540C; <code>(N)d$</code>
+</li>
+<li><code>(N)[n]dd</code> &#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">&#x590D;&#x5236;&#x3001;&#x7C98;&#x8D34;</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li><code>(V)y</code> &#x590D;&#x5236;&#x9009;&#x4E2D;&#x7684;&#x6587;&#x672C;
+</li>
+<li><code>(N)y[n]w</code> <code>(N)y[n]e</code> <code>(N)y[n]l</code> <code>(N)y$</code> &#x7B49;&#x7B49;
+</li>
+<li><code>(N)[n]p</code> &#x5BF9;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x5F53;&#x524D;&#x5149;&#x6807;&#x7684;&#x540E;&#x9762;&#xFF0C;&#x5BF9;&#x4E8E;&#x884C;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x4E0B;&#x4E00;&#x884C;
+</li>
+<li><code>(N)[n]P</code> &#x5BF9;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x5F53;&#x524D;&#x5149;&#x6807;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x5BF9;&#x4E8E;&#x884C;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x4E0A;&#x4E00;&#x884C;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6">&#x4FEE;&#x6539;&#x3001;&#x66FF;&#x6362;</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li><code>(N)r</code> &#x4FEE;&#x6539;&#x5149;&#x6807;&#x4E0B;&#x7684;&#x5355;&#x4E2A;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)R</code> &#x4FEE;&#x6539;&#x4ECE;&#x5149;&#x6807;&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x5E8F;&#x5217;
+</li>
+<li><code>(N)cw</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x8BCD;&#x5C3E;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x7A7A;&#x683C;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)ce</code> &#x540C; <code>(N)cw</code>
+</li>
+<li><code>(N)c$</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)C</code> &#x540C; <code>(N)c$</code>
+</li>
+<li><code>(N)cc</code> &#x5220;&#x9664;&#x6574;&#x884C;&#x6587;&#x672C;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)~</code> &#x53CD;&#x8F6C;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x7684;&#x5927;&#x5C0F;&#x5199;
+</li>
+<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;&lt;e&gt;</code> &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;/g&lt;e&gt;</code> &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x6240;&#x6709; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):&lt;n1&gt;,&lt;n2&gt;s/&lt;sold&gt;/&lt;snew&gt;/g</code> &#x5C06; <code>&lt;n1&gt;</code> &#x884C;&#x81F3; <code>&lt;n2&gt;</code> &#x884C;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709; <code>&lt;sold&gt;</code>
+  &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/g</code> &#x5C06;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/gc</code> &#x5C06;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>&lt;sold&gt;</code> &#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5E76;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x66FF;&#x6362;&#x4E3A;
+<code>&lt;snew&gt;</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7">&#x64A4;&#x9500;</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li><code>(N)[n]u</code> undo&#xFF0C;&#x64A4;&#x9500;&#x6700;&#x540E;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;
+</li>
+<li><code>(N)U</code> undo&#xFF0C;&#x64A4;&#x9500;&#x5BF9;&#x6574;&#x884C;&#x7684;&#x4FEE;&#x6539;
+</li>
+<li><code>(N)[n]CTRL-R</code> redo,&#x5373;&#x64A4;&#x9500;undo&#x3002;&#x64A4;&#x9500;&#x6389;&#x64A4;&#x9500;&#x547D;&#x4EE4;&#xFF0C;&#x6062;&#x590D;&#x64CD;&#x4F5C;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x591A;&#x6B21;&#x8F93;&#x5165;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-8" class="outline-3">
+<h3 id="sec-2-8">&#x641C;&#x7D22;</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li><code>(N)/&lt;s&gt;&lt;e&gt;</code> &#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32; <code>&lt;s&gt;</code> &#xFF0C; <code>n</code> &#x67E5;&#x627E;&#x4E0B;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#xFF0C; <code>N</code> &#x67E5;&#x627E;&#x4E0A;&#x4E00;&#x4E2A;&#x5339;&#x914D;
+</li>
+<li><code>(N)?&lt;s&gt;&lt;e&gt;</code> &#x9006;&#x5411;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;
+</li>
+<li><code>(N)CTRL-o</code> &#x56DE;&#x9000;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x591A;&#x6B21;&#x8F93;&#x5165;
+</li>
+<li><code>(N)CTRL-i</code> &#x56DE;&#x9000;&#x5230;&#x8F83;&#x65B0;&#x7684;&#x4F4D;&#x7F6E;
+</li>
+<li><code>(N)%</code> &#x5149;&#x6807;&#x653E;&#x5728;&#x914D;&#x5BF9;&#x7684;&#x62EC;&#x53F7;&#x5904;&#x6309;&#x4E0B;&#x6B64;&#x7EC4;&#x5408;&#x952E;&#x53EF;&#x8DF3;&#x8F6C;&#x5230;&#x5339;&#x914D;&#x7684;&#x62EC;&#x53F7;&#x5904;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9">&#x8C03;&#x6574;&#x6587;&#x672C;&#x4F4D;&#x7F6E;</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li><code>(N):ce&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x4E2D;&#xFF08;center&#xFF09;
+</li>
+<li><code>(N):ri&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x53F3;&#xFF08;right&#xFF09;
+</li>
+<li><code>(N):le&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x5DE6;&#xFF08;left&#xFF09;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-10" class="outline-3">
+<h3 id="sec-2-10">&#x4FDD;&#x5B58;</h3>
+<div class="outline-text-3" id="text-2-10">
+<ul class="org-ul">
+<li><code>(N):w [f]&lt;e&gt;</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;buffer&#x5230; <code>f</code> &#x6587;&#x4EF6;
+</li>
+<li><code>(V):w [f]&lt;e&gt;</code> &#x4FDD;&#x5B58;&#x9009;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5230; <code>f</code> &#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x6309;&#x4E0B; <code>:</code> &#x540E;&#xFF0C;&#x5728;minibuffer&#x4F1A;&#x663E;&#x793A;
+=&apos;&lt;,&apos;&gt;= &#x6B64;&#x65F6;&#x518D;&#x8F93;&#x5165; <code>w [f]</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-11" class="outline-3">
+<h3 id="sec-2-11">&#x6267;&#x884C;&#x5916;&#x90E8;&#x547D;&#x4EE4;</h3>
+<div class="outline-text-3" id="text-2-11">
+<ul class="org-ul">
+<li><code>(N):!&lt;sh&gt;&lt;e&gt;</code> &#x6267;&#x884C;&#x5916;&#x90E8;shell&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A; <i>:!dir</i>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-12" class="outline-3">
+<h3 id="sec-2-12">&#x63D0;&#x53D6;&#x3001;&#x5408;&#x5E76;&#x6587;&#x4EF6;</h3>
+<div class="outline-text-3" id="text-2-12">
+<ul class="org-ul">
+<li><code>(N):r &lt;f&gt;&lt;e&gt;</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165; <code>f</code> &#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;
+</li>
+<li><code>(N):r !&lt;sh&gt;&lt;e&gt;</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165; <code>sh</code> &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x5185;&#x5BB9;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-13" class="outline-3">
+<h3 id="sec-2-13">&#x4FE1;&#x606F;&#x3001;&#x5E2E;&#x52A9;&#x547D;&#x4EE4;</h3>
+<div class="outline-text-3" id="text-2-13">
+<ul class="org-ul">
+<li><code>(N)CTRL-G</code> &#x5728;minibuffer&#x663E;&#x793A;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4F4D;&#x7F6E;&#x53CA;&#x6587;&#x4EF6;&#x72B6;&#x6001;
+</li>
+<li><code>(N):help&lt;e&gt;</code> &#x6253;&#x5F00;&#x5E2E;&#x52A9;
+</li>
+<li><code>(N):help &lt;s&gt;&lt;e&gt;</code> &#x6253;&#x5F00;&#x5173;&#x4E8E; <code>s</code> &#x4E3B;&#x9898;&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;
+</li>
+</ul>
+<blockquote>
+<p>
+&#x6253;&#x5F00;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x540E;&#x4F7F;&#x7528; <code>CTRL-w CTRL-w</code> &#x5728;&#x7A97;&#x53E3;&#x4E4B;&#x95F4;&#x8DF3;&#x8F6C;
+</p>
+
+<p>
+&#x4F7F;&#x7528; <code>(N):q&lt;e&gt;</code> &#x5173;&#x95ED;&#x5E2E;&#x52A9;&#x7A97;&#x53E3;
+</p>
+
+<p>
+&#x5728;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <code>CTRL-]</code> &#x8DF3;&#x8F6C;&#x5230;&#x5149;&#x6807;&#x6240;&#x5728;&#x6807;&#x7B7E;&#x7684;&#x4E3B;&#x9898;&#x5E2E;&#x52A9;&#xFF0C;&#x4F7F;&#x7528; <code>CTRL-t</code> &#x6216;
+<code>CTRL-o</code> &#x8DF3;&#x56DE;
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+Last Updated 2016-12-26 Mon 20:17.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习 vimtutor、gvimtutor 重点记录</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
+        <p><span>发布时间:</span>2016-12-24, 17:03:16</p>
+        <p><span>最后更新:</span>2016-12-26, 20:17:36</p>
+        
+            <p>
+                <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
+                <a href="https://github.com/yyangdid/blog-backup/blame/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://github.com/yyangdid/blog-backup/commits/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://raw.githubusercontent.com/yyangdid/blog-backup/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+            <p>
+                <span>更新历史:</span><i class="iconfont icon-coding"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/blame/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/commits/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/raw/master/_posts/2016-12-24.学习vimtutor、gvimtutor重点记录.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+        
+        <p>
+            <span>原始链接:</span><a class="post-urlasas" href="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/" title="学习 vimtutor、gvimtutor 重点记录">yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="http://yyangdid.coding.me/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/" title="学习 vimtutor、gvimtutor 重点记录">yyangdid.coding.me/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.coding.me/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">
+                    学习 emacs-tutorial 重点记录
+                </a>
+            </div>
+        
+    </nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-number">1.</span> <span class="toc-text">如何打开 vimtutor、gvimtutor</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-number">1.1.</span> <span class="toc-text">使用终端打开</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-1-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">打开 vimtutor</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-1-2"><span class="toc-number">1.1.2.</span> <span class="toc-text">打开 gvimtutor</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-number">1.2.</span> <span class="toc-text">在 gvim 中打开</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-number">2.</span> <span class="toc-text">常用按键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-1"><span class="toc-number">2.1.</span> <span class="toc-text">移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-2"><span class="toc-number">2.2.</span> <span class="toc-text">进入插入模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-3"><span class="toc-number">2.3.</span> <span class="toc-text">保存、退出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-4"><span class="toc-number">2.4.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-5"><span class="toc-number">2.5.</span> <span class="toc-text">复制、粘贴</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-6"><span class="toc-number">2.6.</span> <span class="toc-text">修改、替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-7"><span class="toc-number">2.7.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-8"><span class="toc-number">2.8.</span> <span class="toc-text">搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-9"><span class="toc-number">2.9.</span> <span class="toc-text">调整文本位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-10"><span class="toc-number">2.10.</span> <span class="toc-text">保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-11"><span class="toc-number">2.11.</span> <span class="toc-text">执行外部命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-12"><span class="toc-number">2.12.</span> <span class="toc-text">提取、合并文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-13"><span class="toc-number">2.13.</span> <span class="toc-text">信息、帮助命令</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"学习 vimtutor、gvimtutor 重点记录　| yyangdid　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/" data-title="学习 vimtutor、gvimtutor 重点记录" data-url="http://yyangdid.github.io/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yyangdid"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+
+            ds.src = '/js/embed.js';
+            /*上面是我自己的 embed.js 链接，请改为你自己的地址*/
+
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/" title="下一篇: 学习 emacs-tutorial 重点记录">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习 vimtutor、gvimtutor 重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习 emacs-tutorial 重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在linux下安装clang+llvm（openSUSE Leap 42.2）/">在 linux 下安装 clang+llvm（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种git乱码解决办法/">各种 git 乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在linux下安装zlib（openSUSE Leap 42.2）/">在 linux 下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快emacs的运行速度/">加快 emacs 的运行速度</a></li></ul>
+
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016 yyangdid
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 6;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

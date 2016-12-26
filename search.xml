@@ -4,6 +4,553 @@
   
     
     <entry>
+      <title><![CDATA[学习 vimtutor、gvimtutor 重点记录]]></title>
+      <url>http://yyangdid.github.io/2016/12/24/2016-12-24.%E5%AD%A6%E4%B9%A0vimtutor%E3%80%81gvimtutor%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[
+
+<blockquote>
+<p>
+vimtutor &#x548C; gvimtutor &#x662F; vim &#x548C; gvim &#x5B98;&#x65B9;&#x7684;&#x7B80;&#x5355;&#x6559;&#x7A0B;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; vim &#x548C; gvim &#x5728;&#x7F16;
+&#x8F91;&#x65F6;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x6309;&#x952E;&#xFF0C;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x7684;&#x8BF4;&#x660E;&#x3002;vimtutor &#x548C; gvimtutor &#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;vimtutor &#x662F;
+&#x5728;&#x7EC8;&#x7AEF;&#x4E0B;&#xFF0C;gvimtutor &#x662F;&#x5728; GUI &#x4E0B;&#xFF0C;&#x56E0;&#x4E3A;&#x6B64;&#x6587;&#x4EF6;&#x662F;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x6D4B;
+&#x8BD5;&#x3001;&#x66F4;&#x6539;&#x3002;
+</p>
+</blockquote>
+<a id="more"></a>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">&#x5982;&#x4F55;&#x6253;&#x5F00; vimtutor&#x3001;gvimtutor</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">&#x4F7F;&#x7528;&#x7EC8;&#x7AEF;&#x6253;&#x5F00;</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">&#x6253;&#x5F00; vimtutor</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+&#x6267;&#x884C; <code>vimtutor</code> &#x547D;&#x4EE4;&#x5373;&#x53EF;&#xFF0C;&#x6B64;&#x547D;&#x4EE4;&#x4E0D;&#x4F1A;&#x53E6;&#x5916;&#x5F00;&#x542F;&#x7A97;&#x53E3;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x7EC8;&#x7AEF;&#x91CC;&#x3002;&#x53EF;&#x80FD;&#x6709;&#x4E9B;&#x6309;&#x952E;
+&#x4F1A;&#x88AB;&#x7EC8;&#x7AEF;&#x5360;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x6B64;&#x65B9;&#x6CD5;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-18-22.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">&#x6253;&#x5F00; gvimtutor</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<p>
+&#x6267;&#x884C; <code>gvimtutor</code> &#x547D;&#x4EE4;&#x5373;&#x53EF;&#xFF0C;&#x4F1A;&#x5F00;&#x542F; gvim &#x7A97;&#x53E3;&#xFF0C;&#x63A8;&#x8350;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-29-24.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">&#x5728; gvim &#x4E2D;&#x6253;&#x5F00;</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+&#x5728; gvim &#x4E2D;&#x8F93;&#x5165; <code>:e $VIMRUNTIME/tutor/tutor.zh_cn.utf-8</code> &#x5373;&#x53EF;,&#x63A8;&#x8350;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;vimtutor&#x3001;gvimtutor&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_17-37-05.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">&#x5E38;&#x7528;&#x6309;&#x952E;</h2>
+<div class="outline-text-2" id="text-2">
+<blockquote>
+<ul class="org-ul">
+<li><code>()</code> &#x8868;&#x793A;&#x6A21;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982; <code>(N)</code> &#x8868;&#x793A; <code>Normal</code> &#x6A21;&#x5F0F;&#x3002;
+<ul class="org-ul">
+<li><code>N</code> <b>Normal</b> &#x6B63;&#x5E38;&#x6A21;&#x5F0F;
+</li>
+<li><code>V</code> <b>Visual</b> &#x53EF;&#x89C6;&#x6A21;&#x5F0F;
+</li>
+</ul>
+</li>
+<li><code>[]</code> &#x8868;&#x793A;&#x53EF;&#x9009;&#xFF0C; <code>&lt;&gt;</code> &#x8868;&#x793A;&#x5FC5;&#x9009;&#x3002;&#x4F8B;&#x5982; <code>[n]</code> &#x8868;&#x793A;&#x53EF;&#x9009;&#x5230;&#x8F93;&#x5165;&#x6570;&#x5B57;&#xFF0C; <code>&lt;n&gt;</code> &#x8868;&#x793A;&#x5FC5;&#x9009;
+&#x8F93;&#x5165;&#x6570;&#x5B57;&#x3002;
+<ul class="org-ul">
+<li><code>n</code> <b>number</b> &#x6570;&#x5B57;
+</li>
+<li><code>e</code> <b>Enter</b> &#x56DE;&#x8F66;
+</li>
+<li><code>s</code> <b>string</b> &#x5B57;&#x7B26;&#x4E32;
+</li>
+<li><code>sold</code> <b>string-old</b> &#x65E7;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x914D;&#x5408; <code>snew</code> &#x4F7F;&#x7528;
+</li>
+<li><code>snew</code> <b>string-new</b> &#x65B0;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x914D;&#x5408; <code>sold</code> &#x4F7F;&#x7528;
+</li>
+<li><code>sh</code> <b>shell</b> shell&#x547D;&#x4EE4;
+</li>
+<li><code>f</code> <b>filename</b> &#x6587;&#x4EF6;&#x540D;
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">&#x79FB;&#x52A8;</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li><code>(N)[n]l</code> &#x5411;&#x53F3;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]h</code> &#x5411;&#x5DE6;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]k</code> &#x5411;&#x4E0A;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)[n]j</code> &#x5411;&#x4E0B;&#x79FB;&#x52A8;
+</li>
+<li><code>(N)0</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;&#xFF0C;&#x5305;&#x62EC;&#x7A7A;&#x683C;
+</li>
+<li><code>(N)^</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)$</code> &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)[n]w</code> &#x8DF3;&#x8F6C;&#x5230;&#x53F3;&#x4FA7;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;
+</li>
+<li><code>(N)[n]e</code> &#x82E5;&#x5149;&#x6807;&#x5F53;&#x524D;&#x5728;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;&#xFF0C;&#x8DF3;&#x8F6C;&#x5230;&#x53F3;&#x4FA7;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;&#xFF0C;&#x5426;&#x5219;&#x8DF3;&#x8F6C;&#x5230;&#x5F53;&#x524D;&#x5355;&#x8BCD;&#x8BCD;&#x5C3E;
+</li>
+<li><code>(N)[n]b</code> &#x8DF3;&#x8F6C;&#x5230;&#x5355;&#x8BCD;&#x9996;&#x5B57;&#x6BCD;
+</li>
+<li><code>(N)&lt;n&gt;G</code> &#x8DF3;&#x8F6C;&#x5230;&#x7B2C; <code>&lt;n&gt;</code> &#x884C;
+</li>
+<li><code>(N)G</code> &#x8DF3;&#x8F6C;&#x5230;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4E00;&#x884C;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)gg</code> &#x8DF3;&#x8F6C;&#x5230;&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x884C;&#x9996;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li><code>(N)i</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x540E;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)I</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x9996;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)a</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x524D;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)A</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x5C3E;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)o</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x4E0B;&#x9762;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)O</code> &#x5728;&#x5F53;&#x524D;&#x884C;&#x4E0A;&#x9762;&#x63D2;&#x5165;&#x4E00;&#x884C;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">&#x4FDD;&#x5B58;&#x3001;&#x9000;&#x51FA;</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li><code>(N):w</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x6587;&#x4EF6;
+</li>
+<li><code>(N):q</code> &#x9000;&#x51FA; vim&#x3001;gvim
+</li>
+<li><code>(N):wq</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5E76;&#x9000;&#x51FA; vim&#x3001;gvim
+</li>
+<li><code>(N):q!</code> &#x5F3A;&#x5236;&#x9000;&#x51FA;&#xFF0C;&#x653E;&#x5F03;&#x6240;&#x6709;&#x6539;&#x52A8;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">&#x5220;&#x9664;</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><code>(N)[n]x</code> &#x5220;&#x9664;&#x5149;&#x6807;&#x6240;&#x5728;&#x7684;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)d[n]w</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x4E0B;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x8BCD;&#x9996;&#xFF0C;&#x5305;&#x62EC;&#x4E24;&#x4E2A;&#x8BCD;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#xFF0C;&#x4F46;&#x4E0D;&#x5305;&#x62EC;&#x540E;&#x4E00;&#x4E2A;
+&#x8BCD;&#x7684;&#x9996;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)d[n]e</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x8BCD;&#x5C3E;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x7A7A;&#x683C;
+</li>
+<li><code>(N)d$</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;
+</li>
+<li><code>(N)D</code> &#x540C; <code>(N)d$</code>
+</li>
+<li><code>(N)[n]dd</code> &#x5220;&#x9664;&#x5F53;&#x524D;&#x884C;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">&#x590D;&#x5236;&#x3001;&#x7C98;&#x8D34;</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li><code>(V)y</code> &#x590D;&#x5236;&#x9009;&#x4E2D;&#x7684;&#x6587;&#x672C;
+</li>
+<li><code>(N)y[n]w</code> <code>(N)y[n]e</code> <code>(N)y[n]l</code> <code>(N)y$</code> &#x7B49;&#x7B49;
+</li>
+<li><code>(N)[n]p</code> &#x5BF9;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x5F53;&#x524D;&#x5149;&#x6807;&#x7684;&#x540E;&#x9762;&#xFF0C;&#x5BF9;&#x4E8E;&#x884C;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x4E0B;&#x4E00;&#x884C;
+</li>
+<li><code>(N)[n]P</code> &#x5BF9;&#x4E8E;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x5F53;&#x524D;&#x5149;&#x6807;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x5BF9;&#x4E8E;&#x884C;&#x662F;&#x7C98;&#x8D34;&#x5230;&#x4E0A;&#x4E00;&#x884C;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-6" class="outline-3">
+<h3 id="sec-2-6">&#x4FEE;&#x6539;&#x3001;&#x66FF;&#x6362;</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li><code>(N)r</code> &#x4FEE;&#x6539;&#x5149;&#x6807;&#x4E0B;&#x7684;&#x5355;&#x4E2A;&#x5B57;&#x7B26;
+</li>
+<li><code>(N)R</code> &#x4FEE;&#x6539;&#x4ECE;&#x5149;&#x6807;&#x5F00;&#x59CB;&#x7684;&#x5B57;&#x7B26;&#x5E8F;&#x5217;
+</li>
+<li><code>(N)cw</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x8BCD;&#x5C3E;&#xFF0C;&#x4E0D;&#x5305;&#x62EC;&#x7A7A;&#x683C;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)ce</code> &#x540C; <code>(N)cw</code>
+</li>
+<li><code>(N)c$</code> &#x4ECE;&#x5149;&#x6807;&#x5904;&#x5220;&#x9664;&#x81F3;&#x884C;&#x5C3E;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)C</code> &#x540C; <code>(N)c$</code>
+</li>
+<li><code>(N)cc</code> &#x5220;&#x9664;&#x6574;&#x884C;&#x6587;&#x672C;&#xFF0C;&#x5E76;&#x8FDB;&#x5165;&#x63D2;&#x5165;&#x6A21;&#x5F0F;
+</li>
+<li><code>(N)~</code> &#x53CD;&#x8F6C;&#x5149;&#x6807;&#x6240;&#x5728;&#x5B57;&#x7B26;&#x7684;&#x5927;&#x5C0F;&#x5199;
+</li>
+<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;&lt;e&gt;</code> &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;/g&lt;e&gt;</code> &#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x6240;&#x6709; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):&lt;n1&gt;,&lt;n2&gt;s/&lt;sold&gt;/&lt;snew&gt;/g</code> &#x5C06; <code>&lt;n1&gt;</code> &#x884C;&#x81F3; <code>&lt;n2&gt;</code> &#x884C;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709; <code>&lt;sold&gt;</code>
+  &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/g</code> &#x5C06;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>&lt;sold&gt;</code> &#x66FF;&#x6362;&#x4E3A; <code>&lt;snew&gt;</code>
+</li>
+<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/gc</code> &#x5C06;&#x6574;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x7684; <code>&lt;sold&gt;</code> &#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5E76;&#x8BE2;&#x95EE;&#x662F;&#x5426;&#x66FF;&#x6362;&#x4E3A;
+<code>&lt;snew&gt;</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-7" class="outline-3">
+<h3 id="sec-2-7">&#x64A4;&#x9500;</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li><code>(N)[n]u</code> undo&#xFF0C;&#x64A4;&#x9500;&#x6700;&#x540E;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;
+</li>
+<li><code>(N)U</code> undo&#xFF0C;&#x64A4;&#x9500;&#x5BF9;&#x6574;&#x884C;&#x7684;&#x4FEE;&#x6539;
+</li>
+<li><code>(N)[n]CTRL-R</code> redo,&#x5373;&#x64A4;&#x9500;undo&#x3002;&#x64A4;&#x9500;&#x6389;&#x64A4;&#x9500;&#x547D;&#x4EE4;&#xFF0C;&#x6062;&#x590D;&#x64CD;&#x4F5C;&#x524D;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x53EF;&#x591A;&#x6B21;&#x8F93;&#x5165;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-8" class="outline-3">
+<h3 id="sec-2-8">&#x641C;&#x7D22;</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li><code>(N)/&lt;s&gt;&lt;e&gt;</code> &#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32; <code>&lt;s&gt;</code> &#xFF0C; <code>n</code> &#x67E5;&#x627E;&#x4E0B;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#xFF0C; <code>N</code> &#x67E5;&#x627E;&#x4E0A;&#x4E00;&#x4E2A;&#x5339;&#x914D;
+</li>
+<li><code>(N)?&lt;s&gt;&lt;e&gt;</code> &#x9006;&#x5411;&#x67E5;&#x627E;&#x5B57;&#x7B26;&#x4E32;
+</li>
+<li><code>(N)CTRL-o</code> &#x56DE;&#x9000;&#x5230;&#x4E4B;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EF;&#x591A;&#x6B21;&#x8F93;&#x5165;
+</li>
+<li><code>(N)CTRL-i</code> &#x56DE;&#x9000;&#x5230;&#x8F83;&#x65B0;&#x7684;&#x4F4D;&#x7F6E;
+</li>
+<li><code>(N)%</code> &#x5149;&#x6807;&#x653E;&#x5728;&#x914D;&#x5BF9;&#x7684;&#x62EC;&#x53F7;&#x5904;&#x6309;&#x4E0B;&#x6B64;&#x7EC4;&#x5408;&#x952E;&#x53EF;&#x8DF3;&#x8F6C;&#x5230;&#x5339;&#x914D;&#x7684;&#x62EC;&#x53F7;&#x5904;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-9" class="outline-3">
+<h3 id="sec-2-9">&#x8C03;&#x6574;&#x6587;&#x672C;&#x4F4D;&#x7F6E;</h3>
+<div class="outline-text-3" id="text-2-9">
+<ul class="org-ul">
+<li><code>(N):ce&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x4E2D;&#xFF08;center&#xFF09;
+</li>
+<li><code>(N):ri&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x53F3;&#xFF08;right&#xFF09;
+</li>
+<li><code>(N):le&lt;e&gt;</code> &#x4F7F;&#x672C;&#x884C;&#x5185;&#x5BB9;&#x5C45;&#x5DE6;&#xFF08;left&#xFF09;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-10" class="outline-3">
+<h3 id="sec-2-10">&#x4FDD;&#x5B58;</h3>
+<div class="outline-text-3" id="text-2-10">
+<ul class="org-ul">
+<li><code>(N):w [f]&lt;e&gt;</code> &#x4FDD;&#x5B58;&#x5F53;&#x524D;buffer&#x5230; <code>f</code> &#x6587;&#x4EF6;
+</li>
+<li><code>(V):w [f]&lt;e&gt;</code> &#x4FDD;&#x5B58;&#x9009;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x5230; <code>f</code> &#x6587;&#x4EF6;&#xFF0C;&#x5F53;&#x6309;&#x4E0B; <code>:</code> &#x540E;&#xFF0C;&#x5728;minibuffer&#x4F1A;&#x663E;&#x793A;
+=&apos;&lt;,&apos;&gt;= &#x6B64;&#x65F6;&#x518D;&#x8F93;&#x5165; <code>w [f]</code>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-11" class="outline-3">
+<h3 id="sec-2-11">&#x6267;&#x884C;&#x5916;&#x90E8;&#x547D;&#x4EE4;</h3>
+<div class="outline-text-3" id="text-2-11">
+<ul class="org-ul">
+<li><code>(N):!&lt;sh&gt;&lt;e&gt;</code> &#x6267;&#x884C;&#x5916;&#x90E8;shell&#x547D;&#x4EE4;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A; <i>:!dir</i>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-12" class="outline-3">
+<h3 id="sec-2-12">&#x63D0;&#x53D6;&#x3001;&#x5408;&#x5E76;&#x6587;&#x4EF6;</h3>
+<div class="outline-text-3" id="text-2-12">
+<ul class="org-ul">
+<li><code>(N):r &lt;f&gt;&lt;e&gt;</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165; <code>f</code> &#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x5185;&#x5BB9;
+</li>
+<li><code>(N):r !&lt;sh&gt;&lt;e&gt;</code> &#x5728;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x63D2;&#x5165; <code>sh</code> &#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x5185;&#x5BB9;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2-13" class="outline-3">
+<h3 id="sec-2-13">&#x4FE1;&#x606F;&#x3001;&#x5E2E;&#x52A9;&#x547D;&#x4EE4;</h3>
+<div class="outline-text-3" id="text-2-13">
+<ul class="org-ul">
+<li><code>(N)CTRL-G</code> &#x5728;minibuffer&#x663E;&#x793A;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7684;&#x4F4D;&#x7F6E;&#x53CA;&#x6587;&#x4EF6;&#x72B6;&#x6001;
+</li>
+<li><code>(N):help&lt;e&gt;</code> &#x6253;&#x5F00;&#x5E2E;&#x52A9;
+</li>
+<li><code>(N):help &lt;s&gt;&lt;e&gt;</code> &#x6253;&#x5F00;&#x5173;&#x4E8E; <code>s</code> &#x4E3B;&#x9898;&#x7684;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;
+</li>
+</ul>
+<blockquote>
+<p>
+&#x6253;&#x5F00;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x540E;&#x4F7F;&#x7528; <code>CTRL-w CTRL-w</code> &#x5728;&#x7A97;&#x53E3;&#x4E4B;&#x95F4;&#x8DF3;&#x8F6C;
+</p>
+
+<p>
+&#x4F7F;&#x7528; <code>(N):q&lt;e&gt;</code> &#x5173;&#x95ED;&#x5E2E;&#x52A9;&#x7A97;&#x53E3;
+</p>
+
+<p>
+&#x5728;&#x5E2E;&#x52A9;&#x6587;&#x4EF6;&#x4E2D;&#x4F7F;&#x7528; <code>CTRL-]</code> &#x8DF3;&#x8F6C;&#x5230;&#x5149;&#x6807;&#x6240;&#x5728;&#x6807;&#x7B7E;&#x7684;&#x4E3B;&#x9898;&#x5E2E;&#x52A9;&#xFF0C;&#x4F7F;&#x7528; <code>CTRL-t</code> &#x6216;
+<code>CTRL-o</code> &#x8DF3;&#x56DE;
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+Last Updated 2016-12-26 Mon 20:17.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[学习 emacs-tutorial 重点记录]]></title>
+      <url>http://yyangdid.github.io/2016/12/24/2016-12-24.%E5%AD%A6%E4%B9%A0emacs-tutorial%E9%87%8D%E7%82%B9%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[
+
+<blockquote>
+<p>
+emacs tutorial &#x662F; emacs &#x5B98;&#x65B9;&#x7684;&#x5FEB;&#x901F;&#x6307;&#x5357;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; emacs &#x5728;&#x7F16;&#x8F91;&#x65F6;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x7EC4;&#x5408;
+&#x6309;&#x952E;&#xFF0C;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x7684;&#x8BF4;&#x660E;&#x3002;&#x56E0;&#x4E3A;&#x6B64;&#x6587;&#x4EF6;&#x662F;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x6D4B;&#x8BD5;&#x3001;&#x66F4;&#x6539;&#x3002;
+</p>
+</blockquote>
+<a id="more"></a>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">&#x5982;&#x4F55;&#x6253;&#x5F00; emacs tutorial</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;&#x5728; emacs &#x4E2D;&#x4E24;&#x79CD;&#x6253;&#x5F00; tutorial &#x7684;&#x65B9;&#x5F0F;&#xFF08;&#x90FD;&#x662F;&#x6307;&#x5728; <code>&#x56FE;&#x5F62;&#x754C;&#x9762;</code> &#x7684; emacs &#x4E2D;&#xFF09;&#x3002;
+</p>
+</div>
+<div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1">&#x7528;&#x9F20;&#x6807;</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+&#x6253;&#x5F00; emacs &#x540E;&#x4F1A;&#x663E;&#x793A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982; emacs logo&#x3001;&#x7248;&#x672C;&#x3001;&#x4E00;&#x4E9B;&#x94FE;&#x63A5;&#x7B49;&#x4FE1;&#x606F;&#x3002;
+&#x4F7F;&#x7528;&#x9F20;&#x6807;&#x70B9;&#x51FB; <code>Emacs Tutorial</code> &#x94FE;&#x63A5;&#x5C31;&#x4F1A;&#x6253;&#x5F00; emacs &#x5FEB;&#x901F;&#x6307;&#x5357;&#x4E86;&#x3002;
+</p>
+
+<div class="figure">
+<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;emacs-tutorial&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_13-37-05.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x952E;</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x952E; <code>C-h t</code> &#xFF08;&#x6309;&#x4F4F; <code>Ctrl</code> &#x952E;&#xFF0C;&#x6309; <code>h</code> &#x952E;&#xFF0C;&#x7136;&#x540E;&#x540C;&#x65F6;&#x677E;&#x5F00;&#xFF0C;&#x518D;&#x6309; <code>t</code> &#x952E;&#xFF0C;
+<code>t</code> &#x4EE3;&#x8868; <code>tutorial</code> &#xFF09; &#x6253;&#x5F00; tutorial&#x3002;
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">&#x5E38;&#x7528;&#x7EC4;&#x5408;&#x952E;</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><code>C-v</code>     &#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#x4E00;&#x9875;&#xFF08;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>PageUp</b> &#xFF09;
+</li>
+<li><code>M-v</code>     &#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#x4E00;&#x9875;&#xFF08;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>PageDn</b> &#xFF09;
+</li>
+<li><code>C-l</code>     &#x91CD;&#x7ED8;&#x5C4F;&#x5E55;&#xFF0C;&#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7F6E;&#x4E8E;&#x5C4F;&#x5E55;&#x4E2D;&#x95F4;&#x884C;
+</li>
+<li><code>C-p</code>     &#x5149;&#x6807;&#x5411;&#x4E0A;&#x4E00;&#x884C;&#xFF08;p &#x4EE3;&#x8868; previous&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Up</b> &#xFF09;
+</li>
+<li><code>C-n</code>     &#x5149;&#x6807;&#x5411;&#x4E0B;&#x4E00;&#x884C;&#xFF08;n &#x4EE3;&#x8868; next&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Down</b> &#xFF09;
+</li>
+<li><code>C-f</code>     &#x5149;&#x6807;&#x5411;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;f &#x4EE3;&#x8868; forward&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Right</b> &#xFF09;
+</li>
+<li><code>M-f</code>     &#x5149;&#x6807;&#x5411;&#x524D;&#x4E00;&#x4E2A;&#x8BCD;
+</li>
+<li><code>C-b</code>     &#x5149;&#x6807;&#x5411;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;b &#x4EE3;&#x8868; backward&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Left</b> &#xFF09;
+</li>
+<li><code>M-b</code>     &#x5149;&#x6807;&#x5411;&#x540E;&#x4E00;&#x4E2A;&#x8BCD;
+</li>
+<li><code>C-a</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;
+</li>
+<li><code>M-a</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x53E5;&#x9996;
+</li>
+<li><code>C-e</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x5C3E;
+</li>
+<li><code>M-e</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x53E5;&#x5C3E;
+</li>
+<li><code>M-&lt;</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x6587;&#x4EF6;&#x9996;
+</li>
+<li><code>M-&gt;</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x6587;&#x4EF6;&#x5C3E;
+</li>
+<li><code>&lt;Delback&gt;</code> &#x5220;&#x9664;&#xFF08;delete&#xFF09;&#x5149;&#x6807;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+</li>
+<li><code>C-d</code>       &#x5220;&#x9664;&#xFF08;delete&#xFF09;&#x5149;&#x6807;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+</li>
+<li><code>M-&lt;Delback&gt;</code> &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x5149;&#x6807;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x8BCD;
+</li>
+<li><code>M-d</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x5149;&#x6807;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x8BCD;
+</li>
+<li><code>C-k</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x4ECE;&#x5149;&#x6807;&#x5230;&#x884C;&#x5C3E;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;
+</li>
+<li><code>M-k</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x4ECE;&#x5149;&#x6807;&#x5230;&#x53E5;&#x5C3E;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;
+</li>
+<li><code>C-SPC</code>       &#x5F00;&#x59CB;&#x9009;&#x62E9;
+</li>
+<li><code>C-@</code>         &#x5F00;&#x59CB;&#x9009;&#x62E9;
+</li>
+<li><code>C-w</code>         &#x526A;&#x5207;&#xFF08;kill&#xFF09;
+</li>
+<li><code>M-w</code>         &#x590D;&#x5236;
+</li>
+<li><code>C-y</code>         &#x53EC;&#x56DE;&#xFF08;yank&#xFF09;&#xFF0C;&#x7C98;&#x8D34;
+</li>
+<li><code>M-y</code>         &#x5FAA;&#x73AF;&#x9009;&#x62E9;&#x53EC;&#x56DE;&#xFF08;yank&#xFF09;&#xFF0C;&#x7C98;&#x8D34;
+</li>
+<li><code>C-x u</code>       &#x64A4;&#x9500;
+</li>
+<li><code>C-_</code>         &#x64A4;&#x9500;
+</li>
+<li><code>C-u 4 C-f</code> &#x5149;&#x6807;&#x5411;&#x524D;&#x79FB;&#x52A8; 4 &#x4E2A;&#x5B57;&#x7B26;
+</li>
+<li><code>C-u 4 C-v</code> &#x5411;&#x4E0B;&#x6EDA;&#x52A8; 4 &#x884C;
+</li>
+<li><code>C-u 4 %</code>   &#x4F1A;&#x63D2;&#x5165; 4 &#x4E2A;%&#xFF0C;&#x5373;&#xFF1A;%%%%
+</li>
+<li><code>C-g</code>     &#x7EC8;&#x6B62;&#x547D;&#x4EE4;
+</li>
+<li><code>C-x 1</code>   &#x5173;&#x95ED;&#x5176;&#x4ED6;&#x7A97;&#x683C;
+</li>
+<li><code>C-x C-f</code> &#x6253;&#x5F00;&#x6587;&#x4EF6;
+</li>
+<li><code>C-x C-s</code> &#x4FDD;&#x5B58;&#x6587;&#x4EF6;
+</li>
+<li><code>C-x C-b</code> &#x5217;&#x51FA;&#x7F13;&#x51B2;&#x533A;
+</li>
+<li><code>C-x s</code>   &#x4FDD;&#x5B58;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x533A;&#x6587;&#x4EF6;
+</li>
+<li><code>C-x C-c</code> &#x5173;&#x95ED; Emacs
+</li>
+<li><code>M-q</code>     &#x6BB5;&#x843D;&#x6392;&#x7248;
+</li>
+<li><code>C-s</code>     &#x641C;&#x7D22;
+</li>
+<li><code>C-x 2</code>   &#x5728;&#x4E0B;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+</li>
+<li><code>C-x 3</code>   &#x5728;&#x53F3;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+</li>
+<li><code>C-M-v</code>   &#x5149;&#x6807;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+</li>
+<li><code>C-M-S-v</code> &#x5149;&#x6807;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+</li>
+<li><code>C-x o</code>   &#x5149;&#x6807;&#x5230;&#x5176;&#x4ED6;&#x7A97;&#x683C;
+</li>
+<li><code>C-x 4 C-f</code> &#x5728;&#x4E0B;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;&#x5E76;&#x6253;&#x5F00;&#x6587;&#x4EF6;
+</li>
+
+<li><code>C-h c $$$-$</code> &#x67E5;&#x770B;&#x7EC4;&#x5408;&#x952E; <b>$$$-$</b> &#x7684;&#x7B80;&#x8981;&#x8BF4;&#x660E;&#x4FE1;&#x606F;
+</li>
+<li><code>C-h k $$$-$</code> &#x67E5;&#x770B;&#x7EC4;&#x5408;&#x952E; <b>$$$-$</b> &#x7684;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x4FE1;&#x606F;
+</li>
+<li><code>C-h f</code>   &#x67E5;&#x770B;&#x51FD;&#x6570;&#x8BF4;&#x660E;
+</li>
+<li><code>C-h v</code>   &#x67E5;&#x770B;&#x53D8;&#x91CF;&#x8BF4;&#x660E;
+</li>
+<li><code>C-h a</code>   &#x641C;&#x7D22;&#x76F8;&#x5173;&#x547D;&#x4EE4;
+</li>
+<li><code>C-h i</code>   &#x6253;&#x5F00;&#x8054;&#x673A;&#x624B;&#x518C;&#xFF08; <code>m emacs &lt;Return&gt;</code> &#x53EF;&#x9605;&#x8BFB; emacs &#x4F7F;&#x7528;&#x624B;&#x518C;&#xFF0C; <code>?</code> &#x53EF;&#x9605;&#x8BFB; Info &#x4F7F;&#x7528;&#x6307;&#x5357;&#xFF09;
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">&#x672F;&#x8BED;&#x5BF9;&#x7167;</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><code>command</code> &#x547D;&#x4EE4;
+</li>
+<li><code>cursor</code>  &#x5149;&#x6807;
+</li>
+<li><code>scrolling</code> &#x6EDA;&#x52A8;
+</li>
+<li><code>numeric argument</code> &#x6570;&#x5B57;&#x53C2;&#x6570;
+</li>
+<li><code>window</code> &#x7A97;&#x683C;
+</li>
+<li><code>frame</code>  &#x7A97;&#x53E3;
+</li>
+<li><code>insert</code> &#x63D2;&#x5165;
+</li>
+<li><code>delete</code> &#x5220;&#x9664;&#xFF08;&#x4E0D;&#x53EF;&#x6062;&#x590D;&#xFF09;
+</li>
+<li><code>kill</code> &#x79FB;&#x9664;&#xFF08;&#x53EF;&#x53EC;&#x56DE;&#xFF09;
+</li>
+<li><code>yank</code> &#x53EC;&#x56DE;
+</li>
+<li><code>undo</code> &#x64A4;&#x9500;
+</li>
+<li><code>file</code> &#x6587;&#x4EF6;
+</li>
+<li><code>buffer</code> &#x7F13;&#x51B2;&#x533A;
+</li>
+<li><code>minibuffer</code> &#x5C0F;&#x7F13;&#x51B2;&#x533A;
+</li>
+<li><code>echo area</code> &#x56DE;&#x663E;&#x533A;
+</li>
+<li><code>mode line</code> &#x72B6;&#x6001;&#x680F;
+</li>
+<li><code>search</code> &#x641C;&#x7D22;
+</li>
+<li><code>incremental search</code> &#x6E10;&#x8FDB;&#x5F0F;&#x641C;&#x7D22;
+</li>
+</ul>
+</div>
+</div>
+
+Last Updated 2016-12-25 Sun 18:50.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[在 linux 下安装 clang+llvm（openSUSE Leap 42.2）]]></title>
       <url>http://yyangdid.github.io/2016/12/19/2016-12-19.%E5%9C%A8linux%E4%B8%8B%E5%AE%89%E8%A3%85clang+llvm%EF%BC%88openSUSE%20Leap%2042.2%EF%BC%89/</url>
       <content type="html"><![CDATA[
