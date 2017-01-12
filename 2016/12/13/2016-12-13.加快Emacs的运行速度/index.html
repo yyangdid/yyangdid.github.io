@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="yyangdid" />
+
+
+
+<meta name="description" content="&amp;#x6B64;&amp;#x65B9;&amp;#x6CD5;&amp;#x53EF;&amp;#x4EE5;&amp;#x52A0;&amp;#x5FEB; Emacs &amp;#x7684;&amp;#x8FD0;&amp;#x884C;&amp;#x901F;&amp;#x5EA6;&amp;#xFF0C;&amp;#x800C;&amp;#x4E0D;&amp;#x662F;&amp;#x542F;&amp;#x52A8;&amp;#x901F;&amp;#x5EA6;&amp;#x3002;&amp;#x5176;&amp;#x5B9E;&amp;#x5C31">
+<meta property="og:type" content="article">
+<meta property="og:title" content="加快Emacs的运行速度">
+<meta property="og:url" content="http://yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/index.html">
+<meta property="og:site_name" content="yyangdid">
+<meta property="og:description" content="&amp;#x6B64;&amp;#x65B9;&amp;#x6CD5;&amp;#x53EF;&amp;#x4EE5;&amp;#x52A0;&amp;#x5FEB; Emacs &amp;#x7684;&amp;#x8FD0;&amp;#x884C;&amp;#x901F;&amp;#x5EA6;&amp;#xFF0C;&amp;#x800C;&amp;#x4E0D;&amp;#x662F;&amp;#x542F;&amp;#x52A8;&amp;#x901F;&amp;#x5EA6;&amp;#x3002;&amp;#x5176;&amp;#x5B9E;&amp;#x5C31">
+<meta property="og:updated_time" content="2017-01-12T14:00:24.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="加快Emacs的运行速度">
+<meta name="twitter:description" content="&amp;#x6B64;&amp;#x65B9;&amp;#x6CD5;&amp;#x53EF;&amp;#x4EE5;&amp;#x52A0;&amp;#x5FEB; Emacs &amp;#x7684;&amp;#x8FD0;&amp;#x884C;&amp;#x901F;&amp;#x5EA6;&amp;#xFF0C;&amp;#x800C;&amp;#x4E0D;&amp;#x662F;&amp;#x542F;&amp;#x52A8;&amp;#x901F;&amp;#x5EA6;&amp;#x3002;&amp;#x5176;&amp;#x5B9E;&amp;#x5C31">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/optimus.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/iconfont/css/iconfont.css">
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+<title>加快Emacs的运行速度 | yyangdid</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/optimus.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">yyangdid</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸟博客</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">yyangdid</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/optimus.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">yyangdid</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸟博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-2016-12-13.加快Emacs的运行速度" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/13/2016-12-13.加快Emacs的运行速度/" class="article-date">
+      <time datetime="2016-12-13T05:53:19.000Z" itemprop="datePublished">2016-12-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      加快Emacs的运行速度
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Emacs/">Emacs</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Emacs/">Emacs</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+
+<blockquote>
+<p>
+&#x6B64;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x52A0;&#x5FEB; Emacs &#x7684;&#x8FD0;&#x884C;&#x901F;&#x5EA6;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#x3002;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x628A; Emacs &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+<code>.emacs.d</code> &#x6587;&#x4EF6;&#x5939;&#x653E;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x800C;&#x5185;&#x5B58;&#x7684;&#x541E;&#x5410;&#x901F;&#x5EA6;&#x8981;&#x6BD4;&#x666E;&#x901A;&#x7684;&#x673A;&#x68B0;&#x786C;&#x76D8;&#x5FEB;&#x7684;&#x591A;&#xFF0C;&#x76F8;&#x5E94;&#x7684;
+emacs &#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x4F1A;&#x6709;&#x5F88;&#x5927;&#x63D0;&#x5347;&#x3002;
+</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>
+&#x6B64;&#x65B9;&#x6CD5;&#x53EA;&#x5728; Linux &#x7CFB;&#x7EDF;&#x4E2D;&#x6D4B;&#x8BD5;&#x4E86;&#xFF0C;&#x4E2A;&#x4EBA;&#x7CFB;&#x7EDF; <code>openSUSE42.2</code>
+</p>
+</blockquote>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">&#x914D;&#x7F6E;</h2>
+<div class="outline-text-2" id="text-1">
+<ol class="org-ol">
+<li>&#x5C06;&#x4E0B;&#x9762;&#x4E00;&#x884C;&#x63D2;&#x5165;&#x5230; <code>/etc/fstab</code> &#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x91CD;&#x542F;&#x7535;&#x8111;&#xFF08;&#x6211;&#x7535;&#x8111;&#x662F; 8G &#x5185;&#x5B58;&#xFF0C;size &#x8BBE;&#x7F6E;&#x4E3A; 1G &#x4E86;&#xFF09;&#x3002;
+</li>
+</ol>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tmpfs       /tmp        tmpfs       nodev,nosuid,size=<span class="number">1</span>G    <span class="number">0</span>   <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</div>
+<ol class="org-ol">
+<li>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#xFF0C;&#x5E76;&#x4E14;&#x8D4B;&#x4E88;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#xFF0C;&#x53EF;&#x4EE5;&#x547D;&#x540D;&#x4E3A; <code>emacs2ram</code> &#xFF0C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;:
+</li>
+</ol>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$1</span>&quot;</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Usage:&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;  emacs2ram start&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;  emacs2ram restore&quot;</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$1</span>&quot;</span> == <span class="string">&quot;start&quot;</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">	mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">&quot;<span class="variable">$(readlink $link)</span>&quot;</span> != <span class="string">&quot;<span class="variable">$volatile</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="comment"># backup project at first</span></span><br><span class="line">	mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">	<span class="comment"># create the link</span></span><br><span class="line">	ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Sync .emacs.d from memory to backup ...&quot;</span></span><br><span class="line">	rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;DONE!&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;Sync .emacs.d from disk to memory ...&quot;</span></span><br><span class="line">	rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">	touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">&quot;DONE!&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Moving .emacs.d back to disk ...&quot;</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;&amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;&amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;DONE!&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+<code>emacs2ram</code> &#x6587;&#x4EF6;&#xFF1A;
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/yyangdid/blog-backup/blob/master/MyFiles/Emacs/emacs2ram" target="_blank" rel="external">github</a>
+</li>
+<li><a href="https://coding.net/u/yyangdid/p/blog-backup/git/blob/master/MyFiles/Emacs/emacs2ram" target="_blank" rel="external">condig.net</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">&#x4F7F;&#x7528;</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">load &#x5230; <code>tmpfs</code></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+&#x8FDB;&#x5165;&#x811A;&#x672C;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x6267;&#x884C;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram start</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x4F1A;&#x63D0;&#x793A;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Sync .emacs.d from disk to memory ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x8BF4;&#x660E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x8F6C;&#x79FB;&#x5230; <code>tmpfs</code> &#x4E86;&#xFF0C;ok&#xFF01;
+</p>
+
+<p>
+&#x53EF;&#x4EE5;&#x7528;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x5668;&#x770B;&#x4E00;&#x4E0B;&#xFF0C;&#x5728; <code>/tmp</code> &#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x4F1A;&#x6709;&#x4E00;&#x4E2A; <code>.emacs.d-&#x7528;&#x6237;&#x540D;</code> &#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;
+&#x800C;&#x4E3B;&#x76EE;&#x5F55;&#x7684; <i>.emacs.d</i> &#x6587;&#x4EF6;&#x5939;&#x4F1A;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x8F6F;&#x94FE;&#x63A5;&#xFF0C;&#x6307;&#x5411; <code>/tmp/.emacs.d-&#x7528;&#x6237;&#x540D;</code> &#xFF0C;&#x540C;&#x65F6;
+&#x5728;&#x4E3B;&#x76EE;&#x5F55;&#x8FD8;&#x4F1A;&#x6709;&#x4E00;&#x4E2A; <code>.emacs.d-backup</code> &#x6587;&#x4EF6;&#x5939;,&#x662F;&#x5BF9;&#x539F; <code>.emacs.d</code> &#x7684;&#x5907;&#x4EFD;&#x3002;
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">&#x8FD8;&#x539F;</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-sec-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">&#x4E0D;&#x4FDD;&#x7559;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x3001;&#x5BF9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x66F4;&#x6539;&#x3002;&#x3002;&#x3002;</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+&#x8FDB;&#x5165;&#x811A;&#x672C;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x6267;&#x884C;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram restore</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x4F1A;&#x63D0;&#x793A;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Moving .emacs.d back to disk ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+&#x7528;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x5668;&#x770B;&#x4E00;&#x4E0B;&#xFF0C; <code>/tmp/.emacs.d-&#x7528;&#x6237;&#x540D;</code> &#x548C; <code>~/.emacs.d-backup</code> &#x4E24;&#x6587;&#x4EF6;&#x5939;&#x5DF2;&#x7ECF;
+&#x6CA1;&#x4E86;&#xFF0C;&#x800C; <code>~/.emacs.d</code> &#x56DE;&#x6765;&#x4E86;&#xFF0C;&#x4E0D;&#x662F;&#x8F6F;&#x94FE;&#x63A5;&#x4E86;&#x3002;
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">&#x4FDD;&#x7559;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x3001;&#x5BF9;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x66F4;&#x6539;&#x3002;&#x3002;&#x3002;</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+&#x8FDB;&#x5165;&#x811A;&#x672C;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x6267;&#x884C;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram start</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x4F1A;&#x63D0;&#x793A;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Sync .emacs.d from memory to backup ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x7136;&#x540E;&#x6267;&#x884C;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram restore</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+&#x4F1A;&#x63D0;&#x793A;&#xFF1A;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Moving .emacs.d back to disk ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
+</div>
+<p>
+ok!
+</p>
+
+
+<p>
+&#x6267;&#x884C; <code>emacs2ram start</code> &#x662F;&#x628A; <code>/tmp/.emacs.d-&#x7528;&#x6237;&#x540D;</code> &#x7684;&#x5185;&#x5BB9;&#x540C;&#x6B65;&#x5230;
+<code>~/.emacs.d-backup</code> &#x3002;
+</p>
+
+
+<p>
+&#x6267;&#x884C; <code>emacs2ram restore</code> &#x662F;&#x628A; <code>~/.emacs.d-backup</code> &#x540C;&#x6B65;&#x5230; <code>~/.eamcs.d</code> &#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;
+<code>/tmp/.emacs.d-&#x7528;&#x6237;&#x540D;</code> &#x548C; <code>~/.emacs.d-backup</code> &#x3002;
+</p>
+
+
+<blockquote>
+<p>
+&#x6B64;&#x65B9;&#x6CD5;&#x662F;&#x5728;
+<a href="https://github.com/lujun9972/emacs-document/blob/master/emacs-common/%E5%8D%81%E5%80%8D%E6%8F%90%E5%8D%87Emacs%E6%80%A7%E8%83%BD.org?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">
+&#x5F00;&#x53D1;&#x8005;&#x5934;&#x6761;</a>&#x770B;&#x5230;&#x7684;&#xFF0C;&#x5BF9;&#x539F;&#x6587;&#x7684; <code>emacs2ram</code> &#x811A;&#x672C;&#x4FEE;&#x6539;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x5982;&#x679C;&#x89C9;&#x5F97;&#x6BCF;&#x6B21;&#x90FD;&#x8981;&#x6267;&#x884C;&#x547D;&#x4EE4;
+&#x9EBB;&#x70E6;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x547D;&#x4EE4;&#x52A0;&#x5165;&#x5F00;&#x673A;&#x542F;&#x52A8;&#x548C;&#x5173;&#x673A;&#x524D;&#x6267;&#x884C;&#xFF0C;&#x4E2A;&#x4EBA;&#x6CA1;&#x6298;&#x817E;&#x3002;
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+
+Last Updated 2017-01-12 Thu 22:00.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
+        <p><span>发布时间:</span>2016-12-13, 13:53:19</p>
+        <p><span>最后更新:</span>2017-01-12, 22:00:24</p>
+        
+            <p>
+                <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
+                <a href="https://github.com/yyangdid/blog-backup/blame/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://github.com/yyangdid/blog-backup/commits/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://raw.githubusercontent.com/yyangdid/blog-backup/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+            <p>
+                <span>更新历史:</span><i class="iconfont icon-coding"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/blame/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/commits/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/raw/master/_posts/2016-12-13.加快Emacs的运行速度.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+        
+        <p>
+            <span>原始链接:</span><a class="post-urlasas" href="http://yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/" title="加快Emacs的运行速度">yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="http://yyangdid.coding.me/2016/12/13/2016-12-13.加快Emacs的运行速度/" title="加快Emacs的运行速度">yyangdid.coding.me/2016/12/13/2016-12-13.加快Emacs的运行速度/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.coding.me/2016/12/13/2016-12-13.加快Emacs的运行速度/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">
+                    在Linux下安装 zlib（openSUSE Leap 42.2）
+                </a>
+            </div>
+        
+        
+    </nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-number">1.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-number">2.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-1"><span class="toc-number">2.1.</span> <span class="toc-text">load 到 tmpfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-2"><span class="toc-number">2.2.</span> <span class="toc-text">还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-2-2-1"><span class="toc-number">2.2.1.</span> <span class="toc-text">不保留历史记录、对配置文件的更改。。。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-2-2-2"><span class="toc-number">2.2.2.</span> <span class="toc-text">保留历史记录、对配置文件的更改。。。</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"加快Emacs的运行速度　| yyangdid　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/12/13/2016-12-13.加快Emacs的运行速度/" data-title="加快Emacs的运行速度" data-url="http://yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yyangdid"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+
+            ds.src = '/js/embed.js';
+            /*上面是我自己的 embed.js 链接，请改为你自己的地址*/
+
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/" title="上一篇: 在Linux下安装 zlib（openSUSE Leap 42.2）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 yyangdid
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 6;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
