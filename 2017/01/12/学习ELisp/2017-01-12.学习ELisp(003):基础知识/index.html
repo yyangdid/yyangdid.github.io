@@ -29,7 +29,7 @@
 
 
 &amp;#x672C;&amp;#x7AE0;&amp;#x8282;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB0;&amp;#x5F55; ELisp &amp;#x7F16;&amp;#x7A0B;&amp;#x4E2D;&amp;#x7684;&amp;#x57FA;&amp;#x672C;">
-<meta property="og:updated_time" content="2017-01-12T13:49:19.528Z">
+<meta property="og:updated_time" content="2017-01-13T13:35:32.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(003):基础知识">
 <meta name="twitter:description" content="&amp;#x5B66;&amp;#x4E60;&amp;#x8D44;&amp;#x6599;&amp;#xFF1A;Emacs Lisp &amp;#x7B80;&amp;#x660E;&amp;#x6559;&amp;#x7A0B;
@@ -124,7 +124,7 @@
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
@@ -343,13 +343,54 @@ ELisp&#x4F7F;&#x7528;&#x5173;&#x952E;&#x5B57; <code>defun</code> &#x6765;&#x5B9A
 &#x5728; Emacs &#x4E2D;&#xFF0C;&#x5F53;&#x5149;&#x6807;&#x5904;&#x4E8E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x540D;&#x4E0A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528; <code>C-h f</code> &#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6B64;&#x51FD;&#x6570;&#x7684;&#x6587;&#x6863;&#x3002;
 </p>
 </blockquote>
+<ul class="org-ul">
+<li>&#x4F8B;&#x5B50;&#x4E00;&#xFF1A;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x51FD;&#x6570; hello () :</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> hello <span class="list">()</span></span><br><span class="line">  <span class="string">&quot;Say hello.&quot;</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">&quot;Hello&quot;</span>)</span>)</span></span><br><span class="line"><span class="comment">;;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;</span></span><br><span class="line"><span class="list">(<span class="keyword">hello</span>)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+<li>&#x4F8B;&#x5B50;&#x4E8C;&#xFF1A;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5E26;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570; hello (name)&#xFF1A;</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> hello <span class="list">(<span class="keyword">name</span>)</span></span><br><span class="line">  <span class="string">&quot;Say hello to user whose name is NAME.&quot;</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">&quot;Hello %s.&quot;</span> name)</span>)</span></span><br><span class="line"><span class="comment">;;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;</span></span><br><span class="line"><span class="list">(<span class="keyword">hello</span> <span class="string">&quot;Emacs&quot;</span>)</span> <span class="comment">;; =&gt; Hello Emacs.</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<blockquote>
+<p>
+&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FD4;&#x56DE;&#x503C;&#x4E00;&#x822C;&#x662F;&#x51FD;&#x6570;&#x5B9A;&#x4E49;&#x91CC;&#x9762;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;
+</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2">&#x53D8;&#x91CF;</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>&#x76F4;&#x63A5;&#x5BF9;&#x53D8;&#x91CF;&#x8D4B;&#x503C;
+
+<p>
+&#x5728; ELisp &#x4E2D;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7ED9;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x58F0;&#x660E;&#x3002;
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#x76F4;&#x63A5;&#x5BF9;&#x53D8;&#x91CF; foo &#x8D4B;&#x503C;</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> foo <span class="string">&quot;I am foo&quot;</span>)</span> <span class="comment">;; =&gt; &quot;I am foo&quot;</span></span><br><span class="line"><span class="list">(<span class="keyword">message</span> foo)</span> <span class="comment">;; =&gt; &quot;I am foo&quot;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<blockquote>
+<p>
+&#x628A;&#x5149;&#x6807;&#x653E;&#x5728;&#x53D8;&#x91CF;&#x540D;&#x4E0A;&#x4F7F;&#x7528; <code>C-h v</code> &#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6B64;&#x53D8;&#x91CF;&#x7684;&#x6587;&#x6863;&#x8BF4;&#x660E;&#x3002;
+</p>
+</blockquote>
 </li>
 </ul>
 </div>
 </div>
 </div>
 
-Last Updated 2017-01-12 Thu 21:49.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+Last Updated 2017-01-13 Fri 21:35.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
 
       
     </div>
@@ -361,7 +402,7 @@ Last Updated 2017-01-12 Thu 21:49.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2017-01-12, 20:45:11</p>
-        <p><span>最后更新:</span>2017-01-12, 21:49:19</p>
+        <p><span>最后更新:</span>2017-01-13, 21:35:32</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
@@ -411,7 +452,7 @@ Last Updated 2017-01-12 Thu 21:49.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-number">1.</span> <span class="toc-text">函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-number">1.1.</span> <span class="toc-text">函数的声明和调用</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-number">1.</span> <span class="toc-text">函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-number">1.1.</span> <span class="toc-text">函数的声明和调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-number">1.2.</span> <span class="toc-text">变量</span></a></li></ol></li></ol>
         
     </div>
     <style>
