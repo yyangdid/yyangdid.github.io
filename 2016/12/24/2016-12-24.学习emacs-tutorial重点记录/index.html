@@ -15,17 +15,68 @@
 
 
 
-<meta name="description" content="emacs tutorial &amp;#x662F; Emacs &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x5FEB;&amp;#x901F;&amp;#x6307;&amp;#x5357;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; Emacs &amp;#x5728;&amp;#x7F16;&amp;#x8F91;&amp;#x65F6;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;">
+<meta name="description" content="Table of Contents
+
+
+1. 如何打开 emacs tutorial
+
+1.1. 用鼠标
+1.2. 使用组合键
+
+
+2. 常用组合键
+3. 术语对照
+
+
+
+
+
+emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑时一些常用的组合
+按键，一些术语的说明。因为此文件是只读文件，所以在此文件中可以随意测试、更改。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习emacs-tutorial重点记录">
 <meta property="og:url" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/index.html">
 <meta property="og:site_name" content="yyangdid">
-<meta property="og:description" content="emacs tutorial &amp;#x662F; Emacs &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x5FEB;&amp;#x901F;&amp;#x6307;&amp;#x5357;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; Emacs &amp;#x5728;&amp;#x7F16;&amp;#x8F91;&amp;#x65F6;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;">
+<meta property="og:description" content="Table of Contents
+
+
+1. 如何打开 emacs tutorial
+
+1.1. 用鼠标
+1.2. 使用组合键
+
+
+2. 常用组合键
+3. 术语对照
+
+
+
+
+
+emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑时一些常用的组合
+按键，一些术语的说明。因为此文件是只读文件，所以在此文件中可以随意测试、更改。">
 <meta property="og:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/1_2016-12-24_13-37-05.png">
 <meta property="og:updated_time" content="2017-01-12T13:43:08.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习emacs-tutorial重点记录">
-<meta name="twitter:description" content="emacs tutorial &amp;#x662F; Emacs &amp;#x5B98;&amp;#x65B9;&amp;#x7684;&amp;#x5FEB;&amp;#x901F;&amp;#x6307;&amp;#x5357;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x4ECB;&amp;#x7ECD;&amp;#x4E86; Emacs &amp;#x5728;&amp;#x7F16;&amp;#x8F91;&amp;#x65F6;&amp;#x4E00;&amp;#x4E9B;&amp;#x5E38;&amp;">
+<meta name="twitter:description" content="Table of Contents
+
+
+1. 如何打开 emacs tutorial
+
+1.1. 用鼠标
+1.2. 使用组合键
+
+
+2. 常用组合键
+3. 术语对照
+
+
+
+
+
+emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑时一些常用的组合
+按键，一些术语的说明。因为此文件是只读文件，所以在此文件中可以随意测试、更改。">
 <meta name="twitter:image" content="http://yyangdid.github.io/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/1_2016-12-24_13-37-05.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -114,7 +165,7 @@
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
@@ -302,197 +353,212 @@
           
         
 
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 如何打开 emacs tutorial</a>
+<ul>
+<li><a href="#sec-1-1">1.1. 用鼠标</a></li>
+<li><a href="#sec-1-2">1.2. 使用组合键</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 常用组合键</a></li>
+<li><a href="#sec-3">3. 术语对照</a></li>
+</ul>
+</div>
+</div>
 <blockquote>
 <p>
-emacs tutorial &#x662F; Emacs &#x5B98;&#x65B9;&#x7684;&#x5FEB;&#x901F;&#x6307;&#x5357;&#xFF0C;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x4E86; Emacs &#x5728;&#x7F16;&#x8F91;&#x65F6;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x7684;&#x7EC4;&#x5408;
-&#x6309;&#x952E;&#xFF0C;&#x4E00;&#x4E9B;&#x672F;&#x8BED;&#x7684;&#x8BF4;&#x660E;&#x3002;&#x56E0;&#x4E3A;&#x6B64;&#x6587;&#x4EF6;&#x662F;&#x53EA;&#x8BFB;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x6D4B;&#x8BD5;&#x3001;&#x66F4;&#x6539;&#x3002;
+emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑时一些常用的组合
+按键，一些术语的说明。因为此文件是只读文件，所以在此文件中可以随意测试、更改。
 </p>
 </blockquote>
 <a id="more"></a>
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">&#x5982;&#x4F55;&#x6253;&#x5F00; emacs tutorial</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> 如何打开 emacs tutorial</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-&#x8FD9;&#x91CC;&#x4ECB;&#x7ECD;&#x5728; emacs &#x4E2D;&#x4E24;&#x79CD;&#x6253;&#x5F00; tutorial &#x7684;&#x65B9;&#x5F0F;&#xFF08;&#x90FD;&#x662F;&#x6307;&#x5728; <code>&#x56FE;&#x5F62;&#x754C;&#x9762;</code> &#x7684; emacs &#x4E2D;&#xFF09;&#x3002;
+这里介绍在 emacs 中两种打开 tutorial 的方式（都是指在 <code>图形界面</code> 的 emacs 中）。
 </p>
 </div>
 <div id="outline-container-sec-1-1" class="outline-3">
-<h3 id="sec-1-1">&#x7528;&#x9F20;&#x6807;</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 用鼠标</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-&#x6253;&#x5F00; emacs &#x540E;&#x4F1A;&#x663E;&#x793A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982; emacs logo&#x3001;&#x7248;&#x672C;&#x3001;&#x4E00;&#x4E9B;&#x94FE;&#x63A5;&#x7B49;&#x4FE1;&#x606F;&#x3002;
-&#x4F7F;&#x7528;&#x9F20;&#x6807;&#x70B9;&#x51FB; <code>Emacs Tutorial</code> &#x94FE;&#x63A5;&#x5C31;&#x4F1A;&#x6253;&#x5F00; emacs &#x5FEB;&#x901F;&#x6307;&#x5357;&#x4E86;&#x3002;
+打开 emacs 后会显示一些简单的信息，例如 emacs logo、版本、一些链接等信息。
+使用鼠标点击 <code>Emacs Tutorial</code> 链接就会打开 emacs 快速指南了。
 </p>
 
 <div class="figure">
-<p><img src="/2016/12/24/2016-12-24.&#x5B66;&#x4E60;emacs-tutorial&#x91CD;&#x70B9;&#x8BB0;&#x5F55;/1_2016-12-24_13-37-05.png" alt="(&#x70B9;&#x51FB;&#x56FE;&#x7247;&#x53EF;&#x653E;&#x5927;)" width="300px">
+<p><img src="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/1_2016-12-24_13-37-05.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
 </div>
 <div id="outline-container-sec-1-2" class="outline-3">
-<h3 id="sec-1-2">&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x952E;</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 使用组合键</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-&#x4F7F;&#x7528;&#x7EC4;&#x5408;&#x952E; <code>C-h t</code> &#xFF08;&#x6309;&#x4F4F; <code>Ctrl</code> &#x952E;&#xFF0C;&#x6309; <code>h</code> &#x952E;&#xFF0C;&#x7136;&#x540E;&#x540C;&#x65F6;&#x677E;&#x5F00;&#xFF0C;&#x518D;&#x6309; <code>t</code> &#x952E;&#xFF0C;
-<code>t</code> &#x4EE3;&#x8868; <code>tutorial</code> &#xFF09; &#x6253;&#x5F00; tutorial&#x3002;
+使用组合键 <code>C-h t</code> （按住 <code>Ctrl</code> 键，按 <code>h</code> 键，然后同时松开，再按 <code>t</code> 键，
+<code>t</code> 代表 <code>tutorial</code> ） 打开 tutorial。
 </p>
 </div>
 </div>
 </div>
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">&#x5E38;&#x7528;&#x7EC4;&#x5408;&#x952E;</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> 常用组合键</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li><code>C-v</code>     &#x5411;&#x4E0B;&#x6EDA;&#x52A8;&#x4E00;&#x9875;&#xFF08;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>PageUp</b> &#xFF09;
+<li><code>C-v</code>     向下滚动一页（等效按键： <b>PageUp</b> ）
 </li>
-<li><code>M-v</code>     &#x5411;&#x4E0A;&#x6EDA;&#x52A8;&#x4E00;&#x9875;&#xFF08;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>PageDn</b> &#xFF09;
+<li><code>M-v</code>     向上滚动一页（等效按键： <b>PageDn</b> ）
 </li>
-<li><code>C-l</code>     &#x91CD;&#x7ED8;&#x5C4F;&#x5E55;&#xFF0C;&#x5C06;&#x5149;&#x6807;&#x6240;&#x5728;&#x884C;&#x7F6E;&#x4E8E;&#x5C4F;&#x5E55;&#x4E2D;&#x95F4;&#x884C;
+<li><code>C-l</code>     重绘屏幕，将光标所在行置于屏幕中间行
 </li>
-<li><code>C-p</code>     &#x5149;&#x6807;&#x5411;&#x4E0A;&#x4E00;&#x884C;&#xFF08;p &#x4EE3;&#x8868; previous&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Up</b> &#xFF09;
+<li><code>C-p</code>     光标向上一行（p 代表 previous，等效按键： <b>Up</b> ）
 </li>
-<li><code>C-n</code>     &#x5149;&#x6807;&#x5411;&#x4E0B;&#x4E00;&#x884C;&#xFF08;n &#x4EE3;&#x8868; next&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Down</b> &#xFF09;
+<li><code>C-n</code>     光标向下一行（n 代表 next，等效按键： <b>Down</b> ）
 </li>
-<li><code>C-f</code>     &#x5149;&#x6807;&#x5411;&#x524D;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;f &#x4EE3;&#x8868; forward&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Right</b> &#xFF09;
+<li><code>C-f</code>     光标向前一个字符（f 代表 forward，等效按键： <b>Right</b> ）
 </li>
-<li><code>M-f</code>     &#x5149;&#x6807;&#x5411;&#x524D;&#x4E00;&#x4E2A;&#x8BCD;
+<li><code>M-f</code>     光标向前一个词
 </li>
-<li><code>C-b</code>     &#x5149;&#x6807;&#x5411;&#x540E;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#xFF08;b &#x4EE3;&#x8868; backward&#xFF0C;&#x7B49;&#x6548;&#x6309;&#x952E;&#xFF1A; <b>Left</b> &#xFF09;
+<li><code>C-b</code>     光标向后一个字符（b 代表 backward，等效按键： <b>Left</b> ）
 </li>
-<li><code>M-b</code>     &#x5149;&#x6807;&#x5411;&#x540E;&#x4E00;&#x4E2A;&#x8BCD;
+<li><code>M-b</code>     光标向后一个词
 </li>
-<li><code>C-a</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x9996;
+<li><code>C-a</code>     光标移动到行首
 </li>
-<li><code>M-a</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x53E5;&#x9996;
+<li><code>M-a</code>     光标移动到句首
 </li>
-<li><code>C-e</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x884C;&#x5C3E;
+<li><code>C-e</code>     光标移动到行尾
 </li>
-<li><code>M-e</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x53E5;&#x5C3E;
+<li><code>M-e</code>     光标移动到句尾
 </li>
-<li><code>M-&lt;</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x6587;&#x4EF6;&#x9996;
+<li><code>M-&lt;</code>     光标移动到文件首
 </li>
-<li><code>M-&gt;</code>     &#x5149;&#x6807;&#x79FB;&#x52A8;&#x5230;&#x6587;&#x4EF6;&#x5C3E;
+<li><code>M-&gt;</code>     光标移动到文件尾
 </li>
-<li><code>&lt;Delback&gt;</code> &#x5220;&#x9664;&#xFF08;delete&#xFF09;&#x5149;&#x6807;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+<li><code>&lt;Delback&gt;</code> 删除（delete）光标前的一个字符
 </li>
-<li><code>C-d</code>       &#x5220;&#x9664;&#xFF08;delete&#xFF09;&#x5149;&#x6807;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+<li><code>C-d</code>       删除（delete）光标后的一个字符
 </li>
-<li><code>M-&lt;Delback&gt;</code> &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x5149;&#x6807;&#x524D;&#x7684;&#x4E00;&#x4E2A;&#x8BCD;
+<li><code>M-&lt;Delback&gt;</code> 移除（kill）光标前的一个词
 </li>
-<li><code>M-d</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x5149;&#x6807;&#x540E;&#x7684;&#x4E00;&#x4E2A;&#x8BCD;
+<li><code>M-d</code>         移除（kill）光标后的一个词
 </li>
-<li><code>C-k</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x4ECE;&#x5149;&#x6807;&#x5230;&#x884C;&#x5C3E;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;
+<li><code>C-k</code>         移除（kill）从光标到行尾之间的所有字符
 </li>
-<li><code>M-k</code>         &#x79FB;&#x9664;&#xFF08;kill&#xFF09;&#x4ECE;&#x5149;&#x6807;&#x5230;&#x53E5;&#x5C3E;&#x4E4B;&#x95F4;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;
+<li><code>M-k</code>         移除（kill）从光标到句尾之间的所有字符
 </li>
-<li><code>C-SPC</code>       &#x5F00;&#x59CB;&#x9009;&#x62E9;
+<li><code>C-SPC</code>       开始选择
 </li>
-<li><code>C-@</code>         &#x5F00;&#x59CB;&#x9009;&#x62E9;
+<li><code>C-@</code>         开始选择
 </li>
-<li><code>C-w</code>         &#x526A;&#x5207;&#xFF08;kill&#xFF09;
+<li><code>C-w</code>         剪切（kill）
 </li>
-<li><code>M-w</code>         &#x590D;&#x5236;
+<li><code>M-w</code>         复制
 </li>
-<li><code>C-y</code>         &#x53EC;&#x56DE;&#xFF08;yank&#xFF09;&#xFF0C;&#x7C98;&#x8D34;
+<li><code>C-y</code>         召回（yank），粘贴
 </li>
-<li><code>M-y</code>         &#x5FAA;&#x73AF;&#x9009;&#x62E9;&#x53EC;&#x56DE;&#xFF08;yank&#xFF09;&#xFF0C;&#x7C98;&#x8D34;
+<li><code>M-y</code>         循环选择召回（yank），粘贴
 </li>
-<li><code>C-x u</code>       &#x64A4;&#x9500;
+<li><code>C-x u</code>       撤销
 </li>
-<li><code>C-_</code>         &#x64A4;&#x9500;
+<li><code>C-_</code>         撤销
 </li>
-<li><code>C-u 4 C-f</code> &#x5149;&#x6807;&#x5411;&#x524D;&#x79FB;&#x52A8; 4 &#x4E2A;&#x5B57;&#x7B26;
+<li><code>C-u 4 C-f</code> 光标向前移动 4 个字符
 </li>
-<li><code>C-u 4 C-v</code> &#x5411;&#x4E0B;&#x6EDA;&#x52A8; 4 &#x884C;
+<li><code>C-u 4 C-v</code> 向下滚动 4 行
 </li>
-<li><code>C-u 4 %</code>   &#x4F1A;&#x63D2;&#x5165; 4 &#x4E2A;%&#xFF0C;&#x5373;&#xFF1A;%%%%
+<li><code>C-u 4 %</code>   会插入 4 个%，即：%%%%
 </li>
-<li><code>C-g</code>     &#x7EC8;&#x6B62;&#x547D;&#x4EE4;
+<li><code>C-g</code>     终止命令
 </li>
-<li><code>C-x 1</code>   &#x5173;&#x95ED;&#x5176;&#x4ED6;&#x7A97;&#x683C;
+<li><code>C-x 1</code>   关闭其他窗格
 </li>
-<li><code>C-x C-f</code> &#x6253;&#x5F00;&#x6587;&#x4EF6;
+<li><code>C-x C-f</code> 打开文件
 </li>
-<li><code>C-x C-s</code> &#x4FDD;&#x5B58;&#x6587;&#x4EF6;
+<li><code>C-x C-s</code> 保存文件
 </li>
-<li><code>C-x C-b</code> &#x5217;&#x51FA;&#x7F13;&#x51B2;&#x533A;
+<li><code>C-x C-b</code> 列出缓冲区
 </li>
-<li><code>C-x s</code>   &#x4FDD;&#x5B58;&#x6240;&#x6709;&#x7F13;&#x51B2;&#x533A;&#x6587;&#x4EF6;
+<li><code>C-x s</code>   保存所有缓冲区文件
 </li>
-<li><code>C-x C-c</code> &#x5173;&#x95ED; Emacs
+<li><code>C-x C-c</code> 关闭 Emacs
 </li>
-<li><code>M-q</code>     &#x6BB5;&#x843D;&#x6392;&#x7248;
+<li><code>M-q</code>     段落排版
 </li>
-<li><code>C-s</code>     &#x641C;&#x7D22;
+<li><code>C-s</code>     搜索
 </li>
-<li><code>C-x 2</code>   &#x5728;&#x4E0B;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+<li><code>C-x 2</code>   在下方划分一个窗格
 </li>
-<li><code>C-x 3</code>   &#x5728;&#x53F3;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+<li><code>C-x 3</code>   在右方划分一个窗格
 </li>
-<li><code>C-M-v</code>   &#x5149;&#x6807;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+<li><code>C-M-v</code>   光标到下一个窗格
 </li>
-<li><code>C-M-S-v</code> &#x5149;&#x6807;&#x5230;&#x4E0A;&#x4E00;&#x4E2A;&#x7A97;&#x683C;
+<li><code>C-M-S-v</code> 光标到上一个窗格
 </li>
-<li><code>C-x o</code>   &#x5149;&#x6807;&#x5230;&#x5176;&#x4ED6;&#x7A97;&#x683C;
+<li><code>C-x o</code>   光标到其他窗格
 </li>
-<li><code>C-x 4 C-f</code> &#x5728;&#x4E0B;&#x65B9;&#x5212;&#x5206;&#x4E00;&#x4E2A;&#x7A97;&#x683C;&#x5E76;&#x6253;&#x5F00;&#x6587;&#x4EF6;
+<li><code>C-x 4 C-f</code> 在下方划分一个窗格并打开文件
 </li>
 
-<li><code>C-h c $$$-$</code> &#x67E5;&#x770B;&#x7EC4;&#x5408;&#x952E; <b>$$$-$</b> &#x7684;&#x7B80;&#x8981;&#x8BF4;&#x660E;&#x4FE1;&#x606F;
+<li><code>C-h c $$$-$</code> 查看组合键 <b>$$$-$</b> 的简要说明信息
 </li>
-<li><code>C-h k $$$-$</code> &#x67E5;&#x770B;&#x7EC4;&#x5408;&#x952E; <b>$$$-$</b> &#x7684;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;&#x4FE1;&#x606F;
+<li><code>C-h k $$$-$</code> 查看组合键 <b>$$$-$</b> 的详细说明信息
 </li>
-<li><code>C-h f</code>   &#x67E5;&#x770B;&#x51FD;&#x6570;&#x8BF4;&#x660E;
+<li><code>C-h f</code>   查看函数说明
 </li>
-<li><code>C-h v</code>   &#x67E5;&#x770B;&#x53D8;&#x91CF;&#x8BF4;&#x660E;
+<li><code>C-h v</code>   查看变量说明
 </li>
-<li><code>C-h a</code>   &#x641C;&#x7D22;&#x76F8;&#x5173;&#x547D;&#x4EE4;
+<li><code>C-h a</code>   搜索相关命令
 </li>
-<li><code>C-h i</code>   &#x6253;&#x5F00;&#x8054;&#x673A;&#x624B;&#x518C;&#xFF08; <code>m emacs &lt;Return&gt;</code> &#x53EF;&#x9605;&#x8BFB; emacs &#x4F7F;&#x7528;&#x624B;&#x518C;&#xFF0C; <code>?</code> &#x53EF;&#x9605;&#x8BFB; Info &#x4F7F;&#x7528;&#x6307;&#x5357;&#xFF09;
+<li><code>C-h i</code>   打开联机手册（ <code>m emacs &lt;Return&gt;</code> 可阅读 emacs 使用手册， <code>?</code> 可阅读 Info 使用指南）
 </li>
 </ul>
 </div>
 </div>
 <div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">&#x672F;&#x8BED;&#x5BF9;&#x7167;</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> 术语对照</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li><code>command</code> &#x547D;&#x4EE4;
+<li><code>command</code> 命令
 </li>
-<li><code>cursor</code>  &#x5149;&#x6807;
+<li><code>cursor</code>  光标
 </li>
-<li><code>scrolling</code> &#x6EDA;&#x52A8;
+<li><code>scrolling</code> 滚动
 </li>
-<li><code>numeric argument</code> &#x6570;&#x5B57;&#x53C2;&#x6570;
+<li><code>numeric argument</code> 数字参数
 </li>
-<li><code>window</code> &#x7A97;&#x683C;
+<li><code>window</code> 窗格
 </li>
-<li><code>frame</code>  &#x7A97;&#x53E3;
+<li><code>frame</code>  窗口
 </li>
-<li><code>insert</code> &#x63D2;&#x5165;
+<li><code>insert</code> 插入
 </li>
-<li><code>delete</code> &#x5220;&#x9664;&#xFF08;&#x4E0D;&#x53EF;&#x6062;&#x590D;&#xFF09;
+<li><code>delete</code> 删除（不可恢复）
 </li>
-<li><code>kill</code> &#x79FB;&#x9664;&#xFF08;&#x53EF;&#x53EC;&#x56DE;&#xFF09;
+<li><code>kill</code> 移除（可召回）
 </li>
-<li><code>yank</code> &#x53EC;&#x56DE;
+<li><code>yank</code> 召回
 </li>
-<li><code>undo</code> &#x64A4;&#x9500;
+<li><code>undo</code> 撤销
 </li>
-<li><code>file</code> &#x6587;&#x4EF6;
+<li><code>file</code> 文件
 </li>
-<li><code>buffer</code> &#x7F13;&#x51B2;&#x533A;
+<li><code>buffer</code> 缓冲区
 </li>
-<li><code>minibuffer</code> &#x5C0F;&#x7F13;&#x51B2;&#x533A;
+<li><code>minibuffer</code> 小缓冲区
 </li>
-<li><code>echo area</code> &#x56DE;&#x663E;&#x533A;
+<li><code>echo area</code> 回显区
 </li>
-<li><code>mode line</code> &#x72B6;&#x6001;&#x680F;
+<li><code>mode line</code> 状态栏
 </li>
-<li><code>search</code> &#x641C;&#x7D22;
+<li><code>search</code> 搜索
 </li>
-<li><code>incremental search</code> &#x6E10;&#x8FDB;&#x5F0F;&#x641C;&#x7D22;
+<li><code>incremental search</code> 渐进式搜索
 </li>
 </ul>
 </div>
@@ -566,7 +632,7 @@ Last Updated 2017-01-12 Thu 21:43.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-number">1.</span> <span class="toc-text">如何打开 emacs tutorial</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-number">1.1.</span> <span class="toc-text">用鼠标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-number">1.2.</span> <span class="toc-text">使用组合键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-number">2.</span> <span class="toc-text">常用组合键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-3"><span class="toc-number">3.</span> <span class="toc-text">术语对照</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-text">1 如何打开 emacs tutorial</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-text">1.1 用鼠标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-text">1.2 使用组合键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-text">2 常用组合键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-3"><span class="toc-text">3 术语对照</span></a></li></ol>
         
     </div>
     <style>
@@ -667,7 +733,7 @@ Last Updated 2017-01-12 Thu 21:43.<br>Render by <a href="https://github.com/Code
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.learn-elisp/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
 
 
 
