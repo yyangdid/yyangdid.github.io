@@ -23,7 +23,21 @@
 1.1. 函数的声明和调用
 1.2. 变量
 
+1.2.1. 局部变量
 
+
+1.3. lambda 表达式
+1.4. 控制结构
+
+1.4.1. 顺序执行
+1.4.2. 条件判断
+1.4.3. 循环   while
+1.4.4. 逻辑运算
+
+
+
+
+2. 本节函数列表
 
 
 
@@ -33,7 +47,7 @@
 
 
 
-本章节主要记录 ELisp 编程中的基本概念，例如如何定义函数，控制结构，变量的使用和作用域&amp;#x2026;&amp;#x2026;">
+本章节主要记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习ELisp(003):基础知识">
 <meta property="og:url" content="http://yyangdid.github.io/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/index.html">
@@ -46,7 +60,21 @@
 1.1. 函数的声明和调用
 1.2. 变量
 
+1.2.1. 局部变量
 
+
+1.3. lambda 表达式
+1.4. 控制结构
+
+1.4.1. 顺序执行
+1.4.2. 条件判断
+1.4.3. 循环   while
+1.4.4. 逻辑运算
+
+
+
+
+2. 本节函数列表
 
 
 
@@ -56,8 +84,8 @@
 
 
 
-本章节主要记录 ELisp 编程中的基本概念，例如如何定义函数，控制结构，变量的使用和作用域&amp;#x2026;&amp;#x2026;">
-<meta property="og:updated_time" content="2017-01-13T13:35:32.552Z">
+本章节主要记录">
+<meta property="og:updated_time" content="2017-01-20T13:48:30.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(003):基础知识">
 <meta name="twitter:description" content="Table of Contents
@@ -68,7 +96,21 @@
 1.1. 函数的声明和调用
 1.2. 变量
 
+1.2.1. 局部变量
 
+
+1.3. lambda 表达式
+1.4. 控制结构
+
+1.4.1. 顺序执行
+1.4.2. 条件判断
+1.4.3. 循环   while
+1.4.4. 逻辑运算
+
+
+
+
+2. 本节函数列表
 
 
 
@@ -78,7 +120,7 @@
 
 
 
-本章节主要记录 ELisp 编程中的基本概念，例如如何定义函数，控制结构，变量的使用和作用域&amp;#x2026;&amp;#x2026;">
+本章节主要记录">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -361,9 +403,23 @@
 <li><a href="#sec-1">1. 函数和变量</a>
 <ul>
 <li><a href="#sec-1-1">1.1. 函数的声明和调用</a></li>
-<li><a href="#sec-1-2">1.2. 变量</a></li>
+<li><a href="#sec-1-2">1.2. 变量</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. 局部变量</a></li>
 </ul>
 </li>
+<li><a href="#sec-1-3">1.3. lambda 表达式</a></li>
+<li><a href="#sec-1-4">1.4. 控制结构</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1. 顺序执行</a></li>
+<li><a href="#sec-1-4-2">1.4.2. 条件判断</a></li>
+<li><a href="#sec-1-4-3">1.4.3. 循环   while</a></li>
+<li><a href="#sec-1-4-4">1.4.4. 逻辑运算</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-2">2. 本节函数列表</a></li>
 </ul>
 </div>
 </div>
@@ -408,7 +464,7 @@ ELisp使用关键字 <code>defun</code> 来定义函数，函数中的参数列�
 <li>例子二：声明一个带有参数的函数
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 声明一个带参数的函数 hello (name)：</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> hello <span class="list">(<span class="keyword">name</span>)</span></span><br><span class="line">  <span class="string">"Say hello to user whose name is NAME."</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"Hello %s."</span> name)</span>)</span></span><br><span class="line"><span class="comment">;;调用此函数</span></span><br><span class="line"><span class="list">(<span class="keyword">hello</span> <span class="string">"Emacs"</span>)</span> <span class="comment">;; =&amp;gt; Hello Emacs.</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 声明一个带参数的函数 hello (name)：</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> hello <span class="list">(<span class="keyword">name</span>)</span></span><br><span class="line">  <span class="string">"Say hello to user whose name is NAME."</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"Hello %s."</span> name)</span>)</span></span><br><span class="line"><span class="comment">;;调用此函数</span></span><br><span class="line"><span class="list">(<span class="keyword">hello</span> <span class="string">"Emacs"</span>)</span> <span class="comment">;; ⇒ Hello Emacs.</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <blockquote>
 <p>
@@ -432,7 +488,7 @@ ELisp使用关键字 <code>defun</code> 来定义函数，函数中的参数列�
 </p>
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 直接对变量 foo 赋值</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> foo <span class="string">"I am foo"</span>)</span> <span class="comment">;; =&amp;gt; "I am foo"</span></span><br><span class="line"><span class="list">(<span class="keyword">message</span> foo)</span> <span class="comment">;; =&amp;gt; "I am foo"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 直接对变量 foo 赋值</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> foo <span class="string">"I am foo"</span>)</span> <span class="comment">;; ⇒ "I am foo"</span></span><br><span class="line"><span class="list">(<span class="keyword">message</span> foo)</span> <span class="comment">;; ⇒ "I am foo"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <blockquote>
 <p>
@@ -440,12 +496,259 @@ ELisp使用关键字 <code>defun</code> 来定义函数，函数中的参数列�
 </p>
 </blockquote>
 </li>
+
+<li>使用 <code>defvar</code> 关键字声明变量
+
+<p>
+上面使用 <code>setq</code> 的方式给一个变量赋值是不能够添加文档字符串的， <code>defvar</code> 可以在
+赋值的同时添加文档字符串，如果 <code>defvar</code> 声明赋值的变量已经存在一个值了，
+<code>defvar</code> 不会改变这个值。
+</p>
+
+<p>
+<code>defvar</code> 的使用格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defvar</span> variable-name value</span><br><span class="line">  <span class="string">"Document string"</span>)</span></span><br></pre></td></tr></table></figure>
+</div>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> foo <span class="string">"Emacs"</span>)</span> <span class="comment">;; 使用 setq 给变量 foo 赋值为 "Emacs"</span></span><br><span class="line"><span class="list">(<span class="keyword">insert</span> foo)</span>       <span class="comment">;; ⇒ Emacs</span></span><br><span class="line"><span class="list">(<span class="keyword">defvar</span> foo <span class="string">"ELisp"</span></span><br><span class="line">  <span class="string">"Test defvar"</span>)</span>   <span class="comment">;; 使用 defvar 给变量 foo 赋值并添加文档字符串</span></span><br><span class="line"><span class="list">(<span class="keyword">isner</span> foo)</span>        <span class="comment">;; ⇒ Emacs ;; defvar 没有改变 foo 的值</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<blockquote>
+<p>
+在 ELips 中函数是全局的，变量也很容易成为全局的，在给函数和变量起名字的时候使
+用 <code>C-h f</code> 和 <code>C-h v</code> 确定一下要定义的名字是否已经被使用了。
+</p>
+</blockquote>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> 局部变量</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+ELisp 使用 <code>let</code> 和 <code>let*</code> 来绑定局部变量。
+</p>
+
+<ul class="org-ul">
+<li><code>let</code>
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">let</span> bindings</span><br><span class="line">  body)</span></span><br><span class="line"><span class="comment">;; bindings 可以是 (var value) 这种对 var 声明并赋予初始值的形式(注意添加小括号)，</span></span><br><span class="line"><span class="comment">;; 也可以是 var 这种声明一个初始值为 nil 的变量，可以声明一个或多个。</span></span><br><span class="line"><span class="comment">;; 局部变量的作用域只在 (let) 范围内</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例一：声明一个初始值不为 nil 的局部变量
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> let_test01 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">a</span> <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"let_test01 - %i"</span></span><br><span class="line">	     a)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">let_test01</span>)</span> <span class="comment">;; ⇒ "let_test01 - 1"</span></span><br><span class="line"><span class="comment">;; 把光标放在变量名 a 上，使用 C-h v 查看变量会提示此变量不存在，这就是局部变量。</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例二：声明一个初始值不为 nil 的局部变量和一个初始值为 nil 的局部变量
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> let_test02 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">a</span> <span class="number">1</span>)</span></span><br><span class="line">	b)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> b <span class="list">(<span class="keyword">+</span> a <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"let_test02 - a:%i - b:%i"</span></span><br><span class="line">	     a</span><br><span class="line">	     b)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">let_test02</span>)</span> <span class="comment">;; ⇒ "let_test02 - a:1 - b:2"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例三：声明多个局部变量
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> let_test03 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">a</span> <span class="number">1</span>)</span></span><br><span class="line">	b</span><br><span class="line">	c</span><br><span class="line">	d)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> b <span class="list">(<span class="keyword">+</span> a <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> c <span class="list">(<span class="keyword">+</span> a <span class="number">2</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> d <span class="list">(<span class="keyword">+</span> a <span class="number">3</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"let_test03 - a:%i - b:%i - c:%i - d:%i"</span></span><br><span class="line">	     a</span><br><span class="line">	     b</span><br><span class="line">	     c</span><br><span class="line">	     d)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">let_test03</span>)</span> <span class="comment">;; ⇒ let_test03 - a:1 - b:2 - c:3 - d:4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例四：在函数中使用函数传参<a id="001" name="001"></a>
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> circle-area <span class="list">(<span class="keyword">radius</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">pai</span> <span class="number">3.1415926</span>)</span></span><br><span class="line">	area)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> area <span class="list">(<span class="keyword">*</span> pai radius radius)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"半径为 %.2f 的圆面积为 %.2f"</span></span><br><span class="line">	     radius</span><br><span class="line">	     area)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">circle-area</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 半径为 3.00 的圆面积为 28.27</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li><code>let*</code>
+
+<p>
+<code>let*</code> 和 <code>let</code> 的格式相同，唯一区别是 <code>let*</code> 在定义局部变量的时候可以使用前面已经定义过的变量直接运算。
+</p>
+
+<p>
+例：改写 <a href="#001"><code>let</code> 例四：在函数中使用函数传参</a>
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> circle-area <span class="list">(<span class="keyword">radius</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let*</span> <span class="list">(<span class="list">(<span class="keyword">pai</span> <span class="number">3.1415926</span>)</span></span><br><span class="line">	 <span class="list">(<span class="keyword">area</span> <span class="list">(<span class="keyword">*</span> pai radius radius)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"半径为 %.2f 的圆面积为 %.2f"</span></span><br><span class="line">	     radius</span><br><span class="line">	     area)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">circle-area</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 半径为 3.00 的圆面积为 28.27</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
 </ul>
 </div>
 </div>
 </div>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> lambda 表达式</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <code>defun</code> 相同。
+</p>
 
-Last Updated 2017-01-13 Fri 21:35.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+<p>
+使用 <code>funcall</code> 来调用。
+</p>
+
+<p>
+定义格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">lambda</span> <span class="list">(<span class="keyword">arguments-list</span>)</span></span><br><span class="line">  <span class="string">"ducomentation string"</span></span><br><span class="line">  body)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例一：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">funcall</span> <span class="list">(<span class="keyword">lambda</span> <span class="list">(<span class="keyword">name</span>)</span></span><br><span class="line">	   <span class="list">(<span class="keyword">message</span> <span class="string">"Hello, %s"</span></span><br><span class="line">		    name)</span>)</span></span><br><span class="line">	 <span class="string">"ELisp"</span>)</span> <span class="comment">;; ⇒ Hello, ELis</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例二：把 lambda 表达式赋值给一个变量
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> lmd <span class="list">(<span class="keyword">lambda</span> <span class="list">(<span class="keyword">name</span>)</span></span><br><span class="line">	    <span class="list">(<span class="keyword">message</span> <span class="string">"Hello, %s"</span></span><br><span class="line">		     name)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">funcall</span> lmd <span class="string">"ELisp"</span>)</span> <span class="comment">;; ⇒ Hello, ELisp</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 控制结构</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 顺序执行</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+在 <code>defun</code> <code>let</code> 等环境中语句是按顺序执行的，但很多情况不会，需要使用 <code>progn</code> 表达式。
+</p>
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">progn</span> A B C D ...)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">progn</span></span><br><span class="line">  <span class="list">(<span class="keyword">setq</span> a <span class="number">2</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"square of %i is %i"</span></span><br><span class="line">	   a</span><br><span class="line">	   <span class="list">(<span class="keyword">*</span> a a)</span>)</span>)</span> <span class="comment">;; ⇒ square of 2 is 4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> 条件判断</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>if
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">if</span> condition</span><br><span class="line">    then</span><br><span class="line">  else)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-max <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">; a b)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"a:%i"</span> a)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"b:%i"</span> b)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">my-max</span> <span class="number">3</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ b:4</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>cond
+
+<p>
+类似 <code>java</code> 中的 <code>case</code> 。
+</p>
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">cond</span> <span class="list">(<span class="keyword">case1</span> do-when-case1)</span></span><br><span class="line">      <span class="list">(<span class="keyword">case2</span> do-when-case2)</span></span><br><span class="line">      ...</span><br><span class="line">      <span class="list">(<span class="keyword">t</span> do-when-none-meet)</span>)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> fib <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">cond</span> <span class="list">(<span class="list">(<span class="keyword">=</span> n <span class="number">0</span>)</span> <span class="number">0</span>)</span></span><br><span class="line">	<span class="list">(<span class="list">(<span class="keyword">=</span> n <span class="number">1</span>)</span> <span class="number">1</span>)</span></span><br><span class="line">	<span class="list">(<span class="list">(<span class="keyword">=</span> n <span class="number">2</span>)</span> <span class="number">2</span>)</span></span><br><span class="line">	<span class="list">(<span class="keyword">n</span>)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">fib</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> 循环   while</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">while</span> condition</span><br><span class="line">  body)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> facl <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">res</span> <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">; n 1)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> res <span class="list">(<span class="keyword">*</span> res n)</span></span><br><span class="line">	    n <span class="list">(<span class="keyword">-</span> n <span class="number">1</span>)</span>)</span>)</span></span><br><span class="line">    res)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">facl</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 6</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> 逻辑运算</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+使用 <code>and</code> <code>or</code> <code>not</code> 。其中 and 和 or 具有短路性质。在表达式比较短的时候，
+可以使用 and 代替 when，or 代替 unless，这是一般不关心返回值，主要是作用于表
+达式内其他语句的副作用。例如 or 经常用来设置函数参数的默认值， and 经常用于
+参数检查。
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> hello-world <span class="list">(<span class="keyword">&amp;amp</span><span class="comment">;optional name)</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> name <span class="list">(<span class="keyword">setq</span> name <span class="string">"Emacs"</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"Hello, %s"</span></span><br><span class="line">	   name)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span>)</span> <span class="comment">;; ⇒ Hello, Emacs</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span> <span class="string">"ELisp"</span>)</span> <span class="comment">;; ⇒ Hello, ELisp</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> square-number-p <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">;= n 0)</span></span><br><span class="line">       <span class="list">(<span class="keyword">=</span> <span class="list">(<span class="keyword">/</span> n <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span> <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span>)</span>)</span> <span class="comment">;; sqrt 是内置函数，开平方 √</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">-1</span>)</span> <span class="comment">;; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">25</span>)</span> <span class="comment">;; t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 本节函数列表</h2>
+<div class="outline-text-2" id="text-2">
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> NAME ARGLIST [DOCSTRING] BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">defvar</span> SYMBOL <span class="keyword">&amp;amp</span><span class="comment">;optional INITVALUE DOCSTRING)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> SYM VAL SYM VAL ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let*</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">lambda</span> ARGS [DOCSTRING] [INTERACTIVE] BODY)</span></span><br><span class="line"><span class="list">(<span class="keyword">progn</span> BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">if</span> COND THEN ELSE...)</span></span><br><span class="line"><span class="list">(<span class="keyword">cond</span> CLAUSES...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">unless</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">or</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">and</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">not</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> NUMBER)</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+
+Last Updated 2017-01-20 Fri 21:48.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
 
       
     </div>
@@ -457,7 +760,7 @@ Last Updated 2017-01-13 Fri 21:35.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2017-01-12, 20:45:11</p>
-        <p><span>最后更新:</span>2017-01-13, 21:35:32</p>
+        <p><span>最后更新:</span>2017-01-20, 21:48:30</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
@@ -507,7 +810,7 @@ Last Updated 2017-01-13 Fri 21:35.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-text">1 函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-text">1.1 函数的声明和调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-text">1.2 变量</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-text">1 函数和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-1"><span class="toc-text">1.1 函数的声明和调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-2"><span class="toc-text">1.2 变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-2-1"><span class="toc-text">1.2.1 局部变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-3"><span class="toc-text">1.3 lambda 表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-1-4"><span class="toc-text">1.4 控制结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-4-1"><span class="toc-text">1.4.1 顺序执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-4-2"><span class="toc-text">1.4.2 条件判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-4-3"><span class="toc-text">1.4.3 循环   while</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sec-1-4-4"><span class="toc-text">1.4.4 逻辑运算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-text">2 本节函数列表</span></a></li></ol>
         
     </div>
     <style>
