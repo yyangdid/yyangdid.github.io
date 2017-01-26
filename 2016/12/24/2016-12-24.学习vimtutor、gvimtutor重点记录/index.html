@@ -478,7 +478,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 </ul>
 </li>
-<li><code>[]</code> 表示可选， <code>&lt;&gt;</code> 表示必选。例如 <code>[n]</code> 表示可选到输入数字， <code>&lt;n&gt;</code> 表示必选
+<li><code>[]</code> 表示可选， <code><></code> 表示必选。例如 <code>[n]</code> 表示可选到输入数字， <code><n></n></code> 表示必选
 输入数字。
 <ul class="org-ul">
 <li><code>n</code> <b>number</b> 数字
@@ -524,7 +524,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 <li><code>(N)[n]b</code> 跳转到单词首字母
 </li>
-<li><code>(N)&lt;n&gt;G</code> 跳转到第 <code>&lt;n&gt;</code> 行
+<li><code>(N)<n>G</n></code> 跳转到第 <code><n></n></code> 行
 </li>
 <li><code>(N)G</code> 跳转到文件最后一行行尾
 </li>
@@ -622,17 +622,17 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 <li><code>(N)~</code> 反转光标所在字符的大小写
 </li>
-<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;&lt;e&gt;</code> 将光标所在行的第一个 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):s/<sold>/<snew><e></e></snew></sold></code> 将光标所在行的第一个 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;/g&lt;e&gt;</code> 将光标所在行的所有 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):s/<sold>/<snew>/g<e></e></snew></sold></code> 将光标所在行的所有 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):&lt;n1&gt;,&lt;n2&gt;s/&lt;sold&gt;/&lt;snew&gt;/g</code> 将 <code>&lt;n1&gt;</code> 行至 <code>&lt;n2&gt;</code> 行之间的所有 <code>&lt;sold&gt;</code>
-  替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):<n1>,<n2>s/<sold>/<snew>/g</snew></sold></n2></n1></code> 将 <code><n1></n1></code> 行至 <code><n2></n2></code> 行之间的所有 <code><sold></sold></code>
+  替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/g</code> 将整个文件中的 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):%s/<sold>/<snew>/g</snew></sold></code> 将整个文件中的 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/gc</code> 将整个文件中的 <code>&lt;sold&gt;</code> 进行匹配，并询问是否替换为
-<code>&lt;snew&gt;</code>
+<li><code>(N):%s/<sold>/<snew>/gc</snew></sold></code> 将整个文件中的 <code><sold></sold></code> 进行匹配，并询问是否替换为
+<code><snew></snew></code>
 </li>
 </ul>
 </div>
@@ -654,9 +654,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-8"><span class="section-number-3">2.8</span> 搜索</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
-<li><code>(N)/&lt;s&gt;&lt;e&gt;</code> 查找字符串 <code>&lt;s&gt;</code> ， <code>n</code> 查找下一个匹配， <code>N</code> 查找上一个匹配
+<li><code>(N)/<s><e></e></s></code> 查找字符串 <code><s></s></code> ， <code>n</code> 查找下一个匹配， <code>N</code> 查找上一个匹配
 </li>
-<li><code>(N)?&lt;s&gt;&lt;e&gt;</code> 逆向查找字符串
+<li><code>(N)?<s><e></e></s></code> 逆向查找字符串
 </li>
 <li><code>(N)CTRL-o</code> 回退到之前的位置，可多次输入
 </li>
@@ -671,11 +671,11 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-9"><span class="section-number-3">2.9</span> 调整文本位置</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
-<li><code>(N):ce&lt;e&gt;</code> 使本行内容居中（center）
+<li><code>(N):ce<e></e></code> 使本行内容居中（center）
 </li>
-<li><code>(N):ri&lt;e&gt;</code> 使本行内容居右（right）
+<li><code>(N):ri<e></e></code> 使本行内容居右（right）
 </li>
-<li><code>(N):le&lt;e&gt;</code> 使本行内容居左（left）
+<li><code>(N):le<e></e></code> 使本行内容居左（left）
 </li>
 </ul>
 </div>
@@ -684,11 +684,11 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-10"><span class="section-number-3">2.10</span> 保存</h3>
 <div class="outline-text-3" id="text-2-10">
 <ul class="org-ul">
-<li><code>(N):w [f]&lt;e&gt;</code> 保存当前buffer到 <code>f</code> 文件
+<li><code>(N):w [f]<e></e></code> 保存当前buffer到 <code>f</code> 文件
 </li>
-<li><code>(V):w [f]&lt;e&gt;</code> 保存选中的文本到 <code>f</code> 文件，当按下 <code>:</code> 后，在minibuffer会显示
-='&lt;,'&gt;= 此时再输入 <code>w [f]</code>
-</li>
+<li><code>(V):w [f]<e></e></code> 保存选中的文本到 <code>f</code> 文件，当按下 <code>:</code> 后，在minibuffer会显示
+='<,'>= 此时再输入 <code>w [f]</code>
+</,'></li>
 </ul>
 </div>
 </div>
@@ -696,7 +696,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-11"><span class="section-number-3">2.11</span> 执行外部命令</h3>
 <div class="outline-text-3" id="text-2-11">
 <ul class="org-ul">
-<li><code>(N):!&lt;sh&gt;&lt;e&gt;</code> 执行外部shell命令，例如： <i>:!dir</i>
+<li><code>(N):!<sh><e></e></sh></code> 执行外部shell命令，例如： <i>:!dir</i>
 </li>
 </ul>
 </div>
@@ -705,9 +705,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-12"><span class="section-number-3">2.12</span> 提取、合并文件</h3>
 <div class="outline-text-3" id="text-2-12">
 <ul class="org-ul">
-<li><code>(N):r &lt;f&gt;&lt;e&gt;</code> 在光标所在行的下一行插入 <code>f</code> 文件的所有内容
+<li><code>(N):r <f><e></e></f></code> 在光标所在行的下一行插入 <code>f</code> 文件的所有内容
 </li>
-<li><code>(N):r !&lt;sh&gt;&lt;e&gt;</code> 在光标所在行的下一行插入 <code>sh</code> 命令的输出内容
+<li><code>(N):r !<sh><e></e></sh></code> 在光标所在行的下一行插入 <code>sh</code> 命令的输出内容
 </li>
 </ul>
 </div>
@@ -718,9 +718,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <ul class="org-ul">
 <li><code>(N)CTRL-G</code> 在minibuffer显示光标所在行的位置及文件状态
 </li>
-<li><code>(N):help&lt;e&gt;</code> 打开帮助
+<li><code>(N):help<e></e></code> 打开帮助
 </li>
-<li><code>(N):help &lt;s&gt;&lt;e&gt;</code> 打开关于 <code>s</code> 主题的帮助文件
+<li><code>(N):help <s><e></e></s></code> 打开关于 <code>s</code> 主题的帮助文件
 </li>
 </ul>
 <blockquote>
@@ -729,7 +729,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </p>
 
 <p>
-使用 <code>(N):q&lt;e&gt;</code> 关闭帮助窗口
+使用 <code>(N):q<e></e></code> 关闭帮助窗口
 </p>
 
 <p>
@@ -910,7 +910,7 @@ Last Updated 2017-01-12 Thu 21:47.<br>Render by <a href="https://github.com/Code
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
 
 
 

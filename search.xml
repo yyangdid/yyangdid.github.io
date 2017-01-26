@@ -4,6 +4,585 @@
   
     
     <entry>
+      <title><![CDATA[学习ELisp(004):基本数据类型--数字]]></title>
+      <url>http://yyangdid.github.io/2017/01/22/%E5%AD%A6%E4%B9%A0ELisp/2017-01-22.%E5%AD%A6%E4%B9%A0ELisp(004):%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B--%E6%95%B0%E5%AD%97/</url>
+      <content type="html"><![CDATA[
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 数字分类和表示方法</a></li>
+<li><a href="#sec-2">2. 数字测试函数</a></li>
+<li><a href="#sec-3">3. 比较操作符</a></li>
+<li><a href="#sec-4">4. 数字转换函数</a>
+<ul>
+<li><a href="#sec-4-1">4.1. 整数转换为浮点数</a></li>
+<li><a href="#sec-4-2">4.2. 浮点数转换为整数</a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5. 数字的运算</a></li>
+<li><a href="#sec-6">6. 附录</a></li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+学习资料：<a href="http://smacs.github.io/elisp/" target="_blank" rel="external">Emacs Lisp 简明教程</a>
+</p>
+
+<p>
+本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。
+</p>
+</blockquote>
+<a id="more"></a>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 数字分类和表示方法</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+ELisp 中的数字分为整数和浮点数( <code>没有双精度浮点数 double</code> )和 NaN 。
+</p>
+
+<ul class="org-ul">
+<li>整数
+
+<p>
+整数的表数范围根据使用机器的不同而不同，可以使用 <code>most-negative-fixnum</code> 和 <code>most-positive-fixnum</code> 两个变量得到。
+</p>
+
+<p>
+例：获取本机的整数表数范围
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test01 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s -- %s"</span></span><br><span class="line">	   most-negative-fixnum</span><br><span class="line">	   most-positive-fixnum)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test01</span>)</span> <span class="comment">;; ⇒ -2305843009213693952 -- 2305843009213693951</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+可以使用多种进制来输入一个整数。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test02 <span class="list">(<span class="keyword">num</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s"</span></span><br><span class="line">	   num)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#b1011000</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用二进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#o130</span>)</span> <span class="comment">;; ⇒ 88 ;;使用八进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">88</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用十进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#x58</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用十六进制输入数字</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>浮点数
+
+<p>
+1500.0, 15e2, 1.5e3, .15e4都表示1500. 。
+</p>
+</li>
+
+<li>NaN
+
+<p>
+使用 <code>(/ 0.0 0.0)</code> 可是得到 NaN <code>-0.0e+NaN</code> 。
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 数字测试函数</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代表 <code>predicate</code> 。如果函数名是一个
+单词，一般在这个单词后面加一个 <code>p</code> 字母，如果函数名是由多个单词组成的，一般在
+这个函数名的后面添加 <code>-p</code> 。
+</p>
+
+<p>
+常用的数字测试函数：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">函数名</th>
+<th scope="col" class="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">(integerp <i>OBJECT</i>)</td>
+<td class="left">测试是否为 <code>整数类型</code></td>
+</tr>
+
+<tr>
+<td class="left">(floatp <i>OBJECT</i>)</td>
+<td class="left">测试是否为 <code>浮点数类型</code></td>
+</tr>
+
+<tr>
+<td class="left">(numberp <i>ObJECT</i>)</td>
+<td class="left">测试是否为 <code>数字类型</code></td>
+</tr>
+
+<tr>
+<td class="left">(zerop <i>OBJECT</i>)</td>
+<td class="left">测试是否为 <code>零</code></td>
+</tr>
+
+<tr>
+<td class="left">(wholenump <i>OBJECT</i>)</td>
+<td class="left">测试是否为 <code>非负整数</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+例:
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>.)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>.)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 比较操作符</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+ELisp 中的比较操作符有 <code>>、<、>=、<=、=、eql< code=""> 。
+</=、=、eql<></、></code></p>
+
+<p>
+由于 ELisp 中的赋值是由 setq 完成的，所以 <code>=</code> 用来测试两个数字的值是否相等。
+</p>
+
+<p>
+而 <code>eql</code> 不仅能测试数字的值是否相等，也能测试数字类型是否相同。
+</p>
+
+<p>
+ELisp 中 <code>不存在 +=、-=、*=</code> 。
+</p>
+
+<p>
+<code>/=</code> 作为不等于测试。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> b <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> c <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> d <span class="number">1.00</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; a c) ;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; a c) ;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= a c) ;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= a c) ;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a d)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> a d)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> a c)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+对于浮点数的测试往往是不准确的，例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a1 <span class="number">1.0e-3</span>)</span> <span class="comment">;; ⇒ 0.001</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a2 <span class="list">(<span class="keyword">-</span> <span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">1.0e-3</span>)</span> <span class="number">1.0</span>)</span>)</span> <span class="comment">;; ⇒ 0.000999999999999889</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a1 a2)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+如果一定要对两个浮点数进行比较，只能在一定范围内进行比较：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defvar</span> fuzz-factor <span class="number">1.0e-6</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> approx-equal <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="string">"在 1.0e-6 范围内进行浮点数比较"</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">=</span> a <span class="number">0</span>)</span> <span class="list">(<span class="keyword">=</span> b <span class="number">0</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">&lt</span><span class="comment">; (/ (abs (- a b)) (max (abs a) (abs b)))</span></span><br><span class="line">	 fuzz-factor)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">approx-equal</span> a1 a2)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 数字转换函数</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> 整数转换为浮点数</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+使用 <code>float</code> 函数可将整数转换为浮点数。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a4 <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> a4)</span> <span class="comment">;; ⇒ 2.0</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 3.0</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">-3</span>)</span> <span class="comment">;; ⇒ -3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> 浮点数转换为整数</h3>
+<div class="outline-text-3" id="text-4-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left">
+
+<col class="left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">函数</th>
+<th scope="col" class="left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">truncate</td>
+<td class="left">转换为靠近 0 的整数</td>
+</tr>
+
+<tr>
+<td class="left">floor</td>
+<td class="left">转换为最接近的不比本身大的整数</td>
+</tr>
+
+<tr>
+<td class="left">ceiling</td>
+<td class="left">转换为最接近的不比本身小的整数</td>
+</tr>
+
+<tr>
+<td class="left">round</td>
+<td class="left">四舍五入后的整数，即与本身求差绝对值最小的整数</td>
+</tr>
+</tbody>
+</table>
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; truncate ;; 转换为靠近 0 的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.8</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; floor ;; 转换为最接近的不比本身大的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.8</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; ceiling ;; 转换为最接近的不比本身小的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.3</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.8</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; round ;; 四舍五入后的整数，即与本身求差绝对值最小的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.3</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.8</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<blockquote>
+<p>
+<b>注：</b>
+</p>
+</blockquote>
+<p>
+浮点数的范围是无穷大的，而整数的是有范围的，当使用 <code>浮点数转换为整数</code> 函数的
+时候，数值超越了整数的表数范围时，代码报错。
+</p>
+
+<p>
+当使用 <code>整数转换为浮点数</code> 函数时，即使被转换的整数是超过整数表数范围的，转换
+为浮点数也不会报错。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 1e30 是一个超过了整数表数范围的数字</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">1e30</span>)</span> <span class="comment">;; ⇒ 报错 ;; 转换为整数</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">1e30</span>)</span> <span class="comment">;; ⇒ 1e+30 ;; 转换为浮点数</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 数字的运算</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
+<li>四则运算 <code>+、-、*、/</code> 。
+
+<p>
+<b>注：</b> 整数和整数运算返回整数，整数和浮点数运算返回
+浮点数。在整数和整数做除法运算时，例如：(/ 1 2) 返回值为 0 ，相当于 truncate
+了一下，改写为 (/ 1 2.0) 返回值为 0.5 。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ -1</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 0</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2.0</span>)</span> <span class="comment">;; ⇒ 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">2.0</span>)</span> <span class="comment">;; ⇒ 3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li><code>++</code> 和 <code>--</code>
+
+<p>
+ELisp 中没有 <code>++和--</code> 操作，类似的的函数是 <code>1+</code> 和 <code>1-</code> ，使用
+<code>setq</code> 赋值代替 <code>++ 和 --</code> 。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="number">1</span>)</span> <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>- a6)</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+在 Common Lisp 中有两个宏实现了 <code>++ 和 --</code> 操作： <code>incf 和 decf</code> ，Emacs 包含
+一个模拟 Common Lisp 的库 <code>cl</code> ，在 ELisp 代码文件中使用这两个实现宏，要在 ELisp 文件头加入：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">eval-when-compile</span></span><br><span class="line">  <span class="list">(<span class="keyword">require</span> <span class="quoted">'cl</span>)</span>)</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+<p>
+由于 <code>incf</code> 和 <code>decf</code> 是两个宏，这样写在运行时不会导入 cl 库。
+</p>
+</li>
+
+<li>求绝对值
+
+<p>
+ELisp 使用 <code>abs</code> 函数求绝对值。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">2</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">-2</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li><code>%</code> 函数 （我个人认为是求余）
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% 被除数 除数)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+参与运算的必须是整数，可以是正整数或负整数，运算时先把负数取绝对值，再运算。
+运算结果和被除数的正负号相同，若被除数等于除数则结果为 0 ，若被除数小于除数
+则结果为被除数。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">8</span>)</span>   <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">-8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">8</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">-8</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">-3</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">3</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">-3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li><code>mod</code> 函数（个人认为是取模）
+
+<p>
+格式：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> 被取模数 模数)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+参与运算的可以是整数或浮点数，可以是正数或负数，运算结果和模数的正负号相同。
+若被取模数和模数的正负号相同，则运算方法和求余相同，运算结果的正负号和模数相
+同。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">4</span>)</span>       <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">-4</span>)</span>     <span class="comment">;; -1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">2.5</span>)</span>   <span class="comment">;; ⇒ 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; ⇒ -0.5</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+若被取模数和模数的正负号不相同，运算方法如下：
+</p>
+
+<p>
+如 a 为被取模数， b 为模数，计算 (mod a b) 。假定两个未知数 x 和 y，则一定会
+有一个或多个结果满足如下条件：
+</p>
+
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; x * b + y = a 且 0 ≤ |y| ≤ |x|</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+因为会有一组或多组 x y 的值满足上面的公式，如果只有一组 x y 的值满足公式，则
+y 的值就是 (mod a b) 的计算结果，如果有多组 x y 的值满足公式，那么 y 的值还
+是不能被唯一确定，所以不同的编程语言对此种情况下 y 的取值有不同的规定。
+</p>
+
+<p>
+把 <code>x</code> 值称为 <code>商</code> ， <code>y</code> 值称为 <code>余</code> 。
+</p>
+
+<p>
+<code>Java、C++</code> 取 <b>商 (即 x) 值尽可能大的那一组里面 y 的值为计算结果</b>
+</p>
+
+<p>
+<code>Python、ELisp</code> 取 <b>商 (即 x) 值尽可能小的那一组里面 y 的值为计算结果</b>
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">-4</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * (-4) + (1) = 9</span></span><br><span class="line"><span class="comment">;; (-3) * (-4) + (-3) = 9 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * 4 + (-1) = (-9)</span></span><br><span class="line"><span class="comment">;; (-3) * 4 + (3) = (-9) ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * (-2.5) + (0.5) = 5.5</span></span><br><span class="line"><span class="comment">;; (-3) * (-2.5) + (-2) = 5.5 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">2.5</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * 2.5 + (-0.5) = -5.5</span></span><br><span class="line"><span class="comment">;; (-3) * 2.5 + (2) = -5.5 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>三角运算函数
+
+<p>
+ELisp 中的三角运算函数有： <code>sin、cos、tan、asin、acos、atan</code> 。
+</p>
+</li>
+
+<li>开方函数
+
+<p>
+ELisp 的开方函数是 <code>sqrt</code> 。
+</p>
+
+<p>
+正数开方的结果都为 <code>浮点数</code> ，0 的开方结果为 <code>0.0</code> ，所有负数的开方结果为
+<code>-0.0e+NaN</code> 。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 2.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ 0.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-4.4</span>)</span> <span class="comment">;; ⇒ -0.0e+NaN</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-9</span>)</span> <span class="comment">;; ⇒ -0.0e+NaN</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>指数运算函数
+
+<p>
+指数运算函数包括 <code>exp、expt</code> 。
+</p>
+
+<p>
+<code>exp</code> 函数是以 e 为底的指数运算 (e 是自然函数，是一个无限不循环小数，他的值
+约为 2.718281828) 。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">exp</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 7.38905609893065</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+<code>expt</code> 函数是可以指定底数的指数运算。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">expt</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 8</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>对数运算函数
+
+<p>
+对数运算函数包括 <code>log、logb</code> 。
+</p>
+
+<p>
+<code>log</code> 函数默认以 e 底数，也可以自定义底数。返回值为浮点数。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">7.38905609893065</span>)</span> <span class="comment">;; ⇒ 2.0 ;; 默认底数为 e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 0.6931471805599453 ;; 默认底数为 e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">4</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 2.0 ;; 自定义底数为 4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+
+<p>
+<code>logb</code> 函数以 2 为底数，但是返回一个整数，此函数用来计算数的位。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">8</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li><code>random</code> 随机数函数
+
+<p>
+使用 <code>(random)</code> 产生一个随机数 (其实是伪随机数)。启动 Emacs后产生的随机数序
+列是相同的，第一次调用 (random) 总是生成 -1457731, 第二次总生成 -7692030. 当
+然平常如果调用次数不同, 则随机数也不一样。但是可以使用 <code>(random t)</code> 函数，此
+函数可以根据当前时间和 Emacs 的 PID 生成一个新的随机数种子。
+</p>
+
+<p>
+例：
+</p>
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a8 <span class="list">(<span class="keyword">random</span> <span class="literal">t</span>)</span>)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 附录</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>函数列表
+
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 测试函数</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> OBJECT)</span></span><br><span class="line"><span class="comment">;; 比较函数</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> OBJ1 OBJ2)</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="comment">;; 转换函数</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="comment">;; 运算</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="keyword">&amp</span><span class="comment">;optional NUMBER-OR-MARKER &amp;rest MORE-NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> DIVIDEND DIVISOR <span class="keyword">&amp</span><span class="comment">;rest DIVISORS)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>+ NUMBER)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>- NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> ARG)</span></span><br><span class="line"><span class="list">(% X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">sin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">cos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">tan</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">asin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">acos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">atan</span> Y <span class="keyword">&amp</span><span class="comment">;optional X)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">exp</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">expt</span> ARG1 ARG2)</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> ARG <span class="keyword">&amp</span><span class="comment">;optional BASE)</span></span><br><span class="line"><span class="list">(<span class="keyword">log10</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> ARG)</span></span><br><span class="line"><span class="comment">;; 随机数</span></span><br><span class="line"><span class="list">(<span class="keyword">random</span> <span class="keyword">&amp</span><span class="comment">;optional N)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+
+<li>变量列表
+<div class="org-src-container">
+
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">most-positive-fixnum</span><br><span class="line">most-negative-fixnum</span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[学习ELisp(003):基础知识]]></title>
       <url>http://yyangdid.github.io/2017/01/12/%E5%AD%A6%E4%B9%A0ELisp/2017-01-12.%E5%AD%A6%E4%B9%A0ELisp(003):%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
       <content type="html"><![CDATA[
@@ -31,7 +610,7 @@
 </li>
 </ul>
 </li>
-<li><a href="#sec-2">2. 本节函数列表</a></li>
+<li><a href="#sec-2">2. 本节附录</a></li>
 </ul>
 </div>
 </div>
@@ -282,7 +861,7 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </p>
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-max <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">; a b)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"a:%i"</span> a)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"b:%i"</span> b)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">my-max</span> <span class="number">3</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ b:4</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> my-max <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="list">(<span class="keyword">if</span> <span class="list">(<span class="keyword">&gt</span><span class="comment">; a b)</span></span><br><span class="line">      <span class="list">(<span class="keyword">message</span> <span class="string">"a:%i"</span> a)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"b:%i"</span> b)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">my-max</span> <span class="number">3</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ b:4</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
 </li>
 
@@ -326,7 +905,7 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </p>
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> facl <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">res</span> <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">; n 1)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> res <span class="list">(<span class="keyword">*</span> res n)</span></span><br><span class="line">	    n <span class="list">(<span class="keyword">-</span> n <span class="number">1</span>)</span>)</span>)</span></span><br><span class="line">    res)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">facl</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 6</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> facl <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">res</span> <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">&gt</span><span class="comment">; n 1)</span></span><br><span class="line">      <span class="list">(<span class="keyword">setq</span> res <span class="list">(<span class="keyword">*</span> res n)</span></span><br><span class="line">	    n <span class="list">(<span class="keyword">-</span> n <span class="number">1</span>)</span>)</span>)</span></span><br><span class="line">    res)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">facl</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 6</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
@@ -343,7 +922,7 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </p>
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> hello-world <span class="list">(<span class="keyword">&amp;amp</span><span class="comment">;optional name)</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> name <span class="list">(<span class="keyword">setq</span> name <span class="string">"Emacs"</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"Hello, %s"</span></span><br><span class="line">	   name)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span>)</span> <span class="comment">;; ⇒ Hello, Emacs</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span> <span class="string">"ELisp"</span>)</span> <span class="comment">;; ⇒ Hello, ELisp</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> square-number-p <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">&amp;gt</span><span class="comment">;= n 0)</span></span><br><span class="line">       <span class="list">(<span class="keyword">=</span> <span class="list">(<span class="keyword">/</span> n <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span> <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span>)</span>)</span> <span class="comment">;; sqrt 是内置函数，开平方 √</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">-1</span>)</span> <span class="comment">;; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">25</span>)</span> <span class="comment">;; t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> hello-world <span class="list">(<span class="keyword">&amp</span><span class="comment">;optional name)</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> name <span class="list">(<span class="keyword">setq</span> name <span class="string">"Emacs"</span>)</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"Hello, %s"</span></span><br><span class="line">	   name)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span>)</span> <span class="comment">;; ⇒ Hello, Emacs</span></span><br><span class="line"><span class="list">(<span class="keyword">hello-world</span> <span class="string">"ELisp"</span>)</span> <span class="comment">;; ⇒ Hello, ELisp</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> square-number-p <span class="list">(<span class="keyword">n</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">&gt</span><span class="comment">;= n 0)</span></span><br><span class="line">       <span class="list">(<span class="keyword">=</span> <span class="list">(<span class="keyword">/</span> n <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span> <span class="list">(<span class="keyword">sqrt</span> n)</span>)</span>)</span>)</span> <span class="comment">;; sqrt 是内置函数，开平方 √</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">-1</span>)</span> <span class="comment">;; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">square-number-p</span> <span class="number">25</span>)</span> <span class="comment">;; t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
@@ -351,16 +930,20 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </div>
 
 <div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 本节函数列表</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> 本节附录</h2>
 <div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>函数列表
 <div class="org-src-container">
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> NAME ARGLIST [DOCSTRING] BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">defvar</span> SYMBOL <span class="keyword">&amp;amp</span><span class="comment">;optional INITVALUE DOCSTRING)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> SYM VAL SYM VAL ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let*</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">lambda</span> ARGS [DOCSTRING] [INTERACTIVE] BODY)</span></span><br><span class="line"><span class="list">(<span class="keyword">progn</span> BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">if</span> COND THEN ELSE...)</span></span><br><span class="line"><span class="list">(<span class="keyword">cond</span> CLAUSES...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">unless</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">or</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">and</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">not</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> NUMBER)</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> NAME ARGLIST [DOCSTRING] BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">defvar</span> SYMBOL <span class="keyword">&amp</span><span class="comment">;optional INITVALUE DOCSTRING)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> SYM VAL SYM VAL ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">let*</span> VARLIST BODY...)</span></span><br><span class="line"><span class="list">(<span class="keyword">lambda</span> ARGS [DOCSTRING] [INTERACTIVE] BODY)</span></span><br><span class="line"><span class="list">(<span class="keyword">progn</span> BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">if</span> COND THEN ELSE...)</span></span><br><span class="line"><span class="list">(<span class="keyword">cond</span> CLAUSES...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">unless</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">when</span> COND BODY ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">or</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">and</span> CONDITIONS ...)</span></span><br><span class="line"><span class="list">(<span class="keyword">not</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> NUMBER)</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
+</li>
+</ul>
 </div>
 </div>
 
-Last Updated 2017-01-20 Fri 21:48.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+Last Updated 2017-01-26 Thu 21:08.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
 ]]></content>
     </entry>
     
@@ -661,7 +1244,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 </ul>
 </li>
-<li><code>[]</code> 表示可选， <code>&lt;&gt;</code> 表示必选。例如 <code>[n]</code> 表示可选到输入数字， <code>&lt;n&gt;</code> 表示必选
+<li><code>[]</code> 表示可选， <code><></code> 表示必选。例如 <code>[n]</code> 表示可选到输入数字， <code><n></n></code> 表示必选
 输入数字。
 <ul class="org-ul">
 <li><code>n</code> <b>number</b> 数字
@@ -707,7 +1290,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 <li><code>(N)[n]b</code> 跳转到单词首字母
 </li>
-<li><code>(N)&lt;n&gt;G</code> 跳转到第 <code>&lt;n&gt;</code> 行
+<li><code>(N)<n>G</n></code> 跳转到第 <code><n></n></code> 行
 </li>
 <li><code>(N)G</code> 跳转到文件最后一行行尾
 </li>
@@ -805,17 +1388,17 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </li>
 <li><code>(N)~</code> 反转光标所在字符的大小写
 </li>
-<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;&lt;e&gt;</code> 将光标所在行的第一个 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):s/<sold>/<snew><e></e></snew></sold></code> 将光标所在行的第一个 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):s/&lt;sold&gt;/&lt;snew&gt;/g&lt;e&gt;</code> 将光标所在行的所有 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):s/<sold>/<snew>/g<e></e></snew></sold></code> 将光标所在行的所有 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):&lt;n1&gt;,&lt;n2&gt;s/&lt;sold&gt;/&lt;snew&gt;/g</code> 将 <code>&lt;n1&gt;</code> 行至 <code>&lt;n2&gt;</code> 行之间的所有 <code>&lt;sold&gt;</code>
-  替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):<n1>,<n2>s/<sold>/<snew>/g</snew></sold></n2></n1></code> 将 <code><n1></n1></code> 行至 <code><n2></n2></code> 行之间的所有 <code><sold></sold></code>
+  替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/g</code> 将整个文件中的 <code>&lt;sold&gt;</code> 替换为 <code>&lt;snew&gt;</code>
+<li><code>(N):%s/<sold>/<snew>/g</snew></sold></code> 将整个文件中的 <code><sold></sold></code> 替换为 <code><snew></snew></code>
 </li>
-<li><code>(N):%s/&lt;sold&gt;/&lt;snew&gt;/gc</code> 将整个文件中的 <code>&lt;sold&gt;</code> 进行匹配，并询问是否替换为
-<code>&lt;snew&gt;</code>
+<li><code>(N):%s/<sold>/<snew>/gc</snew></sold></code> 将整个文件中的 <code><sold></sold></code> 进行匹配，并询问是否替换为
+<code><snew></snew></code>
 </li>
 </ul>
 </div>
@@ -837,9 +1420,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-8"><span class="section-number-3">2.8</span> 搜索</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
-<li><code>(N)/&lt;s&gt;&lt;e&gt;</code> 查找字符串 <code>&lt;s&gt;</code> ， <code>n</code> 查找下一个匹配， <code>N</code> 查找上一个匹配
+<li><code>(N)/<s><e></e></s></code> 查找字符串 <code><s></s></code> ， <code>n</code> 查找下一个匹配， <code>N</code> 查找上一个匹配
 </li>
-<li><code>(N)?&lt;s&gt;&lt;e&gt;</code> 逆向查找字符串
+<li><code>(N)?<s><e></e></s></code> 逆向查找字符串
 </li>
 <li><code>(N)CTRL-o</code> 回退到之前的位置，可多次输入
 </li>
@@ -854,11 +1437,11 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-9"><span class="section-number-3">2.9</span> 调整文本位置</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
-<li><code>(N):ce&lt;e&gt;</code> 使本行内容居中（center）
+<li><code>(N):ce<e></e></code> 使本行内容居中（center）
 </li>
-<li><code>(N):ri&lt;e&gt;</code> 使本行内容居右（right）
+<li><code>(N):ri<e></e></code> 使本行内容居右（right）
 </li>
-<li><code>(N):le&lt;e&gt;</code> 使本行内容居左（left）
+<li><code>(N):le<e></e></code> 使本行内容居左（left）
 </li>
 </ul>
 </div>
@@ -867,11 +1450,11 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-10"><span class="section-number-3">2.10</span> 保存</h3>
 <div class="outline-text-3" id="text-2-10">
 <ul class="org-ul">
-<li><code>(N):w [f]&lt;e&gt;</code> 保存当前buffer到 <code>f</code> 文件
+<li><code>(N):w [f]<e></e></code> 保存当前buffer到 <code>f</code> 文件
 </li>
-<li><code>(V):w [f]&lt;e&gt;</code> 保存选中的文本到 <code>f</code> 文件，当按下 <code>:</code> 后，在minibuffer会显示
-='&lt;,'&gt;= 此时再输入 <code>w [f]</code>
-</li>
+<li><code>(V):w [f]<e></e></code> 保存选中的文本到 <code>f</code> 文件，当按下 <code>:</code> 后，在minibuffer会显示
+='<,'>= 此时再输入 <code>w [f]</code>
+</,'></li>
 </ul>
 </div>
 </div>
@@ -879,7 +1462,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-11"><span class="section-number-3">2.11</span> 执行外部命令</h3>
 <div class="outline-text-3" id="text-2-11">
 <ul class="org-ul">
-<li><code>(N):!&lt;sh&gt;&lt;e&gt;</code> 执行外部shell命令，例如： <i>:!dir</i>
+<li><code>(N):!<sh><e></e></sh></code> 执行外部shell命令，例如： <i>:!dir</i>
 </li>
 </ul>
 </div>
@@ -888,9 +1471,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <h3 id="sec-2-12"><span class="section-number-3">2.12</span> 提取、合并文件</h3>
 <div class="outline-text-3" id="text-2-12">
 <ul class="org-ul">
-<li><code>(N):r &lt;f&gt;&lt;e&gt;</code> 在光标所在行的下一行插入 <code>f</code> 文件的所有内容
+<li><code>(N):r <f><e></e></f></code> 在光标所在行的下一行插入 <code>f</code> 文件的所有内容
 </li>
-<li><code>(N):r !&lt;sh&gt;&lt;e&gt;</code> 在光标所在行的下一行插入 <code>sh</code> 命令的输出内容
+<li><code>(N):r !<sh><e></e></sh></code> 在光标所在行的下一行插入 <code>sh</code> 命令的输出内容
 </li>
 </ul>
 </div>
@@ -901,9 +1484,9 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 <ul class="org-ul">
 <li><code>(N)CTRL-G</code> 在minibuffer显示光标所在行的位置及文件状态
 </li>
-<li><code>(N):help&lt;e&gt;</code> 打开帮助
+<li><code>(N):help<e></e></code> 打开帮助
 </li>
-<li><code>(N):help &lt;s&gt;&lt;e&gt;</code> 打开关于 <code>s</code> 主题的帮助文件
+<li><code>(N):help <s><e></e></s></code> 打开关于 <code>s</code> 主题的帮助文件
 </li>
 </ul>
 <blockquote>
@@ -912,7 +1495,7 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </p>
 
 <p>
-使用 <code>(N):q&lt;e&gt;</code> 关闭帮助窗口
+使用 <code>(N):q<e></e></code> 关闭帮助窗口
 </p>
 
 <p>
@@ -1016,15 +1599,15 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </li>
 <li><code>M-e</code>     光标移动到句尾
 </li>
-<li><code>M-&lt;</code>     光标移动到文件首
+<li><code>M-<</code>     光标移动到文件首
 </li>
-<li><code>M-&gt;</code>     光标移动到文件尾
+<li><code>M-></code>     光标移动到文件尾
 </li>
-<li><code>&lt;Delback&gt;</code> 删除（delete）光标前的一个字符
+<li><code><delback></delback></code> 删除（delete）光标前的一个字符
 </li>
 <li><code>C-d</code>       删除（delete）光标后的一个字符
 </li>
-<li><code>M-&lt;Delback&gt;</code> 移除（kill）光标前的一个词
+<li><code>M-<delback></delback></code> 移除（kill）光标前的一个词
 </li>
 <li><code>M-d</code>         移除（kill）光标后的一个词
 </li>
@@ -1095,7 +1678,7 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </li>
 <li><code>C-h a</code>   搜索相关命令
 </li>
-<li><code>C-h i</code>   打开联机手册（ <code>m emacs &lt;Return&gt;</code> 可阅读 emacs 使用手册， <code>?</code> 可阅读 Info 使用指南）
+<li><code>C-h i</code>   打开联机手册（ <code>m emacs <return></return></code> 可阅读 emacs 使用手册， <code>?</code> 可阅读 Info 使用指南）
 </li>
 </ul>
 </div>
@@ -1592,9 +2175,9 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 <ul class="org-ul">
 <li>libz.a
 </li>
-<li>libz.so -&gt; libz.so.1.2.1
+<li>libz.so -> libz.so.1.2.1
 </li>
-<li>libz.so.1 -&gt; libz.so.1.2.1
+<li>libz.so.1 -> libz.so.1.2.1
 </li>
 <li>libz.so.1.2.1
 </li>
@@ -1618,7 +2201,7 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 <div class="org-src-container">
 
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &amp;gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
 </div>
 </li>
 
@@ -1680,7 +2263,7 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 <div class="org-src-container">
 
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &amp;gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
 </div>
 </li>
 <li>加载配置
@@ -1757,7 +2340,7 @@ emacs 的速度也会有很大提升。
 </ol>
 <div class="org-src-container">
 
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram start"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram restore"</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"start"</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">	mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&amp;gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$(readlink $link)</span>"</span> != <span class="string">"<span class="variable">$volatile</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="comment"># backup project at first</span></span><br><span class="line">	mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">	<span class="comment"># create the link</span></span><br><span class="line">	ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Sync .emacs.d from memory to backup ..."</span></span><br><span class="line">	rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Sync .emacs.d from disk to memory ..."</span></span><br><span class="line">	rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">	touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Moving .emacs.d back to disk ..."</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;amp;&amp;amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;amp;&amp;amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram start"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram restore"</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"start"</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">	mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$(readlink $link)</span>"</span> != <span class="string">"<span class="variable">$volatile</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">	<span class="comment"># backup project at first</span></span><br><span class="line">	mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">	<span class="comment"># create the link</span></span><br><span class="line">	ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Sync .emacs.d from memory to backup ..."</span></span><br><span class="line">	rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"Sync .emacs.d from disk to memory ..."</span></span><br><span class="line">	rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">	touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">	<span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Moving .emacs.d back to disk ..."</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;&amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;&amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 <code>emacs2ram</code> 文件：
