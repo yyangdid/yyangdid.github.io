@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="yyangdid" />
+
+
+
+<meta name="description" content="Table of Contents
+
+
+1. 电平特性
+
+1.1. 单片机的电平
+1.2. RS232 电平：即计算机串口的电平
+
+
+2. 2 进制与 16 进制的表示和转换
+
+2.1. 二进制
+2.2. 十六进制
+2.3. 进制转换
+
+2.3.1. 十进制转换为二进制
+2.3.2. 二进制转换为十进制
+2.3.3. 十进制转换为十六进制
+2.3.4. 十六进制转换为十进制
+2.3.5. 二">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单片机基础知识">
+<meta property="og:url" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/index.html">
+<meta property="og:site_name" content="yyangdid">
+<meta property="og:description" content="Table of Contents
+
+
+1. 电平特性
+
+1.1. 单片机的电平
+1.2. RS232 电平：即计算机串口的电平
+
+
+2. 2 进制与 16 进制的表示和转换
+
+2.1. 二进制
+2.2. 十六进制
+2.3. 进制转换
+
+2.3.1. 十进制转换为二进制
+2.3.2. 二进制转换为十进制
+2.3.3. 十进制转换为十六进制
+2.3.4. 十六进制转换为十进制
+2.3.5. 二">
+<meta property="og:updated_time" content="2017-02-20T13:58:49.656Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单片机基础知识">
+<meta name="twitter:description" content="Table of Contents
+
+
+1. 电平特性
+
+1.1. 单片机的电平
+1.2. RS232 电平：即计算机串口的电平
+
+
+2. 2 进制与 16 进制的表示和转换
+
+2.1. 二进制
+2.2. 十六进制
+2.3. 进制转换
+
+2.3.1. 十进制转换为二进制
+2.3.2. 二进制转换为十进制
+2.3.3. 十进制转换为十六进制
+2.3.4. 十六进制转换为十进制
+2.3.5. 二">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/optimus.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/iconfont/css/iconfont.css">
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+<title>单片机基础知识 | yyangdid</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/optimus.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">yyangdid</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸟博客</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子技术/">电子技术</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">yyangdid</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/optimus.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">yyangdid</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸟博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-学习单片机/2017-02-15.单片机基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/" class="article-date">
+      <time datetime="2017-02-15T12:04:24.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      单片机基础知识
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/单片机/">单片机</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单片机/">单片机</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgfd6d01b">1. 电平特性</a>
+<ul>
+<li><a href="#orgfda437d">1.1. 单片机的电平</a></li>
+<li><a href="#orga31b6fa">1.2. RS232 电平：即计算机串口的电平</a></li>
+</ul>
+</li>
+<li><a href="#org34364b7">2. 2 进制与 16 进制的表示和转换</a>
+<ul>
+<li><a href="#orgc54d0ae">2.1. 二进制</a></li>
+<li><a href="#org51c8179">2.2. 十六进制</a></li>
+<li><a href="#org1ebd2a9">2.3. 进制转换</a>
+<ul>
+<li><a href="#org1445838">2.3.1. 十进制转换为二进制</a></li>
+<li><a href="#orgcd9bdd2">2.3.2. 二进制转换为十进制</a></li>
+<li><a href="#orgcb270d2">2.3.3. 十进制转换为十六进制</a></li>
+<li><a href="#org9f485e4">2.3.4. 十六进制转换为十进制</a></li>
+<li><a href="#org98a1b76">2.3.5. 二进制转换为十六进制</a></li>
+<li><a href="#orge3cd963">2.3.6. 十六进制转换为二进制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbb40f18">3. 2 进制数的逻辑运算</a>
+<ul>
+<li><a href="#org09d56dc">3.1. <code>与</code> 运算</a></li>
+<li><a href="#org53c71c3">3.2. <code>或</code> 运算</a></li>
+<li><a href="#orge095043">3.3. <code>非</code> 运算</a></li>
+<li><a href="#orgc0da7ea">3.4. <code>异或</code> 运算</a></li>
+</ul>
+</li>
+<li><a href="#org44882c9">4. 8051 单片机介绍</a>
+<ul>
+<li><a href="#org60bc310">4.1. 80C51 的引脚封装</a>
+<ul>
+<li><a href="#orga382f2f">4.1.1. P3 口第二功能各引脚功能定义</a></li>
+</ul>
+</li>
+<li><a href="#orgab6e498">4.2. 8051 内部结构</a></li>
+<li><a href="#org82ee814">4.3. 总线(BUS)</a></li>
+<li><a href="#orgcedd5de">4.4. 单片机的构成</a></li>
+<li><a href="#orgc324e9e">4.5. 单片机工作的基本时序</a>
+<ul>
+<li><a href="#orgce1dd51">4.5.1. 震荡周期</a></li>
+<li><a href="#org2c91b54">4.5.2. 状态周期</a></li>
+<li><a href="#orgcdb75fa">4.5.3. 机器周期</a></li>
+<li><a href="#org916d81b">4.5.4. 指令周期</a></li>
+</ul>
+</li>
+<li><a href="#org61b685e">4.6. 单片机主要学习什么</a>
+<ul>
+<li><a href="#org943de30">4.6.1. 单片机 I/O 口的结构</a></li>
+<li><a href="#org0c4c1fc">4.6.2. 上下拉电阻</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org03f5fea">5. C51 基础知识</a></li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+51 单片机需要的基础知识。
+</p>
+</blockquote>
+<div class="HTML">
+<p>
+<!&#x2013;more&#x2013;>
+</p>
+
+</div>
+
+<div id="outline-container-orgfd6d01b" class="outline-2">
+<h2 id="orgfd6d01b"><span class="section-number-2">1</span> 电平特性</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+在数字电路中只有两种电平：高电平和低电平。
+</p>
+</div>
+
+<div id="outline-container-orgfda437d" class="outline-3">
+<h3 id="orgfda437d"><span class="section-number-3">1.1</span> 单片机的电平</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+数字电路中只有两种电平：高电平和低电平。
+</p>
+
+<ul class="org-ul">
+<li>高电平：5V 或者 3.3V，电压取决于单片机的电源。</li>
+<li>低电平：0V</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga31b6fa" class="outline-3">
+<h3 id="orga31b6fa"><span class="section-number-3">1.2</span> RS232 电平：即计算机串口的电平</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>高电平：-12V</li>
+<li>低电平：+12V</li>
+</ul>
+
+<blockquote>
+<p>
+当需要单片机与电脑进行通信的时候，需要通过各种元器件把单片机的电平转换为计算
+机可识别的电平才能与电脑进行通信。
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org34364b7" class="outline-2">
+<h2 id="org34364b7"><span class="section-number-2">2</span> 2 进制与 16 进制的表示和转换</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li><p>
+二进制、十进制、十六进制简易转换表
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-right">
+
+<col class="org-right">
+
+<col class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">二进制</th>
+<th scope="col" class="org-right">十进制</th>
+<th scope="col" class="org-right">十六进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">10</td>
+<td class="org-right">2</td>
+<td class="org-right">2</td>
+</tr>
+
+<tr>
+<td class="org-right">11</td>
+<td class="org-right">3</td>
+<td class="org-right">3</td>
+</tr>
+
+<tr>
+<td class="org-right">100</td>
+<td class="org-right">4</td>
+<td class="org-right">4</td>
+</tr>
+
+<tr>
+<td class="org-right">101</td>
+<td class="org-right">5</td>
+<td class="org-right">5</td>
+</tr>
+
+<tr>
+<td class="org-right">110</td>
+<td class="org-right">6</td>
+<td class="org-right">6</td>
+</tr>
+
+<tr>
+<td class="org-right">111</td>
+<td class="org-right">7</td>
+<td class="org-right">7</td>
+</tr>
+
+<tr>
+<td class="org-right">1000</td>
+<td class="org-right">8</td>
+<td class="org-right">8</td>
+</tr>
+
+<tr>
+<td class="org-right">1001</td>
+<td class="org-right">9</td>
+<td class="org-right">9</td>
+</tr>
+
+<tr>
+<td class="org-right">1010</td>
+<td class="org-right">10</td>
+<td class="org-right">A</td>
+</tr>
+
+<tr>
+<td class="org-right">1011</td>
+<td class="org-right">11</td>
+<td class="org-right">B</td>
+</tr>
+
+<tr>
+<td class="org-right">1100</td>
+<td class="org-right">12</td>
+<td class="org-right">C</td>
+</tr>
+
+<tr>
+<td class="org-right">1101</td>
+<td class="org-right">13</td>
+<td class="org-right">D</td>
+</tr>
+
+<tr>
+<td class="org-right">1110</td>
+<td class="org-right">14</td>
+<td class="org-right">E</td>
+</tr>
+
+<tr>
+<td class="org-right">1111</td>
+<td class="org-right">15</td>
+<td class="org-right">F</td>
+</tr>
+
+<tr>
+<td class="org-right">10000</td>
+<td class="org-right">16</td>
+<td class="org-right">10</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+
+<div id="outline-container-orgc54d0ae" class="outline-3">
+<h3 id="orgc54d0ae"><span class="section-number-3">2.1</span> 二进制</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+由于数字电路中只有两种电平特性，所以计算机中使用的数字都采用的二进制形式的。
+</p>
+
+<p>
+二进制是使用 <code>0</code> 和 <code>1</code> 两个数码来表示的数，它的基数为 <code>2</code> ，进位规则是“逢二进一”。
+</p>
+</div>
+</div>
+<div id="outline-container-org51c8179" class="outline-3">
+<h3 id="org51c8179"><span class="section-number-3">2.2</span> 十六进制</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+十六进制的基数为 <code>F</code> ，进位规则是“逢十六进一”。
+</p>
+</div>
+</div>
+<div id="outline-container-org1ebd2a9" class="outline-3">
+<h3 id="org1ebd2a9"><span class="section-number-3">2.3</span> 进制转换</h3>
+<div class="outline-text-3" id="text-2-3">
+</div><div id="outline-container-org1445838" class="outline-4">
+<h4 id="org1445838"><span class="section-number-4">2.3.1</span> 十进制转换为二进制</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+十进制转换为二进制主要分为这几种情况：正整数转二进制，负整数转二进制，小数转
+二进制。
+</p>
+</div>
+<ol class="org-ol"><li><a id="orgb207f68"></a>正整数转二进制<br><div class="outline-text-5" id="text-2-3-1-1">
+<ul class="org-ul">
+<li><p>
+<code>运算方法：</code>
+</p>
+
+<p>
+除二取余，倒序排列，高位补零。
+</p>
+
+<p>
+意思是，将十进制的正整数除以二，得到的商再除以二，依次类推直到商为零或一
+为止，再旁边标出每一步的余数，然后倒着写出来，高位补为零就可以了。
+</p>
+
+<p>
+例如：
+</p>
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+</ul>
+</div></li>
+
+<li><a id="org54bbc1d"></a>负整数转二进制<br><div class="outline-text-5" id="text-2-3-1-2">
+<ul class="org-ul">
+<li><p>
+<code>运算方法：</code>
+</p>
+
+<p>
+将对应的正整数转换为二进制，对二进制取反然后加一。
+</p>
+
+<p>
+例如：
+</p>
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+</ul>
+</div></li>
+
+<li><a id="org30c9c06"></a>小数转二进制<br><div class="outline-text-5" id="text-2-3-1-3">
+<ul class="org-ul">
+<li><p>
+运算方法：乘二取整，正序排列。
+</p>
+
+<p>
+解释：对被转换的小数乘以 2，取其整数部分（0 或 1）作为二进制小数部分，取其
+小数部分，再乘以 2，再取其整数部分作为二进制小数部分，然后取小数部分，再
+乘以 2，直到小数部分为 0 或者已经去到了足够的位数。每次取的整数部分，按照
+先后次序排列，就是二进制小数。
+</p>
+
+<p>
+例如：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+</ul>
+</div></li></ol>
+</div>
+<div id="outline-container-orgcd9bdd2" class="outline-4">
+<h4 id="orgcd9bdd2"><span class="section-number-4">2.3.2</span> 二进制转换为十进制</h4>
+<div class="outline-text-4" id="text-2-3-2">
+</div><ol class="org-ol"><li><a id="orgabcac4c"></a>整数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-1">
+<p>
+首先将二进制的位数补齐，首位为 0 则是整数，为 1 则为负数。
+</p>
+
+<p>
+用二进制的每一位数值乘以对应的 2 的幂次，然后依次相加，即为其对应的十进制数
+值。
+</p>
+
+<p>
+例如：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</div></li>
+<li><a id="orgb5ac400"></a>小数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-2">
+<p>
+将二进制的每位数字乘以对应位数的 2 的负幂次数，然后相加。
+</p>
+
+<p>
+例如：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</div></li></ol>
+</div>
+<div id="outline-container-orgcb270d2" class="outline-4">
+<h4 id="orgcb270d2"><span class="section-number-4">2.3.3</span> 十进制转换为十六进制</h4>
+</div>
+<div id="outline-container-org9f485e4" class="outline-4">
+<h4 id="org9f485e4"><span class="section-number-4">2.3.4</span> 十六进制转换为十进制</h4>
+</div>
+<div id="outline-container-org98a1b76" class="outline-4">
+<h4 id="org98a1b76"><span class="section-number-4">2.3.5</span> 二进制转换为十六进制</h4>
+</div>
+<div id="outline-container-orge3cd963" class="outline-4">
+<h4 id="orge3cd963"><span class="section-number-4">2.3.6</span> 十六进制转换为二进制</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbb40f18" class="outline-2">
+<h2 id="orgbb40f18"><span class="section-number-2">3</span> 2 进制数的逻辑运算</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org09d56dc" class="outline-3">
+<h3 id="org09d56dc"><span class="section-number-3">3.1</span> <code>与</code> 运算</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+运算法则：有 0 得 0
+</p>
+
+<p>
+例如：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">运算式</th>
+<th scope="col" class="org-right">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1&1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">1&0</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">0&0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org53c71c3" class="outline-3">
+<h3 id="org53c71c3"><span class="section-number-3">3.2</span> <code>或</code> 运算</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+运算法则：有 1 得 1
+</p>
+
+<p>
+例如：
+</p>
+
+<p>
+注：由于 org-mode 表格中不能使用 <code>|</code> ，所以用 <code>∣</code> 来代替。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">运算式</th>
+<th scope="col" class="org-right">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1∣1</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">1∣0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">0∣0</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orge095043" class="outline-3">
+<h3 id="orge095043"><span class="section-number-3">3.3</span> <code>非</code> 运算</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+运算法则：取反
+</p>
+
+<p>
+例如：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">运算式</th>
+<th scope="col" class="org-right">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">~1</td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">~0</td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-orgc0da7ea" class="outline-3">
+<h3 id="orgc0da7ea"><span class="section-number-3">3.4</span> <code>异或</code> 运算</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+运算法则：不同为 1，相同为 0
+</p>
+
+<p>
+例如：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-right">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">运算式</th>
+<th scope="col" class="org-right">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1<sup>1</sup></td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">0<sup>0</sup></td>
+<td class="org-right">0</td>
+</tr>
+
+<tr>
+<td class="org-left">1<sup>0</sup></td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-left">0<sup>1</sup></td>
+<td class="org-right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44882c9" class="outline-2">
+<h2 id="org44882c9"><span class="section-number-2">4</span> 8051 单片机介绍</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org60bc310" class="outline-3">
+<h3 id="org60bc310"><span class="section-number-3">4.1</span> 80C51 的引脚封装</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</div>
+<div id="outline-container-orga382f2f" class="outline-4">
+<h4 id="orga382f2f"><span class="section-number-4">4.1.1</span> P3 口第二功能各引脚功能定义</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="org-left">
+
+<col class="org-left">
+
+<col class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">引脚</th>
+<th scope="col" class="org-left">第二功能标注</th>
+<th scope="col" class="org-left">第二功能解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">P3.0</td>
+<td class="org-left">RXD</td>
+<td class="org-left">串行口输入</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.1</td>
+<td class="org-left">TXD</td>
+<td class="org-left">串行口输出</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.2</td>
+<td class="org-left">INT0</td>
+<td class="org-left">外部中断 0 输入</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.3</td>
+<td class="org-left">INT1</td>
+<td class="org-left">外部中断 1 输入</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.4</td>
+<td class="org-left">T0</td>
+<td class="org-left">定时器 0 外部输入</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.5</td>
+<td class="org-left">T1</td>
+<td class="org-left">定时器 1 外部输入</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.6</td>
+<td class="org-left">WR</td>
+<td class="org-left">外部写控制</td>
+</tr>
+
+<tr>
+<td class="org-left">P3.7</td>
+<td class="org-left">RD</td>
+<td class="org-left">外部读控制</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="outline-container-orgab6e498" class="outline-3">
+<h3 id="orgab6e498"><span class="section-number-3">4.2</span> 8051 内部结构</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org82ee814" class="outline-3">
+<h3 id="org82ee814"><span class="section-number-3">4.3</span> 总线(BUS)</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+总线(BUS)是计算机各不见之间传送信息的公共通道。
+</p>
+
+<p>
+总线分为两类：
+</p>
+
+<ul class="org-ul">
+<li><p>
+内部总线
+</p>
+
+<p>
+内部总线是 CPU 内部之间的连线。
+</p></li>
+
+<li><p>
+外部总线
+</p>
+
+<p>
+外部总线是 CPU 与其他部件之间的连线。
+</p>
+
+<p>
+外部总线分为三种：
+</p>
+
+<ul class="org-ul">
+<li>数据总线 DB (Date Bus)</li>
+
+<li>地址总线 AB (Address Bus)</li>
+
+<li>控制总线 CB (Control Bus)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcedd5de" class="outline-3">
+<h3 id="orgcedd5de"><span class="section-number-3">4.4</span> 单片机的构成</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li><p>
+CPU
+</p>
+
+<p>
+由运算和控制逻辑组成，同时还包括中断系统和部分外部特殊功能寄存器。
+</p></li>
+
+<li><p>
+RAM
+</p>
+
+<p>
+用来存放可以读写的数据，如运算的中间结果、最终结果以及欲显示的数据。
+</p></li>
+
+<li><p>
+ROM
+</p>
+
+<p>
+用来存放程序、原始数据和表格。
+</p></li>
+
+<li><p>
+I/O
+</p>
+
+<p>
+四个 8 位并行 I/O 口，即可用作输入，也可用作输出。
+</p></li>
+
+<li><p>
+T/C
+</p>
+
+<p>
+两个定时/计数器，即可工作在定时模式，也可工作在记数模式。
+</p></li>
+
+<li>五个中断源的中断控制系统。</li>
+
+<li>一个全双工 UART (同样异步接收发送器) 的串行 I/O 口，用于实现单片机之间或单
+片机与计算机之间的串行通信。</li>
+
+<li>片内振荡器和时钟产生电路，石英晶体和微调电容需要外接。最高震荡频率取决于单
+片机型号和性能。</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc324e9e" class="outline-3">
+<h3 id="orgc324e9e"><span class="section-number-3">4.5</span> 单片机工作的基本时序</h3>
+<div class="outline-text-3" id="text-4-5">
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+</div>
+<div id="outline-container-orgce1dd51" class="outline-4">
+<h4 id="orgce1dd51"><span class="section-number-4">4.5.1</span> 震荡周期</h4>
+<div class="outline-text-4" id="text-4-5-1">
+<p>
+震荡周期也称为时钟周期，是指为单片机提供时钟脉冲信号的震荡源的周期，开发板上
+为 12MHZ。
+</p>
+</div>
+</div>
+<div id="outline-container-org2c91b54" class="outline-4">
+<h4 id="org2c91b54"><span class="section-number-4">4.5.2</span> 状态周期</h4>
+<div class="outline-text-4" id="text-4-5-2">
+<p>
+每个状态周期为时钟周期的 2 倍，是震荡周期经二分频后得到的。
+</p>
+</div>
+</div>
+<div id="outline-container-orgcdb75fa" class="outline-4">
+<h4 id="orgcdb75fa"><span class="section-number-4">4.5.3</span> 机器周期</h4>
+<div class="outline-text-4" id="text-4-5-3">
+<p>
+一个机器周期包含 6 个状态周期 S1~S6 ，也就是 12 个时钟周期。在一个机器周期内，
+CPU 可以完成一个独立的操作。
+</p>
+</div>
+</div>
+<div id="outline-container-org916d81b" class="outline-4">
+<h4 id="org916d81b"><span class="section-number-4">4.5.4</span> 指令周期</h4>
+<div class="outline-text-4" id="text-4-5-4">
+<p>
+是指 CPU 完成一条操作所需要的全部时间。每条指令执行时间都是有一个或几个机器
+周期组成。MCS-51 系统中，有单周期指令、双周期指令和四周期指令。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org61b685e" class="outline-3">
+<h3 id="org61b685e"><span class="section-number-3">4.6</span> 单片机主要学习什么</h3>
+<div class="outline-text-3" id="text-4-6">
+<ul class="org-ul">
+<li>对 I/O 口的控制，无论单片机对外接进行何种控制，都是通过 I/O 口进行的。</li>
+<li>接收外部的控制，通过 I/O 来感受外部的电压。</li>
+<li>51 单片机总共有 P0 、P1、P2、P3 四个 8 位双向输入输出端口(I/O)，每个端口都
+有锁存器、输出驱动器和输入缓冲器。4 个 I/O 端口都能作输入输出口用。</li>
+</ul>
+</div>
+<div id="outline-container-org943de30" class="outline-4">
+<h4 id="org943de30"><span class="section-number-4">4.6.1</span> 单片机 I/O 口的结构</h4>
+<div class="outline-text-4" id="text-4-6-1">
+<p>
+单片机 I/O 口分为三种：开漏输出、准双向 IO 、强推挽输出。
+</p>
+
+<p>
+51 单片机使用 <code>开漏输出</code> 和 <code>准双向 IO</code> 。
+</p>
+
+<p>
+P0 口没有内部的上拉电阻，只能借助外部上拉电阻，使用 <code>开漏输出</code> 。其他口使用 <code>准双向 IO</code> 。
+</p>
+
+<ul class="org-ul">
+<li><p>
+开漏输出
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+<li><p>
+准双向 IO
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+<li><p>
+强推挽输出
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c4c1fc" class="outline-4">
+<h4 id="org0c4c1fc"><span class="section-number-4">4.6.2</span> 上下拉电阻</h4>
+<div class="outline-text-4" id="text-4-6-2">
+<ul class="org-ul">
+<li>概念</li>
+</ul>
+
+<p>
+上拉电阻就是将不确定的信号通过一个电阻拉到高电平，同时此电阻起到一
+个限流的作用。下拉电阻就是下拉倒低电平。
+</p>
+
+<ul class="org-ul">
+<li>上拉电阻的作用
+
+<ul class="org-ul">
+<li>OC 门(在开漏输出电路中)要输出高电平，外部必须加上拉电阻。</li>
+
+<li>加大普通 IO 口的驱动能力。</li>
+
+<li>起到限流的作用。</li>
+
+<li>抵抗电磁干扰。</li>
+</ul></li>
+<li>上拉电阻的选取原则
+
+<ul class="org-ul">
+<li>从降低功耗方面考虑应该足够大，因为电阻越大，电流越小。</li>
+
+<li>从确保足够的引脚驱动能力考虑应该足够小，电阻越小，电流越大。</li>
+
+<li><p>
+开漏输出时，过大的上拉电阻会导致信号的上升沿变缓。
+</p>
+
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org03f5fea" class="outline-2">
+<h2 id="org03f5fea"><span class="section-number-2">5</span> C51 基础知识</h2>
+</div>
+
+Last Updated 2017-02-20 Mon 21:58.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
+        <p><span>发布时间:</span>2017-02-15, 20:04:24</p>
+        <p><span>最后更新:</span>2017-02-20, 21:58:49</p>
+        
+            <p>
+                <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
+                <a href="https://github.com/yyangdid/blog-backup/blame/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://github.com/yyangdid/blog-backup/commits/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://raw.githubusercontent.com/yyangdid/blog-backup/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+            <p>
+                <span>更新历史:</span><i class="iconfont icon-coding"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/blame/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/commits/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/raw/master/_posts/学习单片机/2017-02-15.单片机基础知识.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+        
+        <p>
+            <span>原始链接:</span><a class="post-urlasas" href="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/" title="单片机基础知识">yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="http://yyangdid.coding.me/2017/02/15/学习单片机/2017-02-15.单片机基础知识/" title="单片机基础知识">yyangdid.coding.me/2017/02/15/学习单片机/2017-02-15.单片机基础知识/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.coding.me/2017/02/15/学习单片机/2017-02-15.单片机基础知识/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">
+                    电子技术自学指南第三版笔记
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">
+                    学习ELisp(006):基本数据类型--cons_cell和列表
+                </a>
+            </div>
+        
+    </nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgfd6d01b"><span class="toc-text">1 电平特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgfda437d"><span class="toc-text">1.1 单片机的电平</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orga31b6fa"><span class="toc-text">1.2 RS232 电平：即计算机串口的电平</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org34364b7"><span class="toc-text">2 2 进制与 16 进制的表示和转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc54d0ae"><span class="toc-text">2.1 二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org51c8179"><span class="toc-text">2.2 十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org1ebd2a9"><span class="toc-text">2.3 进制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org1445838"><span class="toc-text">2.3.1 十进制转换为二进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgcd9bdd2"><span class="toc-text">2.3.2 二进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgcb270d2"><span class="toc-text">2.3.3 十进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org9f485e4"><span class="toc-text">2.3.4 十六进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org98a1b76"><span class="toc-text">2.3.5 二进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orge3cd963"><span class="toc-text">2.3.6 十六进制转换为二进制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgbb40f18"><span class="toc-text">3 2 进制数的逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org09d56dc"><span class="toc-text">3.1 与 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org53c71c3"><span class="toc-text">3.2 或 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orge095043"><span class="toc-text">3.3 非 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc0da7ea"><span class="toc-text">3.4 异或 运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org44882c9"><span class="toc-text">4 8051 单片机介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org60bc310"><span class="toc-text">4.1 80C51 的引脚封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orga382f2f"><span class="toc-text">4.1.1 P3 口第二功能各引脚功能定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgab6e498"><span class="toc-text">4.2 8051 内部结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org82ee814"><span class="toc-text">4.3 总线(BUS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgcedd5de"><span class="toc-text">4.4 单片机的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc324e9e"><span class="toc-text">4.5 单片机工作的基本时序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgce1dd51"><span class="toc-text">4.5.1 震荡周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org2c91b54"><span class="toc-text">4.5.2 状态周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgcdb75fa"><span class="toc-text">4.5.3 机器周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org916d81b"><span class="toc-text">4.5.4 指令周期</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org61b685e"><span class="toc-text">4.6 单片机主要学习什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org943de30"><span class="toc-text">4.6.1 单片机 I/O 口的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org0c4c1fc"><span class="toc-text">4.6.2 上下拉电阻</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org03f5fea"><span class="toc-text">5 C51 基础知识</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"单片机基础知识　| yyangdid　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/15/学习单片机/2017-02-15.单片机基础知识/" data-title="单片机基础知识" data-url="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yyangdid"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+
+            ds.src = '/js/embed.js';
+            /*上面是我自己的 embed.js 链接，请改为你自己的地址*/
+
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/" title="上一篇: 电子技术自学指南第三版笔记">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/" title="下一篇: 学习ELisp(006):基本数据类型--cons_cell和列表">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">电子技术自学指南第三版笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">学习ELisp(006):基本数据类型--cons_cell和列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/">学习ELisp(005):基本数据类型--字符和字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 yyangdid
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 6;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -29,7 +29,26 @@
 
 
 
-各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。">
+各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。
+
+
+
+
+
+
+
+
+
+
+主要参考资料来自康林工作室-git 设置和码农天注定-git 乱码解决方案汇总
+
+
+
+1 系统乱码
+
+
+
+修改之前建议备份 ~/.profil">
 <meta property="og:type" content="article">
 <meta property="og:title" content="各种Git乱码解决办法">
 <meta property="og:url" content="http://yyangdid.github.io/2016/12/19/2016-12-18.各种Git乱码解决办法/index.html">
@@ -48,7 +67,26 @@
 
 
 
-各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。">
+各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。
+
+
+
+
+
+
+
+
+
+
+主要参考资料来自康林工作室-git 设置和码农天注定-git 乱码解决方案汇总
+
+
+
+1 系统乱码
+
+
+
+修改之前建议备份 ~/.profil">
 <meta property="og:updated_time" content="2017-01-12T13:40:07.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="各种Git乱码解决办法">
@@ -66,7 +104,26 @@
 
 
 
-各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。">
+各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。
+
+
+
+
+
+
+
+
+
+
+主要参考资料来自康林工作室-git 设置和码农天注定-git 乱码解决方案汇总
+
+
+
+1 系统乱码
+
+
+
+修改之前建议备份 ~/.profil">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -227,7 +284,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子技术/">电子技术</a></li></ul>
                     </div>
                 </section>
                 
@@ -346,10 +403,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. 系统乱码</a></li>
-<li><a href="#sec-2">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
+<li><a href="#orgc9e3201">1. 系统乱码</a></li>
+<li><a href="#org418644d">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
 <ul>
-<li><a href="#sec-2-1">2.1. 解决方法</a></li>
+<li><a href="#org844f6f3">2.1. 解决方法</a></li>
 </ul>
 </li>
 </ul>
@@ -360,14 +417,19 @@
 各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。
 </p>
 </blockquote>
-<a id="more"></a>
+<div class="HTML">
+<p>
+<!&#x2013;more&#x2013;>
+</p>
+
+</div>
 <blockquote>
 <p>
 主要参考资料来自<a href="http://blog.csdn.net/kl222/article/details/32903495" target="_blank" rel="external">康林工作室-git 设置</a>和<a href="http://blog.csdn.net/yunnywu/article/details/50553908" target="_blank" rel="external">码农天注定-git 乱码解决方案汇总</a>
 </p>
 </blockquote>
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> 系统乱码</h2>
+<div id="outline-container-orgc9e3201" class="outline-2">
+<h2 id="orgc9e3201"><span class="section-number-2">1</span> 系统乱码</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <p>
@@ -387,7 +449,6 @@
 重新读取配置文件:
 </p>
 <div class="org-src-container">
-
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
 </div>
 
@@ -395,13 +456,12 @@
 查看当前用户系统编码：
 </p>
 <div class="org-src-container">
-
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">evn|grep LANG</span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 使用 git add 命令添加文件名称包含中文时乱码</h2>
+<div id="outline-container-org418644d" class="outline-2">
+<h2 id="org418644d"><span class="section-number-2">2</span> 使用 git add 命令添加文件名称包含中文时乱码</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 使用 git add 添加文件，如果文件名包含中文，显示如下：
@@ -410,30 +470,31 @@
 273\223\273.txt
 </pre>
 </div>
-<div id="outline-container-sec-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 解决方法</h3>
+<div id="outline-container-org844f6f3" class="outline-3">
+<h3 id="org844f6f3"><span class="section-number-3">2.1</span> 解决方法</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
-<li>方法一：
+<li><p>
+方法一：
 执行命令：
+</p>
 <div class="org-src-container">
-
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-<li>方法二：
+</div></li>
+<li><p>
+方法二：
 修改 <code>~/.gitconfig</code> 文件如下：（如果没有此文件就新建一个)
+</p>
 <pre class="example">
 [core]
 	quotepath = false
-</pre>
-</li>
+</pre></li>
 </ol>
 </div>
 </div>
 </div>
 
-Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -501,7 +562,7 @@ Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-text">1 系统乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-text">2 使用 git add 命令添加文件名称包含中文时乱码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-2-1"><span class="toc-text">2.1 解决方法</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgc9e3201"><span class="toc-text">1 系统乱码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org418644d"><span class="toc-text">2 使用 git add 命令添加文件名称包含中文时乱码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org844f6f3"><span class="toc-text">2.1 解决方法</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -602,7 +663,7 @@ Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/Code
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">电子技术自学指南第三版笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">学习ELisp(006):基本数据类型--cons_cell和列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/">学习ELisp(005):基本数据类型--字符和字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
 
 
 

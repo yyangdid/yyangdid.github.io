@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="yyangdid" />
+
+
+
+<meta name="description" content="Table of Contents
+
+
+1. 直流电路基础知识
+
+1.1. 电流
+
+1.1.1. 电气和电子设备需要电流才能工作。
+1.1.2. 电流产生的方法有很多种。
+1.1.3. 电流
+
+
+1.2. 欧姆定律
+
+1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。
+
+
+1.3. 电阻的串联
+1.4. 电阻的并联
+1.5. 功率
+1.6. 微电流
+1.7. 伏 - 安特性曲线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子技术自学指南第三版笔记">
+<meta property="og:url" content="http://yyangdid.github.io/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/index.html">
+<meta property="og:site_name" content="yyangdid">
+<meta property="og:description" content="Table of Contents
+
+
+1. 直流电路基础知识
+
+1.1. 电流
+
+1.1.1. 电气和电子设备需要电流才能工作。
+1.1.2. 电流产生的方法有很多种。
+1.1.3. 电流
+
+
+1.2. 欧姆定律
+
+1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。
+
+
+1.3. 电阻的串联
+1.4. 电阻的并联
+1.5. 功率
+1.6. 微电流
+1.7. 伏 - 安特性曲线">
+<meta property="og:updated_time" content="2017-02-21T12:18:59.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电子技术自学指南第三版笔记">
+<meta name="twitter:description" content="Table of Contents
+
+
+1. 直流电路基础知识
+
+1.1. 电流
+
+1.1.1. 电气和电子设备需要电流才能工作。
+1.1.2. 电流产生的方法有很多种。
+1.1.3. 电流
+
+
+1.2. 欧姆定律
+
+1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。
+
+
+1.3. 电阻的串联
+1.4. 电阻的并联
+1.5. 功率
+1.6. 微电流
+1.7. 伏 - 安特性曲线">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/optimus.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <link rel="stylesheet" href="/iconfont/css/iconfont.css">
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+
+
+
+<title>电子技术自学指南第三版笔记 | yyangdid</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/optimus.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">yyangdid</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">菜鸟博客</p>
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子技术/">电子技术</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">yyangdid</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/optimus.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">yyangdid</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">菜鸟博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:yyangdid@gmail.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/yyangdid" title="GitHub"></a>
+                            
+                                <a class="fa Coding" target="_blank" href="https://coding.net/u/yyangdid" title="Coding"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-学习单片机/2017-02-21.电子技术自学指南第三版笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/" class="article-date">
+      <time datetime="2017-02-21T06:16:14.000Z" itemprop="datePublished">2017-02-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      电子技术自学指南第三版笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/电子技术/">电子技术</a><a class="article-category-link" href="/categories/电子技术/单片机/">单片机</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单片机/">单片机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/电子技术/">电子技术</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgcfd27bb">1. 直流电路基础知识</a>
+<ul>
+<li><a href="#orgb52e948">1.1. 电流</a>
+<ul>
+<li><a href="#orgcd2b252">1.1.1. 电气和电子设备需要电流才能工作。</a></li>
+<li><a href="#orge706730">1.1.2. 电流产生的方法有很多种。</a></li>
+<li><a href="#orgaec73b7">1.1.3. 电流</a></li>
+</ul>
+</li>
+<li><a href="#orgd68ea60">1.2. 欧姆定律</a>
+<ul>
+<li><a href="#orgef5d495">1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。</a></li>
+</ul>
+</li>
+<li><a href="#org8c2e4b2">1.3. 电阻的串联</a></li>
+<li><a href="#orga16db84">1.4. 电阻的并联</a></li>
+<li><a href="#orgd278591">1.5. 功率</a></li>
+<li><a href="#orga801f35">1.6. 微电流</a></li>
+<li><a href="#orgd954f65">1.7. 伏 - 安特性曲线</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+电子技术自学指南第三版笔记
+</p>
+</blockquote>
+<div class="HTML">
+<p>
+<!&#x2013;more&#x2013;>
+</p>
+
+</div>
+<div id="outline-container-orgcfd27bb" class="outline-2">
+<h2 id="orgcfd27bb"><span class="section-number-2">1</span> 直流电路基础知识</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgb52e948" class="outline-3">
+<h3 id="orgb52e948"><span class="section-number-3">1.1</span> 电流</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgcd2b252" class="outline-4">
+<h4 id="orgcd2b252"><span class="section-number-4">1.1.1</span> 电气和电子设备需要电流才能工作。</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li><p>
+<b></b> 什么是电流？
+</p>
+
+<p>
+<b></b> 电荷的流动被称为电流。这种电荷通常由带负电子的电子组成。然而，在半导体中，
+也有带正电子的载流子，他们被称为空穴 (hole)。
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge706730" class="outline-4">
+<h4 id="orge706730"><span class="section-number-4">1.1.2</span> 电流产生的方法有很多种。</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<ul class="org-ul">
+<li><p>
+<b></b> 写出几种电流产生的方法
+</p>
+
+<p>
+<b></b> 常用的方法：
+</p>
+
+<ol class="org-ol">
+<li>磁场法：在磁场中旋转的导线中能产生感生电子。水力、风力或蒸汽驱动的发电
+机，汽车里的风扇。</li>
+
+<li>化学法：利用化学品和电极之间发生的化学反应来产生单子。电池。</li>
+
+<li>光伏法：当光照射到半导体晶体上时产生电子。太阳能电池。</li>
+</ol>
+<p>
+不常用的方法：
+</p>
+
+<ol class="org-ol">
+<li>热学法：利用热电偶的结间温差产生电子。太空飞船上的发电机就使用热电学法
+发电，它使用放射性物质作为燃料。</li>
+
+<li>电化学反应法：利用氢气、氧气和电极间的电化学反应产生电荷。燃料电池。</li>
+
+<li>压电法：利用压电物质的机械形变产生电荷。安装在鞋跟上的压电材料能在人走
+动时点亮 LED 。</li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgaec73b7" class="outline-4">
+<h4 id="orgaec73b7"><span class="section-number-4">1.1.3</span> 电流</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<p>
+本书使用电池作为电压源。电池为电路提供电势差，从而产生电流。电流就是电荷的流
+动。对于电池，流动的电荷就是电子，从电子过剩的一端流向电子匮乏的一端。由于电
+子带负电荷，所以实际上是从电池负极流向正极，称该方向为电子流的方向。但是多数
+教科书都采用电流的方向，电流的方向和电子流的方向相反，称为常规电流方向或简称
+为电流方向。
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b>A</b> 画出下图的电流方向(电池符号已经注明了正负极)。
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0001_2017-02-21_15-50-31.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+<p>
+<b>B</b> 什么说明存在电势差？
+</p>
+
+<p>
+<b>C</b> 电势差会导致什么情况？
+</p>
+
+<p>
+<b>D</b> 如果电池反接会出现什么情况？
+</p>
+
+<p>
+<b>A</b>
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0002_2017-02-21_15-50-59.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+<p>
+<b>B</b> 电池符号表明了电路两端由电势差(也称为电压)。
+</p>
+
+<p>
+<b>C</b> 如果接有题目图示中的完整电路，那么就会产生电流。
+</p>
+
+<p>
+<b>D</b> 电流会沿反方向流动。
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd68ea60" class="outline-3">
+<h3 id="orgd68ea60"><span class="section-number-3">1.2</span> 欧姆定律</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-orgef5d495" class="outline-4">
+<h4 id="orgef5d495"><span class="section-number-4">1.2.1</span> 欧姆定律阐明了电压、电流、电阻之间的关系。</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li><p>
+<b></b> 欧姆定律的代数表达式？
+</p>
+
+<p>
+<b></b> V = I x R 
+</p>
+
+<p>
+V 代表电压(有些书籍使用 E 表示)，I 代表电流，R 代表电阻。
+</p></li>
+<li><p>
+<b></b> 使用欧姆定律求解下面问题
+</p>
+
+<p>
+<b>A</b> R = 20Ω    I = 0.5A   V = ??
+</p>
+
+<p>
+<b>B</b> R = 560Ω   I = 0.02A  V = ??
+</p>
+
+<p>
+<b>C</b> R = 1000Ω  I = 0.01A  V = ??
+</p>
+
+<p>
+<b>D</b> R = 20Ω    I = 1.5A   V = ??
+</p>
+
+<p>
+<b>A</b> 10V
+</p>
+
+<p>
+<b>B</b> 11.2V
+</p>
+
+<p>
+<b>C</b> 10A
+</p>
+
+<p>
+<b>D</b> 30A 
+</p></li>
+<li><p>
+<b></b> 使用欧姆定律求解电流值
+</p>
+
+<p>
+<b>A</b> V = 1V    R = 2Ω    I = ??
+</p>
+
+<p>
+<b>B</b> V = 2V    R = 10Ω   I = ??
+</p>
+
+<p>
+<b>C</b> V = 10V   R = 3Ω    I = ??
+</p>
+
+<p>
+<b>D</b> V = 120V  R = 100Ω  I = ??
+</p>
+
+<p>
+<b>A</b> 0.5A
+</p>
+
+<p>
+<b>B</b> 0.2A
+</p>
+
+<p>
+<b>C</b> 3.3A
+</p>
+
+<p>
+<b>D</b> 1.2A 
+</p></li>
+<li><p>
+<b></b> 使用欧姆定律求解电阻值
+</p>
+
+<p>
+<b>A</b> V = 1V    I = 1A    R = ??
+</p>
+
+<p>
+<b>B</b> V = 2V    I = 0.5A  R = ??
+</p>
+
+<p>
+<b>C</b> V = 10V   I = 3A    R = ??
+</p>
+
+<p>
+<b>D</b> V = 50V   I = 20A   R = ??
+</p>
+
+<p>
+<b>A</b> 1Ω
+</p>
+
+<p>
+<b>B</b> 4Ω
+</p>
+
+<p>
+<b>C</b> 3.3Ω
+</p>
+
+<p>
+<b>D</b> 2.5Ω 
+</p></li>
+<li><p>
+<b></b> 使用欧姆定律求解
+</p>
+
+<p>
+<b>A</b> 已知 12V 和 10Ω ，求电流。
+</p>
+
+<p>
+<b>B</b> 已知 24V 和 8A ，求电阻。
+</p>
+
+<p>
+<b>C</b> 已知 5A 和 75Ω ，求电压。
+</p>
+
+<p>
+<b>A</b> 1.2A
+</p>
+
+<p>
+<b>B</b> 3Ω
+</p>
+
+<p>
+<b>C</b> 375V
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8c2e4b2" class="outline-3">
+<h3 id="org8c2e4b2"><span class="section-number-3">1.3</span> 电阻的串联</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+如下图，就是电阻的串联：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0003_2017-02-21_17-11-24.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<ul class="org-ul">
+<li><p>
+<b></b> 它们的总电阻是多少？
+</p>
+
+<p>
+<b></b> R<sub>T</sub> = R<sub>1</sub> + R<sub>2</sub> = 10Ω + 5Ω = 15Ω
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga16db84" class="outline-3">
+<h3 id="orga16db84"><span class="section-number-3">1.4</span> 电阻的并联</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+如下图，电阻可以并联：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0004_2017-02-21_17-12-05.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+<ul class="org-ul">
+<li><p>
+<b></b> 上图的总电阻是多少？
+</p>
+
+<p>
+<b></b> 
+</p>
+<p alt="(点击图片可放大)" width="300px">
+<object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0005_2017-02-21_17-23-46.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+因此，R<sub>T</sub> = 1Ω
+</p>
+
+<p>
+R<sub>T</sub> 通常被称为等效并联电阻。
+</p></li>
+
+<li><p>
+<b></b> 下面问题中的两个电阻都是并联的，求等效电阻是多少
+</p>
+
+<p>
+<b>A</b> R<sub>1</sub> = 1Ω    R<sub>2</sub> = 1Ω    R<sub>T</sub> = ??
+</p>
+
+<p>
+<b>B</b> R<sub>1</sub> = 1000Ω R<sub>2</sub> = 500Ω  R<sub>T</sub> = ??
+</p>
+
+<p>
+<b>C</b> R<sub>1</sub> = 3600Ω R<sub>2</sub> = 1800Ω R<sub>T</sub> = ??
+</p>
+
+<p>
+<b>A</b> 1Ω
+</p>
+
+<p>
+<b>B</b> 333Ω
+</p>
+
+<p>
+<b>C</b> 1200Ω 
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd278591" class="outline-3">
+<h3 id="orgd278591"><span class="section-number-3">1.5</span> 功率</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+当有电流流过电阻时，就会消耗电能(通常是以热量的形式)。功率使用 P 表示，单位是
+瓦特(W)。
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b></b> 功率的计算公式：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0006_2017-02-21_17-46-23.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div></li>
+<li><p>
+<b></b> 已知电流和电压，求电阻上的功率
+</p>
+
+<p>
+<b>A</b> V = 10V    I = 3A    P = ??
+</p>
+
+<p>
+<b>B</b> V = 100V   I = 5A    P = ??
+</p>
+
+<p>
+<b>C</b> V = 120V   I = 10A   P = ??
+</p>
+
+<p>
+<b>A</b> 30W
+</p>
+
+<p>
+<b>B</b> 500W 即 0.5kW
+</p>
+
+<p>
+<b>C</b> 1200W 即 1.2kW
+</p></li>
+<li><p>
+<b></b> 已知电流和电阻时，求功率
+</p>
+
+<p>
+<b>A</b> R = 20Ω    I = 0.5A    P = ??
+</p>
+
+<p>
+<b>B</b> R = 560Ω   I = 0.02A   P = ??
+</p>
+
+<p>
+<b>C</b> V = 1V     R = 2Ω      P = ??
+</p>
+
+<p>
+<b>D</b> V = 2V     R = 10Ω     P = ??
+</p>
+
+<p>
+<b>A</b> 5W
+</p>
+
+<p>
+<b>B</b> 0.224W
+</p>
+
+<p>
+<b>C</b> 0.5W
+</p>
+
+<p>
+<b>D</b> 0.4W
+</p></li>
+<li><p>
+<b></b> 如果碳膜电阻的标准额定功率为 1/4W、1/2W、1W 和 2W ，那么下面给出的电阻
+应选择多大的额定功率？不能让电路中的电阻实际功率超出额定功率值。
+</p>
+
+<p>
+<b>A</b> 5W    ??
+</p>
+
+<p>
+<b>B</b> 0.224W    ??
+</p>
+
+<p>
+<b>C</b> 0.5W      ??
+</p>
+
+<p>
+<b>D</b> 0.4W      ??
+</p>
+
+<p>
+<b>A</b> 5W 或更大
+</p>
+
+<p>
+<b>B</b> 1/4W 或更大
+</p>
+
+<p>
+<b>C</b> 1/2W 或更大
+</p>
+
+<p>
+<b>D</b> 1/2W 或更大
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga801f35" class="outline-3">
+<h3 id="orga801f35"><span class="section-number-3">1.6</span> 微电流</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+在重型工业设备中使用的电流远大于 1A ，但是大多数电路需要的电流都不足 1A 。
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b></b> A(安)、mA(毫安)、μA(微安) 之间的换算
+</p>
+
+<p>
+<b></b> 1A = 1000mA 1mA = 1000μA
+</p></li>
+
+<li><p>
+<b></b> kΩ(千欧)、MΩ(兆欧)
+</p>
+
+<p>
+<b></b>  1MΩ = 1000kΩ 1kΩ =1000Ω
+</p></li>
+
+<li><p>
+<b></b> 电阻两端的电压为 6V，要求流过电阻的电流为 5mA，求应该使用多大的电阻，对
+应的功耗是多少？
+</p>
+
+<p>
+<b></b> R = 1.2kΩ  P = 30mV
+</p></li>
+
+<li><p>
+<b></b> 求出缺少量
+</p>
+
+<p>
+<b>A</b> 已知电压为 50V、电流为 10mA，求电阻
+</p>
+
+<p>
+<b>B</b> 已知电压为 1V、电阻为 1MΩ，求电流
+</p>
+
+<p>
+<b>A</b> 5kΩ
+</p>
+
+<p>
+<b>B</b> 1μA
+</p></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgd954f65" class="outline-3">
+<h3 id="orgd954f65"><span class="section-number-3">1.7</span> 伏 - 安特性曲线</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+将电阻上的压降和流过电阻的电流绘成图，就得到了伏 - 安特性曲线(V-I 曲线)。
+</p>
+
+<ul class="org-ul">
+<li><p>
+<b></b> 在一个简单的电路中，电池两端接 1kΩ的电阻
+</p>
+
+<p>
+<b>A</b> 如果使用 10V 电池，求出对应的电流值
+</p>
+
+<p>
+<b>B</b> 如果使用 1V 电池，求出对应的电流值
+</p>
+
+<p>
+<b>C</b> 如果使用 20V 电池，求出对应的电流值
+</p>
+
+<p>
+<b>A</b> 10mA
+</p>
+
+<p>
+<b>B</b> 1mA 
+</p>
+
+<p>
+<b>C</b> 20mA
+</p></li>
+
+<li><p>
+<b></b> 画出上一题的 V-I 曲线，并计算图中直线的斜率。
+</p>
+
+<p>
+<b></b> 
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0007_2017-02-21_20-07-31.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+<p>
+计算上图中直线的斜率，可以选择两个电，分别记作 A 和 B。
+</p>
+
+<p>
+A 点：V = 5V，I = 5mA
+</p>
+
+<p>
+B 点：V = 20V，I = 20mA
+</p>
+
+<p>
+斜率如下计算：
+</p>
+
+<div class="figure">
+<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0008_2017-02-21_20-18-21.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+
+<p>
+其实这条直线的斜率就等于电阻。
+</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+Last Updated 2017-02-21 Tue 20:18.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">电子技术自学指南第三版笔记</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
+        <p><span>发布时间:</span>2017-02-21, 14:16:14</p>
+        <p><span>最后更新:</span>2017-02-21, 20:18:59</p>
+        
+            <p>
+                <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
+                <a href="https://github.com/yyangdid/blog-backup/blame/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://github.com/yyangdid/blog-backup/commits/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://raw.githubusercontent.com/yyangdid/blog-backup/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+            <p>
+                <span>更新历史:</span><i class="iconfont icon-coding"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/blame/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="顺序查看文章各部分修改记录" target = "_blank">Blame</a>,
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/commits/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="查看文章有关更新记录" target = "_blank">History</a><span class="raw">文本模式:</span><i class="fa fa-file-text-o"></i>
+                <a href="https://coding.net/u/yyangdid/p/blog-backup/git/raw/master/_posts/学习单片机/2017-02-21.电子技术自学指南第三版笔记.org" title="查看、下载文章org-mode原始文本" target = "_blank"> .org Raw</a>
+            </p>
+        
+        <p>
+            <span>原始链接:</span><a class="post-urlasas" href="http://yyangdid.github.io/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/" title="电子技术自学指南第三版笔记">yyangdid.github.io/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.github.io/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="http://yyangdid.coding.me/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/" title="电子技术自学指南第三版笔记">yyangdid.coding.me/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: yyangdid.coding.me/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/　　作者: yyangdid" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">
+                    单片机基础知识
+                </a>
+            </div>
+        
+    </nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgcfd27bb"><span class="toc-text">1 直流电路基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgb52e948"><span class="toc-text">1.1 电流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgcd2b252"><span class="toc-text">1.1.1 电气和电子设备需要电流才能工作。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orge706730"><span class="toc-text">1.1.2 电流产生的方法有很多种。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgaec73b7"><span class="toc-text">1.1.3 电流</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgd68ea60"><span class="toc-text">1.2 欧姆定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgef5d495"><span class="toc-text">1.2.1 欧姆定律阐明了电压、电流、电阻之间的关系。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org8c2e4b2"><span class="toc-text">1.3 电阻的串联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orga16db84"><span class="toc-text">1.4 电阻的并联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgd278591"><span class="toc-text">1.5 功率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orga801f35"><span class="toc-text">1.6 微电流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgd954f65"><span class="toc-text">1.7 伏 - 安特性曲线</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"电子技术自学指南第三版笔记　| yyangdid　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/" data-title="电子技术自学指南第三版笔记" data-url="http://yyangdid.github.io/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"yyangdid"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+
+            ds.src = '/js/embed.js';
+            /*上面是我自己的 embed.js 链接，请改为你自己的地址*/
+
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] 
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/" title="下一篇: 单片机基础知识">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">电子技术自学指南第三版笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">学习ELisp(006):基本数据类型--cons_cell和列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/">学习ELisp(005):基本数据类型--字符和字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 yyangdid
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 6;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

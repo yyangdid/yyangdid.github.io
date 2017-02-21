@@ -38,7 +38,18 @@
 
 
 
-本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。">
+本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。
+
+
+
+
+
+
+
+
+
+
+1 数字分类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习ELisp(004):基本数据类型--数字">
 <meta property="og:url" content="http://yyangdid.github.io/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/index.html">
@@ -66,7 +77,18 @@
 
 
 
-本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。">
+本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。
+
+
+
+
+
+
+
+
+
+
+1 数字分类">
 <meta property="og:updated_time" content="2017-01-26T13:07:54.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(004):基本数据类型--数字">
@@ -93,7 +115,18 @@
 
 
 
-本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。">
+本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。
+
+
+
+
+
+
+
+
+
+
+1 数字分类">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -254,7 +287,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Clang/">Clang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ELisp/">ELisp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Emacs/">Emacs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vim/">Vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zlib/">zlib</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/乱码/">乱码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/电子技术/">电子技术</a></li></ul>
                     </div>
                 </section>
                 
@@ -373,17 +406,17 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1. 数字分类和表示方法</a></li>
-<li><a href="#sec-2">2. 数字测试函数</a></li>
-<li><a href="#sec-3">3. 比较操作符</a></li>
-<li><a href="#sec-4">4. 数字转换函数</a>
+<li><a href="#orgc1dac80">1. 数字分类和表示方法</a></li>
+<li><a href="#org1720e03">2. 数字测试函数</a></li>
+<li><a href="#orge5711fc">3. 比较操作符</a></li>
+<li><a href="#orgc6b48d9">4. 数字转换函数</a>
 <ul>
-<li><a href="#sec-4-1">4.1. 整数转换为浮点数</a></li>
-<li><a href="#sec-4-2">4.2. 浮点数转换为整数</a></li>
+<li><a href="#org474b9ba">4.1. 整数转换为浮点数</a></li>
+<li><a href="#org69c143a">4.2. 浮点数转换为整数</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. 数字的运算</a></li>
-<li><a href="#sec-6">6. 附录</a></li>
+<li><a href="#orgf4f90c7">5. 数字的运算</a></li>
+<li><a href="#orgf162664">6. 附录</a></li>
 </ul>
 </div>
 </div>
@@ -396,17 +429,24 @@
 本章节主要记录 ELisp 对数字的一些操作：类型测试、数字比较、数字运算、数字转换。
 </p>
 </blockquote>
-<a id="more"></a>
+<div class="HTML">
+<p>
+<!&#x2013;more&#x2013;>
+</p>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> 数字分类和表示方法</h2>
+</div>
+
+<div id="outline-container-orgc1dac80" class="outline-2">
+<h2 id="orgc1dac80"><span class="section-number-2">1</span> 数字分类和表示方法</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 ELisp 中的数字分为整数和浮点数( <code>没有双精度浮点数 double</code> )和 NaN 。
 </p>
 
 <ul class="org-ul">
-<li>整数
+<li><p>
+整数
+</p>
 
 <p>
 整数的表数范围根据使用机器的不同而不同，可以使用 <code>most-negative-fixnum</code> 和 <code>most-positive-fixnum</code> 两个变量得到。
@@ -416,8 +456,7 @@ ELisp 中的数字分为整数和浮点数( <code>没有双精度浮点数 doubl
 例：获取本机的整数表数范围
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test01 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s -- %s"</span></span><br><span class="line">	   most-negative-fixnum</span><br><span class="line">	   most-positive-fixnum)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test01</span>)</span> <span class="comment">;; ⇒ -2305843009213693952 -- 2305843009213693951</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test01 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s -- %s"</span></span><br><span class="line">           most-negative-fixnum</span><br><span class="line">           most-positive-fixnum)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test01</span>)</span> <span class="comment">;; &#8658; -2305843009213693952 -- 2305843009213693951</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -428,30 +467,30 @@ ELisp 中的数字分为整数和浮点数( <code>没有双精度浮点数 doubl
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test02 <span class="list">(<span class="keyword">num</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s"</span></span><br><span class="line">           num)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#b1011000</span>)</span> <span class="comment">;; &#8658; 88 ;; &#20351;&#29992;&#20108;&#36827;&#21046;&#36755;&#20837;&#25968;&#23383;</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#o130</span>)</span> <span class="comment">;; &#8658; 88 ;;&#20351;&#29992;&#20843;&#36827;&#21046;&#36755;&#20837;&#25968;&#23383;</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">88</span>)</span> <span class="comment">;; &#8658; 88 ;; &#20351;&#29992;&#21313;&#36827;&#21046;&#36755;&#20837;&#25968;&#23383;</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#x58</span>)</span> <span class="comment">;; &#8658; 88 ;; &#20351;&#29992;&#21313;&#20845;&#36827;&#21046;&#36755;&#20837;&#25968;&#23383;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> num-test02 <span class="list">(<span class="keyword">num</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">message</span> <span class="string">"%s"</span></span><br><span class="line">	   num)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#b1011000</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用二进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#o130</span>)</span> <span class="comment">;; ⇒ 88 ;;使用八进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">88</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用十进制输入数字</span></span><br><span class="line"><span class="list">(<span class="keyword">num-test02</span> <span class="number">#x58</span>)</span> <span class="comment">;; ⇒ 88 ;; 使用十六进制输入数字</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li>浮点数
+<li><p>
+浮点数
+</p>
 
 <p>
 1500.0, 15e2, 1.5e3, .15e4都表示1500. 。
-</p>
-</li>
+</p></li>
 
-<li>NaN
+<li><p>
+NaN
+</p>
 
 <p>
 使用 <code>(/ 0.0 0.0)</code> 可是得到 NaN <code>-0.0e+NaN</code> 。
-</p>
-</li>
+</p></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 数字测试函数</h2>
+<div id="outline-container-org1720e03" class="outline-2">
+<h2 id="org1720e03"><span class="section-number-2">2</span> 数字测试函数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代表 <code>predicate</code> 。如果函数名是一个
@@ -466,40 +505,40 @@ ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">函数名</th>
-<th scope="col" class="left">作用</th>
+<th scope="col" class="org-left">函数名</th>
+<th scope="col" class="org-left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">(integerp <i>OBJECT</i>)</td>
-<td class="left">测试是否为 <code>整数类型</code></td>
+<td class="org-left">(integerp <i>OBJECT</i>)</td>
+<td class="org-left">测试是否为 <code>整数类型</code></td>
 </tr>
 
 <tr>
-<td class="left">(floatp <i>OBJECT</i>)</td>
-<td class="left">测试是否为 <code>浮点数类型</code></td>
+<td class="org-left">(floatp <i>OBJECT</i>)</td>
+<td class="org-left">测试是否为 <code>浮点数类型</code></td>
 </tr>
 
 <tr>
-<td class="left">(numberp <i>ObJECT</i>)</td>
-<td class="left">测试是否为 <code>数字类型</code></td>
+<td class="org-left">(numberp <i>ObJECT</i>)</td>
+<td class="org-left">测试是否为 <code>数字类型</code></td>
 </tr>
 
 <tr>
-<td class="left">(zerop <i>OBJECT</i>)</td>
-<td class="left">测试是否为 <code>零</code></td>
+<td class="org-left">(zerop <i>OBJECT</i>)</td>
+<td class="org-left">测试是否为 <code>零</code></td>
 </tr>
 
 <tr>
-<td class="left">(wholenump <i>OBJECT</i>)</td>
-<td class="left">测试是否为 <code>非负整数</code></td>
+<td class="org-left">(wholenump <i>OBJECT</i>)</td>
+<td class="org-left">测试是否为 <code>非负整数</code></td>
 </tr>
 </tbody>
 </table>
@@ -508,14 +547,13 @@ ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代
 例:
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>.)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>.)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1.0</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-1</span>)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1</span>.)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">1.0</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1</span>.)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">1.0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">1</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">1.0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">1.0</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-0.0</span>e+NaN)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> <span class="number">-1</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> 比较操作符</h2>
+<div id="outline-container-orge5711fc" class="outline-2">
+<h2 id="orge5711fc"><span class="section-number-2">3</span> 比较操作符</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 ELisp 中的比较操作符有 <code>>、<、>=、<=、=、eql< code=""> 。
@@ -541,33 +579,30 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> b <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> c <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> d <span class="number">1.00</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; a c) ;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; a c) ;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= a c) ;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= a c) ;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a d)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> a d)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> a c)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> b <span class="number">1</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> c <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> d <span class="number">1.00</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; a c) ;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; a c) ;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= a c) ;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= a c) ;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a d)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> a d)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> a c)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
 对于浮点数的测试往往是不准确的，例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a1 <span class="number">1.0e-3</span>)</span> <span class="comment">;; ⇒ 0.001</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a2 <span class="list">(<span class="keyword">-</span> <span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">1.0e-3</span>)</span> <span class="number">1.0</span>)</span>)</span> <span class="comment">;; ⇒ 0.000999999999999889</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a1 a2)</span> <span class="comment">;; ⇒ nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a1 <span class="number">1.0e-3</span>)</span> <span class="comment">;; &#8658; 0.001</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a2 <span class="list">(<span class="keyword">-</span> <span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">1.0e-3</span>)</span> <span class="number">1.0</span>)</span>)</span> <span class="comment">;; &#8658; 0.000999999999999889</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> a1 a2)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
 如果一定要对两个浮点数进行比较，只能在一定范围内进行比较：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defvar</span> fuzz-factor <span class="number">1.0e-6</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> approx-equal <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="string">"在 1.0e-6 范围内进行浮点数比较"</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">=</span> a <span class="number">0</span>)</span> <span class="list">(<span class="keyword">=</span> b <span class="number">0</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">&lt</span><span class="comment">; (/ (abs (- a b)) (max (abs a) (abs b)))</span></span><br><span class="line">	 fuzz-factor)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">approx-equal</span> a1 a2)</span> <span class="comment">;; ⇒ t</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defvar</span> fuzz-factor <span class="number">1.0e-6</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> approx-equal <span class="list">(<span class="keyword">a</span> b)</span></span><br><span class="line">  <span class="string">"&#22312; 1.0e-6 &#33539;&#22260;&#20869;&#36827;&#34892;&#28014;&#28857;&#25968;&#27604;&#36739;"</span></span><br><span class="line">  <span class="list">(<span class="keyword">or</span> <span class="list">(<span class="keyword">and</span> <span class="list">(<span class="keyword">=</span> a <span class="number">0</span>)</span> <span class="list">(<span class="keyword">=</span> b <span class="number">0</span>)</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">&lt</span><span class="comment">; (/ (abs (- a b)) (max (abs a) (abs b)))</span></span><br><span class="line">         fuzz-factor)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">approx-equal</span> a1 a2)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 数字转换函数</h2>
+<div id="outline-container-orgc6b48d9" class="outline-2">
+<h2 id="orgc6b48d9"><span class="section-number-2">4</span> 数字转换函数</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> 整数转换为浮点数</h3>
+</div><div id="outline-container-org474b9ba" class="outline-3">
+<h3 id="org474b9ba"><span class="section-number-3">4.1</span> 整数转换为浮点数</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 使用 <code>float</code> 函数可将整数转换为浮点数。
@@ -577,47 +612,46 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a4 <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> a4)</span> <span class="comment">;; ⇒ 2.0</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 3.0</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">-3</span>)</span> <span class="comment">;; ⇒ -3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a4 <span class="number">2</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> a4)</span> <span class="comment">;; &#8658; 2.0</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; 3.0</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">-3</span>)</span> <span class="comment">;; &#8658; -3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> 浮点数转换为整数</h3>
+<div id="outline-container-org69c143a" class="outline-3">
+<h3 id="org69c143a"><span class="section-number-3">4.2</span> 浮点数转换为整数</h3>
 <div class="outline-text-3" id="text-4-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
 <colgroup>
-<col class="left">
+<col class="org-left">
 
-<col class="left">
+<col class="org-left">
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="left">函数</th>
-<th scope="col" class="left">作用</th>
+<th scope="col" class="org-left">函数</th>
+<th scope="col" class="org-left">作用</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="left">truncate</td>
-<td class="left">转换为靠近 0 的整数</td>
+<td class="org-left">truncate</td>
+<td class="org-left">转换为靠近 0 的整数</td>
 </tr>
 
 <tr>
-<td class="left">floor</td>
-<td class="left">转换为最接近的不比本身大的整数</td>
+<td class="org-left">floor</td>
+<td class="org-left">转换为最接近的不比本身大的整数</td>
 </tr>
 
 <tr>
-<td class="left">ceiling</td>
-<td class="left">转换为最接近的不比本身小的整数</td>
+<td class="org-left">ceiling</td>
+<td class="org-left">转换为最接近的不比本身小的整数</td>
 </tr>
 
 <tr>
-<td class="left">round</td>
-<td class="left">四舍五入后的整数，即与本身求差绝对值最小的整数</td>
+<td class="org-left">round</td>
+<td class="org-left">四舍五入后的整数，即与本身求差绝对值最小的整数</td>
 </tr>
 </tbody>
 </table>
@@ -625,8 +659,7 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; truncate ;; 转换为靠近 0 的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.8</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; floor ;; 转换为最接近的不比本身大的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.8</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; ceiling ;; 转换为最接近的不比本身小的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.3</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.8</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; round ;; 四舍五入后的整数，即与本身求差绝对值最小的整数</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.3</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.8</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; truncate ;; &#36716;&#25442;&#20026;&#38752;&#36817; 0 &#30340;&#25972;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.3</span>)</span>   <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">2.8</span>)</span>   <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; &#8658; -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; floor ;; &#36716;&#25442;&#20026;&#26368;&#25509;&#36817;&#30340;&#19981;&#27604;&#26412;&#36523;&#22823;&#30340;&#25972;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.3</span>)</span>   <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.3</span>)</span>  <span class="comment">;; &#8658; -3</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">2.8</span>)</span>   <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">-2.8</span>)</span>  <span class="comment">;; &#8658; -3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; ceiling ;; &#36716;&#25442;&#20026;&#26368;&#25509;&#36817;&#30340;&#19981;&#27604;&#26412;&#36523;&#23567;&#30340;&#25972;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.3</span>)</span>  <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.3</span>)</span> <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">2.8</span>)</span>  <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> <span class="number">-2.8</span>)</span> <span class="comment">;; &#8658; -2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; round ;; &#22235;&#33293;&#20116;&#20837;&#21518;&#30340;&#25972;&#25968;&#65292;&#21363;&#19982;&#26412;&#36523;&#27714;&#24046;&#32477;&#23545;&#20540;&#26368;&#23567;&#30340;&#25972;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.3</span>)</span>  <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.3</span>)</span> <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">2.8</span>)</span>  <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> <span class="number">-2.8</span>)</span> <span class="comment">;; &#8658; -3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <blockquote>
 <p>
@@ -647,17 +680,18 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 1e30 是一个超过了整数表数范围的数字</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">1e30</span>)</span> <span class="comment">;; ⇒ 报错 ;; 转换为整数</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">1e30</span>)</span> <span class="comment">;; ⇒ 1e+30 ;; 转换为浮点数</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 1e30 &#26159;&#19968;&#20010;&#36229;&#36807;&#20102;&#25972;&#25968;&#34920;&#25968;&#33539;&#22260;&#30340;&#25968;&#23383;</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> <span class="number">1e30</span>)</span> <span class="comment">;; &#8658; &#25253;&#38169; ;; &#36716;&#25442;&#20026;&#25972;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> <span class="number">1e30</span>)</span> <span class="comment">;; &#8658; 1e+30 ;; &#36716;&#25442;&#20026;&#28014;&#28857;&#25968;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> 数字的运算</h2>
+<div id="outline-container-orgf4f90c7" class="outline-2">
+<h2 id="orgf4f90c7"><span class="section-number-2">5</span> 数字的运算</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li>四则运算 <code>+、-、*、/</code> 。
+<li><p>
+四则运算 <code>+、-、*、/</code> 。
+</p>
 
 <p>
 <b>注：</b> 整数和整数运算返回整数，整数和浮点数运算返回
@@ -669,12 +703,12 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; -1</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 0</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2.0</span>)</span> <span class="comment">;; &#8658; 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">2.0</span>)</span> <span class="comment">;; &#8658; 3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ -1</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 0</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> <span class="number">1</span> <span class="number">2.0</span>)</span> <span class="comment">;; ⇒ 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="number">1.0</span> <span class="number">2.0</span>)</span> <span class="comment">;; ⇒ 3.0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li><code>++</code> 和 <code>--</code>
+<li><p>
+<code>++</code> 和 <code>--</code>
+</p>
 
 <p>
 ELisp 中没有 <code>++和--</code> 操作，类似的的函数是 <code>1+</code> 和 <code>1-</code> ，使用
@@ -685,8 +719,7 @@ ELisp 中没有 <code>++和--</code> 操作，类似的的函数是 <code>1+</co
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="number">1</span>)</span> <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>- a6)</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="number">1</span>)</span> <span class="comment">;; &#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>+ a6)</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> a6 <span class="list">(<span class="number">1</span>- a6)</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -694,15 +727,15 @@ ELisp 中没有 <code>++和--</code> 操作，类似的的函数是 <code>1+</co
 一个模拟 Common Lisp 的库 <code>cl</code> ，在 ELisp 代码文件中使用这两个实现宏，要在 ELisp 文件头加入：
 </p>
 <div class="org-src-container">
-
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">eval-when-compile</span></span><br><span class="line">  <span class="list">(<span class="keyword">require</span> <span class="quoted">'cl</span>)</span>)</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 由于 <code>incf</code> 和 <code>decf</code> 是两个宏，这样写在运行时不会导入 cl 库。
-</p>
-</li>
+</p></li>
 
-<li>求绝对值
+<li><p>
+求绝对值
+</p>
 
 <p>
 ELisp 使用 <code>abs</code> 函数求绝对值。
@@ -712,19 +745,18 @@ ELisp 使用 <code>abs</code> 函数求绝对值。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">2</span>)</span>  <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">-2</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">2</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> <span class="number">-2</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li><code>%</code> 函数 （我个人认为是求余）
+<li><p>
+<code>%</code> 函数 （我个人认为是求余）
+</p>
 
 <p>
 格式：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% 被除数 除数)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% <span class="keyword">&#34987</span><span class="comment">;&#38500;&#25968; &#38500;&#25968;)</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -737,19 +769,18 @@ ELisp 使用 <code>abs</code> 函数求绝对值。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">8</span>)</span>   <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">-8</span>)</span>  <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">8</span>)</span>  <span class="comment">;; &#8658; -3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">-8</span>)</span> <span class="comment">;; &#8658; -3</span></span><br><span class="line"></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">3</span>)</span>   <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">-3</span>)</span>  <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">3</span>)</span>  <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">-3</span>)</span> <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">8</span>)</span>   <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(% <span class="number">3</span> <span class="number">-8</span>)</span>  <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">8</span>)</span>  <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="list">(% <span class="number">-3</span> <span class="number">-8</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">3</span>)</span>   <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(% <span class="number">8</span> <span class="number">-3</span>)</span>  <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">3</span>)</span>  <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="list">(% <span class="number">-8</span> <span class="number">-3</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li><code>mod</code> 函数（个人认为是取模）
+<li><p>
+<code>mod</code> 函数（个人认为是取模）
+</p>
 
 <p>
 格式：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> 被取模数 模数)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="keyword">&#34987</span><span class="comment">;&#21462;&#27169;&#25968; &#27169;&#25968;)</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -762,8 +793,7 @@ ELisp 使用 <code>abs</code> 函数求绝对值。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">4</span>)</span>       <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">-4</span>)</span>     <span class="comment">;; -1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">2.5</span>)</span>   <span class="comment">;; ⇒ 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; ⇒ -0.5</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">4</span>)</span>       <span class="comment">;; &#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">-4</span>)</span>     <span class="comment">;; -1</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">2.5</span>)</span>   <span class="comment">;; &#8658; 0.5</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; &#8658; -0.5</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -776,8 +806,7 @@ ELisp 使用 <code>abs</code> 函数求绝对值。
 </p>
 
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; x * b + y = a 且 0 ≤ |y| ≤ |x|</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; x * b + y = a &#19988; 0 &#8804; |y| &#8804; |x|</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -802,19 +831,20 @@ y 的值就是 (mod a b) 的计算结果，如果有多组 x y 的值满足公�
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">-4</span>)</span> <span class="comment">;; &#8658; -3</span></span><br><span class="line"><span class="comment">;; &#28385;&#36275; (x * b + y = a) &#20844;&#24335;</span></span><br><span class="line"><span class="comment">;; (-2) * (-4) + (1) = 9</span></span><br><span class="line"><span class="comment">;; (-3) * (-4) + (-3) = 9 ;; &#8730; ;;&#21830; (&#21363; x) &#20540;&#27604;&#36739;&#23567;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">4</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="comment">;; &#28385;&#36275; (x * b + y = a) &#20844;&#24335;</span></span><br><span class="line"><span class="comment">;; (-2) * 4 + (-1) = (-9)</span></span><br><span class="line"><span class="comment">;; (-3) * 4 + (3) = (-9) ;; &#8730; ;;&#21830; (&#21363; x) &#20540;&#27604;&#36739;&#23567;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; &#8658; -2</span></span><br><span class="line"><span class="comment">;; &#28385;&#36275; (x * b + y = a) &#20844;&#24335;</span></span><br><span class="line"><span class="comment">;; (-2) * (-2.5) + (0.5) = 5.5</span></span><br><span class="line"><span class="comment">;; (-3) * (-2.5) + (-2) = 5.5 ;; &#8730; ;;&#21830; (&#21363; x) &#20540;&#27604;&#36739;&#23567;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">2.5</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="comment">;; &#28385;&#36275; (x * b + y = a) &#20844;&#24335;</span></span><br><span class="line"><span class="comment">;; (-2) * 2.5 + (-0.5) = -5.5</span></span><br><span class="line"><span class="comment">;; (-3) * 2.5 + (2) = -5.5 ;; &#8730; ;;&#21830; (&#21363; x) &#20540;&#27604;&#36739;&#23567;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">9</span> <span class="number">-4</span>)</span> <span class="comment">;; ⇒ -3</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * (-4) + (1) = 9</span></span><br><span class="line"><span class="comment">;; (-3) * (-4) + (-3) = 9 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-9</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * 4 + (-1) = (-9)</span></span><br><span class="line"><span class="comment">;; (-3) * 4 + (3) = (-9) ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">5.5</span> <span class="number">-2.5</span>)</span> <span class="comment">;; ⇒ -2</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * (-2.5) + (0.5) = 5.5</span></span><br><span class="line"><span class="comment">;; (-3) * (-2.5) + (-2) = 5.5 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> <span class="number">-5.5</span> <span class="number">2.5</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="comment">;; 满足 (x * b + y = a) 公式</span></span><br><span class="line"><span class="comment">;; (-2) * 2.5 + (-0.5) = -5.5</span></span><br><span class="line"><span class="comment">;; (-3) * 2.5 + (2) = -5.5 ;; √ ;;商 (即 x) 值比较小</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li>三角运算函数
+<li><p>
+三角运算函数
+</p>
 
 <p>
 ELisp 中的三角运算函数有： <code>sin、cos、tan、asin、acos、atan</code> 。
-</p>
-</li>
+</p></li>
 
-<li>开方函数
+<li><p>
+开方函数
+</p>
 
 <p>
 ELisp 的开方函数是 <code>sqrt</code> 。
@@ -829,12 +859,12 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">4</span>)</span> <span class="comment">;; &#8658; 2.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">0</span>)</span> <span class="comment">;; &#8658; 0.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-4.4</span>)</span> <span class="comment">;; &#8658; -0.0e+NaN</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-9</span>)</span> <span class="comment">;; &#8658; -0.0e+NaN</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 2.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">0</span>)</span> <span class="comment">;; ⇒ 0.0</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-4.4</span>)</span> <span class="comment">;; ⇒ -0.0e+NaN</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> <span class="number">-9</span>)</span> <span class="comment">;; ⇒ -0.0e+NaN</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li>指数运算函数
+<li><p>
+指数运算函数
+</p>
 
 <p>
 指数运算函数包括 <code>exp、expt</code> 。
@@ -849,8 +879,7 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">exp</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 7.38905609893065</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">exp</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 7.38905609893065</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -861,12 +890,12 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">expt</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; 8</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">expt</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; ⇒ 8</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li>对数运算函数
+<li><p>
+对数运算函数
+</p>
 
 <p>
 对数运算函数包括 <code>log、logb</code> 。
@@ -880,8 +909,7 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
-
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">7.38905609893065</span>)</span> <span class="comment">;; ⇒ 2.0 ;; 默认底数为 e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 0.6931471805599453 ;; 默认底数为 e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">4</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 2.0 ;; 自定义底数为 4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">7.38905609893065</span>)</span> <span class="comment">;; &#8658; 2.0 ;; &#40664;&#35748;&#24213;&#25968;&#20026; e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 0.6931471805599453 ;; &#40664;&#35748;&#24213;&#25968;&#20026; e</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> <span class="number">4</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 2.0 ;; &#33258;&#23450;&#20041;&#24213;&#25968;&#20026; 4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -892,12 +920,12 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">4</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">8</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">2</span>)</span> <span class="comment">;; ⇒ 1</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">4</span>)</span> <span class="comment">;; ⇒ 2</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> <span class="number">8</span>)</span> <span class="comment">;; ⇒ 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li><code>random</code> 随机数函数
+<li><p>
+<code>random</code> 随机数函数
+</p>
 
 <p>
 使用 <code>(random)</code> 产生一个随机数 (其实是伪随机数)。启动 Emacs后产生的随机数序
@@ -910,36 +938,34 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 例：
 </p>
 <div class="org-src-container">
-
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> a8 <span class="list">(<span class="keyword">random</span> <span class="literal">t</span>)</span>)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
+</div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> 附录</h2>
+<div id="outline-container-orgf162664" class="outline-2">
+<h2 id="orgf162664"><span class="section-number-2">6</span> 附录</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
-<li>函数列表
+<li><p>
+函数列表
+</p>
 
 <div class="org-src-container">
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#27979;&#35797;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> OBJECT)</span></span><br><span class="line"><span class="comment">;; &#27604;&#36739;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> OBJ1 OBJ2)</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="comment">;; &#36716;&#25442;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="comment">;; &#36816;&#31639;</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="keyword">&amp</span><span class="comment">;optional NUMBER-OR-MARKER &amp;rest MORE-NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> DIVIDEND DIVISOR <span class="keyword">&amp</span><span class="comment">;rest DIVISORS)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>+ NUMBER)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>- NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> ARG)</span></span><br><span class="line"><span class="list">(% X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">sin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">cos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">tan</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">asin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">acos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">atan</span> Y <span class="keyword">&amp</span><span class="comment">;optional X)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">exp</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">expt</span> ARG1 ARG2)</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> ARG <span class="keyword">&amp</span><span class="comment">;optional BASE)</span></span><br><span class="line"><span class="list">(<span class="keyword">log10</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> ARG)</span></span><br><span class="line"><span class="comment">;; &#38543;&#26426;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">random</span> <span class="keyword">&amp</span><span class="comment">;optional N)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
+</div></li>
 
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; 测试函数</span></span><br><span class="line"><span class="list">(<span class="keyword">integerp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">floatp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">numberp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">zerop</span> NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">wholenump</span> OBJECT)</span></span><br><span class="line"><span class="comment">;; 比较函数</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">; NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&gt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">&lt</span><span class="comment">;= NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="list">(<span class="keyword">eql</span> OBJ1 OBJ2)</span></span><br><span class="line"><span class="list">(<span class="keyword">/=</span> NUM1 NUM2)</span></span><br><span class="line"><span class="comment">;; 转换函数</span></span><br><span class="line"><span class="list">(<span class="keyword">float</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">truncate</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">floor</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">ceiling</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="list">(<span class="keyword">round</span> ARG <span class="keyword">&amp</span><span class="comment">;optional DIVISOR)</span></span><br><span class="line"><span class="comment">;; 运算</span></span><br><span class="line"><span class="list">(<span class="keyword">+</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">-</span> <span class="keyword">&amp</span><span class="comment">;optional NUMBER-OR-MARKER &amp;rest MORE-NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">*</span> <span class="keyword">&amp</span><span class="comment">;rest NUMBERS-OR-MARKERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">/</span> DIVIDEND DIVISOR <span class="keyword">&amp</span><span class="comment">;rest DIVISORS)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>+ NUMBER)</span></span><br><span class="line"><span class="list">(<span class="number">1</span>- NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">abs</span> ARG)</span></span><br><span class="line"><span class="list">(% X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">mod</span> X Y)</span></span><br><span class="line"><span class="list">(<span class="keyword">sin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">cos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">tan</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">asin</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">acos</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">atan</span> Y <span class="keyword">&amp</span><span class="comment">;optional X)</span></span><br><span class="line"><span class="list">(<span class="keyword">sqrt</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">exp</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">expt</span> ARG1 ARG2)</span></span><br><span class="line"><span class="list">(<span class="keyword">log</span> ARG <span class="keyword">&amp</span><span class="comment">;optional BASE)</span></span><br><span class="line"><span class="list">(<span class="keyword">log10</span> ARG)</span></span><br><span class="line"><span class="list">(<span class="keyword">logb</span> ARG)</span></span><br><span class="line"><span class="comment">;; 随机数</span></span><br><span class="line"><span class="list">(<span class="keyword">random</span> <span class="keyword">&amp</span><span class="comment">;optional N)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
-
-<li>变量列表
+<li><p>
+变量列表
+</p>
 <div class="org-src-container">
-
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">most-positive-fixnum</span><br><span class="line">most-negative-fixnum</span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
-</div>
-</li>
+</div></li>
 </ul>
 </div>
 </div>
 
-Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 8.2.10)
+Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -985,6 +1011,12 @@ Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/Code
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/">
+                    学习ELisp(005):基本数据类型--字符和字符串
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
                 <a href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">
@@ -1001,7 +1033,7 @@ Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-1"><span class="toc-text">1 数字分类和表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-2"><span class="toc-text">2 数字测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-3"><span class="toc-text">3 比较操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-4"><span class="toc-text">4 数字转换函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-4-1"><span class="toc-text">4.1 整数转换为浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sec-4-2"><span class="toc-text">4.2 浮点数转换为整数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-5"><span class="toc-text">5 数字的运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sec-6"><span class="toc-text">6 附录</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgc1dac80"><span class="toc-text">1 数字分类和表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org1720e03"><span class="toc-text">2 数字测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orge5711fc"><span class="toc-text">3 比较操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgc6b48d9"><span class="toc-text">4 数字转换函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org474b9ba"><span class="toc-text">4.1 整数转换为浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org69c143a"><span class="toc-text">4.2 浮点数转换为整数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgf4f90c7"><span class="toc-text">5 数字的运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgf162664"><span class="toc-text">6 附录</span></a></li></ol>
         
     </div>
     <style>
@@ -1088,7 +1120,9 @@ Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/Code
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/" title="上一篇: 学习ELisp(005):基本数据类型--字符和字符串">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -1100,7 +1134,7 @@ Last Updated 2017-01-26 Thu 21:07.<br>Render by <a href="https://github.com/Code
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/">电子技术自学指南第三版笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">学习ELisp(006):基本数据类型--cons_cell和列表</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/28/学习ELisp/2017-01-28.学习ELisp(005):基本数据类型--字符和字符串/">学习ELisp(005):基本数据类型--字符和字符串</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/22/学习ELisp/2017-01-22.学习ELisp(004):基本数据类型--数字/">学习ELisp(004):基本数据类型--数字</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/12/学习ELisp/2017-01-12.学习ELisp(003):基础知识/">学习ELisp(003):基础知识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/27/学习ELisp/2016-12-27.学习ELisp(001):HelloWorld/">学习ELisp(001):HelloWorld</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习vimtutor、gvimtutor重点记录/">学习vimtutor、gvimtutor重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/24/2016-12-24.学习emacs-tutorial重点记录/">学习emacs-tutorial重点记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/">在Linux下安装Clang+LLVM（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/19/2016-12-18.各种Git乱码解决办法/">各种Git乱码解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/">在Linux下安装 zlib（openSUSE Leap 42.2）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></li></ul>
 
 
 
