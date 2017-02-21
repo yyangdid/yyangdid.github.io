@@ -33,21 +33,7 @@
 
 
 本章节主要记录对 cons cell 和列表的操作，标题中不能使用空格所以把 cons cell 写
-为了 cons_cell 。
-
-
-
-
-
-
-
-
-
-
-1 cons cell
-
-
-个人把 cons ce">
+为了 cons_cell 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习ELisp(006):基本数据类型--cons_cell和列表">
 <meta property="og:url" content="http://yyangdid.github.io/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/index.html">
@@ -70,22 +56,8 @@
 
 
 本章节主要记录对 cons cell 和列表的操作，标题中不能使用空格所以把 cons cell 写
-为了 cons_cell 。
-
-
-
-
-
-
-
-
-
-
-1 cons cell
-
-
-个人把 cons ce">
-<meta property="og:updated_time" content="2017-02-14T06:15:16.656Z">
+为了 cons_cell 。">
+<meta property="og:updated_time" content="2017-02-21T12:34:14.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(006):基本数据类型--cons_cell和列表">
 <meta name="twitter:description" content="Table of Contents
@@ -106,21 +78,7 @@
 
 
 本章节主要记录对 cons cell 和列表的操作，标题中不能使用空格所以把 cons cell 写
-为了 cons_cell 。
-
-
-
-
-
-
-
-
-
-
-1 cons cell
-
-
-个人把 cons ce">
+为了 cons_cell 。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -400,11 +358,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga9c97fe">1. cons cell</a></li>
-<li><a href="#org78e06dc">2. 列表</a></li>
-<li><a href="#orga47b943">3. 测试函数</a></li>
-<li><a href="#orgc29ae87">4. 构造函数</a></li>
-<li><a href="#org88fae76">5. 把列表当成数组用</a></li>
+<li><a href="#org6512d7f">1. cons cell</a></li>
+<li><a href="#org169e81a">2. 列表</a></li>
+<li><a href="#orgf724abc">3. 测试函数</a></li>
+<li><a href="#orga6845cd">4. 构造函数</a></li>
+<li><a href="#orgcefa1b8">5. 把列表当成数组用</a></li>
 </ul>
 </div>
 </div>
@@ -418,15 +376,10 @@
 为了 <code>cons_cell</code> 。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
+<a id="more"></a>
 
-</div>
-
-<div id="outline-container-orga9c97fe" class="outline-2">
-<h2 id="orga9c97fe"><span class="section-number-2">1</span> cons cell</h2>
+<div id="outline-container-org6512d7f" class="outline-2">
+<h2 id="org6512d7f"><span class="section-number-2">1</span> cons cell</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 个人把 <code>cons cell</code> 理解为只有两个元素的列表，第一个是 <i>CAR</i> ，第一个是 <i>CDR</i> 。
@@ -440,8 +393,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-org78e06dc" class="outline-2">
-<h2 id="org78e06dc"><span class="section-number-2">2</span> 列表</h2>
+<div id="outline-container-org169e81a" class="outline-2">
+<h2 id="org169e81a"><span class="section-number-2">2</span> 列表</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 列表包含了 <code>cons cell</code> ，列表可以包含多个元素，列表有一个特殊的元素 &#x2013; 空表 <code>nil</code> 。
@@ -479,8 +432,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orga47b943" class="outline-2">
-<h2 id="orga47b943"><span class="section-number-2">3</span> 测试函数</h2>
+<div id="outline-container-orgf724abc" class="outline-2">
+<h2 id="orgf724abc"><span class="section-number-2">3</span> 测试函数</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 测试一个对象是否是 cons cell 用 <code>consp</code> 函数，是否是列表用 <code>listp</code> 函数，是否
@@ -495,8 +448,8 @@
 </div>
 </div>
 </div>
-<div id="outline-container-orgc29ae87" class="outline-2">
-<h2 id="orgc29ae87"><span class="section-number-2">4</span> 构造函数</h2>
+<div id="outline-container-orga6845cd" class="outline-2">
+<h2 id="orga6845cd"><span class="section-number-2">4</span> 构造函数</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -556,8 +509,8 @@
 </div>
 </div>
 
-<div id="outline-container-org88fae76" class="outline-2">
-<h2 id="org88fae76"><span class="section-number-2">5</span> 把列表当成数组用</h2>
+<div id="outline-container-orgcefa1b8" class="outline-2">
+<h2 id="orgcefa1b8"><span class="section-number-2">5</span> 把列表当成数组用</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 使用 <code>car</code> 和 <code>cdr</code> 获取列表的第一个元素和剩余元素， <code>cdr</code> 获取的返回值是一个列表。
@@ -677,7 +630,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-Last Updated 2017-02-14 Tue 14:15.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -689,7 +642,7 @@ Last Updated 2017-02-14 Tue 14:15.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/">学习ELisp(006):基本数据类型--cons_cell和列表</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2017-01-31, 14:11:32</p>
-        <p><span>最后更新:</span>2017-02-14, 14:15:16</p>
+        <p><span>最后更新:</span>2017-02-21, 20:34:14</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
@@ -745,7 +698,7 @@ Last Updated 2017-02-14 Tue 14:15.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orga9c97fe"><span class="toc-text">1 cons cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org78e06dc"><span class="toc-text">2 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orga47b943"><span class="toc-text">3 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgc29ae87"><span class="toc-text">4 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org88fae76"><span class="toc-text">5 把列表当成数组用</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org6512d7f"><span class="toc-text">1 cons cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org169e81a"><span class="toc-text">2 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgf724abc"><span class="toc-text">3 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orga6845cd"><span class="toc-text">4 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgcefa1b8"><span class="toc-text">5 把列表当成数组用</span></a></li></ol>
         
     </div>
     <style>

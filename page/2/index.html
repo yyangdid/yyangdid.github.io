@@ -295,14 +295,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
-
-<div id="table-of-contents">
+              <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga47c25f">1. 下载</a></li>
-<li><a href="#org19f6c77">2. 安装</a></li>
+<li><a href="#org6b1da57">1. 下载</a></li>
+<li><a href="#org89c41d1">2. 安装</a></li>
 </ul>
 </div>
 </div>
@@ -311,62 +309,7 @@
 在 Linux 下安装 Clang+LLVM（预编译版本）。测试系统为 openSUSE Leap 42.2。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
-<div id="outline-container-orga47c25f" class="outline-2">
-<h2 id="orga47c25f"><span class="section-number-2">1</span> 下载</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-进入 <a href="http://releases.llvm.org/download.html" target="_blank" rel="external">http://releases.llvm.org/download.html</a> 下载，此时的最新版本为 <code>3.9.0</code> ，找
-到 <code>Pre-Built Binaries:</code> 列表下的对应发行版的预编译版本，此处下载的为 openSUSE 版：
-<a href="http://releases.llvm.org/3.9.0/clang+llvm-3.9.0-x86_64-opensuse13.2.tar.xz" target="_blank" rel="external">Clang for OpenSuSE 13.2 x86<sub>64</sub></a> 。
-</p>
-</div>
-</div>
-<div id="outline-container-org19f6c77" class="outline-2">
-<h2 id="org19f6c77"><span class="section-number-2">2</span> 安装</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-解压 <code>clang+llvm-3.9.0-x86_64-opensuse13.2.tar.xz</code> 文件。
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">xz <span class="operator">-d</span> clang+llvm-<span class="number">3.9</span>.<span class="number">0</span>-x86_64-opensuse13.<span class="number">2</span>.tar.xz</span><br><span class="line">tar -xvf clang+llvm-<span class="number">3.9</span>.<span class="number">0</span>-x86_64-opensuse13.<span class="number">2</span>.tar</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-得到 <code>clang+llvm-3.9.0-x86_64-opensuse13.2</code> 文件夹。
-</p>
-
-<p>
-进入 <code>clang+llvm-3.9.0-x86_64-opensuse13.2</code> 文件夹：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> clang+llvm-<span class="number">3.9</span>.<span class="number">0</span>-x86_64-opensuse13.<span class="number">2</span></span><br></pre></td></tr></table></figure>
-</div>
-<p>
-将所有文件拷贝到 <code>/usr/local</code> 文件夹下：（获取 <code>su</code> 权限或使用 <code>sudo</code> 执行命令）
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp -r * /usr/<span class="built_in">local</span></span><br></pre></td></tr></table></figure>
-</div>
-<p>
-安装完成。
-</p>
-
-<p>
-查看 clang 的版本：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">clang -v</span><br></pre></td></tr></table></figure>
-</div>
-</div>
-</div>
-
-Last Updated 2017-01-12 Thu 21:42.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
-
+          
       
     </div>
     
@@ -383,6 +326,10 @@ Last Updated 2017-01-12 Thu 21:42.<br>Render by <a href="https://github.com/Code
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Clang/">Clang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LLVM/">LLVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/12/19/2016-12-19.在Linux下安装Clang+LLVM（openSUSE Leap 42.2）/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -439,16 +386,14 @@ Last Updated 2017-01-12 Thu 21:42.<br>Render by <a href="https://github.com/Code
     <div class="article-entry" itemprop="articleBody">
       
           
-        
-
-<div id="table-of-contents">
+              <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc9e3201">1. 系统乱码</a></li>
-<li><a href="#org418644d">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
+<li><a href="#orgb16af63">1. 系统乱码</a></li>
+<li><a href="#org3df30cc">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
 <ul>
-<li><a href="#org844f6f3">2.1. 解决方法</a></li>
+<li><a href="#orgdc6d35a">2.1. 解决方法</a></li>
 </ul>
 </li>
 </ul>
@@ -459,85 +404,7 @@ Last Updated 2017-01-12 Thu 21:42.<br>Render by <a href="https://github.com/Code
 各种 Git 乱码解决办法。测试系统为 openSUSE Leap 42.2。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
-<blockquote>
-<p>
-主要参考资料来自<a href="http://blog.csdn.net/kl222/article/details/32903495" target="_blank" rel="external">康林工作室-git 设置</a>和<a href="http://blog.csdn.net/yunnywu/article/details/50553908" target="_blank" rel="external">码农天注定-git 乱码解决方案汇总</a>
-</p>
-</blockquote>
-<div id="outline-container-orgc9e3201" class="outline-2">
-<h2 id="orgc9e3201"><span class="section-number-2">1</span> 系统乱码</h2>
-<div class="outline-text-2" id="text-1">
-<blockquote>
-<p>
-修改之前建议备份 <code>~/.profile</code> 文件。
-</p>
-</blockquote>
-<p>
-把项目的字符编码统一设置为 <code>UTF-8</code> 。
-</p>
-
-<p>
-设置系统语言为 <code>zh_CN.UTF-8</code> :
-把 <code>export LANG=zh_CN.UTF-8</code> 添加到 <code>~/.profile</code> 文件中。
-</p>
-
-<p>
-重新读取配置文件:
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
-</div>
-
-<p>
-查看当前用户系统编码：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">evn|grep LANG</span><br></pre></td></tr></table></figure>
-</div>
-</div>
-</div>
-<div id="outline-container-org418644d" class="outline-2">
-<h2 id="org418644d"><span class="section-number-2">2</span> 使用 git add 命令添加文件名称包含中文时乱码</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-使用 git add 添加文件，如果文件名包含中文，显示如下：
-</p>
-<pre class="example">
-273\223\273.txt
-</pre>
-</div>
-<div id="outline-container-org844f6f3" class="outline-3">
-<h3 id="org844f6f3"><span class="section-number-3">2.1</span> 解决方法</h3>
-<div class="outline-text-3" id="text-2-1">
-<ol class="org-ol">
-<li><p>
-方法一：
-执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-方法二：
-修改 <code>~/.gitconfig</code> 文件如下：（如果没有此文件就新建一个)
-</p>
-<pre class="example">
-[core]
-	quotepath = false
-</pre></li>
-</ol>
-</div>
-</div>
-</div>
-
-Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
-
+          
       
     </div>
     
@@ -554,6 +421,10 @@ Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/Code
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/乱码/">乱码</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/12/19/2016-12-18.各种Git乱码解决办法/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -610,31 +481,29 @@ Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/Code
     <div class="article-entry" itemprop="articleBody">
       
           
-        
-
-<div id="table-of-contents">
+              <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org052e603">1. zlib 简介</a>
+<li><a href="#org1d69ce4">1. zlib 简介</a>
 <ul>
-<li><a href="#org850054c">1.1. 数据头(header)</a></li>
-<li><a href="#orgd43399a">1.2. 算法</a></li>
-<li><a href="#org4925dae">1.3. 使用资源</a></li>
-<li><a href="#org060d954">1.4. 策略</a></li>
-<li><a href="#orgad3ecb3">1.5. 错误处理</a></li>
-<li><a href="#org1ffa44f">1.6. 数据长度</a></li>
-<li><a href="#org6e33565">1.7. 业界应用</a></li>
+<li><a href="#orga4010d7">1.1. 数据头(header)</a></li>
+<li><a href="#orgc24e2cd">1.2. 算法</a></li>
+<li><a href="#orgdc6b1f2">1.3. 使用资源</a></li>
+<li><a href="#orgc554fec">1.4. 策略</a></li>
+<li><a href="#orgc1a8dc9">1.5. 错误处理</a></li>
+<li><a href="#org32b65f8">1.6. 数据长度</a></li>
+<li><a href="#org98d4917">1.7. 业界应用</a></li>
 </ul>
 </li>
-<li><a href="#orgaccd68b">2. 安装 zlib</a>
+<li><a href="#org4a95f61">2. 安装 zlib</a>
 <ul>
-<li><a href="#orgbfa53d2">2.1. 下载</a></li>
-<li><a href="#org620858c">2.2. 解压</a></li>
-<li><a href="#orgfef8012">2.3. 配置安装</a>
+<li><a href="#orge62f5cb">2.1. 下载</a></li>
+<li><a href="#orgce7c303">2.2. 解压</a></li>
+<li><a href="#org374a63f">2.3. 配置安装</a>
 <ul>
-<li><a href="#org9120a92">2.3.1. 标准配置安装（未测试，本人使用下面的自定义安装目录安装的）</a></li>
-<li><a href="#org2c96a9e">2.3.2. 自定义安装目录安装</a></li>
+<li><a href="#org37da7dc">2.3.1. 标准配置安装（未测试，本人使用下面的自定义安装目录安装的）</a></li>
+<li><a href="#org1f22392">2.3.2. 自定义安装目录安装</a></li>
 </ul>
 </li>
 </ul>
@@ -647,332 +516,7 @@ Last Updated 2017-01-12 Thu 21:40.<br>Render by <a href="https://github.com/Code
 在 Linux 下安装 zlib，测试系统为 <code>openSUSE Leap 42.2</code> 。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
-<div id="outline-container-org052e603" class="outline-2">
-<h2 id="org052e603"><span class="section-number-2">1</span> zlib 简介</h2>
-<div class="outline-text-2" id="text-1">
-<blockquote>
-<p>
-参考<a href="http://baike.baidu.com/link?url=CVTE1oPyeITvhkxeeJaPIbZhozQgMj4nFZDbZ7PMyK11L-Ft_5efh_6FaL3cGaJ9KPtxleGi8Z1pdDxmhTCVga" target="_blank" rel="external">百度百科</a>
-</p>
-</blockquote>
-<p>
-zlib 是提供数据压缩用的函式库，由 Jean-loup Gailly 与 Mark Adler 所开发，初版
-0.9 版在 1995 年 5 月 1 日发表，zlib 使用 DEFLATE 算法，最初是为 libpng 函式库所
-写的，后来普遍为许多软件所使用。此函式库为自由软件，使用 zlib 授权。截至 2007 年
-3 月，zlib 是包含在 Coverity 的美国国土安全部赞助者选择继续审查的开源项目。
-</p>
-</div>
-<div id="outline-container-org850054c" class="outline-3">
-<h3 id="org850054c"><span class="section-number-3">1.1</span> 数据头(header)</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-zlib 能使用一个 gzip 数据头，zlib 数据头或者不使用数据头压缩数据。
-</p>
-
-<p>
-通常情况下，数据压缩使用 zlib 数据头，因为这提供错误数据检测。当数据不使用数据头
-写入时，结果是没有任何错误检测的原始 DEFLATE 数据，那么解压缩软件的调用者不知道
-压缩数据在什么地方结束。
-</p>
-
-<p>
-gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文件系统信息，事实上这是
-广 泛使用的 gzip 文件的数据头格式。注意 zlib 函式库本身不能创建一个 gzip 文件，但
-是它相当轻松的通过把压缩数据写入到一个有 gzip 文件头的文件中。
-</p>
-</div>
-</div>
-<div id="outline-container-orgd43399a" class="outline-3">
-<h3 id="orgd43399a"><span class="section-number-3">1.2</span> 算法</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-目前 zlib 仅支持一个 LZ77 的变种算法，DEFLATE 的算法。
-</p>
-
-<p>
-这个算法使用很少的系统资源，对各种数据提供很好的压缩效果。这也是在 ZIP 档案中无
-一例外的使用这个算法。（尽管 zip 文件格式也支持几种其他的算法）。
-</p>
-
-<p>
-看起来 zlib 格式将不会被扩展使用任何其他算法，尽管数据头可以有这种可能性。
-</p>
-</div>
-</div>
-<div id="outline-container-org4925dae" class="outline-3">
-<h3 id="org4925dae"><span class="section-number-3">1.3</span> 使用资源</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-函数库提供了对处理器和内存使用控制的能力。
-</p>
-
-<p>
-不同的压缩级别数值可以指示不同的压缩执行速度。
-</p>
-
-<p>
-还有内存控制管理的功能。这在一些诸如嵌入式系统这样内存有限制的环境中是有用的。
-</p>
-</div>
-</div>
-<div id="outline-container-org060d954" class="outline-3">
-<h3 id="org060d954"><span class="section-number-3">1.4</span> 策略</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-压缩可以针对特定类型的数据进行优化。
-</p>
-
-<p>
-如果你总是使用 zlib 库压缩压缩特定类型的数据，那么可以使用有针对性的策略可以提高
-压缩效率和性能。例如，如果你的数据包含很长的重复数据，那么可以用 RLE（运行长度编
-码）策略，可能会有更好的结果。
-</p>
-
-<p>
-对于一般的数据，默认的策略是首选。
-</p>
-</div>
-</div>
-<div id="outline-container-orgad3ecb3" class="outline-3">
-<h3 id="orgad3ecb3"><span class="section-number-3">1.5</span> 错误处理</h3>
-<div class="outline-text-3" id="text-1-5">
-<p>
-错误可以被放发现和跳过。
-</p>
-
-<p>
-数据混乱可以被检测（只要数据和 zlib 或者 gzip 数据头一起被写入－参见上面）
-</p>
-
-<p>
-此外，如果全刷新点（full-flush points）被写入到压缩后的数据流中，那么错误数据是
-可以被跳过的，并且解压缩将重新同步到下个全刷新点。（错误数据的无错恢复被提供）。
-全刷新点技术对于在不可靠的通道上的大数据流是很有用的，一些过去的数据丢失是不重要
-的（例如多媒体数据），但是建立太多的全刷新点会极大的影响速度和压缩。
-</p>
-</div>
-</div>
-<div id="outline-container-org1ffa44f" class="outline-3">
-<h3 id="org1ffa44f"><span class="section-number-3">1.6</span> 数据长度</h3>
-<div class="outline-text-3" id="text-1-6">
-<p>
-对于压缩和解压缩，没有数据长度的限制。
-</p>
-
-<p>
-重复调用库函数允许处理无限的数据块。一些辅助代码（计数变量）可能会溢出，但是不影
-响实际的压缩和解压缩。
-</p>
-
-
-<p>
-当压缩一个长（无限）数据流时，最好写入全刷新点。
-</p>
-</div>
-</div>
-<div id="outline-container-org6e33565" class="outline-3">
-<h3 id="org6e33565"><span class="section-number-3">1.7</span> 业界应用</h3>
-<div class="outline-text-3" id="text-1-7">
-<p>
-今天，zlib 是一种事实上的业界标准，以至于在标准文档中，zlib 和 DEFLATE 常常互换
-使用。数以千计的应用程序直接或间接依靠 zlib 压缩函式库，包括：
-</p>
-<ul class="org-ul">
-<li>Linux 核心：使用 zlib 以实作网络协定的压缩、档案系统的压缩以及开机时解压缩自身</li>
-</ul>
-<p>
-的核心。
-</p>
-<ul class="org-ul">
-<li>libpng：用于 PNG 图形格式的一个实现，对 bitmap 数据规定了 DEFLATE 作为流压缩方</li>
-</ul>
-<p>
-法。
-</p>
-<ul class="org-ul">
-<li>Apache：使用 zlib 实作 http 1.1。</li>
-<li>OpenSSH、OpenSSL：以 zlib 达到最佳化加密网络传输。</li>
-<li>FFmpeg：以 zlib 读写 Matroska 等以 DEFLATE 算法压缩的多媒体串流格式。</li>
-<li>rsync：以 zlib 最佳化远端同步时的传输。</li>
-<li>Subversion、Git 和 CVS 版本控制 系统，使用 zlib 来压缩和远端仓库的通讯流量。</li>
-<li>dpkg 和 RPM 等包管理软件：以 zlib 解压缩 RPM 或者其他封包。</li>
-</ul>
-<p>
-因为其代码的可移植性，宽松的许可以及较小的内存占用，zlib 在许多嵌入式设备中也有应用。
-</p>
-</div>
-</div>
-</div>
-
-
-
-
-<div id="outline-container-orgaccd68b" class="outline-2">
-<h2 id="orgaccd68b"><span class="section-number-2">2</span> 安装 zlib</h2>
-<div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgbfa53d2" class="outline-3">
-<h3 id="orgbfa53d2"><span class="section-number-3">2.1</span> 下载</h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-在 <a href="http://zlib.net/" target="_blank" rel="external">zlib 官网</a> 下载最新版本，此处为 <code>1.2.8</code> 版本，下载链接：<a href="http://zlib.net/zlib-1.2.8.tar.gz" target="_blank" rel="external">zlib-1.2.8.tar.gz</a>
-</p>
-</div>
-</div>
-<div id="outline-container-org620858c" class="outline-3">
-<h3 id="org620858c"><span class="section-number-3">2.2</span> 解压</h3>
-<div class="outline-text-3" id="text-2-2">
-<p>
-终端进入 <code>zlib-1.2.8.tar.gz</code> 所在的目录执行解压命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -xzvf zlib-<span class="number">1.2</span>.<span class="number">8</span>.tar.gz</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-解压完成得到 <code>zlib-1.2.8</code> 文件夹。
-</p>
-</div>
-</div>
-<div id="outline-container-orgfef8012" class="outline-3">
-<h3 id="orgfef8012"><span class="section-number-3">2.3</span> 配置安装</h3>
-<div class="outline-text-3" id="text-2-3">
-<p>
-终端进入 <code>zlib-1.2.8</code> 文件夹
-</p>
-</div>
-<div id="outline-container-org9120a92" class="outline-4">
-<h4 id="org9120a92"><span class="section-number-4">2.3.1</span> 标准配置安装（未测试，本人使用下面的<a href="#orgcc507bc">自定义安装目录安装</a>的）</h4>
-<div class="outline-text-4" id="text-2-3-1">
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<ol class="org-ol">
-<li><p>
-build static
-</p>
-
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ./configure</span><br><span class="line">$ make <span class="built_in">test</span></span><br><span class="line">$ make install</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-build shared libraries
-</p>
-
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ make clean</span><br><span class="line">$ ./configure --shared</span><br><span class="line">$ make <span class="built_in">test</span></span><br><span class="line">$ make install</span><br><span class="line">$ cp zutil.h /usr/<span class="built_in">local</span>/include</span><br><span class="line">$ cp zutil.c /usr/<span class="built_in">local</span>/include</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-现在 <code>/usr/local/lib</code> 下应该有这几个文件：
-</p>
-<ul class="org-ul">
-<li>libz.a</li>
-<li>libz.so -> libz.so.1.2.1</li>
-<li>libz.so.1 -> libz.so.1.2.1</li>
-<li>libz.so.1.2.1</li>
-</ul>
-<p>
-<code>/usr/local/include</code> 下应该有这几个文件：
-</p>
-<ul class="org-ul">
-<li>zconf.h</li>
-<li>zlib.h</li>
-<li>zutil.h</li>
-</ul></li>
-<li><p>
-系统配置
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
-</div></li>
-
-<li><p>
-加载配置
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ldconfig</span><br><span class="line">$ updatedb</span><br></pre></td></tr></table></figure>
-</div></li>
-</ol>
-</div>
-</div>
-<div id="outline-container-org2c96a9e" class="outline-4">
-<h4 id="org2c96a9e"><span class="section-number-4">2.3.2</span> 自定义安装目录安装<a id="orgcc507bc"></a></h4>
-<div class="outline-text-4" id="text-2-3-2">
-<ol class="org-ol">
-<li><p>
-安装在 <code>/usr/local/zlib</code> 文件夹下。
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令创建文件夹：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir /usr/<span class="built_in">local</span>/zlib</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-执行配置：
-</p>
-
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/zlib</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-编译：
-</p>
-
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-安装：
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-系统配置
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> /usr/<span class="built_in">local</span>/zlib/lib &gt; /etc/ld.so.conf.d/zlib.conf</span><br></pre></td></tr></table></figure>
-</div></li>
-<li><p>
-加载配置
-</p>
-
-<p>
-获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ldconfig</span><br><span class="line">$ updatedb</span><br></pre></td></tr></table></figure>
-</div></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-
-Last Updated 2017-01-12 Thu 21:39.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
-
+          
       
     </div>
     
@@ -989,6 +533,10 @@ Last Updated 2017-01-12 Thu 21:39.<br>Render by <a href="https://github.com/Code
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zlib/">zlib</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/12/17/2016-12-17.在Linux下安装zlib（openSUSE Leap 42.2）/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1045,20 +593,18 @@ Last Updated 2017-01-12 Thu 21:39.<br>Render by <a href="https://github.com/Code
     <div class="article-entry" itemprop="articleBody">
       
           
-        
-
-<div id="table-of-contents">
+              <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgac2dc84">1. 配置</a></li>
-<li><a href="#org257fa71">2. 使用</a>
+<li><a href="#orge6dde10">1. 配置</a></li>
+<li><a href="#org3add918">2. 使用</a>
 <ul>
-<li><a href="#orga168fa7">2.1. load 到 <code>tmpfs</code></a></li>
-<li><a href="#org97a7906">2.2. 还原</a>
+<li><a href="#orgf541013">2.1. load 到 <code>tmpfs</code></a></li>
+<li><a href="#org4fbe06c">2.2. 还原</a>
 <ul>
-<li><a href="#orgb8595e9">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
-<li><a href="#org7a19831">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#orgf1c423a">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#org1507b6a">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
 </ul>
 </li>
 </ul>
@@ -1073,154 +619,7 @@ Last Updated 2017-01-12 Thu 21:39.<br>Render by <a href="https://github.com/Code
 emacs 的速度也会有很大提升。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
-<blockquote>
-<p>
-此方法只在 Linux 系统中测试了，个人系统 <code>openSUSE42.2</code>
-</p>
-</blockquote>
-<div id="outline-container-orgac2dc84" class="outline-2">
-<h2 id="orgac2dc84"><span class="section-number-2">1</span> 配置</h2>
-<div class="outline-text-2" id="text-1">
-<ol class="org-ol">
-<li>将下面一行插入到 <code>/etc/fstab</code> 中，然后重启电脑（我电脑是 8G 内存，size 设置为 1G 了）。</li>
-</ol>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tmpfs       /tmp        tmpfs       nodev,nosuid,size=<span class="number">1</span>G    <span class="number">0</span>   <span class="number">0</span></span><br></pre></td></tr></table></figure>
-</div>
-<ol class="org-ol">
-<li>新建一个脚本，并且赋予可执行权限，可以命名为 <code>emacs2ram</code> ，内容如下:</li>
-</ol>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram start"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram restore"</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"start"</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">        mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$(readlink $link)</span>"</span> != <span class="string">"<span class="variable">$volatile</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># backup project at first</span></span><br><span class="line">        mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">        <span class="comment"># create the link</span></span><br><span class="line">        ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from memory to backup ..."</span></span><br><span class="line">        rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from disk to memory ..."</span></span><br><span class="line">        rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">        touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Moving .emacs.d back to disk ..."</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;&amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;&amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-</div>
-<p>
-<code>emacs2ram</code> 文件：
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/yyangdid/blog-backup/blob/master/MyFiles/Emacs/emacs2ram" target="_blank" rel="external">github</a></li>
-<li><a href="https://coding.net/u/yyangdid/p/blog-backup/git/blob/master/MyFiles/Emacs/emacs2ram" target="_blank" rel="external">condig.net</a></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org257fa71" class="outline-2">
-<h2 id="org257fa71"><span class="section-number-2">2</span> 使用</h2>
-<div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orga168fa7" class="outline-3">
-<h3 id="orga168fa7"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
-<div class="outline-text-3" id="text-2-1">
-<p>
-进入脚本所在的目录执行：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram start</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-会提示：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Sync .emacs.d from disk to memory ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-说明配置文件已经转移到 <code>tmpfs</code> 了，ok！
-</p>
-
-<p>
-可以用文件管理器看一下，在 <code>/tmp</code> 文件夹下会有一个 <code>.emacs.d-用户名</code> 的文件夹，
-而主目录的 <i>.emacs.d</i> 文件夹会变成一个软链接，指向 <code>/tmp/.emacs.d-用户名</code> ，同时
-在主目录还会有一个 <code>.emacs.d-backup</code> 文件夹,是对原 <code>.emacs.d</code> 的备份。
-</p>
-</div>
-</div>
-<div id="outline-container-org97a7906" class="outline-3">
-<h3 id="org97a7906"><span class="section-number-3">2.2</span> 还原</h3>
-<div class="outline-text-3" id="text-2-2">
-</div><div id="outline-container-orgb8595e9" class="outline-4">
-<h4 id="orgb8595e9"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
-<div class="outline-text-4" id="text-2-2-1">
-<p>
-进入脚本所在的目录执行：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram restore</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-会提示：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Moving .emacs.d back to disk ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
-</div>
-
-<p>
-用文件管理器看一下， <code>/tmp/.emacs.d-用户名</code> 和 <code>~/.emacs.d-backup</code> 两文件夹已经
-没了，而 <code>~/.emacs.d</code> 回来了，不是软链接了。
-</p>
-</div>
-</div>
-<div id="outline-container-org7a19831" class="outline-4">
-<h4 id="org7a19831"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
-<div class="outline-text-4" id="text-2-2-2">
-<p>
-进入脚本所在的目录执行：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram start</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-会提示：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Sync .emacs.d from memory to backup ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-然后执行：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">emacs2ram restore</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-会提示：
-</p>
-<div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Moving .emacs.d back to disk ...</span><br><span class="line">DONE!</span><br></pre></td></tr></table></figure>
-</div>
-<p>
-ok!
-</p>
-
-
-<p>
-执行 <code>emacs2ram start</code> 是把 <code>/tmp/.emacs.d-用户名</code> 的内容同步到
-<code>~/.emacs.d-backup</code> 。
-</p>
-
-
-<p>
-执行 <code>emacs2ram restore</code> 是把 <code>~/.emacs.d-backup</code> 同步到 <code>~/.eamcs.d</code> ，同时删除
-<code>/tmp/.emacs.d-用户名</code> 和 <code>~/.emacs.d-backup</code> 。
-</p>
-
-
-<blockquote>
-<p>
-此方法是在
-<a href="https://github.com/lujun9972/emacs-document/blob/master/emacs-common/%E5%8D%81%E5%80%8D%E6%8F%90%E5%8D%87Emacs%E6%80%A7%E8%83%BD.org?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io" target="_blank" rel="external">
-开发者头条</a>看到的，对原文的 <code>emacs2ram</code> 脚本修改了一下。如果觉得每次都要执行命令
-麻烦，可以把命令加入开机启动和关机前执行，个人没折腾。
-</p>
-</blockquote>
-</div>
-</div>
-</div>
-</div>
-
-Last Updated 2017-01-15 Sun 17:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
-
+          
       
     </div>
     
@@ -1237,6 +636,10 @@ Last Updated 2017-01-15 Sun 17:34.<br>Render by <a href="https://github.com/Code
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Emacs/">Emacs</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2016/12/13/2016-12-13.加快Emacs的运行速度/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

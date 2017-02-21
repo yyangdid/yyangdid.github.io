@@ -36,7 +36,7 @@
 
 
 此方法可以加快 Emacs 的运行速度，而不是启动速度。其实就是把 Emacs 的配置文件
-.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普">
+.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普通的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="加快Emacs的运行速度">
 <meta property="og:url" content="http://yyangdid.github.io/2016/12/13/2016-12-13.加快Emacs的运行速度/index.html">
@@ -62,8 +62,8 @@
 
 
 此方法可以加快 Emacs 的运行速度，而不是启动速度。其实就是把 Emacs 的配置文件
-.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普">
-<meta property="og:updated_time" content="2017-01-15T09:34:25.355Z">
+.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普通的">
+<meta property="og:updated_time" content="2017-02-21T12:36:00.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加快Emacs的运行速度">
 <meta name="twitter:description" content="Table of Contents
@@ -87,7 +87,7 @@
 
 
 此方法可以加快 Emacs 的运行速度，而不是启动速度。其实就是把 Emacs 的配置文件
-.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普">
+.emacs.d 文件夹放到内存中，而内存的吞吐速度要比普通的">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -367,14 +367,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgac2dc84">1. 配置</a></li>
-<li><a href="#org257fa71">2. 使用</a>
+<li><a href="#orge6dde10">1. 配置</a></li>
+<li><a href="#org3add918">2. 使用</a>
 <ul>
-<li><a href="#orga168fa7">2.1. load 到 <code>tmpfs</code></a></li>
-<li><a href="#org97a7906">2.2. 还原</a>
+<li><a href="#orgf541013">2.1. load 到 <code>tmpfs</code></a></li>
+<li><a href="#org4fbe06c">2.2. 还原</a>
 <ul>
-<li><a href="#orgb8595e9">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
-<li><a href="#org7a19831">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#orgf1c423a">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#org1507b6a">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
 </ul>
 </li>
 </ul>
@@ -389,19 +389,14 @@
 emacs 的速度也会有很大提升。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
+<a id="more"></a>
 <blockquote>
 <p>
 此方法只在 Linux 系统中测试了，个人系统 <code>openSUSE42.2</code>
 </p>
 </blockquote>
-<div id="outline-container-orgac2dc84" class="outline-2">
-<h2 id="orgac2dc84"><span class="section-number-2">1</span> 配置</h2>
+<div id="outline-container-orge6dde10" class="outline-2">
+<h2 id="orge6dde10"><span class="section-number-2">1</span> 配置</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>将下面一行插入到 <code>/etc/fstab</code> 中，然后重启电脑（我电脑是 8G 内存，size 设置为 1G 了）。</li>
@@ -424,11 +419,11 @@ emacs 的速度也会有很大提升。
 </ul>
 </div>
 </div>
-<div id="outline-container-org257fa71" class="outline-2">
-<h2 id="org257fa71"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-org3add918" class="outline-2">
+<h2 id="org3add918"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orga168fa7" class="outline-3">
-<h3 id="orga168fa7"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
+</div><div id="outline-container-orgf541013" class="outline-3">
+<h3 id="orgf541013"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -453,11 +448,11 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org97a7906" class="outline-3">
-<h3 id="org97a7906"><span class="section-number-3">2.2</span> 还原</h3>
+<div id="outline-container-org4fbe06c" class="outline-3">
+<h3 id="org4fbe06c"><span class="section-number-3">2.2</span> 还原</h3>
 <div class="outline-text-3" id="text-2-2">
-</div><div id="outline-container-orgb8595e9" class="outline-4">
-<h4 id="orgb8595e9"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
+</div><div id="outline-container-orgf1c423a" class="outline-4">
+<h4 id="orgf1c423a"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -478,8 +473,8 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org7a19831" class="outline-4">
-<h4 id="org7a19831"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
+<div id="outline-container-org1507b6a" class="outline-4">
+<h4 id="org1507b6a"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 进入脚本所在的目录执行：
@@ -535,7 +530,7 @@ ok!
 </div>
 </div>
 
-Last Updated 2017-01-15 Sun 17:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-21 Tue 20:36.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -547,7 +542,7 @@ Last Updated 2017-01-15 Sun 17:34.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2016/12/13/2016-12-13.加快Emacs的运行速度/">加快Emacs的运行速度</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2016-12-13, 13:53:19</p>
-        <p><span>最后更新:</span>2017-01-15, 17:34:25</p>
+        <p><span>最后更新:</span>2017-02-21, 20:36:00</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
@@ -597,7 +592,7 @@ Last Updated 2017-01-15 Sun 17:34.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgac2dc84"><span class="toc-text">1 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org257fa71"><span class="toc-text">2 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orga168fa7"><span class="toc-text">2.1 load 到 tmpfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org97a7906"><span class="toc-text">2.2 还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgb8595e9"><span class="toc-text">2.2.1 不保留历史记录、对配置文件的更改。。。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org7a19831"><span class="toc-text">2.2.2 保留历史记录、对配置文件的更改。。。</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orge6dde10"><span class="toc-text">1 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org3add918"><span class="toc-text">2 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgf541013"><span class="toc-text">2.1 load 到 tmpfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org4fbe06c"><span class="toc-text">2.2 还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgf1c423a"><span class="toc-text">2.2.1 不保留历史记录、对配置文件的更改。。。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org1507b6a"><span class="toc-text">2.2.2 保留历史记录、对配置文件的更改。。。</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>

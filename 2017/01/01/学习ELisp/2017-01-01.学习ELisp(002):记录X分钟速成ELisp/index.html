@@ -15,55 +15,16 @@
 
 
 
-<meta name="description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。
-
-
-
-
-
-
-
-
-
-ELisp是由符号表达式构成的（即 s-表达式 或 s式 ）， s-表达式 两侧由括号 () 包围，一个 s-表达式 可以包含 原子符号 和 其他的 s-表达式 。
-
-
-;; ELisp &amp;#20351;&amp;#29992;&amp;#20998;&amp;#21495;&amp;#34920;&amp;#31034;&amp;#26412;">
+<meta name="description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习ELisp(002):记录X分钟速成ELisp">
 <meta property="og:url" content="http://yyangdid.github.io/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/index.html">
 <meta property="og:site_name" content="yyangdid">
-<meta property="og:description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。
-
-
-
-
-
-
-
-
-
-ELisp是由符号表达式构成的（即 s-表达式 或 s式 ）， s-表达式 两侧由括号 () 包围，一个 s-表达式 可以包含 原子符号 和 其他的 s-表达式 。
-
-
-;; ELisp &amp;#20351;&amp;#29992;&amp;#20998;&amp;#21495;&amp;#34920;&amp;#31034;&amp;#26412;">
-<meta property="og:updated_time" content="2017-02-14T06:32:38.012Z">
+<meta property="og:description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。">
+<meta property="og:updated_time" content="2017-02-21T12:34:49.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(002):记录X分钟速成ELisp">
-<meta name="twitter:description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。
-
-
-
-
-
-
-
-
-
-ELisp是由符号表达式构成的（即 s-表达式 或 s式 ）， s-表达式 两侧由括号 () 包围，一个 s-表达式 可以包含 原子符号 和 其他的 s-表达式 。
-
-
-;; ELisp &amp;#20351;&amp;#29992;&amp;#20998;&amp;#21495;&amp;#34920;&amp;#31034;&amp;#26412;">
+<meta name="twitter:description" content="学习 X分钟速成Y 系列之 elisp 版本（官方中文版：elisp）。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -344,12 +305,7 @@ ELisp是由符号表达式构成的（即 s-表达式 或 s式 ）， s-表达�
 学习 <a href="https://learnxinyminutes.com/" target="_blank" rel="external">X分钟速成Y</a> 系列之 <a href="https://learnxinyminutes.com/docs/elisp/" target="_blank" rel="external">elisp</a> 版本（官方中文版：<a href="https://learnxinyminutes.com/docs/zh-cn/elisp-cn/" target="_blank" rel="external">elisp</a>）。
 </p>
 </blockquote>
-<div class="HTML">
-<p>
-<!&#x2013;more&#x2013;>
-</p>
-
-</div>
+<a id="more"></a>
 <ul class="org-ul">
 <li>ELisp是由符号表达式构成的（即 <code>s-表达式</code> 或 <code>s式</code> ）， <code>s-表达式</code> 两侧由括号 <code>()</code> 包围，一个 <code>s-表达式</code> 可以包含 <code>原子符号</code> 和 <code>其他的 s-表达式</code> 。</li>
 </ul>
@@ -429,7 +385,7 @@ ELisp是由符号表达式构成的（即 s-表达式 或 s式 ）， s-表达�
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#25226; *ttt* buffer &#20013;&#30340;&#25152;&#26377; Hello &#26367;&#25442;&#20026; Hi</span></span><br><span class="line"><span class="comment">;; (goto-char (point-min)) &#25226;&#20809;&#26631;&#31227;&#21040; buffer &#24320;&#22836;</span></span><br><span class="line"><span class="comment">;; (search-forward "Hello") &#26597;&#25214;&#23383;&#31526;&#20018; "Hello"</span></span><br><span class="line"><span class="comment">;; (while x y) &#24403; x &#36820;&#22238;&#26576;&#20010;&#20540;&#26102;&#25191;&#34892; y&#65292;&#24403; x &#36820;&#22238; nil(&#31354;)&#26102;&#25512;&#20986;&#24490;&#29615;</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> replace-hello-by-hi <span class="list">()</span></span><br><span class="line">    <span class="list">(<span class="keyword">switch-to-buffer-other-window</span> <span class="string">"*ttt*"</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">goto-char</span> <span class="list">(<span class="keyword">point-min</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">while</span> <span class="list">(<span class="keyword">search-forward</span> <span class="string">"Hello"</span>)</span></span><br><span class="line">      <span class="list">(<span class="keyword">replace-match</span> <span class="string">"Hi"</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">other-window</span> <span class="number">1</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">replace-hello-by-hi</span>)</span></span><br><span class="line"><span class="comment">;; &#19978;&#38754;&#20989;&#25968;&#26367;&#25442;&#25104;&#21151;&#65292;&#20294;&#20250;&#25253;&#38169;&#65306;"Search failed: Hello"&#12290;&#22914;&#26524;&#35201;&#36991;&#20813;&#36825;&#20010;&#38169;&#35823;, &#38656;&#35201;</span></span><br><span class="line"><span class="comment">;; &#21578;&#35785; `search-forward' &#36825;&#20010;&#21629;&#20196;&#26159;&#21542;&#22312; buffer &#30340;&#26576;&#20010;&#22320;&#26041;&#20572;&#27490;&#26597;&#25214;, &#24182;&#19988;&#22312;&#20160;&#20040;&#37117;</span></span><br><span class="line"><span class="comment">;; &#27809;&#25214;&#21040;&#26102;&#26159;&#21542;&#24212;&#35813;&#19981;&#32473;&#20986;&#38169;&#35823;&#25552;&#31034;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">;; &#20351;&#29992; (search-forward "Hello" nil t) &#21363;&#21487;</span></span><br><span class="line"><span class="comment">;; &#21442;&#25968; nil &#34920;&#31034;&#19981;&#38480;&#20110;&#26576;&#20010;&#33539;&#22260;</span></span><br><span class="line"><span class="comment">;; &#21442;&#25968; t &#34920;&#31034;&#24403;&#20160;&#20040;&#37117;&#27809;&#25214;&#21040;&#26102;&#19981;&#32473;&#20986;&#38169;&#35823;&#25552;&#31034;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
-Last Updated 2017-02-14 Tue 14:32.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -441,7 +397,7 @@ Last Updated 2017-02-14 Tue 14:32.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2017/01/01/学习ELisp/2017-01-01.学习ELisp(002):记录X分钟速成ELisp/">学习ELisp(002):记录X分钟速成ELisp</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2017-01-01, 19:41:34</p>
-        <p><span>最后更新:</span>2017-02-14, 14:32:38</p>
+        <p><span>最后更新:</span>2017-02-21, 20:34:49</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
