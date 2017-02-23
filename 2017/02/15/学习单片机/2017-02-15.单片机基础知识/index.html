@@ -59,7 +59,19 @@
 2.3.3. 十进制转换为十六进制
 2.3.4. 十六进制转换为十进制
 2.3.5. 二进制">
-<meta property="og:updated_time" content="2017-02-21T12:34:03.089Z">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.png">
+<meta property="og:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.png">
+<meta property="og:updated_time" content="2017-02-23T02:22:06.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单片机基础知识">
 <meta name="twitter:description" content="Table of Contents
@@ -82,6 +94,7 @@
 2.3.3. 十进制转换为十六进制
 2.3.4. 十六进制转换为十进制
 2.3.5. 二进制">
+<meta name="twitter:image" content="http://yyangdid.github.io/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -361,63 +374,63 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org632a6b4">1. 电平特性</a>
+<li><a href="#orgf67e2ee">1. 电平特性</a>
 <ul>
-<li><a href="#org43e9bfc">1.1. 单片机的电平</a></li>
-<li><a href="#org9a0bc4c">1.2. RS232 电平：即计算机串口的电平</a></li>
+<li><a href="#orga2752f3">1.1. 单片机的电平</a></li>
+<li><a href="#orga59ac31">1.2. RS232 电平：即计算机串口的电平</a></li>
 </ul>
 </li>
-<li><a href="#org065c881">2. 2 进制与 16 进制的表示和转换</a>
+<li><a href="#orge6db4f8">2. 2 进制与 16 进制的表示和转换</a>
 <ul>
-<li><a href="#org63bc459">2.1. 二进制</a></li>
-<li><a href="#orgc048c0d">2.2. 十六进制</a></li>
-<li><a href="#orgfd10c1d">2.3. 进制转换</a>
+<li><a href="#org89e0cf7">2.1. 二进制</a></li>
+<li><a href="#orgc39f3fd">2.2. 十六进制</a></li>
+<li><a href="#orge733b3e">2.3. 进制转换</a>
 <ul>
-<li><a href="#org4ab1290">2.3.1. 十进制转换为二进制</a></li>
-<li><a href="#orgd6c3023">2.3.2. 二进制转换为十进制</a></li>
-<li><a href="#orgdda32fc">2.3.3. 十进制转换为十六进制</a></li>
-<li><a href="#orgc763c31">2.3.4. 十六进制转换为十进制</a></li>
-<li><a href="#orgcd83379">2.3.5. 二进制转换为十六进制</a></li>
-<li><a href="#org844991b">2.3.6. 十六进制转换为二进制</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org4cd5c36">3. 2 进制数的逻辑运算</a>
-<ul>
-<li><a href="#orgaf99625">3.1. <code>与</code> 运算</a></li>
-<li><a href="#org533a74b">3.2. <code>或</code> 运算</a></li>
-<li><a href="#org424097d">3.3. <code>非</code> 运算</a></li>
-<li><a href="#org6eacad1">3.4. <code>异或</code> 运算</a></li>
-</ul>
-</li>
-<li><a href="#orgc5acc79">4. 8051 单片机介绍</a>
-<ul>
-<li><a href="#orgf8c87d0">4.1. 80C51 的引脚封装</a>
-<ul>
-<li><a href="#org6011050">4.1.1. P3 口第二功能各引脚功能定义</a></li>
-</ul>
-</li>
-<li><a href="#org5390d6d">4.2. 8051 内部结构</a></li>
-<li><a href="#orgc338b69">4.3. 总线(BUS)</a></li>
-<li><a href="#org3dfb073">4.4. 单片机的构成</a></li>
-<li><a href="#orge88ea51">4.5. 单片机工作的基本时序</a>
-<ul>
-<li><a href="#orgd97cc00">4.5.1. 震荡周期</a></li>
-<li><a href="#org4d07001">4.5.2. 状态周期</a></li>
-<li><a href="#org7808741">4.5.3. 机器周期</a></li>
-<li><a href="#org04331ae">4.5.4. 指令周期</a></li>
-</ul>
-</li>
-<li><a href="#org63292aa">4.6. 单片机主要学习什么</a>
-<ul>
-<li><a href="#orgf103460">4.6.1. 单片机 I/O 口的结构</a></li>
-<li><a href="#org38bedc1">4.6.2. 上下拉电阻</a></li>
+<li><a href="#org4bdb5de">2.3.1. 十进制转换为二进制</a></li>
+<li><a href="#orgb35ec6d">2.3.2. 二进制转换为十进制</a></li>
+<li><a href="#orgdae5b20">2.3.3. 十进制转换为十六进制</a></li>
+<li><a href="#org38d7754">2.3.4. 十六进制转换为十进制</a></li>
+<li><a href="#org1bf9433">2.3.5. 二进制转换为十六进制</a></li>
+<li><a href="#org22639e2">2.3.6. 十六进制转换为二进制</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org326062d">5. C51 基础知识</a></li>
+<li><a href="#org7c23e39">3. 2 进制数的逻辑运算</a>
+<ul>
+<li><a href="#orgde38d24">3.1. <code>与</code> 运算</a></li>
+<li><a href="#orgeee80eb">3.2. <code>或</code> 运算</a></li>
+<li><a href="#org8c84e48">3.3. <code>非</code> 运算</a></li>
+<li><a href="#org4d238a3">3.4. <code>异或</code> 运算</a></li>
+</ul>
+</li>
+<li><a href="#orgb2ddd67">4. 8051 单片机介绍</a>
+<ul>
+<li><a href="#orgeb3bae2">4.1. 80C51 的引脚封装</a>
+<ul>
+<li><a href="#org94d30ce">4.1.1. P3 口第二功能各引脚功能定义</a></li>
+</ul>
+</li>
+<li><a href="#org733f5e4">4.2. 8051 内部结构</a></li>
+<li><a href="#org1486b17">4.3. 总线(BUS)</a></li>
+<li><a href="#orgf0575a0">4.4. 单片机的构成</a></li>
+<li><a href="#orgb220ebf">4.5. 单片机工作的基本时序</a>
+<ul>
+<li><a href="#org38f3d60">4.5.1. 震荡周期</a></li>
+<li><a href="#orgd7e46f5">4.5.2. 状态周期</a></li>
+<li><a href="#orgeac6a0e">4.5.3. 机器周期</a></li>
+<li><a href="#org9c7cdf1">4.5.4. 指令周期</a></li>
+</ul>
+</li>
+<li><a href="#orgdb44d25">4.6. 单片机主要学习什么</a>
+<ul>
+<li><a href="#orgd2fba10">4.6.1. 单片机 I/O 口的结构</a></li>
+<li><a href="#org53428f2">4.6.2. 上下拉电阻</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6a72ab9">5. C51 基础知识</a></li>
 </ul>
 </div>
 </div>
@@ -428,16 +441,16 @@
 </blockquote>
 <a id="more"></a>
 
-<div id="outline-container-org632a6b4" class="outline-2">
-<h2 id="org632a6b4"><span class="section-number-2">1</span> 电平特性</h2>
+<div id="outline-container-orgf67e2ee" class="outline-2">
+<h2 id="orgf67e2ee"><span class="section-number-2">1</span> 电平特性</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 在数字电路中只有两种电平：高电平和低电平。
 </p>
 </div>
 
-<div id="outline-container-org43e9bfc" class="outline-3">
-<h3 id="org43e9bfc"><span class="section-number-3">1.1</span> 单片机的电平</h3>
+<div id="outline-container-orga2752f3" class="outline-3">
+<h3 id="orga2752f3"><span class="section-number-3">1.1</span> 单片机的电平</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 数字电路中只有两种电平：高电平和低电平。
@@ -450,8 +463,8 @@
 </div>
 </div>
 
-<div id="outline-container-org9a0bc4c" class="outline-3">
-<h3 id="org9a0bc4c"><span class="section-number-3">1.2</span> RS232 电平：即计算机串口的电平</h3>
+<div id="outline-container-orga59ac31" class="outline-3">
+<h3 id="orga59ac31"><span class="section-number-3">1.2</span> RS232 电平：即计算机串口的电平</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>高电平：-12V</li>
@@ -468,8 +481,8 @@
 </div>
 </div>
 
-<div id="outline-container-org065c881" class="outline-2">
-<h2 id="org065c881"><span class="section-number-2">2</span> 2 进制与 16 进制的表示和转换</h2>
+<div id="outline-container-orge6db4f8" class="outline-2">
+<h2 id="orge6db4f8"><span class="section-number-2">2</span> 2 进制与 16 进制的表示和转换</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><p>
@@ -600,8 +613,8 @@
 </ul>
 </div>
 
-<div id="outline-container-org63bc459" class="outline-3">
-<h3 id="org63bc459"><span class="section-number-3">2.1</span> 二进制</h3>
+<div id="outline-container-org89e0cf7" class="outline-3">
+<h3 id="org89e0cf7"><span class="section-number-3">2.1</span> 二进制</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 由于数字电路中只有两种电平特性，所以计算机中使用的数字都采用的二进制形式的。
@@ -612,26 +625,26 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgc048c0d" class="outline-3">
-<h3 id="orgc048c0d"><span class="section-number-3">2.2</span> 十六进制</h3>
+<div id="outline-container-orgc39f3fd" class="outline-3">
+<h3 id="orgc39f3fd"><span class="section-number-3">2.2</span> 十六进制</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 十六进制的基数为 <code>F</code> ，进位规则是“逢十六进一”。
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd10c1d" class="outline-3">
-<h3 id="orgfd10c1d"><span class="section-number-3">2.3</span> 进制转换</h3>
+<div id="outline-container-orge733b3e" class="outline-3">
+<h3 id="orge733b3e"><span class="section-number-3">2.3</span> 进制转换</h3>
 <div class="outline-text-3" id="text-2-3">
-</div><div id="outline-container-org4ab1290" class="outline-4">
-<h4 id="org4ab1290"><span class="section-number-4">2.3.1</span> 十进制转换为二进制</h4>
+</div><div id="outline-container-org4bdb5de" class="outline-4">
+<h4 id="org4bdb5de"><span class="section-number-4">2.3.1</span> 十进制转换为二进制</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 十进制转换为二进制主要分为这几种情况：正整数转二进制，负整数转二进制，小数转
 二进制。
 </p>
 </div>
-<ol class="org-ol"><li><a id="org52d2bc5"></a>正整数转二进制<br><div class="outline-text-5" id="text-2-3-1-1">
+<ol class="org-ol"><li><a id="orgf7cad41"></a>正整数转二进制<br><div class="outline-text-5" id="text-2-3-1-1">
 <ul class="org-ul">
 <li><p>
 <code>运算方法：</code>
@@ -652,14 +665,13 @@
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li>
 
-<li><a id="orga38ac10"></a>负整数转二进制<br><div class="outline-text-5" id="text-2-3-1-2">
+<li><a id="orgc67ac99"></a>负整数转二进制<br><div class="outline-text-5" id="text-2-3-1-2">
 <ul class="org-ul">
 <li><p>
 <code>运算方法：</code>
@@ -675,14 +687,13 @@ Sorry, your browser does not support SVG.</object>
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li>
 
-<li><a id="org9eacf84"></a>小数转二进制<br><div class="outline-text-5" id="text-2-3-1-3">
+<li><a id="org5b2459b"></a>小数转二进制<br><div class="outline-text-5" id="text-2-3-1-3">
 <ul class="org-ul">
 <li><p>
 运算方法：乘二取整，正序排列。
@@ -700,17 +711,16 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li></ol>
 </div>
-<div id="outline-container-orgd6c3023" class="outline-4">
-<h4 id="orgd6c3023"><span class="section-number-4">2.3.2</span> 二进制转换为十进制</h4>
+<div id="outline-container-orgb35ec6d" class="outline-4">
+<h4 id="orgb35ec6d"><span class="section-number-4">2.3.2</span> 二进制转换为十进制</h4>
 <div class="outline-text-4" id="text-2-3-2">
-</div><ol class="org-ol"><li><a id="org0544ee1"></a>整数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-1">
+</div><ol class="org-ol"><li><a id="orge53531b"></a>整数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-1">
 <p>
 首先将二进制的位数补齐，首位为 0 则是整数，为 1 则为负数。
 </p>
@@ -725,12 +735,11 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div></li>
-<li><a id="org9b6f4db"></a>小数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-2">
+<li><a id="org22aca3f"></a>小数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-2">
 <p>
 将二进制的每位数字乘以对应位数的 2 的负幂次数，然后相加。
 </p>
@@ -740,31 +749,30 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div></li></ol>
 </div>
-<div id="outline-container-orgdda32fc" class="outline-4">
-<h4 id="orgdda32fc"><span class="section-number-4">2.3.3</span> 十进制转换为十六进制</h4>
+<div id="outline-container-orgdae5b20" class="outline-4">
+<h4 id="orgdae5b20"><span class="section-number-4">2.3.3</span> 十进制转换为十六进制</h4>
 </div>
-<div id="outline-container-orgc763c31" class="outline-4">
-<h4 id="orgc763c31"><span class="section-number-4">2.3.4</span> 十六进制转换为十进制</h4>
+<div id="outline-container-org38d7754" class="outline-4">
+<h4 id="org38d7754"><span class="section-number-4">2.3.4</span> 十六进制转换为十进制</h4>
 </div>
-<div id="outline-container-orgcd83379" class="outline-4">
-<h4 id="orgcd83379"><span class="section-number-4">2.3.5</span> 二进制转换为十六进制</h4>
+<div id="outline-container-org1bf9433" class="outline-4">
+<h4 id="org1bf9433"><span class="section-number-4">2.3.5</span> 二进制转换为十六进制</h4>
 </div>
-<div id="outline-container-org844991b" class="outline-4">
-<h4 id="org844991b"><span class="section-number-4">2.3.6</span> 十六进制转换为二进制</h4>
+<div id="outline-container-org22639e2" class="outline-4">
+<h4 id="org22639e2"><span class="section-number-4">2.3.6</span> 十六进制转换为二进制</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org4cd5c36" class="outline-2">
-<h2 id="org4cd5c36"><span class="section-number-2">3</span> 2 进制数的逻辑运算</h2>
+<div id="outline-container-org7c23e39" class="outline-2">
+<h2 id="org7c23e39"><span class="section-number-2">3</span> 2 进制数的逻辑运算</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgaf99625" class="outline-3">
-<h3 id="orgaf99625"><span class="section-number-3">3.1</span> <code>与</code> 运算</h3>
+</div><div id="outline-container-orgde38d24" class="outline-3">
+<h3 id="orgde38d24"><span class="section-number-3">3.1</span> <code>与</code> 运算</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 运算法则：有 0 得 0
@@ -806,8 +814,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org533a74b" class="outline-3">
-<h3 id="org533a74b"><span class="section-number-3">3.2</span> <code>或</code> 运算</h3>
+<div id="outline-container-orgeee80eb" class="outline-3">
+<h3 id="orgeee80eb"><span class="section-number-3">3.2</span> <code>或</code> 运算</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 运算法则：有 1 得 1
@@ -853,8 +861,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org424097d" class="outline-3">
-<h3 id="org424097d"><span class="section-number-3">3.3</span> <code>非</code> 运算</h3>
+<div id="outline-container-org8c84e48" class="outline-3">
+<h3 id="org8c84e48"><span class="section-number-3">3.3</span> <code>非</code> 运算</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 运算法则：取反
@@ -891,8 +899,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org6eacad1" class="outline-3">
-<h3 id="org6eacad1"><span class="section-number-3">3.4</span> <code>异或</code> 运算</h3>
+<div id="outline-container-org4d238a3" class="outline-3">
+<h3 id="org4d238a3"><span class="section-number-3">3.4</span> <code>异或</code> 运算</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 运算法则：不同为 1，相同为 0
@@ -941,21 +949,20 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgc5acc79" class="outline-2">
-<h2 id="orgc5acc79"><span class="section-number-2">4</span> 8051 单片机介绍</h2>
+<div id="outline-container-orgb2ddd67" class="outline-2">
+<h2 id="orgb2ddd67"><span class="section-number-2">4</span> 8051 单片机介绍</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgf8c87d0" class="outline-3">
-<h3 id="orgf8c87d0"><span class="section-number-3">4.1</span> 80C51 的引脚封装</h3>
+</div><div id="outline-container-orgeb3bae2" class="outline-3">
+<h3 id="orgeb3bae2"><span class="section-number-3">4.1</span> 80C51 的引脚封装</h3>
 <div class="outline-text-3" id="text-4-1">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
-<div id="outline-container-org6011050" class="outline-4">
-<h4 id="org6011050"><span class="section-number-4">4.1.1</span> P3 口第二功能各引脚功能定义</h4>
+<div id="outline-container-org94d30ce" class="outline-4">
+<h4 id="org94d30ce"><span class="section-number-4">4.1.1</span> P3 口第二功能各引脚功能定义</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1027,20 +1034,19 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org5390d6d" class="outline-3">
-<h3 id="org5390d6d"><span class="section-number-3">4.2</span> 8051 内部结构</h3>
+<div id="outline-container-org733f5e4" class="outline-3">
+<h3 id="org733f5e4"><span class="section-number-3">4.2</span> 8051 内部结构</h3>
 <div class="outline-text-3" id="text-4-2">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc338b69" class="outline-3">
-<h3 id="orgc338b69"><span class="section-number-3">4.3</span> 总线(BUS)</h3>
+<div id="outline-container-org1486b17" class="outline-3">
+<h3 id="org1486b17"><span class="section-number-3">4.3</span> 总线(BUS)</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 总线(BUS)是计算机各不见之间传送信息的公共通道。
@@ -1081,8 +1087,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3dfb073" class="outline-3">
-<h3 id="org3dfb073"><span class="section-number-3">4.4</span> 单片机的构成</h3>
+<div id="outline-container-orgf0575a0" class="outline-3">
+<h3 id="orgf0575a0"><span class="section-number-3">4.4</span> 单片机的构成</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li><p>
@@ -1135,18 +1141,17 @@ T/C
 </ul>
 </div>
 </div>
-<div id="outline-container-orge88ea51" class="outline-3">
-<h3 id="orge88ea51"><span class="section-number-3">4.5</span> 单片机工作的基本时序</h3>
+<div id="outline-container-orgb220ebf" class="outline-3">
+<h3 id="orgb220ebf"><span class="section-number-3">4.5</span> 单片机工作的基本时序</h3>
 <div class="outline-text-3" id="text-4-5">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
-<div id="outline-container-orgd97cc00" class="outline-4">
-<h4 id="orgd97cc00"><span class="section-number-4">4.5.1</span> 震荡周期</h4>
+<div id="outline-container-org38f3d60" class="outline-4">
+<h4 id="org38f3d60"><span class="section-number-4">4.5.1</span> 震荡周期</h4>
 <div class="outline-text-4" id="text-4-5-1">
 <p>
 震荡周期也称为时钟周期，是指为单片机提供时钟脉冲信号的震荡源的周期，开发板上
@@ -1154,16 +1159,16 @@ Sorry, your browser does not support SVG.</object>
 </p>
 </div>
 </div>
-<div id="outline-container-org4d07001" class="outline-4">
-<h4 id="org4d07001"><span class="section-number-4">4.5.2</span> 状态周期</h4>
+<div id="outline-container-orgd7e46f5" class="outline-4">
+<h4 id="orgd7e46f5"><span class="section-number-4">4.5.2</span> 状态周期</h4>
 <div class="outline-text-4" id="text-4-5-2">
 <p>
 每个状态周期为时钟周期的 2 倍，是震荡周期经二分频后得到的。
 </p>
 </div>
 </div>
-<div id="outline-container-org7808741" class="outline-4">
-<h4 id="org7808741"><span class="section-number-4">4.5.3</span> 机器周期</h4>
+<div id="outline-container-orgeac6a0e" class="outline-4">
+<h4 id="orgeac6a0e"><span class="section-number-4">4.5.3</span> 机器周期</h4>
 <div class="outline-text-4" id="text-4-5-3">
 <p>
 一个机器周期包含 6 个状态周期 S1~S6 ，也就是 12 个时钟周期。在一个机器周期内，
@@ -1171,8 +1176,8 @@ CPU 可以完成一个独立的操作。
 </p>
 </div>
 </div>
-<div id="outline-container-org04331ae" class="outline-4">
-<h4 id="org04331ae"><span class="section-number-4">4.5.4</span> 指令周期</h4>
+<div id="outline-container-org9c7cdf1" class="outline-4">
+<h4 id="org9c7cdf1"><span class="section-number-4">4.5.4</span> 指令周期</h4>
 <div class="outline-text-4" id="text-4-5-4">
 <p>
 是指 CPU 完成一条操作所需要的全部时间。每条指令执行时间都是有一个或几个机器
@@ -1181,8 +1186,8 @@ CPU 可以完成一个独立的操作。
 </div>
 </div>
 </div>
-<div id="outline-container-org63292aa" class="outline-3">
-<h3 id="org63292aa"><span class="section-number-3">4.6</span> 单片机主要学习什么</h3>
+<div id="outline-container-orgdb44d25" class="outline-3">
+<h3 id="orgdb44d25"><span class="section-number-3">4.6</span> 单片机主要学习什么</h3>
 <div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
 <li>对 I/O 口的控制，无论单片机对外接进行何种控制，都是通过 I/O 口进行的。</li>
@@ -1191,8 +1196,8 @@ CPU 可以完成一个独立的操作。
 有锁存器、输出驱动器和输入缓冲器。4 个 I/O 端口都能作输入输出口用。</li>
 </ul>
 </div>
-<div id="outline-container-orgf103460" class="outline-4">
-<h4 id="orgf103460"><span class="section-number-4">4.6.1</span> 单片机 I/O 口的结构</h4>
+<div id="outline-container-orgd2fba10" class="outline-4">
+<h4 id="orgd2fba10"><span class="section-number-4">4.6.1</span> 单片机 I/O 口的结构</h4>
 <div class="outline-text-4" id="text-4-6-1">
 <p>
 单片机 I/O 口分为三种：开漏输出、准双向 IO 、强推挽输出。
@@ -1212,8 +1217,7 @@ P0 口没有内部的上拉电阻，只能借助外部上拉电阻，使用 <cod
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 <li><p>
@@ -1221,8 +1225,7 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 <li><p>
@@ -1230,15 +1233,14 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org38bedc1" class="outline-4">
-<h4 id="org38bedc1"><span class="section-number-4">4.6.2</span> 上下拉电阻</h4>
+<div id="outline-container-org53428f2" class="outline-4">
+<h4 id="org53428f2"><span class="section-number-4">4.6.2</span> 上下拉电阻</h4>
 <div class="outline-text-4" id="text-4-6-2">
 <ul class="org-ul">
 <li>概念</li>
@@ -1274,8 +1276,7 @@ Sorry, your browser does not support SVG.</object>
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul></li>
@@ -1284,11 +1285,11 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org326062d" class="outline-2">
-<h2 id="org326062d"><span class="section-number-2">5</span> C51 基础知识</h2>
+<div id="outline-container-org6a72ab9" class="outline-2">
+<h2 id="org6a72ab9"><span class="section-number-2">5</span> C51 基础知识</h2>
 </div>
 
-Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-23 Thu 10:22.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 
       
     </div>
@@ -1300,7 +1301,7 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
         <p><span>本文标题:</span><a href="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/">单片机基础知识</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">yyangdid</a></p>
         <p><span>发布时间:</span>2017-02-15, 20:04:24</p>
-        <p><span>最后更新:</span>2017-02-21, 20:34:03</p>
+        <p><span>最后更新:</span>2017-02-23, 10:22:06</p>
         
             <p>
                 <span>更新历史:</span>&nbsp<i class="fa fa-github">&nbsp</i>
@@ -1356,7 +1357,7 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org632a6b4"><span class="toc-text">1 电平特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org43e9bfc"><span class="toc-text">1.1 单片机的电平</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org9a0bc4c"><span class="toc-text">1.2 RS232 电平：即计算机串口的电平</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org065c881"><span class="toc-text">2 2 进制与 16 进制的表示和转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org63bc459"><span class="toc-text">2.1 二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc048c0d"><span class="toc-text">2.2 十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgfd10c1d"><span class="toc-text">2.3 进制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org4ab1290"><span class="toc-text">2.3.1 十进制转换为二进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgd6c3023"><span class="toc-text">2.3.2 二进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgdda32fc"><span class="toc-text">2.3.3 十进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgc763c31"><span class="toc-text">2.3.4 十六进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgcd83379"><span class="toc-text">2.3.5 二进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org844991b"><span class="toc-text">2.3.6 十六进制转换为二进制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org4cd5c36"><span class="toc-text">3 2 进制数的逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgaf99625"><span class="toc-text">3.1 与 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org533a74b"><span class="toc-text">3.2 或 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org424097d"><span class="toc-text">3.3 非 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org6eacad1"><span class="toc-text">3.4 异或 运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgc5acc79"><span class="toc-text">4 8051 单片机介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgf8c87d0"><span class="toc-text">4.1 80C51 的引脚封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org6011050"><span class="toc-text">4.1.1 P3 口第二功能各引脚功能定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org5390d6d"><span class="toc-text">4.2 8051 内部结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc338b69"><span class="toc-text">4.3 总线(BUS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org3dfb073"><span class="toc-text">4.4 单片机的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orge88ea51"><span class="toc-text">4.5 单片机工作的基本时序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgd97cc00"><span class="toc-text">4.5.1 震荡周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org4d07001"><span class="toc-text">4.5.2 状态周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org7808741"><span class="toc-text">4.5.3 机器周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org04331ae"><span class="toc-text">4.5.4 指令周期</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org63292aa"><span class="toc-text">4.6 单片机主要学习什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgf103460"><span class="toc-text">4.6.1 单片机 I/O 口的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org38bedc1"><span class="toc-text">4.6.2 上下拉电阻</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org326062d"><span class="toc-text">5 C51 基础知识</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgf67e2ee"><span class="toc-text">1 电平特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orga2752f3"><span class="toc-text">1.1 单片机的电平</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orga59ac31"><span class="toc-text">1.2 RS232 电平：即计算机串口的电平</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orge6db4f8"><span class="toc-text">2 2 进制与 16 进制的表示和转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org89e0cf7"><span class="toc-text">2.1 二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgc39f3fd"><span class="toc-text">2.2 十六进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orge733b3e"><span class="toc-text">2.3 进制转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org4bdb5de"><span class="toc-text">2.3.1 十进制转换为二进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgb35ec6d"><span class="toc-text">2.3.2 二进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgdae5b20"><span class="toc-text">2.3.3 十进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org38d7754"><span class="toc-text">2.3.4 十六进制转换为十进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org1bf9433"><span class="toc-text">2.3.5 二进制转换为十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org22639e2"><span class="toc-text">2.3.6 十六进制转换为二进制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org7c23e39"><span class="toc-text">3 2 进制数的逻辑运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgde38d24"><span class="toc-text">3.1 与 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgeee80eb"><span class="toc-text">3.2 或 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org8c84e48"><span class="toc-text">3.3 非 运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org4d238a3"><span class="toc-text">3.4 异或 运算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgb2ddd67"><span class="toc-text">4 8051 单片机介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgeb3bae2"><span class="toc-text">4.1 80C51 的引脚封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org94d30ce"><span class="toc-text">4.1.1 P3 口第二功能各引脚功能定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org733f5e4"><span class="toc-text">4.2 8051 内部结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org1486b17"><span class="toc-text">4.3 总线(BUS)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgf0575a0"><span class="toc-text">4.4 单片机的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgb220ebf"><span class="toc-text">4.5 单片机工作的基本时序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org38f3d60"><span class="toc-text">4.5.1 震荡周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgd7e46f5"><span class="toc-text">4.5.2 状态周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#orgeac6a0e"><span class="toc-text">4.5.3 机器周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org9c7cdf1"><span class="toc-text">4.5.4 指令周期</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgdb44d25"><span class="toc-text">4.6 单片机主要学习什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orgd2fba10"><span class="toc-text">4.6.1 单片机 I/O 口的结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org53428f2"><span class="toc-text">4.6.2 上下拉电阻</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org6a72ab9"><span class="toc-text">5 C51 基础知识</span></a></li></ol>
         
     </div>
     <style>

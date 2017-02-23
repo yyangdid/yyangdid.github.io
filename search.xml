@@ -12,25 +12,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org00f0e97">1. 直流电路基础知识</a>
+<li><a href="#org6b67f02">1. 直流电路基础知识</a>
 <ul>
-<li><a href="#orgf659a7f">1.1. 电流</a>
+<li><a href="#org9ca1384">1.1. 电流</a>
 <ul>
-<li><a href="#orgb92b2c4">1.1.1. 电气和电子设备需要电流才能工作。</a></li>
-<li><a href="#orgc639373">1.1.2. 电流产生的方法有很多种。</a></li>
-<li><a href="#org43f5184">1.1.3. 电流</a></li>
+<li><a href="#org4b6078d">1.1.1. 电气和电子设备需要电流才能工作。</a></li>
+<li><a href="#orgb50111c">1.1.2. 电流产生的方法有很多种。</a></li>
+<li><a href="#orgaa65ad7">1.1.3. 电流</a></li>
 </ul>
 </li>
-<li><a href="#org10ef3e2">1.2. 欧姆定律</a>
+<li><a href="#orgd9945a7">1.2. 欧姆定律</a>
 <ul>
-<li><a href="#orge171f6d">1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。</a></li>
+<li><a href="#org4edfc2b">1.2.1. 欧姆定律阐明了电压、电流、电阻之间的关系。</a></li>
 </ul>
 </li>
-<li><a href="#orgb8148ef">1.3. 电阻的串联</a></li>
-<li><a href="#orgb93699c">1.4. 电阻的并联</a></li>
-<li><a href="#orgf2b13c9">1.5. 功率</a></li>
-<li><a href="#org193712e">1.6. 微电流</a></li>
-<li><a href="#org7c0a7b0">1.7. 伏 - 安特性曲线</a></li>
+<li><a href="#org922683a">1.3. 电阻的串联</a></li>
+<li><a href="#orga0a501d">1.4. 电阻的并联</a></li>
+<li><a href="#orgad67280">1.5. 功率</a></li>
+<li><a href="#org13bece8">1.6. 微电流</a></li>
+<li><a href="#org873094d">1.7. 伏 - 安特性曲线</a></li>
 </ul>
 </li>
 </ul>
@@ -42,14 +42,14 @@
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org00f0e97" class="outline-2">
-<h2 id="org00f0e97"><span class="section-number-2">1</span> 直流电路基础知识</h2>
+<div id="outline-container-org6b67f02" class="outline-2">
+<h2 id="org6b67f02"><span class="section-number-2">1</span> 直流电路基础知识</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgf659a7f" class="outline-3">
-<h3 id="orgf659a7f"><span class="section-number-3">1.1</span> 电流</h3>
+</div><div id="outline-container-org9ca1384" class="outline-3">
+<h3 id="org9ca1384"><span class="section-number-3">1.1</span> 电流</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-orgb92b2c4" class="outline-4">
-<h4 id="orgb92b2c4"><span class="section-number-4">1.1.1</span> 电气和电子设备需要电流才能工作。</h4>
+</div><div id="outline-container-org4b6078d" class="outline-4">
+<h4 id="org4b6078d"><span class="section-number-4">1.1.1</span> 电气和电子设备需要电流才能工作。</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <ul class="org-ul">
 <li><p>
@@ -63,8 +63,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc639373" class="outline-4">
-<h4 id="orgc639373"><span class="section-number-4">1.1.2</span> 电流产生的方法有很多种。</h4>
+<div id="outline-container-orgb50111c" class="outline-4">
+<h4 id="orgb50111c"><span class="section-number-4">1.1.2</span> 电流产生的方法有很多种。</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <ul class="org-ul">
 <li><p>
@@ -99,8 +99,8 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org43f5184" class="outline-4">
-<h4 id="org43f5184"><span class="section-number-4">1.1.3</span> 电流</h4>
+<div id="outline-container-orgaa65ad7" class="outline-4">
+<h4 id="orgaa65ad7"><span class="section-number-4">1.1.3</span> 电流</h4>
 <div class="outline-text-4" id="text-1-1-3">
 <p>
 本书使用电池作为电压源。电池为电路提供电势差，从而产生电流。电流就是电荷的流
@@ -116,8 +116,7 @@
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0001_2017-02-21_15-50-31.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0001_2017-02-21_15-50-31.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 
@@ -138,8 +137,7 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0002_2017-02-21_15-50-59.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0002_2017-02-21_15-50-59.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 
@@ -158,11 +156,11 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org10ef3e2" class="outline-3">
-<h3 id="org10ef3e2"><span class="section-number-3">1.2</span> 欧姆定律</h3>
+<div id="outline-container-orgd9945a7" class="outline-3">
+<h3 id="orgd9945a7"><span class="section-number-3">1.2</span> 欧姆定律</h3>
 <div class="outline-text-3" id="text-1-2">
-</div><div id="outline-container-orge171f6d" class="outline-4">
-<h4 id="orge171f6d"><span class="section-number-4">1.2.1</span> 欧姆定律阐明了电压、电流、电阻之间的关系。</h4>
+</div><div id="outline-container-org4edfc2b" class="outline-4">
+<h4 id="org4edfc2b"><span class="section-number-4">1.2.1</span> 欧姆定律阐明了电压、电流、电阻之间的关系。</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <ul class="org-ul">
 <li><p>
@@ -313,16 +311,15 @@ V 代表电压(有些书籍使用 E 表示)，I 代表电流，R 代表电阻。
 </div>
 </div>
 
-<div id="outline-container-orgb8148ef" class="outline-3">
-<h3 id="orgb8148ef"><span class="section-number-3">1.3</span> 电阻的串联</h3>
+<div id="outline-container-org922683a" class="outline-3">
+<h3 id="org922683a"><span class="section-number-3">1.3</span> 电阻的串联</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 如下图，就是电阻的串联：
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0003_2017-02-21_17-11-24.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0003_2017-02-21_17-11-24.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 <ul class="org-ul">
@@ -337,16 +334,15 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgb93699c" class="outline-3">
-<h3 id="orgb93699c"><span class="section-number-3">1.4</span> 电阻的并联</h3>
+<div id="outline-container-orga0a501d" class="outline-3">
+<h3 id="orga0a501d"><span class="section-number-3">1.4</span> 电阻的并联</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 如下图，电阻可以并联：
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0004_2017-02-21_17-12-05.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0004_2017-02-21_17-12-05.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 
@@ -359,8 +355,7 @@ Sorry, your browser does not support SVG.</object>
 <b></b> 
 </p>
 <p alt="(点击图片可放大)" width="300px">
-<object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0005_2017-02-21_17-23-46.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0005_2017-02-21_17-23-46.png" alt="(点击图片可放大)" width="300px">
 因此，R<sub>T</sub> = 1Ω
 </p>
 
@@ -398,8 +393,8 @@ R<sub>T</sub> 通常被称为等效并联电阻。
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf2b13c9" class="outline-3">
-<h3 id="orgf2b13c9"><span class="section-number-3">1.5</span> 功率</h3>
+<div id="outline-container-orgad67280" class="outline-3">
+<h3 id="orgad67280"><span class="section-number-3">1.5</span> 功率</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 当有电流流过电阻时，就会消耗电能(通常是以热量的形式)。功率使用 P 表示，单位是
@@ -412,8 +407,7 @@ R<sub>T</sub> 通常被称为等效并联电阻。
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0006_2017-02-21_17-46-23.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0006_2017-02-21_17-46-23.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 <li><p>
@@ -517,8 +511,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 </div>
 </div>
-<div id="outline-container-org193712e" class="outline-3">
-<h3 id="org193712e"><span class="section-number-3">1.6</span> 微电流</h3>
+<div id="outline-container-org13bece8" class="outline-3">
+<h3 id="org13bece8"><span class="section-number-3">1.6</span> 微电流</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 在重型工业设备中使用的电流远大于 1A ，但是大多数电路需要的电流都不足 1A 。
@@ -572,8 +566,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 </div>
 </div>
-<div id="outline-container-org7c0a7b0" class="outline-3">
-<h3 id="org7c0a7b0"><span class="section-number-3">1.7</span> 伏 - 安特性曲线</h3>
+<div id="outline-container-org873094d" class="outline-3">
+<h3 id="org873094d"><span class="section-number-3">1.7</span> 伏 - 安特性曲线</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 将电阻上的压降和流过电阻的电流绘成图，就得到了伏 - 安特性曲线(V-I 曲线)。
@@ -617,8 +611,7 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0007_2017-02-21_20-07-31.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0007_2017-02-21_20-07-31.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 
@@ -639,8 +632,7 @@ B 点：V = 20V，I = 20mA
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-21.电子技术自学指南第三版笔记/0008_2017-02-21_20-18-21.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/21/学习单片机/2017-02-21.电子技术自学指南第三版笔记/0008_2017-02-21_20-18-21.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 
@@ -652,7 +644,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-21 Tue 21:08.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 ]]></content>
       
         <categories>
@@ -683,63 +675,63 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org632a6b4">1. 电平特性</a>
+<li><a href="#orgf67e2ee">1. 电平特性</a>
 <ul>
-<li><a href="#org43e9bfc">1.1. 单片机的电平</a></li>
-<li><a href="#org9a0bc4c">1.2. RS232 电平：即计算机串口的电平</a></li>
+<li><a href="#orga2752f3">1.1. 单片机的电平</a></li>
+<li><a href="#orga59ac31">1.2. RS232 电平：即计算机串口的电平</a></li>
 </ul>
 </li>
-<li><a href="#org065c881">2. 2 进制与 16 进制的表示和转换</a>
+<li><a href="#orge6db4f8">2. 2 进制与 16 进制的表示和转换</a>
 <ul>
-<li><a href="#org63bc459">2.1. 二进制</a></li>
-<li><a href="#orgc048c0d">2.2. 十六进制</a></li>
-<li><a href="#orgfd10c1d">2.3. 进制转换</a>
+<li><a href="#org89e0cf7">2.1. 二进制</a></li>
+<li><a href="#orgc39f3fd">2.2. 十六进制</a></li>
+<li><a href="#orge733b3e">2.3. 进制转换</a>
 <ul>
-<li><a href="#org4ab1290">2.3.1. 十进制转换为二进制</a></li>
-<li><a href="#orgd6c3023">2.3.2. 二进制转换为十进制</a></li>
-<li><a href="#orgdda32fc">2.3.3. 十进制转换为十六进制</a></li>
-<li><a href="#orgc763c31">2.3.4. 十六进制转换为十进制</a></li>
-<li><a href="#orgcd83379">2.3.5. 二进制转换为十六进制</a></li>
-<li><a href="#org844991b">2.3.6. 十六进制转换为二进制</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org4cd5c36">3. 2 进制数的逻辑运算</a>
-<ul>
-<li><a href="#orgaf99625">3.1. <code>与</code> 运算</a></li>
-<li><a href="#org533a74b">3.2. <code>或</code> 运算</a></li>
-<li><a href="#org424097d">3.3. <code>非</code> 运算</a></li>
-<li><a href="#org6eacad1">3.4. <code>异或</code> 运算</a></li>
-</ul>
-</li>
-<li><a href="#orgc5acc79">4. 8051 单片机介绍</a>
-<ul>
-<li><a href="#orgf8c87d0">4.1. 80C51 的引脚封装</a>
-<ul>
-<li><a href="#org6011050">4.1.1. P3 口第二功能各引脚功能定义</a></li>
-</ul>
-</li>
-<li><a href="#org5390d6d">4.2. 8051 内部结构</a></li>
-<li><a href="#orgc338b69">4.3. 总线(BUS)</a></li>
-<li><a href="#org3dfb073">4.4. 单片机的构成</a></li>
-<li><a href="#orge88ea51">4.5. 单片机工作的基本时序</a>
-<ul>
-<li><a href="#orgd97cc00">4.5.1. 震荡周期</a></li>
-<li><a href="#org4d07001">4.5.2. 状态周期</a></li>
-<li><a href="#org7808741">4.5.3. 机器周期</a></li>
-<li><a href="#org04331ae">4.5.4. 指令周期</a></li>
-</ul>
-</li>
-<li><a href="#org63292aa">4.6. 单片机主要学习什么</a>
-<ul>
-<li><a href="#orgf103460">4.6.1. 单片机 I/O 口的结构</a></li>
-<li><a href="#org38bedc1">4.6.2. 上下拉电阻</a></li>
+<li><a href="#org4bdb5de">2.3.1. 十进制转换为二进制</a></li>
+<li><a href="#orgb35ec6d">2.3.2. 二进制转换为十进制</a></li>
+<li><a href="#orgdae5b20">2.3.3. 十进制转换为十六进制</a></li>
+<li><a href="#org38d7754">2.3.4. 十六进制转换为十进制</a></li>
+<li><a href="#org1bf9433">2.3.5. 二进制转换为十六进制</a></li>
+<li><a href="#org22639e2">2.3.6. 十六进制转换为二进制</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org326062d">5. C51 基础知识</a></li>
+<li><a href="#org7c23e39">3. 2 进制数的逻辑运算</a>
+<ul>
+<li><a href="#orgde38d24">3.1. <code>与</code> 运算</a></li>
+<li><a href="#orgeee80eb">3.2. <code>或</code> 运算</a></li>
+<li><a href="#org8c84e48">3.3. <code>非</code> 运算</a></li>
+<li><a href="#org4d238a3">3.4. <code>异或</code> 运算</a></li>
+</ul>
+</li>
+<li><a href="#orgb2ddd67">4. 8051 单片机介绍</a>
+<ul>
+<li><a href="#orgeb3bae2">4.1. 80C51 的引脚封装</a>
+<ul>
+<li><a href="#org94d30ce">4.1.1. P3 口第二功能各引脚功能定义</a></li>
+</ul>
+</li>
+<li><a href="#org733f5e4">4.2. 8051 内部结构</a></li>
+<li><a href="#org1486b17">4.3. 总线(BUS)</a></li>
+<li><a href="#orgf0575a0">4.4. 单片机的构成</a></li>
+<li><a href="#orgb220ebf">4.5. 单片机工作的基本时序</a>
+<ul>
+<li><a href="#org38f3d60">4.5.1. 震荡周期</a></li>
+<li><a href="#orgd7e46f5">4.5.2. 状态周期</a></li>
+<li><a href="#orgeac6a0e">4.5.3. 机器周期</a></li>
+<li><a href="#org9c7cdf1">4.5.4. 指令周期</a></li>
+</ul>
+</li>
+<li><a href="#orgdb44d25">4.6. 单片机主要学习什么</a>
+<ul>
+<li><a href="#orgd2fba10">4.6.1. 单片机 I/O 口的结构</a></li>
+<li><a href="#org53428f2">4.6.2. 上下拉电阻</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6a72ab9">5. C51 基础知识</a></li>
 </ul>
 </div>
 </div>
@@ -750,16 +742,16 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 </blockquote>
 <a id="more"></a>
 
-<div id="outline-container-org632a6b4" class="outline-2">
-<h2 id="org632a6b4"><span class="section-number-2">1</span> 电平特性</h2>
+<div id="outline-container-orgf67e2ee" class="outline-2">
+<h2 id="orgf67e2ee"><span class="section-number-2">1</span> 电平特性</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 在数字电路中只有两种电平：高电平和低电平。
 </p>
 </div>
 
-<div id="outline-container-org43e9bfc" class="outline-3">
-<h3 id="org43e9bfc"><span class="section-number-3">1.1</span> 单片机的电平</h3>
+<div id="outline-container-orga2752f3" class="outline-3">
+<h3 id="orga2752f3"><span class="section-number-3">1.1</span> 单片机的电平</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 数字电路中只有两种电平：高电平和低电平。
@@ -772,8 +764,8 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 
-<div id="outline-container-org9a0bc4c" class="outline-3">
-<h3 id="org9a0bc4c"><span class="section-number-3">1.2</span> RS232 电平：即计算机串口的电平</h3>
+<div id="outline-container-orga59ac31" class="outline-3">
+<h3 id="orga59ac31"><span class="section-number-3">1.2</span> RS232 电平：即计算机串口的电平</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>高电平：-12V</li>
@@ -790,8 +782,8 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 
-<div id="outline-container-org065c881" class="outline-2">
-<h2 id="org065c881"><span class="section-number-2">2</span> 2 进制与 16 进制的表示和转换</h2>
+<div id="outline-container-orge6db4f8" class="outline-2">
+<h2 id="orge6db4f8"><span class="section-number-2">2</span> 2 进制与 16 进制的表示和转换</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><p>
@@ -922,8 +914,8 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 </ul>
 </div>
 
-<div id="outline-container-org63bc459" class="outline-3">
-<h3 id="org63bc459"><span class="section-number-3">2.1</span> 二进制</h3>
+<div id="outline-container-org89e0cf7" class="outline-3">
+<h3 id="org89e0cf7"><span class="section-number-3">2.1</span> 二进制</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 由于数字电路中只有两种电平特性，所以计算机中使用的数字都采用的二进制形式的。
@@ -934,26 +926,26 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 </p>
 </div>
 </div>
-<div id="outline-container-orgc048c0d" class="outline-3">
-<h3 id="orgc048c0d"><span class="section-number-3">2.2</span> 十六进制</h3>
+<div id="outline-container-orgc39f3fd" class="outline-3">
+<h3 id="orgc39f3fd"><span class="section-number-3">2.2</span> 十六进制</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 十六进制的基数为 <code>F</code> ，进位规则是“逢十六进一”。
 </p>
 </div>
 </div>
-<div id="outline-container-orgfd10c1d" class="outline-3">
-<h3 id="orgfd10c1d"><span class="section-number-3">2.3</span> 进制转换</h3>
+<div id="outline-container-orge733b3e" class="outline-3">
+<h3 id="orge733b3e"><span class="section-number-3">2.3</span> 进制转换</h3>
 <div class="outline-text-3" id="text-2-3">
-</div><div id="outline-container-org4ab1290" class="outline-4">
-<h4 id="org4ab1290"><span class="section-number-4">2.3.1</span> 十进制转换为二进制</h4>
+</div><div id="outline-container-org4bdb5de" class="outline-4">
+<h4 id="org4bdb5de"><span class="section-number-4">2.3.1</span> 十进制转换为二进制</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 十进制转换为二进制主要分为这几种情况：正整数转二进制，负整数转二进制，小数转
 二进制。
 </p>
 </div>
-<ol class="org-ol"><li><a id="org52d2bc5"></a>正整数转二进制<br><div class="outline-text-5" id="text-2-3-1-1">
+<ol class="org-ol"><li><a id="orgf7cad41"></a>正整数转二进制<br><div class="outline-text-5" id="text-2-3-1-1">
 <ul class="org-ul">
 <li><p>
 <code>运算方法：</code>
@@ -974,14 +966,13 @@ Last Updated 2017-02-21 Tue 20:33.<br>Render by <a href="https://github.com/Code
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-positive-integer-converted-to-binary_2017-02-15_21-21-55.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li>
 
-<li><a id="orga38ac10"></a>负整数转二进制<br><div class="outline-text-5" id="text-2-3-1-2">
+<li><a id="orgc67ac99"></a>负整数转二进制<br><div class="outline-text-5" id="text-2-3-1-2">
 <ul class="org-ul">
 <li><p>
 <code>运算方法：</code>
@@ -997,14 +988,13 @@ Sorry, your browser does not support SVG.</object>
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimal-negative-integer-converted-to-binary_2017-02-15_21-34-27.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li>
 
-<li><a id="org9eacf84"></a>小数转二进制<br><div class="outline-text-5" id="text-2-3-1-3">
+<li><a id="org5b2459b"></a>小数转二进制<br><div class="outline-text-5" id="text-2-3-1-3">
 <ul class="org-ul">
 <li><p>
 运算方法：乘二取整，正序排列。
@@ -1022,17 +1012,16 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/decimals-converted-to-binary_2017-02-16_12-01-58.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div></li></ol>
 </div>
-<div id="outline-container-orgd6c3023" class="outline-4">
-<h4 id="orgd6c3023"><span class="section-number-4">2.3.2</span> 二进制转换为十进制</h4>
+<div id="outline-container-orgb35ec6d" class="outline-4">
+<h4 id="orgb35ec6d"><span class="section-number-4">2.3.2</span> 二进制转换为十进制</h4>
 <div class="outline-text-4" id="text-2-3-2">
-</div><ol class="org-ol"><li><a id="org0544ee1"></a>整数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-1">
+</div><ol class="org-ol"><li><a id="orge53531b"></a>整数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-1">
 <p>
 首先将二进制的位数补齐，首位为 0 则是整数，为 1 则为负数。
 </p>
@@ -1047,12 +1036,11 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-integer_2017-02-16_12-24-13.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div></li>
-<li><a id="org9b6f4db"></a>小数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-2">
+<li><a id="org22aca3f"></a>小数二进制转换为十进制<br><div class="outline-text-5" id="text-2-3-2-2">
 <p>
 将二进制的每位数字乘以对应位数的 2 的负幂次数，然后相加。
 </p>
@@ -1062,31 +1050,30 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/binary-converted-to-decimals_2017-02-16_12-56-15.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div></li></ol>
 </div>
-<div id="outline-container-orgdda32fc" class="outline-4">
-<h4 id="orgdda32fc"><span class="section-number-4">2.3.3</span> 十进制转换为十六进制</h4>
+<div id="outline-container-orgdae5b20" class="outline-4">
+<h4 id="orgdae5b20"><span class="section-number-4">2.3.3</span> 十进制转换为十六进制</h4>
 </div>
-<div id="outline-container-orgc763c31" class="outline-4">
-<h4 id="orgc763c31"><span class="section-number-4">2.3.4</span> 十六进制转换为十进制</h4>
+<div id="outline-container-org38d7754" class="outline-4">
+<h4 id="org38d7754"><span class="section-number-4">2.3.4</span> 十六进制转换为十进制</h4>
 </div>
-<div id="outline-container-orgcd83379" class="outline-4">
-<h4 id="orgcd83379"><span class="section-number-4">2.3.5</span> 二进制转换为十六进制</h4>
+<div id="outline-container-org1bf9433" class="outline-4">
+<h4 id="org1bf9433"><span class="section-number-4">2.3.5</span> 二进制转换为十六进制</h4>
 </div>
-<div id="outline-container-org844991b" class="outline-4">
-<h4 id="org844991b"><span class="section-number-4">2.3.6</span> 十六进制转换为二进制</h4>
+<div id="outline-container-org22639e2" class="outline-4">
+<h4 id="org22639e2"><span class="section-number-4">2.3.6</span> 十六进制转换为二进制</h4>
 </div>
 </div>
 </div>
-<div id="outline-container-org4cd5c36" class="outline-2">
-<h2 id="org4cd5c36"><span class="section-number-2">3</span> 2 进制数的逻辑运算</h2>
+<div id="outline-container-org7c23e39" class="outline-2">
+<h2 id="org7c23e39"><span class="section-number-2">3</span> 2 进制数的逻辑运算</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgaf99625" class="outline-3">
-<h3 id="orgaf99625"><span class="section-number-3">3.1</span> <code>与</code> 运算</h3>
+</div><div id="outline-container-orgde38d24" class="outline-3">
+<h3 id="orgde38d24"><span class="section-number-3">3.1</span> <code>与</code> 运算</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 运算法则：有 0 得 0
@@ -1128,8 +1115,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org533a74b" class="outline-3">
-<h3 id="org533a74b"><span class="section-number-3">3.2</span> <code>或</code> 运算</h3>
+<div id="outline-container-orgeee80eb" class="outline-3">
+<h3 id="orgeee80eb"><span class="section-number-3">3.2</span> <code>或</code> 运算</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 运算法则：有 1 得 1
@@ -1175,8 +1162,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org424097d" class="outline-3">
-<h3 id="org424097d"><span class="section-number-3">3.3</span> <code>非</code> 运算</h3>
+<div id="outline-container-org8c84e48" class="outline-3">
+<h3 id="org8c84e48"><span class="section-number-3">3.3</span> <code>非</code> 运算</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 运算法则：取反
@@ -1213,8 +1200,8 @@ Sorry, your browser does not support SVG.</object>
 </table>
 </div>
 </div>
-<div id="outline-container-org6eacad1" class="outline-3">
-<h3 id="org6eacad1"><span class="section-number-3">3.4</span> <code>异或</code> 运算</h3>
+<div id="outline-container-org4d238a3" class="outline-3">
+<h3 id="org4d238a3"><span class="section-number-3">3.4</span> <code>异或</code> 运算</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 运算法则：不同为 1，相同为 0
@@ -1263,21 +1250,20 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgc5acc79" class="outline-2">
-<h2 id="orgc5acc79"><span class="section-number-2">4</span> 8051 单片机介绍</h2>
+<div id="outline-container-orgb2ddd67" class="outline-2">
+<h2 id="orgb2ddd67"><span class="section-number-2">4</span> 8051 单片机介绍</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgf8c87d0" class="outline-3">
-<h3 id="orgf8c87d0"><span class="section-number-3">4.1</span> 80C51 的引脚封装</h3>
+</div><div id="outline-container-orgeb3bae2" class="outline-3">
+<h3 id="orgeb3bae2"><span class="section-number-3">4.1</span> 80C51 的引脚封装</h3>
 <div class="outline-text-3" id="text-4-1">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/80C51-pin-decal_2017-02-16_16-28-39.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
-<div id="outline-container-org6011050" class="outline-4">
-<h4 id="org6011050"><span class="section-number-4">4.1.1</span> P3 口第二功能各引脚功能定义</h4>
+<div id="outline-container-org94d30ce" class="outline-4">
+<h4 id="org94d30ce"><span class="section-number-4">4.1.1</span> P3 口第二功能各引脚功能定义</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -1349,20 +1335,19 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org5390d6d" class="outline-3">
-<h3 id="org5390d6d"><span class="section-number-3">4.2</span> 8051 内部结构</h3>
+<div id="outline-container-org733f5e4" class="outline-3">
+<h3 id="org733f5e4"><span class="section-number-3">4.2</span> 8051 内部结构</h3>
 <div class="outline-text-3" id="text-4-2">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-internal-structure_2017-02-16_17-53-05.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgc338b69" class="outline-3">
-<h3 id="orgc338b69"><span class="section-number-3">4.3</span> 总线(BUS)</h3>
+<div id="outline-container-org1486b17" class="outline-3">
+<h3 id="org1486b17"><span class="section-number-3">4.3</span> 总线(BUS)</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 总线(BUS)是计算机各不见之间传送信息的公共通道。
@@ -1403,8 +1388,8 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3dfb073" class="outline-3">
-<h3 id="org3dfb073"><span class="section-number-3">4.4</span> 单片机的构成</h3>
+<div id="outline-container-orgf0575a0" class="outline-3">
+<h3 id="orgf0575a0"><span class="section-number-3">4.4</span> 单片机的构成</h3>
 <div class="outline-text-3" id="text-4-4">
 <ul class="org-ul">
 <li><p>
@@ -1457,18 +1442,17 @@ T/C
 </ul>
 </div>
 </div>
-<div id="outline-container-orge88ea51" class="outline-3">
-<h3 id="orge88ea51"><span class="section-number-3">4.5</span> 单片机工作的基本时序</h3>
+<div id="outline-container-orgb220ebf" class="outline-3">
+<h3 id="orgb220ebf"><span class="section-number-3">4.5</span> 单片机工作的基本时序</h3>
 <div class="outline-text-3" id="text-4-5">
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/8051-basic-timing_2017-02-20_20-12-26.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div>
 </div>
-<div id="outline-container-orgd97cc00" class="outline-4">
-<h4 id="orgd97cc00"><span class="section-number-4">4.5.1</span> 震荡周期</h4>
+<div id="outline-container-org38f3d60" class="outline-4">
+<h4 id="org38f3d60"><span class="section-number-4">4.5.1</span> 震荡周期</h4>
 <div class="outline-text-4" id="text-4-5-1">
 <p>
 震荡周期也称为时钟周期，是指为单片机提供时钟脉冲信号的震荡源的周期，开发板上
@@ -1476,16 +1460,16 @@ Sorry, your browser does not support SVG.</object>
 </p>
 </div>
 </div>
-<div id="outline-container-org4d07001" class="outline-4">
-<h4 id="org4d07001"><span class="section-number-4">4.5.2</span> 状态周期</h4>
+<div id="outline-container-orgd7e46f5" class="outline-4">
+<h4 id="orgd7e46f5"><span class="section-number-4">4.5.2</span> 状态周期</h4>
 <div class="outline-text-4" id="text-4-5-2">
 <p>
 每个状态周期为时钟周期的 2 倍，是震荡周期经二分频后得到的。
 </p>
 </div>
 </div>
-<div id="outline-container-org7808741" class="outline-4">
-<h4 id="org7808741"><span class="section-number-4">4.5.3</span> 机器周期</h4>
+<div id="outline-container-orgeac6a0e" class="outline-4">
+<h4 id="orgeac6a0e"><span class="section-number-4">4.5.3</span> 机器周期</h4>
 <div class="outline-text-4" id="text-4-5-3">
 <p>
 一个机器周期包含 6 个状态周期 S1~S6 ，也就是 12 个时钟周期。在一个机器周期内，
@@ -1493,8 +1477,8 @@ CPU 可以完成一个独立的操作。
 </p>
 </div>
 </div>
-<div id="outline-container-org04331ae" class="outline-4">
-<h4 id="org04331ae"><span class="section-number-4">4.5.4</span> 指令周期</h4>
+<div id="outline-container-org9c7cdf1" class="outline-4">
+<h4 id="org9c7cdf1"><span class="section-number-4">4.5.4</span> 指令周期</h4>
 <div class="outline-text-4" id="text-4-5-4">
 <p>
 是指 CPU 完成一条操作所需要的全部时间。每条指令执行时间都是有一个或几个机器
@@ -1503,8 +1487,8 @@ CPU 可以完成一个独立的操作。
 </div>
 </div>
 </div>
-<div id="outline-container-org63292aa" class="outline-3">
-<h3 id="org63292aa"><span class="section-number-3">4.6</span> 单片机主要学习什么</h3>
+<div id="outline-container-orgdb44d25" class="outline-3">
+<h3 id="orgdb44d25"><span class="section-number-3">4.6</span> 单片机主要学习什么</h3>
 <div class="outline-text-3" id="text-4-6">
 <ul class="org-ul">
 <li>对 I/O 口的控制，无论单片机对外接进行何种控制，都是通过 I/O 口进行的。</li>
@@ -1513,8 +1497,8 @@ CPU 可以完成一个独立的操作。
 有锁存器、输出驱动器和输入缓冲器。4 个 I/O 端口都能作输入输出口用。</li>
 </ul>
 </div>
-<div id="outline-container-orgf103460" class="outline-4">
-<h4 id="orgf103460"><span class="section-number-4">4.6.1</span> 单片机 I/O 口的结构</h4>
+<div id="outline-container-orgd2fba10" class="outline-4">
+<h4 id="orgd2fba10"><span class="section-number-4">4.6.1</span> 单片机 I/O 口的结构</h4>
 <div class="outline-text-4" id="text-4-6-1">
 <p>
 单片机 I/O 口分为三种：开漏输出、准双向 IO 、强推挽输出。
@@ -1534,8 +1518,7 @@ P0 口没有内部的上拉电阻，只能借助外部上拉电阻，使用 <cod
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0002_2017-02-20_21-02-47.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 <li><p>
@@ -1543,8 +1526,7 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0001_2017-02-20_20-31-27.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 <li><p>
@@ -1552,15 +1534,14 @@ Sorry, your browser does not support SVG.</object>
 </p>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0003_2017-02-20_21-24-35.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org38bedc1" class="outline-4">
-<h4 id="org38bedc1"><span class="section-number-4">4.6.2</span> 上下拉电阻</h4>
+<div id="outline-container-org53428f2" class="outline-4">
+<h4 id="org53428f2"><span class="section-number-4">4.6.2</span> 上下拉电阻</h4>
 <div class="outline-text-4" id="text-4-6-2">
 <ul class="org-ul">
 <li>概念</li>
@@ -1596,8 +1577,7 @@ Sorry, your browser does not support SVG.</object>
 
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/02/15/学习单片机/2017-02-15.单片机基础知识/scm-0004_2017-02-20_21-58-33.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul></li>
@@ -1606,11 +1586,11 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 </div>
-<div id="outline-container-org326062d" class="outline-2">
-<h2 id="org326062d"><span class="section-number-2">5</span> C51 基础知识</h2>
+<div id="outline-container-org6a72ab9" class="outline-2">
+<h2 id="org6a72ab9"><span class="section-number-2">5</span> C51 基础知识</h2>
 </div>
 
-Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-23 Thu 10:22.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 ]]></content>
       
         <categories>
@@ -1637,11 +1617,11 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6512d7f">1. cons cell</a></li>
-<li><a href="#org169e81a">2. 列表</a></li>
-<li><a href="#orgf724abc">3. 测试函数</a></li>
-<li><a href="#orga6845cd">4. 构造函数</a></li>
-<li><a href="#orgcefa1b8">5. 把列表当成数组用</a></li>
+<li><a href="#org78d05cb">1. cons cell</a></li>
+<li><a href="#org7286e28">2. 列表</a></li>
+<li><a href="#org52f796a">3. 测试函数</a></li>
+<li><a href="#org6e720e4">4. 构造函数</a></li>
+<li><a href="#org7709f83">5. 把列表当成数组用</a></li>
 </ul>
 </div>
 </div>
@@ -1657,8 +1637,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </blockquote>
 <a id="more"></a>
 
-<div id="outline-container-org6512d7f" class="outline-2">
-<h2 id="org6512d7f"><span class="section-number-2">1</span> cons cell</h2>
+<div id="outline-container-org78d05cb" class="outline-2">
+<h2 id="org78d05cb"><span class="section-number-2">1</span> cons cell</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 个人把 <code>cons cell</code> 理解为只有两个元素的列表，第一个是 <i>CAR</i> ，第一个是 <i>CDR</i> 。
@@ -1672,8 +1652,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 </div>
-<div id="outline-container-org169e81a" class="outline-2">
-<h2 id="org169e81a"><span class="section-number-2">2</span> 列表</h2>
+<div id="outline-container-org7286e28" class="outline-2">
+<h2 id="org7286e28"><span class="section-number-2">2</span> 列表</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 列表包含了 <code>cons cell</code> ，列表可以包含多个元素，列表有一个特殊的元素 &#x2013; 空表 <code>nil</code> 。
@@ -1711,8 +1691,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf724abc" class="outline-2">
-<h2 id="orgf724abc"><span class="section-number-2">3</span> 测试函数</h2>
+<div id="outline-container-org52f796a" class="outline-2">
+<h2 id="org52f796a"><span class="section-number-2">3</span> 测试函数</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 测试一个对象是否是 cons cell 用 <code>consp</code> 函数，是否是列表用 <code>listp</code> 函数，是否
@@ -1727,8 +1707,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 </div>
-<div id="outline-container-orga6845cd" class="outline-2">
-<h2 id="orga6845cd"><span class="section-number-2">4</span> 构造函数</h2>
+<div id="outline-container-org6e720e4" class="outline-2">
+<h2 id="org6e720e4"><span class="section-number-2">4</span> 构造函数</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -1788,8 +1768,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 
-<div id="outline-container-orgcefa1b8" class="outline-2">
-<h2 id="orgcefa1b8"><span class="section-number-2">5</span> 把列表当成数组用</h2>
+<div id="outline-container-org7709f83" class="outline-2">
+<h2 id="org7709f83"><span class="section-number-2">5</span> 把列表当成数组用</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 使用 <code>car</code> 和 <code>cdr</code> 获取列表的第一个元素和剩余元素， <code>cdr</code> 获取的返回值是一个列表。
@@ -1815,8 +1795,7 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-nth_2017-02-04_20-09-56.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-nth_2017-02-04_20-09-56.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 
@@ -1832,8 +1811,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-nthcdr_2017-02-04_20-31-09.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-nthcdr_2017-02-04_20-31-09.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 
@@ -1849,8 +1827,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-last_2017-02-04_20-39-46.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-last_2017-02-04_20-39-46.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 
@@ -1866,8 +1843,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-butlast_2017-02-04_20-45-47.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-butlast_2017-02-04_20-45-47.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 </ul>
@@ -1890,8 +1866,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 
 <div class="figure">
-<p><object type="image/svg+xml" data="2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-setcar&setcdr_2017-02-04_21-11-40.svg" class="org-svg" alt="(点击图片可放大)" width="300px">
-Sorry, your browser does not support SVG.</object>
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-setcar&setcdr_2017-02-04_21-11-40.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 
@@ -1909,7 +1884,7 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
+Last Updated 2017-02-22 Wed 10:50.<br>Render by <a href="https://github.com/CodeFalling/hexo-renderer-org" target="_blank" rel="external">hexo-renderer-org</a> with <a href="http://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a> 25.1.1 (<a href="http://orgmode.org" target="_blank" rel="external">Org</a> mode 9.0.5)
 ]]></content>
       
         <categories>
@@ -1940,21 +1915,21 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org80e4e71">1. 简介</a>
+<li><a href="#orge87077c">1. 简介</a>
 <ul>
-<li><a href="#orge54661f">1.1. 字符串</a></li>
-<li><a href="#org81d3109">1.2. 字符</a>
+<li><a href="#org25b58ff">1.1. 字符串</a></li>
+<li><a href="#orgbb48f16">1.2. 字符</a>
 <ul>
-<li><a href="#orgbe1980d">1.2.1. 获取字符相对应的那个整数</a></li>
+<li><a href="#org137c39e">1.2.1. 获取字符相对应的那个整数</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org7cfa212">2. 测试函数</a></li>
-<li><a href="#orga030b57">3. 构造函数</a></li>
-<li><a href="#org16ec508">4. 比较函数</a></li>
-<li><a href="#org6f82959">5. 转换函数</a></li>
-<li><a href="#orgf00b00e">6. 附录</a></li>
+<li><a href="#orgeafca81">2. 测试函数</a></li>
+<li><a href="#orgfc6cbd4">3. 构造函数</a></li>
+<li><a href="#org9755bae">4. 比较函数</a></li>
+<li><a href="#orgacaf9ae">5. 转换函数</a></li>
+<li><a href="#orgcfbc05c">6. 附录</a></li>
 </ul>
 </div>
 </div>
@@ -1968,11 +1943,11 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org80e4e71" class="outline-2">
-<h2 id="org80e4e71"><span class="section-number-2">1</span> 简介</h2>
+<div id="outline-container-orge87077c" class="outline-2">
+<h2 id="orge87077c"><span class="section-number-2">1</span> 简介</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orge54661f" class="outline-3">
-<h3 id="orge54661f"><span class="section-number-3">1.1</span> 字符串</h3>
+</div><div id="outline-container-org25b58ff" class="outline-3">
+<h3 id="org25b58ff"><span class="section-number-3">1.1</span> 字符串</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 在 Emacs 中字符串是有序的字符数组， Emacs 的字符串可以容纳任何字符。 Emacs 字
@@ -1980,8 +1955,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </p>
 </div>
 </div>
-<div id="outline-container-org81d3109" class="outline-3">
-<h3 id="org81d3109"><span class="section-number-3">1.2</span> 字符</h3>
+<div id="outline-container-orgbb48f16" class="outline-3">
+<h3 id="orgbb48f16"><span class="section-number-3">1.2</span> 字符</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 字符串是由字符组成的，字符其实就是一个整数，例如字符 'A' 就是一个整数 65 。目
@@ -1989,8 +1964,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </p>
 </div>
 
-<div id="outline-container-orgbe1980d" class="outline-4">
-<h4 id="orgbe1980d"><span class="section-number-4">1.2.1</span> 获取字符相对应的那个整数</h4>
+<div id="outline-container-org137c39e" class="outline-4">
+<h4 id="org137c39e"><span class="section-number-4">1.2.1</span> 获取字符相对应的那个整数</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 例：
@@ -2087,8 +2062,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 </div>
-<div id="outline-container-org7cfa212" class="outline-2">
-<h2 id="org7cfa212"><span class="section-number-2">2</span> 测试函数</h2>
+<div id="outline-container-orgeafca81" class="outline-2">
+<h2 id="orgeafca81"><span class="section-number-2">2</span> 测试函数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <code>stringp</code> 函数，测试是否为字符串
@@ -2106,8 +2081,8 @@ ELisp 中没有测试字符串是否为空的函数，自定义一个：
 </div>
 </div>
 </div>
-<div id="outline-container-orga030b57" class="outline-2">
-<h2 id="orga030b57"><span class="section-number-2">3</span> 构造函数</h2>
+<div id="outline-container-orgfc6cbd4" class="outline-2">
+<h2 id="orgfc6cbd4"><span class="section-number-2">3</span> 构造函数</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><p>
@@ -2153,8 +2128,8 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 </ul>
 </div>
 </div>
-<div id="outline-container-org16ec508" class="outline-2">
-<h2 id="org16ec508"><span class="section-number-2">4</span> 比较函数</h2>
+<div id="outline-container-org9755bae" class="outline-2">
+<h2 id="org9755bae"><span class="section-number-2">4</span> 比较函数</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -2206,8 +2181,8 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 </ul>
 </div>
 </div>
-<div id="outline-container-org6f82959" class="outline-2">
-<h2 id="org6f82959"><span class="section-number-2">5</span> 转换函数</h2>
+<div id="outline-container-orgacaf9ae" class="outline-2">
+<h2 id="orgacaf9ae"><span class="section-number-2">5</span> 转换函数</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><p>
@@ -2309,8 +2284,8 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf00b00e" class="outline-2">
-<h2 id="orgf00b00e"><span class="section-number-2">6</span> 附录</h2>
+<div id="outline-container-orgcfbc05c" class="outline-2">
+<h2 id="orgcfbc05c"><span class="section-number-2">6</span> 附录</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><p>
@@ -2354,17 +2329,17 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6e71f8f">1. 数字分类和表示方法</a></li>
-<li><a href="#org04be5e7">2. 数字测试函数</a></li>
-<li><a href="#orgfabf474">3. 比较操作符</a></li>
-<li><a href="#org838d039">4. 数字转换函数</a>
+<li><a href="#orgee9a84c">1. 数字分类和表示方法</a></li>
+<li><a href="#org675e80e">2. 数字测试函数</a></li>
+<li><a href="#orge5b6349">3. 比较操作符</a></li>
+<li><a href="#orga90e4ad">4. 数字转换函数</a>
 <ul>
-<li><a href="#orge6d6b5f">4.1. 整数转换为浮点数</a></li>
-<li><a href="#org3b3db1b">4.2. 浮点数转换为整数</a></li>
+<li><a href="#orgb091c42">4.1. 整数转换为浮点数</a></li>
+<li><a href="#orgc10ee5e">4.2. 浮点数转换为整数</a></li>
 </ul>
 </li>
-<li><a href="#org2762c08">5. 数字的运算</a></li>
-<li><a href="#org89fa03d">6. 附录</a></li>
+<li><a href="#org2fb8ea0">5. 数字的运算</a></li>
+<li><a href="#org2806a0e">6. 附录</a></li>
 </ul>
 </div>
 </div>
@@ -2379,8 +2354,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </blockquote>
 <a id="more"></a>
 
-<div id="outline-container-org6e71f8f" class="outline-2">
-<h2 id="org6e71f8f"><span class="section-number-2">1</span> 数字分类和表示方法</h2>
+<div id="outline-container-orgee9a84c" class="outline-2">
+<h2 id="orgee9a84c"><span class="section-number-2">1</span> 数字分类和表示方法</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 ELisp 中的数字分为整数和浮点数( <code>没有双精度浮点数 double</code> )和 NaN 。
@@ -2432,8 +2407,8 @@ NaN
 </div>
 </div>
 
-<div id="outline-container-org04be5e7" class="outline-2">
-<h2 id="org04be5e7"><span class="section-number-2">2</span> 数字测试函数</h2>
+<div id="outline-container-org675e80e" class="outline-2">
+<h2 id="org675e80e"><span class="section-number-2">2</span> 数字测试函数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代表 <code>predicate</code> 。如果函数名是一个
@@ -2495,8 +2470,8 @@ ELisp 的测试函数一般都采用 <code>p</code> 结尾， <code>p</code> 代
 </div>
 </div>
 
-<div id="outline-container-orgfabf474" class="outline-2">
-<h2 id="orgfabf474"><span class="section-number-2">3</span> 比较操作符</h2>
+<div id="outline-container-orge5b6349" class="outline-2">
+<h2 id="orge5b6349"><span class="section-number-2">3</span> 比较操作符</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 ELisp 中的比较操作符有 <code>>、<、>=、<=、=、eql< code=""> 。
@@ -2541,11 +2516,11 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 </div>
 </div>
 
-<div id="outline-container-org838d039" class="outline-2">
-<h2 id="org838d039"><span class="section-number-2">4</span> 数字转换函数</h2>
+<div id="outline-container-orga90e4ad" class="outline-2">
+<h2 id="orga90e4ad"><span class="section-number-2">4</span> 数字转换函数</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orge6d6b5f" class="outline-3">
-<h3 id="orge6d6b5f"><span class="section-number-3">4.1</span> 整数转换为浮点数</h3>
+</div><div id="outline-container-orgb091c42" class="outline-3">
+<h3 id="orgb091c42"><span class="section-number-3">4.1</span> 整数转换为浮点数</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 使用 <code>float</code> 函数可将整数转换为浮点数。
@@ -2559,8 +2534,8 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 </div>
 </div>
 </div>
-<div id="outline-container-org3b3db1b" class="outline-3">
-<h3 id="org3b3db1b"><span class="section-number-3">4.2</span> 浮点数转换为整数</h3>
+<div id="outline-container-orgc10ee5e" class="outline-3">
+<h3 id="orgc10ee5e"><span class="section-number-3">4.2</span> 浮点数转换为整数</h3>
 <div class="outline-text-3" id="text-4-2">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -2628,8 +2603,8 @@ ELisp 中 <code>不存在 +=、-=、*=</code> 。
 </div>
 </div>
 </div>
-<div id="outline-container-org2762c08" class="outline-2">
-<h2 id="org2762c08"><span class="section-number-2">5</span> 数字的运算</h2>
+<div id="outline-container-org2fb8ea0" class="outline-2">
+<h2 id="org2fb8ea0"><span class="section-number-2">5</span> 数字的运算</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><p>
@@ -2886,8 +2861,8 @@ ELisp 的开方函数是 <code>sqrt</code> 。
 </ul>
 </div>
 </div>
-<div id="outline-container-org89fa03d" class="outline-2">
-<h2 id="org89fa03d"><span class="section-number-2">6</span> 附录</h2>
+<div id="outline-container-org2806a0e" class="outline-2">
+<h2 id="org2806a0e"><span class="section-number-2">6</span> 附录</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><p>
@@ -2939,26 +2914,26 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6be0214">1. 函数和变量</a>
+<li><a href="#org168cd76">1. 函数和变量</a>
 <ul>
-<li><a href="#org19ca73e">1.1. 函数的声明和调用</a></li>
-<li><a href="#org5e604b5">1.2. 变量</a>
+<li><a href="#org6cdf09a">1.1. 函数的声明和调用</a></li>
+<li><a href="#org2ae7fd7">1.2. 变量</a>
 <ul>
-<li><a href="#org801ce0d">1.2.1. 局部变量</a></li>
+<li><a href="#org411be49">1.2.1. 局部变量</a></li>
 </ul>
 </li>
-<li><a href="#org71fae5d">1.3. lambda 表达式</a></li>
-<li><a href="#org3ce74e1">1.4. 控制结构</a>
+<li><a href="#org0b4ddbf">1.3. lambda 表达式</a></li>
+<li><a href="#org3acff68">1.4. 控制结构</a>
 <ul>
-<li><a href="#orgd1404b4">1.4.1. 顺序执行</a></li>
-<li><a href="#org7484026">1.4.2. 条件判断</a></li>
-<li><a href="#orgd5432d9">1.4.3. 循环   while</a></li>
-<li><a href="#org9e81185">1.4.4. 逻辑运算</a></li>
+<li><a href="#org63424e8">1.4.1. 顺序执行</a></li>
+<li><a href="#orge29eba1">1.4.2. 条件判断</a></li>
+<li><a href="#orgfd5e74a">1.4.3. 循环   while</a></li>
+<li><a href="#org9cd9c6a">1.4.4. 逻辑运算</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orge66d921">2. 本节附录</a></li>
+<li><a href="#org8f3b61c">2. 本节附录</a></li>
 </ul>
 </div>
 </div>
@@ -2972,11 +2947,11 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org6be0214" class="outline-2">
-<h2 id="org6be0214"><span class="section-number-2">1</span> 函数和变量</h2>
+<div id="outline-container-org168cd76" class="outline-2">
+<h2 id="org168cd76"><span class="section-number-2">1</span> 函数和变量</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org19ca73e" class="outline-3">
-<h3 id="org19ca73e"><span class="section-number-3">1.1</span> 函数的声明和调用</h3>
+</div><div id="outline-container-org6cdf09a" class="outline-3">
+<h3 id="org6cdf09a"><span class="section-number-3">1.1</span> 函数的声明和调用</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li><p>
@@ -3016,8 +2991,8 @@ ELisp使用关键字 <code>defun</code> 来定义函数，函数中的参数列�
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e604b5" class="outline-3">
-<h3 id="org5e604b5"><span class="section-number-3">1.2</span> 变量</h3>
+<div id="outline-container-org2ae7fd7" class="outline-3">
+<h3 id="org2ae7fd7"><span class="section-number-3">1.2</span> 变量</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li><p>
@@ -3064,8 +3039,8 @@ ELisp使用关键字 <code>defun</code> 来定义函数，函数中的参数列�
 </ul>
 </div>
 
-<div id="outline-container-org801ce0d" class="outline-4">
-<h4 id="org801ce0d"><span class="section-number-4">1.2.1</span> 局部变量</h4>
+<div id="outline-container-org411be49" class="outline-4">
+<h4 id="org411be49"><span class="section-number-4">1.2.1</span> 局部变量</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 ELisp 使用 <code>let</code> 和 <code>let*</code> 来绑定局部变量。
@@ -3101,7 +3076,7 @@ ELisp 使用 <code>let</code> 和 <code>let*</code> 来绑定局部变量。
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> let_test03 <span class="list">()</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">a</span> <span class="number">1</span>)</span></span><br><span class="line">        b</span><br><span class="line">        c</span><br><span class="line">        d)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> b <span class="list">(<span class="keyword">+</span> a <span class="number">1</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> c <span class="list">(<span class="keyword">+</span> a <span class="number">2</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> d <span class="list">(<span class="keyword">+</span> a <span class="number">3</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"let_test03 - a:%i - b:%i - c:%i - d:%i"</span></span><br><span class="line">             a</span><br><span class="line">             b</span><br><span class="line">             c</span><br><span class="line">             d)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">let_test03</span>)</span> <span class="comment">;; &#8658; let_test03 - a:1 - b:2 - c:3 - d:4</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
-例四：在函数中使用函数传参<a id="orgeec3df7"></a>
+例四：在函数中使用函数传参<a id="org2b10c76"></a>
 </p>
 <div class="org-src-container">
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> circle-area <span class="list">(<span class="keyword">radius</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let</span> <span class="list">(<span class="list">(<span class="keyword">pai</span> <span class="number">3.1415926</span>)</span></span><br><span class="line">        area)</span></span><br><span class="line">    <span class="list">(<span class="keyword">setq</span> area <span class="list">(<span class="keyword">*</span> pai radius radius)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"&#21322;&#24452;&#20026; %.2f &#30340;&#22278;&#38754;&#31215;&#20026; %.2f"</span></span><br><span class="line">             radius</span><br><span class="line">             area)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">circle-area</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; &#21322;&#24452;&#20026; 3.00 &#30340;&#22278;&#38754;&#31215;&#20026; 28.27</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
@@ -3117,7 +3092,7 @@ ELisp 使用 <code>let</code> 和 <code>let*</code> 来绑定局部变量。
 </p>
 
 <p>
-例：改写 <a href="#orgeec3df7"><code>let</code> 例四：在函数中使用函数传参</a>
+例：改写 <a href="#org2b10c76"><code>let</code> 例四：在函数中使用函数传参</a>
 </p>
 <div class="org-src-container">
 <figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> circle-area <span class="list">(<span class="keyword">radius</span>)</span></span><br><span class="line">  <span class="list">(<span class="keyword">let*</span> <span class="list">(<span class="list">(<span class="keyword">pai</span> <span class="number">3.1415926</span>)</span></span><br><span class="line">         <span class="list">(<span class="keyword">area</span> <span class="list">(<span class="keyword">*</span> pai radius radius)</span>)</span>)</span></span><br><span class="line">    <span class="list">(<span class="keyword">message</span> <span class="string">"&#21322;&#24452;&#20026; %.2f &#30340;&#22278;&#38754;&#31215;&#20026; %.2f"</span></span><br><span class="line">             radius</span><br><span class="line">             area)</span>)</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">circle-area</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; &#21322;&#24452;&#20026; 3.00 &#30340;&#22278;&#38754;&#31215;&#20026; 28.27</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
@@ -3126,8 +3101,8 @@ ELisp 使用 <code>let</code> 和 <code>let*</code> 来绑定局部变量。
 </div>
 </div>
 </div>
-<div id="outline-container-org71fae5d" class="outline-3">
-<h3 id="org71fae5d"><span class="section-number-3">1.3</span> lambda 表达式</h3>
+<div id="outline-container-org0b4ddbf" class="outline-3">
+<h3 id="org0b4ddbf"><span class="section-number-3">1.3</span> lambda 表达式</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <code>defun</code> 相同。
@@ -3157,11 +3132,11 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </div>
 </div>
 </div>
-<div id="outline-container-org3ce74e1" class="outline-3">
-<h3 id="org3ce74e1"><span class="section-number-3">1.4</span> 控制结构</h3>
+<div id="outline-container-org3acff68" class="outline-3">
+<h3 id="org3acff68"><span class="section-number-3">1.4</span> 控制结构</h3>
 <div class="outline-text-3" id="text-1-4">
-</div><div id="outline-container-orgd1404b4" class="outline-4">
-<h4 id="orgd1404b4"><span class="section-number-4">1.4.1</span> 顺序执行</h4>
+</div><div id="outline-container-org63424e8" class="outline-4">
+<h4 id="org63424e8"><span class="section-number-4">1.4.1</span> 顺序执行</h4>
 <div class="outline-text-4" id="text-1-4-1">
 <p>
 在 <code>defun</code> <code>let</code> 等环境中语句是按顺序执行的，但很多情况不会，需要使用 <code>progn</code> 表达式。
@@ -3182,8 +3157,8 @@ lambda 表达式类似其他编程语言的匿名函数，其定义格式和 <co
 </div>
 </div>
 
-<div id="outline-container-org7484026" class="outline-4">
-<h4 id="org7484026"><span class="section-number-4">1.4.2</span> 条件判断</h4>
+<div id="outline-container-orge29eba1" class="outline-4">
+<h4 id="orge29eba1"><span class="section-number-4">1.4.2</span> 条件判断</h4>
 <div class="outline-text-4" id="text-1-4-2">
 <ul class="org-ul">
 <li><p>
@@ -3227,8 +3202,8 @@ cond
 </div>
 </div>
 
-<div id="outline-container-orgd5432d9" class="outline-4">
-<h4 id="orgd5432d9"><span class="section-number-4">1.4.3</span> 循环   while</h4>
+<div id="outline-container-orgfd5e74a" class="outline-4">
+<h4 id="orgfd5e74a"><span class="section-number-4">1.4.3</span> 循环   while</h4>
 <div class="outline-text-4" id="text-1-4-3">
 <p>
 格式：
@@ -3245,8 +3220,8 @@ cond
 </div>
 </div>
 
-<div id="outline-container-org9e81185" class="outline-4">
-<h4 id="org9e81185"><span class="section-number-4">1.4.4</span> 逻辑运算</h4>
+<div id="outline-container-org9cd9c6a" class="outline-4">
+<h4 id="org9cd9c6a"><span class="section-number-4">1.4.4</span> 逻辑运算</h4>
 <div class="outline-text-4" id="text-1-4-4">
 <p>
 使用 <code>and</code> <code>or</code> <code>not</code> 。其中 and 和 or 具有短路性质。在表达式比较短的时候，
@@ -3263,8 +3238,8 @@ cond
 </div>
 </div>
 
-<div id="outline-container-orge66d921" class="outline-2">
-<h2 id="orge66d921"><span class="section-number-2">2</span> 本节附录</h2>
+<div id="outline-container-org8f3b61c" class="outline-2">
+<h2 id="org8f3b61c"><span class="section-number-2">2</span> 本节附录</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><p>
@@ -3420,8 +3395,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org40d56bd">1. 学习材料</a></li>
-<li><a href="#org757346d">2. Hello World 例子</a></li>
+<li><a href="#org5289b0b">1. 学习材料</a></li>
+<li><a href="#org6ec5909">2. Hello World 例子</a></li>
 </ul>
 </div>
 </div>
@@ -3433,8 +3408,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org40d56bd" class="outline-2">
-<h2 id="org40d56bd"><span class="section-number-2">1</span> 学习材料</h2>
+<div id="outline-container-org5289b0b" class="outline-2">
+<h2 id="org5289b0b"><span class="section-number-2">1</span> 学习材料</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://learnxinyminutes.com/docs/elisp/" target="_blank" rel="external">Learn X in Y minutes</a>
@@ -3443,8 +3418,8 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 </ul>
 </div>
 </div>
-<div id="outline-container-org757346d" class="outline-2">
-<h2 id="org757346d"><span class="section-number-2">2</span> Hello World 例子</h2>
+<div id="outline-container-org6ec5909" class="outline-2">
+<h2 id="org6ec5909"><span class="section-number-2">2</span> Hello World 例子</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 elisp代码文件不能作为一个单独的可执行文件运行，所有的 ELisp 代码都是在 Emacs 软件下
@@ -3502,32 +3477,32 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org40466be">1. 如何打开 vimtutor、gvimtutor</a>
+<li><a href="#org83ede42">1. 如何打开 vimtutor、gvimtutor</a>
 <ul>
-<li><a href="#org9714662">1.1. 使用终端打开</a>
+<li><a href="#org886e624">1.1. 使用终端打开</a>
 <ul>
-<li><a href="#org6aea26b">1.1.1. 打开 vimtutor</a></li>
-<li><a href="#org1e870d6">1.1.2. 打开 gvimtutor</a></li>
+<li><a href="#org754a7a4">1.1.1. 打开 vimtutor</a></li>
+<li><a href="#orge069ba0">1.1.2. 打开 gvimtutor</a></li>
 </ul>
 </li>
-<li><a href="#org0e84d8a">1.2. 在 gvim 中打开</a></li>
+<li><a href="#org4910eb1">1.2. 在 gvim 中打开</a></li>
 </ul>
 </li>
-<li><a href="#org33f6f5f">2. 常用按键</a>
+<li><a href="#orgee0c2da">2. 常用按键</a>
 <ul>
-<li><a href="#org9e124dd">2.1. 移动</a></li>
-<li><a href="#orgd2ce2df">2.2. 进入插入模式</a></li>
-<li><a href="#org3552a05">2.3. 保存、退出</a></li>
-<li><a href="#org6479d93">2.4. 删除</a></li>
-<li><a href="#org1f02613">2.5. 复制、粘贴</a></li>
-<li><a href="#orgffe8f02">2.6. 修改、替换</a></li>
-<li><a href="#org4bc27b5">2.7. 撤销</a></li>
-<li><a href="#orgf0197b7">2.8. 搜索</a></li>
-<li><a href="#orgd695254">2.9. 调整文本位置</a></li>
-<li><a href="#org3225dcd">2.10. 保存</a></li>
-<li><a href="#org322c062">2.11. 执行外部命令</a></li>
-<li><a href="#orgef7a763">2.12. 提取、合并文件</a></li>
-<li><a href="#orgd55fdcd">2.13. 信息、帮助命令</a></li>
+<li><a href="#org7a3f35f">2.1. 移动</a></li>
+<li><a href="#org53eb52e">2.2. 进入插入模式</a></li>
+<li><a href="#orgbeb5619">2.3. 保存、退出</a></li>
+<li><a href="#org700ee66">2.4. 删除</a></li>
+<li><a href="#org6596c69">2.5. 复制、粘贴</a></li>
+<li><a href="#orgc382901">2.6. 修改、替换</a></li>
+<li><a href="#orgfde93b7">2.7. 撤销</a></li>
+<li><a href="#orgd511c92">2.8. 搜索</a></li>
+<li><a href="#org9fb9cc4">2.9. 调整文本位置</a></li>
+<li><a href="#orga5759a9">2.10. 保存</a></li>
+<li><a href="#org960c330">2.11. 执行外部命令</a></li>
+<li><a href="#org2bb5976">2.12. 提取、合并文件</a></li>
+<li><a href="#orgbbbf4a7">2.13. 信息、帮助命令</a></li>
 </ul>
 </li>
 </ul>
@@ -3542,14 +3517,14 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org40466be" class="outline-2">
-<h2 id="org40466be"><span class="section-number-2">1</span> 如何打开 vimtutor、gvimtutor</h2>
+<div id="outline-container-org83ede42" class="outline-2">
+<h2 id="org83ede42"><span class="section-number-2">1</span> 如何打开 vimtutor、gvimtutor</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org9714662" class="outline-3">
-<h3 id="org9714662"><span class="section-number-3">1.1</span> 使用终端打开</h3>
+</div><div id="outline-container-org886e624" class="outline-3">
+<h3 id="org886e624"><span class="section-number-3">1.1</span> 使用终端打开</h3>
 <div class="outline-text-3" id="text-1-1">
-</div><div id="outline-container-org6aea26b" class="outline-4">
-<h4 id="org6aea26b"><span class="section-number-4">1.1.1</span> 打开 vimtutor</h4>
+</div><div id="outline-container-org754a7a4" class="outline-4">
+<h4 id="org754a7a4"><span class="section-number-4">1.1.1</span> 打开 vimtutor</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
 执行 <code>vimtutor</code> 命令即可，此命令不会另外开启窗口，直接在终端里。可能有些按键
@@ -3562,8 +3537,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </div>
 </div>
 </div>
-<div id="outline-container-org1e870d6" class="outline-4">
-<h4 id="org1e870d6"><span class="section-number-4">1.1.2</span> 打开 gvimtutor</h4>
+<div id="outline-container-orge069ba0" class="outline-4">
+<h4 id="orge069ba0"><span class="section-number-4">1.1.2</span> 打开 gvimtutor</h4>
 <div class="outline-text-4" id="text-1-1-2">
 <p>
 执行 <code>gvimtutor</code> 命令即可，会开启 gvim 窗口，推荐。
@@ -3576,8 +3551,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </div>
 </div>
 </div>
-<div id="outline-container-org0e84d8a" class="outline-3">
-<h3 id="org0e84d8a"><span class="section-number-3">1.2</span> 在 gvim 中打开</h3>
+<div id="outline-container-org4910eb1" class="outline-3">
+<h3 id="org4910eb1"><span class="section-number-3">1.2</span> 在 gvim 中打开</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 在 gvim 中输入 <code>:e $VIMRUNTIME/tutor/tutor.zh_cn.utf-8</code> 即可,推荐。
@@ -3590,8 +3565,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </div>
 </div>
 </div>
-<div id="outline-container-org33f6f5f" class="outline-2">
-<h2 id="org33f6f5f"><span class="section-number-2">2</span> 常用按键</h2>
+<div id="outline-container-orgee0c2da" class="outline-2">
+<h2 id="orgee0c2da"><span class="section-number-2">2</span> 常用按键</h2>
 <div class="outline-text-2" id="text-2">
 <blockquote>
 <ul class="org-ul">
@@ -3614,8 +3589,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </blockquote>
 </div>
-<div id="outline-container-org9e124dd" class="outline-3">
-<h3 id="org9e124dd"><span class="section-number-3">2.1</span> 移动</h3>
+<div id="outline-container-org7a3f35f" class="outline-3">
+<h3 id="org7a3f35f"><span class="section-number-3">2.1</span> 移动</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li><code>(N)[n]l</code> 向右移动</li>
@@ -3634,8 +3609,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd2ce2df" class="outline-3">
-<h3 id="orgd2ce2df"><span class="section-number-3">2.2</span> 进入插入模式</h3>
+<div id="outline-container-org53eb52e" class="outline-3">
+<h3 id="org53eb52e"><span class="section-number-3">2.2</span> 进入插入模式</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li><code>(N)i</code> 在光标所在字符后进入插入模式</li>
@@ -3647,8 +3622,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org3552a05" class="outline-3">
-<h3 id="org3552a05"><span class="section-number-3">2.3</span> 保存、退出</h3>
+<div id="outline-container-orgbeb5619" class="outline-3">
+<h3 id="orgbeb5619"><span class="section-number-3">2.3</span> 保存、退出</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li><code>(N):w</code> 保存当前文件</li>
@@ -3658,8 +3633,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org6479d93" class="outline-3">
-<h3 id="org6479d93"><span class="section-number-3">2.4</span> 删除</h3>
+<div id="outline-container-org700ee66" class="outline-3">
+<h3 id="org700ee66"><span class="section-number-3">2.4</span> 删除</h3>
 <div class="outline-text-3" id="text-2-4">
 <ul class="org-ul">
 <li><code>(N)[n]x</code> 删除光标所在的字符</li>
@@ -3672,8 +3647,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org1f02613" class="outline-3">
-<h3 id="org1f02613"><span class="section-number-3">2.5</span> 复制、粘贴</h3>
+<div id="outline-container-org6596c69" class="outline-3">
+<h3 id="org6596c69"><span class="section-number-3">2.5</span> 复制、粘贴</h3>
 <div class="outline-text-3" id="text-2-5">
 <ul class="org-ul">
 <li><code>(V)y</code> 复制选中的文本</li>
@@ -3683,8 +3658,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgffe8f02" class="outline-3">
-<h3 id="orgffe8f02"><span class="section-number-3">2.6</span> 修改、替换</h3>
+<div id="outline-container-orgc382901" class="outline-3">
+<h3 id="orgc382901"><span class="section-number-3">2.6</span> 修改、替换</h3>
 <div class="outline-text-3" id="text-2-6">
 <ul class="org-ul">
 <li><code>(N)r</code> 修改光标下的单个字符</li>
@@ -3705,8 +3680,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org4bc27b5" class="outline-3">
-<h3 id="org4bc27b5"><span class="section-number-3">2.7</span> 撤销</h3>
+<div id="outline-container-orgfde93b7" class="outline-3">
+<h3 id="orgfde93b7"><span class="section-number-3">2.7</span> 撤销</h3>
 <div class="outline-text-3" id="text-2-7">
 <ul class="org-ul">
 <li><code>(N)[n]u</code> undo，撤销最后执行的命令</li>
@@ -3715,8 +3690,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf0197b7" class="outline-3">
-<h3 id="orgf0197b7"><span class="section-number-3">2.8</span> 搜索</h3>
+<div id="outline-container-orgd511c92" class="outline-3">
+<h3 id="orgd511c92"><span class="section-number-3">2.8</span> 搜索</h3>
 <div class="outline-text-3" id="text-2-8">
 <ul class="org-ul">
 <li><code>(N)/<s><e></e></s></code> 查找字符串 <code><s></s></code> ， <code>n</code> 查找下一个匹配， <code>N</code> 查找上一个匹配</li>
@@ -3727,8 +3702,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd695254" class="outline-3">
-<h3 id="orgd695254"><span class="section-number-3">2.9</span> 调整文本位置</h3>
+<div id="outline-container-org9fb9cc4" class="outline-3">
+<h3 id="org9fb9cc4"><span class="section-number-3">2.9</span> 调整文本位置</h3>
 <div class="outline-text-3" id="text-2-9">
 <ul class="org-ul">
 <li><code>(N):ce<e></e></code> 使本行内容居中（center）</li>
@@ -3737,8 +3712,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org3225dcd" class="outline-3">
-<h3 id="org3225dcd"><span class="section-number-3">2.10</span> 保存</h3>
+<div id="outline-container-orga5759a9" class="outline-3">
+<h3 id="orga5759a9"><span class="section-number-3">2.10</span> 保存</h3>
 <div class="outline-text-3" id="text-2-10">
 <ul class="org-ul">
 <li><code>(N):w [f]<e></e></code> 保存当前buffer到 <code>f</code> 文件</li>
@@ -3747,16 +3722,16 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-org322c062" class="outline-3">
-<h3 id="org322c062"><span class="section-number-3">2.11</span> 执行外部命令</h3>
+<div id="outline-container-org960c330" class="outline-3">
+<h3 id="org960c330"><span class="section-number-3">2.11</span> 执行外部命令</h3>
 <div class="outline-text-3" id="text-2-11">
 <ul class="org-ul">
 <li><code>(N):!<sh><e></e></sh></code> 执行外部shell命令，例如： <i>:!dir</i></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgef7a763" class="outline-3">
-<h3 id="orgef7a763"><span class="section-number-3">2.12</span> 提取、合并文件</h3>
+<div id="outline-container-org2bb5976" class="outline-3">
+<h3 id="org2bb5976"><span class="section-number-3">2.12</span> 提取、合并文件</h3>
 <div class="outline-text-3" id="text-2-12">
 <ul class="org-ul">
 <li><code>(N):r <f><e></e></f></code> 在光标所在行的下一行插入 <code>f</code> 文件的所有内容</li>
@@ -3764,8 +3739,8 @@ vimtutor 和 gvimtutor 是 Vim 和 GVim 官方的简单教程，主要介绍了 
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd55fdcd" class="outline-3">
-<h3 id="orgd55fdcd"><span class="section-number-3">2.13</span> 信息、帮助命令</h3>
+<div id="outline-container-orgbbbf4a7" class="outline-3">
+<h3 id="orgbbbf4a7"><span class="section-number-3">2.13</span> 信息、帮助命令</h3>
 <div class="outline-text-3" id="text-2-13">
 <ul class="org-ul">
 <li><code>(N)CTRL-G</code> 在minibuffer显示光标所在行的位置及文件状态</li>
@@ -3817,14 +3792,14 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org14b7a80">1. 如何打开 emacs tutorial</a>
+<li><a href="#org803483d">1. 如何打开 emacs tutorial</a>
 <ul>
-<li><a href="#org3e6f1f8">1.1. 用鼠标</a></li>
-<li><a href="#org0dee4be">1.2. 使用组合键</a></li>
+<li><a href="#org9b8ad16">1.1. 用鼠标</a></li>
+<li><a href="#org46b4230">1.2. 使用组合键</a></li>
 </ul>
 </li>
-<li><a href="#orgc53ead9">2. 常用组合键</a></li>
-<li><a href="#orgc13c8a7">3. 术语对照</a></li>
+<li><a href="#org64f927c">2. 常用组合键</a></li>
+<li><a href="#orgb06ca82">3. 术语对照</a></li>
 </ul>
 </div>
 </div>
@@ -3835,15 +3810,15 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org14b7a80" class="outline-2">
-<h2 id="org14b7a80"><span class="section-number-2">1</span> 如何打开 emacs tutorial</h2>
+<div id="outline-container-org803483d" class="outline-2">
+<h2 id="org803483d"><span class="section-number-2">1</span> 如何打开 emacs tutorial</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 这里介绍在 emacs 中两种打开 tutorial 的方式（都是指在 <code>图形界面</code> 的 emacs 中）。
 </p>
 </div>
-<div id="outline-container-org3e6f1f8" class="outline-3">
-<h3 id="org3e6f1f8"><span class="section-number-3">1.1</span> 用鼠标</h3>
+<div id="outline-container-org9b8ad16" class="outline-3">
+<h3 id="org9b8ad16"><span class="section-number-3">1.1</span> 用鼠标</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 打开 emacs 后会显示一些简单的信息，例如 emacs logo、版本、一些链接等信息。
@@ -3856,8 +3831,8 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </div>
 </div>
 </div>
-<div id="outline-container-org0dee4be" class="outline-3">
-<h3 id="org0dee4be"><span class="section-number-3">1.2</span> 使用组合键</h3>
+<div id="outline-container-org46b4230" class="outline-3">
+<h3 id="org46b4230"><span class="section-number-3">1.2</span> 使用组合键</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 使用组合键 <code>C-h t</code> （按住 <code>Ctrl</code> 键，按 <code>h</code> 键，然后同时松开，再按 <code>t</code> 键，
@@ -3866,8 +3841,8 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </div>
 </div>
 </div>
-<div id="outline-container-orgc53ead9" class="outline-2">
-<h2 id="orgc53ead9"><span class="section-number-2">2</span> 常用组合键</h2>
+<div id="outline-container-org64f927c" class="outline-2">
+<h2 id="org64f927c"><span class="section-number-2">2</span> 常用组合键</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li><code>C-v</code>     向下滚动一页（等效按键： <b>PageUp</b> ）</li>
@@ -3927,8 +3902,8 @@ emacs tutorial 是 Emacs 官方的快速指南，主要介绍了 Emacs 在编辑
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc13c8a7" class="outline-2">
-<h2 id="orgc13c8a7"><span class="section-number-2">3</span> 术语对照</h2>
+<div id="outline-container-orgb06ca82" class="outline-2">
+<h2 id="orgb06ca82"><span class="section-number-2">3</span> 术语对照</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><code>command</code> 命令</li>
@@ -3980,8 +3955,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6b1da57">1. 下载</a></li>
-<li><a href="#org89c41d1">2. 安装</a></li>
+<li><a href="#orgd2d0f81">1. 下载</a></li>
+<li><a href="#orgac609d6">2. 安装</a></li>
 </ul>
 </div>
 </div>
@@ -3991,8 +3966,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org6b1da57" class="outline-2">
-<h2 id="org6b1da57"><span class="section-number-2">1</span> 下载</h2>
+<div id="outline-container-orgd2d0f81" class="outline-2">
+<h2 id="orgd2d0f81"><span class="section-number-2">1</span> 下载</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 进入 <a href="http://releases.llvm.org/download.html" target="_blank" rel="external">http://releases.llvm.org/download.html</a> 下载，此时的最新版本为 <code>3.9.0</code> ，找
@@ -4001,8 +3976,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 </p>
 </div>
 </div>
-<div id="outline-container-org89c41d1" class="outline-2">
-<h2 id="org89c41d1"><span class="section-number-2">2</span> 安装</h2>
+<div id="outline-container-orgac609d6" class="outline-2">
+<h2 id="orgac609d6"><span class="section-number-2">2</span> 安装</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 解压 <code>clang+llvm-3.9.0-x86_64-opensuse13.2.tar.xz</code> 文件。
@@ -4070,10 +4045,10 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb16af63">1. 系统乱码</a></li>
-<li><a href="#org3df30cc">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
+<li><a href="#org149bb6f">1. 系统乱码</a></li>
+<li><a href="#org8b4e080">2. 使用 git add 命令添加文件名称包含中文时乱码</a>
 <ul>
-<li><a href="#orgdc6d35a">2.1. 解决方法</a></li>
+<li><a href="#orgafb9cbf">2.1. 解决方法</a></li>
 </ul>
 </li>
 </ul>
@@ -4090,8 +4065,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 主要参考资料来自<a href="http://blog.csdn.net/kl222/article/details/32903495" target="_blank" rel="external">康林工作室-git 设置</a>和<a href="http://blog.csdn.net/yunnywu/article/details/50553908" target="_blank" rel="external">码农天注定-git 乱码解决方案汇总</a>
 </p>
 </blockquote>
-<div id="outline-container-orgb16af63" class="outline-2">
-<h2 id="orgb16af63"><span class="section-number-2">1</span> 系统乱码</h2>
+<div id="outline-container-org149bb6f" class="outline-2">
+<h2 id="org149bb6f"><span class="section-number-2">1</span> 系统乱码</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <p>
@@ -4122,8 +4097,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 </div>
 </div>
 </div>
-<div id="outline-container-org3df30cc" class="outline-2">
-<h2 id="org3df30cc"><span class="section-number-2">2</span> 使用 git add 命令添加文件名称包含中文时乱码</h2>
+<div id="outline-container-org8b4e080" class="outline-2">
+<h2 id="org8b4e080"><span class="section-number-2">2</span> 使用 git add 命令添加文件名称包含中文时乱码</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 使用 git add 添加文件，如果文件名包含中文，显示如下：
@@ -4132,8 +4107,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 273\223\273.txt
 </pre>
 </div>
-<div id="outline-container-orgdc6d35a" class="outline-3">
-<h3 id="orgdc6d35a"><span class="section-number-3">2.1</span> 解决方法</h3>
+<div id="outline-container-orgafb9cbf" class="outline-3">
+<h3 id="orgafb9cbf"><span class="section-number-3">2.1</span> 解决方法</h3>
 <div class="outline-text-3" id="text-2-1">
 <ol class="org-ol">
 <li><p>
@@ -4185,25 +4160,25 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1d69ce4">1. zlib 简介</a>
+<li><a href="#org0c5f4a3">1. zlib 简介</a>
 <ul>
-<li><a href="#orga4010d7">1.1. 数据头(header)</a></li>
-<li><a href="#orgc24e2cd">1.2. 算法</a></li>
-<li><a href="#orgdc6b1f2">1.3. 使用资源</a></li>
-<li><a href="#orgc554fec">1.4. 策略</a></li>
-<li><a href="#orgc1a8dc9">1.5. 错误处理</a></li>
-<li><a href="#org32b65f8">1.6. 数据长度</a></li>
-<li><a href="#org98d4917">1.7. 业界应用</a></li>
+<li><a href="#org84e6cf9">1.1. 数据头(header)</a></li>
+<li><a href="#org9120df1">1.2. 算法</a></li>
+<li><a href="#org5bdeb95">1.3. 使用资源</a></li>
+<li><a href="#org5cb80f5">1.4. 策略</a></li>
+<li><a href="#orga518164">1.5. 错误处理</a></li>
+<li><a href="#org7a84e17">1.6. 数据长度</a></li>
+<li><a href="#org8820a8c">1.7. 业界应用</a></li>
 </ul>
 </li>
-<li><a href="#org4a95f61">2. 安装 zlib</a>
+<li><a href="#org899feec">2. 安装 zlib</a>
 <ul>
-<li><a href="#orge62f5cb">2.1. 下载</a></li>
-<li><a href="#orgce7c303">2.2. 解压</a></li>
-<li><a href="#org374a63f">2.3. 配置安装</a>
+<li><a href="#org7d8cc96">2.1. 下载</a></li>
+<li><a href="#org0ab82d3">2.2. 解压</a></li>
+<li><a href="#org6572231">2.3. 配置安装</a>
 <ul>
-<li><a href="#org37da7dc">2.3.1. 标准配置安装（未测试，本人使用下面的自定义安装目录安装的）</a></li>
-<li><a href="#org1f22392">2.3.2. 自定义安装目录安装</a></li>
+<li><a href="#org699f630">2.3.1. 标准配置安装（未测试，本人使用下面的自定义安装目录安装的）</a></li>
+<li><a href="#org8ea4262">2.3.2. 自定义安装目录安装</a></li>
 </ul>
 </li>
 </ul>
@@ -4217,8 +4192,8 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-org1d69ce4" class="outline-2">
-<h2 id="org1d69ce4"><span class="section-number-2">1</span> zlib 简介</h2>
+<div id="outline-container-org0c5f4a3" class="outline-2">
+<h2 id="org0c5f4a3"><span class="section-number-2">1</span> zlib 简介</h2>
 <div class="outline-text-2" id="text-1">
 <blockquote>
 <p>
@@ -4232,8 +4207,8 @@ zlib 是提供数据压缩用的函式库，由 Jean-loup Gailly 与 Mark Adler 
 3 月，zlib 是包含在 Coverity 的美国国土安全部赞助者选择继续审查的开源项目。
 </p>
 </div>
-<div id="outline-container-orga4010d7" class="outline-3">
-<h3 id="orga4010d7"><span class="section-number-3">1.1</span> 数据头(header)</h3>
+<div id="outline-container-org84e6cf9" class="outline-3">
+<h3 id="org84e6cf9"><span class="section-number-3">1.1</span> 数据头(header)</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 zlib 能使用一个 gzip 数据头，zlib 数据头或者不使用数据头压缩数据。
@@ -4252,8 +4227,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-orgc24e2cd" class="outline-3">
-<h3 id="orgc24e2cd"><span class="section-number-3">1.2</span> 算法</h3>
+<div id="outline-container-org9120df1" class="outline-3">
+<h3 id="org9120df1"><span class="section-number-3">1.2</span> 算法</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 目前 zlib 仅支持一个 LZ77 的变种算法，DEFLATE 的算法。
@@ -4269,8 +4244,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-orgdc6b1f2" class="outline-3">
-<h3 id="orgdc6b1f2"><span class="section-number-3">1.3</span> 使用资源</h3>
+<div id="outline-container-org5bdeb95" class="outline-3">
+<h3 id="org5bdeb95"><span class="section-number-3">1.3</span> 使用资源</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 函数库提供了对处理器和内存使用控制的能力。
@@ -4285,8 +4260,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-orgc554fec" class="outline-3">
-<h3 id="orgc554fec"><span class="section-number-3">1.4</span> 策略</h3>
+<div id="outline-container-org5cb80f5" class="outline-3">
+<h3 id="org5cb80f5"><span class="section-number-3">1.4</span> 策略</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 压缩可以针对特定类型的数据进行优化。
@@ -4303,8 +4278,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-orgc1a8dc9" class="outline-3">
-<h3 id="orgc1a8dc9"><span class="section-number-3">1.5</span> 错误处理</h3>
+<div id="outline-container-orga518164" class="outline-3">
+<h3 id="orga518164"><span class="section-number-3">1.5</span> 错误处理</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 错误可以被放发现和跳过。
@@ -4322,8 +4297,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-org32b65f8" class="outline-3">
-<h3 id="org32b65f8"><span class="section-number-3">1.6</span> 数据长度</h3>
+<div id="outline-container-org7a84e17" class="outline-3">
+<h3 id="org7a84e17"><span class="section-number-3">1.6</span> 数据长度</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 对于压缩和解压缩，没有数据长度的限制。
@@ -4340,8 +4315,8 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-org98d4917" class="outline-3">
-<h3 id="org98d4917"><span class="section-number-3">1.7</span> 业界应用</h3>
+<div id="outline-container-org8820a8c" class="outline-3">
+<h3 id="org8820a8c"><span class="section-number-3">1.7</span> 业界应用</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 今天，zlib 是一种事实上的业界标准，以至于在标准文档中，zlib 和 DEFLATE 常常互换
@@ -4377,19 +4352,19 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 
 
 
-<div id="outline-container-org4a95f61" class="outline-2">
-<h2 id="org4a95f61"><span class="section-number-2">2</span> 安装 zlib</h2>
+<div id="outline-container-org899feec" class="outline-2">
+<h2 id="org899feec"><span class="section-number-2">2</span> 安装 zlib</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orge62f5cb" class="outline-3">
-<h3 id="orge62f5cb"><span class="section-number-3">2.1</span> 下载</h3>
+</div><div id="outline-container-org7d8cc96" class="outline-3">
+<h3 id="org7d8cc96"><span class="section-number-3">2.1</span> 下载</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 在 <a href="http://zlib.net/" target="_blank" rel="external">zlib 官网</a> 下载最新版本，此处为 <code>1.2.8</code> 版本，下载链接：<a href="http://zlib.net/zlib-1.2.8.tar.gz" target="_blank" rel="external">zlib-1.2.8.tar.gz</a>
 </p>
 </div>
 </div>
-<div id="outline-container-orgce7c303" class="outline-3">
-<h3 id="orgce7c303"><span class="section-number-3">2.2</span> 解压</h3>
+<div id="outline-container-org0ab82d3" class="outline-3">
+<h3 id="org0ab82d3"><span class="section-number-3">2.2</span> 解压</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 终端进入 <code>zlib-1.2.8.tar.gz</code> 所在的目录执行解压命令：
@@ -4402,15 +4377,15 @@ gzip 数据头比 zlib 数据头要大，因为它保存了文件名和其他文
 </p>
 </div>
 </div>
-<div id="outline-container-org374a63f" class="outline-3">
-<h3 id="org374a63f"><span class="section-number-3">2.3</span> 配置安装</h3>
+<div id="outline-container-org6572231" class="outline-3">
+<h3 id="org6572231"><span class="section-number-3">2.3</span> 配置安装</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 终端进入 <code>zlib-1.2.8</code> 文件夹
 </p>
 </div>
-<div id="outline-container-org37da7dc" class="outline-4">
-<h4 id="org37da7dc"><span class="section-number-4">2.3.1</span> 标准配置安装（未测试，本人使用下面的<a href="#org58b4e14">自定义安装目录安装</a>的）</h4>
+<div id="outline-container-org699f630" class="outline-4">
+<h4 id="org699f630"><span class="section-number-4">2.3.1</span> 标准配置安装（未测试，本人使用下面的<a href="#org48a9b01">自定义安装目录安装</a>的）</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 获得 <code>su</code> 权限或者使用 <code>sudo</code> 执行命令：
@@ -4471,8 +4446,8 @@ build shared libraries
 </ol>
 </div>
 </div>
-<div id="outline-container-org1f22392" class="outline-4">
-<h4 id="org1f22392"><span class="section-number-4">2.3.2</span> 自定义安装目录安装<a id="org58b4e14"></a></h4>
+<div id="outline-container-org8ea4262" class="outline-4">
+<h4 id="org8ea4262"><span class="section-number-4">2.3.2</span> 自定义安装目录安装<a id="org48a9b01"></a></h4>
 <div class="outline-text-4" id="text-2-3-2">
 <ol class="org-ol">
 <li><p>
@@ -4564,14 +4539,14 @@ Last Updated 2017-02-21 Tue 20:35.<br>Render by <a href="https://github.com/Code
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge6dde10">1. 配置</a></li>
-<li><a href="#org3add918">2. 使用</a>
+<li><a href="#org10d4e17">1. 配置</a></li>
+<li><a href="#org9e5907c">2. 使用</a>
 <ul>
-<li><a href="#orgf541013">2.1. load 到 <code>tmpfs</code></a></li>
-<li><a href="#org4fbe06c">2.2. 还原</a>
+<li><a href="#orgf130c34">2.1. load 到 <code>tmpfs</code></a></li>
+<li><a href="#org296245b">2.2. 还原</a>
 <ul>
-<li><a href="#orgf1c423a">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
-<li><a href="#org1507b6a">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#orge8073f8">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#org5ca9a01">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
 </ul>
 </li>
 </ul>
@@ -4592,8 +4567,8 @@ emacs 的速度也会有很大提升。
 此方法只在 Linux 系统中测试了，个人系统 <code>openSUSE42.2</code>
 </p>
 </blockquote>
-<div id="outline-container-orge6dde10" class="outline-2">
-<h2 id="orge6dde10"><span class="section-number-2">1</span> 配置</h2>
+<div id="outline-container-org10d4e17" class="outline-2">
+<h2 id="org10d4e17"><span class="section-number-2">1</span> 配置</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>将下面一行插入到 <code>/etc/fstab</code> 中，然后重启电脑（我电脑是 8G 内存，size 设置为 1G 了）。</li>
@@ -4616,11 +4591,11 @@ emacs 的速度也会有很大提升。
 </ul>
 </div>
 </div>
-<div id="outline-container-org3add918" class="outline-2">
-<h2 id="org3add918"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-org9e5907c" class="outline-2">
+<h2 id="org9e5907c"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgf541013" class="outline-3">
-<h3 id="orgf541013"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
+</div><div id="outline-container-orgf130c34" class="outline-3">
+<h3 id="orgf130c34"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -4645,11 +4620,11 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org4fbe06c" class="outline-3">
-<h3 id="org4fbe06c"><span class="section-number-3">2.2</span> 还原</h3>
+<div id="outline-container-org296245b" class="outline-3">
+<h3 id="org296245b"><span class="section-number-3">2.2</span> 还原</h3>
 <div class="outline-text-3" id="text-2-2">
-</div><div id="outline-container-orgf1c423a" class="outline-4">
-<h4 id="orgf1c423a"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
+</div><div id="outline-container-orge8073f8" class="outline-4">
+<h4 id="orge8073f8"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -4670,8 +4645,8 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org1507b6a" class="outline-4">
-<h4 id="org1507b6a"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
+<div id="outline-container-org5ca9a01" class="outline-4">
+<h4 id="org5ca9a01"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 进入脚本所在的目录执行：
