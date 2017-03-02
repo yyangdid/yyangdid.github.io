@@ -63,7 +63,7 @@
 
 此方法可以加快 Emacs 的运行速度，而不是启动速度。其实就是把 Emacs 的配置文件
 .emacs.d 文件夹放到内存中，而内存的吞吐速度要比普通的">
-<meta property="og:updated_time" content="2017-02-21T12:36:00.913Z">
+<meta property="og:updated_time" content="2017-02-21T12:36:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加快Emacs的运行速度">
 <meta name="twitter:description" content="Table of Contents
@@ -367,14 +367,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org10d4e17">1. 配置</a></li>
-<li><a href="#org9e5907c">2. 使用</a>
+<li><a href="#orgf5092f7">1. 配置</a></li>
+<li><a href="#org35b9157">2. 使用</a>
 <ul>
-<li><a href="#orgf130c34">2.1. load 到 <code>tmpfs</code></a></li>
-<li><a href="#org296245b">2.2. 还原</a>
+<li><a href="#orgb12aff3">2.1. load 到 <code>tmpfs</code></a></li>
+<li><a href="#org63ffb51">2.2. 还原</a>
 <ul>
-<li><a href="#orge8073f8">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
-<li><a href="#org5ca9a01">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#org698ff84">2.2.1. 不保留历史记录、对配置文件的更改。。。</a></li>
+<li><a href="#org247f187">2.2.2. 保留历史记录、对配置文件的更改。。。</a></li>
 </ul>
 </li>
 </ul>
@@ -395,8 +395,8 @@ emacs 的速度也会有很大提升。
 此方法只在 Linux 系统中测试了，个人系统 <code>openSUSE42.2</code>
 </p>
 </blockquote>
-<div id="outline-container-org10d4e17" class="outline-2">
-<h2 id="org10d4e17"><span class="section-number-2">1</span> 配置</h2>
+<div id="outline-container-orgf5092f7" class="outline-2">
+<h2 id="orgf5092f7"><span class="section-number-2">1</span> 配置</h2>
 <div class="outline-text-2" id="text-1">
 <ol class="org-ol">
 <li>将下面一行插入到 <code>/etc/fstab</code> 中，然后重启电脑（我电脑是 8G 内存，size 设置为 1G 了）。</li>
@@ -408,7 +408,7 @@ emacs 的速度也会有很大提升。
 <li>新建一个脚本，并且赋予可执行权限，可以命名为 <code>emacs2ram</code> ，内容如下:</li>
 </ol>
 <div class="org-src-container">
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram start"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram restore"</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"start"</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">        mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$(readlink $link)</span>"</span> != <span class="string">"<span class="variable">$volatile</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># backup project at first</span></span><br><span class="line">        mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">        <span class="comment"># create the link</span></span><br><span class="line">        ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from memory to backup ..."</span></span><br><span class="line">        rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from disk to memory ..."</span></span><br><span class="line">        rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">        touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Moving .emacs.d back to disk ..."</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;&amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;&amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="shebang">#!/bin/sh</span><br><span class="line"></span></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$1</span>"</span> ];<span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Usage:"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram start"</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"  emacs2ram restore"</span></span><br><span class="line">    <span class="built_in">exit</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"start"</span> ];<span class="keyword">then</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line">    IFS=</span><br><span class="line">    <span class="built_in">set</span> -efu</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -r <span class="variable">$volatile</span> ]; <span class="keyword">then</span></span><br><span class="line">        mkdir -m0700 <span class="variable">$volatile</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># link -&amp;gt; volatie does not exist</span></span><br><span class="line">    <span class="keyword">if</span> [ <span class="string">"<span class="variable">$(readlink $link)</span>"</span> != <span class="string">"<span class="variable">$volatile</span>"</span> ]; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># backup project at first</span></span><br><span class="line">        mv <span class="variable">$link</span> <span class="variable">$backup</span></span><br><span class="line">        <span class="comment"># create the link</span></span><br><span class="line">        ln <span class="operator">-s</span> <span class="variable">$volatile</span> <span class="variable">$link</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ <span class="operator">-e</span> <span class="variable">$link</span>/.unpacked ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from memory to backup ..."</span></span><br><span class="line">        rsync -avq --delete --exclude .unpacked ./<span class="variable">$link</span>/ ./<span class="variable">$backup</span>/</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"Sync .emacs.d from disk to memory ..."</span></span><br><span class="line">        rsync -avq ./<span class="variable">$backup</span>/ ./<span class="variable">$link</span>/</span><br><span class="line">        touch <span class="variable">$link</span>/.unpacked</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Moving .emacs.d back to disk ..."</span></span><br><span class="line">    backup=.emacs.d-backup</span><br><span class="line">    link=.emacs.d</span><br><span class="line">    volatile=/tmp/.emacs.d-<span class="variable">$USER</span></span><br><span class="line">    <span class="built_in">cd</span> ~/</span><br><span class="line">    rm <span class="operator">-f</span> <span class="variable">$link</span> &amp;amp;&amp;amp; mv <span class="variable">$backup</span> <span class="variable">$link</span> &amp;amp;&amp;amp; rm -rf <span class="variable">$volatile</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"DONE!"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 <code>emacs2ram</code> 文件：
@@ -419,11 +419,11 @@ emacs 的速度也会有很大提升。
 </ul>
 </div>
 </div>
-<div id="outline-container-org9e5907c" class="outline-2">
-<h2 id="org9e5907c"><span class="section-number-2">2</span> 使用</h2>
+<div id="outline-container-org35b9157" class="outline-2">
+<h2 id="org35b9157"><span class="section-number-2">2</span> 使用</h2>
 <div class="outline-text-2" id="text-2">
-</div><div id="outline-container-orgf130c34" class="outline-3">
-<h3 id="orgf130c34"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
+</div><div id="outline-container-orgb12aff3" class="outline-3">
+<h3 id="orgb12aff3"><span class="section-number-3">2.1</span> load 到 <code>tmpfs</code></h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -448,11 +448,11 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org296245b" class="outline-3">
-<h3 id="org296245b"><span class="section-number-3">2.2</span> 还原</h3>
+<div id="outline-container-org63ffb51" class="outline-3">
+<h3 id="org63ffb51"><span class="section-number-3">2.2</span> 还原</h3>
 <div class="outline-text-3" id="text-2-2">
-</div><div id="outline-container-orge8073f8" class="outline-4">
-<h4 id="orge8073f8"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
+</div><div id="outline-container-org698ff84" class="outline-4">
+<h4 id="org698ff84"><span class="section-number-4">2.2.1</span> 不保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 进入脚本所在的目录执行：
@@ -473,8 +473,8 @@ emacs 的速度也会有很大提升。
 </p>
 </div>
 </div>
-<div id="outline-container-org5ca9a01" class="outline-4">
-<h4 id="org5ca9a01"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
+<div id="outline-container-org247f187" class="outline-4">
+<h4 id="org247f187"><span class="section-number-4">2.2.2</span> 保留历史记录、对配置文件的更改。。。</h4>
 <div class="outline-text-4" id="text-2-2-2">
 <p>
 进入脚本所在的目录执行：
@@ -520,7 +520,7 @@ ok!
 <blockquote>
 <p>
 此方法是在
-<a href="https://github.com/lujun9972/emacs-document/blob/master/emacs-common/%E5%8D%81%E5%80%8D%E6%8F%90%E5%8D%87Emacs%E6%80%A7%E8%83%BD.org?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io" target="_blank" rel="external">
+<a href="https://github.com/lujun9972/emacs-document/blob/master/emacs-common/%E5%8D%81%E5%80%8D%E6%8F%90%E5%8D%87Emacs%E6%80%A7%E8%83%BD.org?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io" target="_blank" rel="external">
 开发者头条</a>看到的，对原文的 <code>emacs2ram</code> 脚本修改了一下。如果觉得每次都要执行命令
 麻烦，可以把命令加入开机启动和关机前执行，个人没折腾。
 </p>
@@ -592,7 +592,7 @@ Last Updated 2017-02-21 Tue 20:36.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org10d4e17"><span class="toc-text">1 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org9e5907c"><span class="toc-text">2 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgf130c34"><span class="toc-text">2.1 load 到 tmpfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org296245b"><span class="toc-text">2.2 还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#orge8073f8"><span class="toc-text">2.2.1 不保留历史记录、对配置文件的更改。。。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org5ca9a01"><span class="toc-text">2.2.2 保留历史记录、对配置文件的更改。。。</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgf5092f7"><span class="toc-text">1 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org35b9157"><span class="toc-text">2 使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#orgb12aff3"><span class="toc-text">2.1 load 到 tmpfs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org63ffb51"><span class="toc-text">2.2 还原</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org698ff84"><span class="toc-text">2.2.1 不保留历史记录、对配置文件的更改。。。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#org247f187"><span class="toc-text">2.2.2 保留历史记录、对配置文件的更改。。。</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -755,6 +755,27 @@ Last Updated 2017-02-21 Tue 20:36.<br>Render by <a href="https://github.com/Code
 
 
 
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <div class="scroll" id="scroll">

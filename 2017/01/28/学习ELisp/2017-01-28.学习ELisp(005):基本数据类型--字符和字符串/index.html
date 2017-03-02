@@ -75,7 +75,7 @@
 
 
 本章节主要记录 ELisp 对字符、字符串的处理。">
-<meta property="og:updated_time" content="2017-02-21T12:34:21.541Z">
+<meta property="og:updated_time" content="2017-02-21T12:34:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(005):基本数据类型--字符和字符串">
 <meta name="twitter:description" content="Table of Contents
@@ -385,21 +385,21 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge87077c">1. 简介</a>
+<li><a href="#orgdaf770a">1. 简介</a>
 <ul>
-<li><a href="#org25b58ff">1.1. 字符串</a></li>
-<li><a href="#orgbb48f16">1.2. 字符</a>
+<li><a href="#org326e785">1.1. 字符串</a></li>
+<li><a href="#org5a7582f">1.2. 字符</a>
 <ul>
-<li><a href="#org137c39e">1.2.1. 获取字符相对应的那个整数</a></li>
+<li><a href="#org0d8c25e">1.2.1. 获取字符相对应的那个整数</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgeafca81">2. 测试函数</a></li>
-<li><a href="#orgfc6cbd4">3. 构造函数</a></li>
-<li><a href="#org9755bae">4. 比较函数</a></li>
-<li><a href="#orgacaf9ae">5. 转换函数</a></li>
-<li><a href="#orgcfbc05c">6. 附录</a></li>
+<li><a href="#orga74236b">2. 测试函数</a></li>
+<li><a href="#orgbd7db61">3. 构造函数</a></li>
+<li><a href="#org40301cb">4. 比较函数</a></li>
+<li><a href="#orgd5e790a">5. 转换函数</a></li>
+<li><a href="#org867c189">6. 附录</a></li>
 </ul>
 </div>
 </div>
@@ -413,11 +413,11 @@
 </p>
 </blockquote>
 <a id="more"></a>
-<div id="outline-container-orge87077c" class="outline-2">
-<h2 id="orge87077c"><span class="section-number-2">1</span> 简介</h2>
+<div id="outline-container-orgdaf770a" class="outline-2">
+<h2 id="orgdaf770a"><span class="section-number-2">1</span> 简介</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-org25b58ff" class="outline-3">
-<h3 id="org25b58ff"><span class="section-number-3">1.1</span> 字符串</h3>
+</div><div id="outline-container-org326e785" class="outline-3">
+<h3 id="org326e785"><span class="section-number-3">1.1</span> 字符串</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 在 Emacs 中字符串是有序的字符数组， Emacs 的字符串可以容纳任何字符。 Emacs 字
@@ -425,8 +425,8 @@
 </p>
 </div>
 </div>
-<div id="outline-container-orgbb48f16" class="outline-3">
-<h3 id="orgbb48f16"><span class="section-number-3">1.2</span> 字符</h3>
+<div id="outline-container-org5a7582f" class="outline-3">
+<h3 id="org5a7582f"><span class="section-number-3">1.2</span> 字符</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 字符串是由字符组成的，字符其实就是一个整数，例如字符 'A' 就是一个整数 65 。目
@@ -434,14 +434,14 @@
 </p>
 </div>
 
-<div id="outline-container-org137c39e" class="outline-4">
-<h4 id="org137c39e"><span class="section-number-4">1.2.1</span> 获取字符相对应的那个整数</h4>
+<div id="outline-container-org0d8c25e" class="outline-4">
+<h4 id="org0d8c25e"><span class="section-number-4">1.2.1</span> 获取字符相对应的那个整数</h4>
 <div class="outline-text-4" id="text-1-2-1">
 <p>
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">message</span> <span class="string">"%i"</span> ?A)</span> <span class="comment">;; &#8658; "65"</span></span><br><span class="line"><span class="list">(<span class="keyword">message</span> <span class="string">"%i"</span> ?a)</span> <span class="comment">;; &#8658; "97"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">message</span> <span class="string">"%i"</span> ?A)</span> <span class="comment">;; &amp;#8658; "65"</span></span><br><span class="line"><span class="list">(<span class="keyword">message</span> <span class="string">"%i"</span> ?a)</span> <span class="comment">;; &amp;#8658; "97"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 对于标点和具有特殊意义的字符最好在 <code>?</code> 后面加上转义字符 <code>\</code> ，因为某些标点会
@@ -473,12 +473,12 @@
 
 <tr>
 <td class="org-left">?\b ⇒ 8</td>
-<td class="org-left">退格，backspace， <bs>，`C-h'</bs></td>
+<td class="org-left">退格，backspace， &lt;BS&gt;，`C-h'</td>
 </tr>
 
 <tr>
 <td class="org-left">?\t ⇒ 9</td>
-<td class="org-left">制表符，tab，<tab>，`C-i'</tab></td>
+<td class="org-left">制表符，tab，&lt;TAB&gt;，`C-i'</td>
 </tr>
 
 <tr>
@@ -498,17 +498,17 @@
 
 <tr>
 <td class="org-left">?\r ⇒ 13</td>
-<td class="org-left">回车，carriage return，<ret>，`C-m'</ret></td>
+<td class="org-left">回车，carriage return，&lt;RET&gt;，`C-m'</td>
 </tr>
 
 <tr>
 <td class="org-left">?\e ⇒ 27</td>
-<td class="org-left">escape character，<esc>，`C-['</esc></td>
+<td class="org-left">escape character，&lt;ESC&gt;，`C-['</td>
 </tr>
 
 <tr>
 <td class="org-left">?\s ⇒ 32</td>
-<td class="org-left">空格，space character，<spc></spc></td>
+<td class="org-left">空格，space character，&lt;SPC&gt;</td>
 </tr>
 
 <tr>
@@ -518,7 +518,7 @@
 
 <tr>
 <td class="org-left">?\d ⇒ 127</td>
-<td class="org-left">删除，delete character，<del></del></td>
+<td class="org-left">删除，delete character，&lt;DEL&gt;</td>
 </tr>
 </tbody>
 </table>
@@ -526,14 +526,14 @@
 控制字符可以有多种表示方式，比如 <code>C-i</code> ，一下几种都是正确的：
 </p>
 <div class="org-src-container">
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">;; &#20197;&#19979;&#30340;&#34920;&#31034;&#26041;&#27861;&#37117;&#23545;&#24212;&#25972;&#25968; 9</span><br><span class="line">?\^I</span><br><span class="line">?\^i</span><br><span class="line">?\C-I</span><br><span class="line">?\C-i</span><br><span class="line">;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">;; &amp;#20197;&amp;#19979;&amp;#30340;&amp;#34920;&amp;#31034;&amp;#26041;&amp;#27861;&amp;#37117;&amp;#23545;&amp;#24212;&amp;#25972;&amp;#25968; 9</span><br><span class="line">?\^I</span><br><span class="line">?\^i</span><br><span class="line">?\C-I</span><br><span class="line">?\C-i</span><br><span class="line">;;</span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-orgeafca81" class="outline-2">
-<h2 id="orgeafca81"><span class="section-number-2">2</span> 测试函数</h2>
+<div id="outline-container-orga74236b" class="outline-2">
+<h2 id="orga74236b"><span class="section-number-2">2</span> 测试函数</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <code>stringp</code> 函数，测试是否为字符串
@@ -541,18 +541,18 @@
 <code>string-or-null-p</code> 函数，测试是否为字符串或 nil
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> str01 <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> str02 <span class="literal">nil</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> str01)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> str02)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> str01)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> str02)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> str01)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> str02)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> str01 <span class="string">""</span>)</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> str02 <span class="literal">nil</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> str01)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> str02)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> str01)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> str02)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> str01)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> str02)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 ELisp 中没有测试字符串是否为空的函数，自定义一个：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> string-is-empty-p <span class="list">(<span class="keyword">str</span>)</span></span><br><span class="line">  <span class="string">"&#27979;&#35797;&#23383;&#31526;&#20018; str &#26159;&#21542;&#20026;&#31354;"</span></span><br><span class="line">  <span class="list">(<span class="keyword">not</span> <span class="list">(<span class="keyword">string&lt</span><span class="comment">; "" str)))</span></span><br><span class="line"><span class="comment">;; &#25110;&#65306;</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> string-is-empty-p <span class="list">(<span class="keyword">str</span>)</span></span><br><span class="line">  <span class="string">"&#27979;&#35797;&#23383;&#31526;&#20018; str &#26159;&#21542;&#20026;&#31354;"</span></span><br><span class="line">  <span class="list">(<span class="keyword">=</span> <span class="list">(<span class="keyword">length</span> str)</span> <span class="number">0</span>)</span>)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">defun</span> string-is-empty-p <span class="list">(<span class="keyword">str</span>)</span></span><br><span class="line">  <span class="string">"&amp;#27979;&amp;#35797;&amp;#23383;&amp;#31526;&amp;#20018; str &amp;#26159;&amp;#21542;&amp;#20026;&amp;#31354;"</span></span><br><span class="line">  <span class="list">(<span class="keyword">not</span> <span class="list">(<span class="keyword">string&amp;lt</span><span class="comment">; "" str)))</span></span><br><span class="line"><span class="comment">;; &amp;#25110;&amp;#65306;</span></span><br><span class="line"><span class="list">(<span class="keyword">defun</span> string-is-empty-p <span class="list">(<span class="keyword">str</span>)</span></span><br><span class="line">  <span class="string">"&amp;#27979;&amp;#35797;&amp;#23383;&amp;#31526;&amp;#20018; str &amp;#26159;&amp;#21542;&amp;#20026;&amp;#31354;"</span></span><br><span class="line">  <span class="list">(<span class="keyword">=</span> <span class="list">(<span class="keyword">length</span> str)</span> <span class="number">0</span>)</span>)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
-<div id="outline-container-orgfc6cbd4" class="outline-2">
-<h2 id="orgfc6cbd4"><span class="section-number-2">3</span> 构造函数</h2>
+<div id="outline-container-orgbd7db61" class="outline-2">
+<h2 id="orgbd7db61"><span class="section-number-2">3</span> 构造函数</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li><p>
@@ -568,7 +568,7 @@ ELisp 中使用 <code>make-string</code> 函数创建一个字符串，但是字
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">make-string</span> <span class="number">5</span> ?x)</span> <span class="comment">;; &#8658; "xxxxx"</span></span><br><span class="line"><span class="list">(<span class="keyword">string</span> ?a ?b ?c)</span> <span class="comment">;; &#8658; "abc"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">make-string</span> <span class="number">5</span> ?x)</span> <span class="comment">;; &amp;#8658; "xxxxx"</span></span><br><span class="line"><span class="list">(<span class="keyword">string</span> ?a ?b ?c)</span> <span class="comment">;; &amp;#8658; "abc"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -593,13 +593,13 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; "3456789"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123465789"</span> <span class="number">3</span> <span class="number">5</span>)</span> <span class="comment">;; &#8658; "34"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">-3</span> <span class="number">-1</span>)</span> <span class="comment">;; &#8658; "78"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123465789"</span> <span class="number">3</span> <span class="number">11</span>)</span> <span class="comment">;; &#8658; &#25253;&#38169; ;; &#32456;&#28857;&#36234;&#30028;</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">5</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; &#25253;&#38169; ;; &#32456;&#28857;&#27604;&#36215;&#28857;&#23567;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="string">"a"</span> <span class="string">"b"</span> <span class="string">"c"</span>)</span> <span class="comment">;; &#8658; "abc"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; "3456789"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123465789"</span> <span class="number">3</span> <span class="number">5</span>)</span> <span class="comment">;; &amp;#8658; "34"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">-3</span> <span class="number">-1</span>)</span> <span class="comment">;; &amp;#8658; "78"</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123465789"</span> <span class="number">3</span> <span class="number">11</span>)</span> <span class="comment">;; &amp;#8658; &amp;#25253;&amp;#38169; ;; &amp;#32456;&amp;#28857;&amp;#36234;&amp;#30028;</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> <span class="string">"0123456789"</span> <span class="number">5</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; &amp;#25253;&amp;#38169; ;; &amp;#32456;&amp;#28857;&amp;#27604;&amp;#36215;&amp;#28857;&amp;#23567;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="string">"a"</span> <span class="string">"b"</span> <span class="string">"c"</span>)</span> <span class="comment">;; &amp;#8658; "abc"</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org9755bae" class="outline-2">
-<h2 id="org9755bae"><span class="section-number-2">4</span> 比较函数</h2>
+<div id="outline-container-org40301cb" class="outline-2">
+<h2 id="org40301cb"><span class="section-number-2">4</span> 比较函数</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -620,7 +620,7 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#27492;&#26102;&#25105;&#30340; Emacs &#30340;&#21464;&#37327; case-fold-search &#35774;&#32622;&#20026;&#20102;t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-equal</span> ?a ?A)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &amp;#27492;&amp;#26102;&amp;#25105;&amp;#30340; Emacs &amp;#30340;&amp;#21464;&amp;#37327; case-fold-search &amp;#35774;&amp;#32622;&amp;#20026;&amp;#20102;t</span></span><br><span class="line"><span class="list">(<span class="keyword">char-equal</span> ?a ?A)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -632,27 +632,27 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 </p>
 
 <p>
-<code>string<</code> 和 <code>string-lessp</code> 比较两个字符串的长短(个人理解)
+<code>string&lt;</code> 和 <code>string-lessp</code> 比较两个字符串的长短(个人理解)
 </p>
 
 <p>
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">string=</span> <span class="string">"a"</span> <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-equal</span> <span class="string">"a"</span> <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string&lt</span><span class="comment">; "as" "asdf") ;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-lessp</span> <span class="string">"as"</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">string=</span> <span class="string">"a"</span> <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-equal</span> <span class="string">"a"</span> <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string&amp;lt</span><span class="comment">; "as" "asdf") ;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">string-lessp</span> <span class="string">"as"</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="comment">;;</span></span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 <code>length</code> 获取字符串的长度。
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">length</span> <span class="string">"as"</span>)</span> <span class="comment">;; &#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">length</span> <span class="string">""</span>)</span> <span class="comment">;; &#8658; 0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">length</span> <span class="string">"as"</span>)</span> <span class="comment">;; &amp;#8658; 2</span></span><br><span class="line"><span class="list">(<span class="keyword">length</span> <span class="string">""</span>)</span> <span class="comment">;; &amp;#8658; 0</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgacaf9ae" class="outline-2">
-<h2 id="orgacaf9ae"><span class="section-number-2">5</span> 转换函数</h2>
+<div id="outline-container-orgd5e790a" class="outline-2">
+<h2 id="orgd5e790a"><span class="section-number-2">5</span> 转换函数</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><p>
@@ -672,7 +672,7 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">char-to-string</span> ?a)</span> <span class="comment">;; &#8658; "a"</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-char</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &#8658; 97</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">char-to-string</span> ?a)</span> <span class="comment">;; &amp;#8658; "a"</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-char</span> <span class="string">"asdf"</span>)</span> <span class="comment">;; &amp;#8658; 97</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -697,7 +697,7 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">123</span>)</span> <span class="comment">;; &#8658; "123"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">-2</span>)</span> <span class="comment">;; &#8658; "-2"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">1.8</span>)</span> <span class="comment">;; &#8658; "1.8"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">1e3</span>)</span> <span class="comment">;; &#8658; "1000.0"</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">format</span> <span class="string">"%#o"</span> <span class="number">12</span>)</span> <span class="comment">;; &#8658; "014" ;; &#36755;&#20986;&#20026;&#20843;&#36827;&#21046;</span></span><br><span class="line"><span class="list">(<span class="keyword">format</span> <span class="string">"%#x"</span> <span class="number">12</span>)</span> <span class="comment">;; &#8658; "0xc" ;; &#36755;&#20986;&#20026;&#21313;&#20845;&#36827;&#21046;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"123"</span>)</span> <span class="comment">;; &#8658; 123</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"1a2"</span>)</span> <span class="comment">;; &#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"92a"</span>)</span> <span class="comment">;; &#8658; 92</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"a12f"</span>)</span> <span class="comment">;; &#8658; 0</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"1e3"</span>)</span> <span class="comment">;; &#8658; 1000.0</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"14"</span> <span class="number">8</span>)</span> <span class="comment">;; &#8658; 12</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">123</span>)</span> <span class="comment">;; &amp;#8658; "123"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">-2</span>)</span> <span class="comment">;; &amp;#8658; "-2"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">1.8</span>)</span> <span class="comment">;; &amp;#8658; "1.8"</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> <span class="number">1e3</span>)</span> <span class="comment">;; &amp;#8658; "1000.0"</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">format</span> <span class="string">"%#o"</span> <span class="number">12</span>)</span> <span class="comment">;; &amp;#8658; "014" ;; &amp;#36755;&amp;#20986;&amp;#20026;&amp;#20843;&amp;#36827;&amp;#21046;</span></span><br><span class="line"><span class="list">(<span class="keyword">format</span> <span class="string">"%#x"</span> <span class="number">12</span>)</span> <span class="comment">;; &amp;#8658; "0xc" ;; &amp;#36755;&amp;#20986;&amp;#20026;&amp;#21313;&amp;#20845;&amp;#36827;&amp;#21046;</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"123"</span>)</span> <span class="comment">;; &amp;#8658; 123</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"1a2"</span>)</span> <span class="comment">;; &amp;#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"92a"</span>)</span> <span class="comment">;; &amp;#8658; 92</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"a12f"</span>)</span> <span class="comment">;; &amp;#8658; 0</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"1e3"</span>)</span> <span class="comment">;; &amp;#8658; 1000.0</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> <span class="string">"14"</span> <span class="number">8</span>)</span> <span class="comment">;; &amp;#8658; 12</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -720,7 +720,7 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="quoted">'(?a ?b ?c)</span>)</span> <span class="comment">;; &#8658; "abc" ;; &#21015;&#34920;&#36716;&#23383;&#31526;&#20018;</span></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> [?a ?b ?c])</span> <span class="comment">;; &#8658; "abc" ;; &#21521;&#37327;&#36716;&#23383;&#31526;&#20018;</span></span><br><span class="line"><span class="list">(<span class="keyword">vconcat</span> <span class="string">"abc"</span>)</span> <span class="comment">;; &#8658; [97 98 99] ;; &#23383;&#31526;&#20018;&#36716;&#21521;&#37327;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> <span class="string">"abc"</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; (97 98 99) ;; &#23383;&#31526;&#20018;&#36716;&#21015;&#34920;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="quoted">'(?a ?b ?c)</span>)</span> <span class="comment">;; &amp;#8658; "abc" ;; &amp;#21015;&amp;#34920;&amp;#36716;&amp;#23383;&amp;#31526;&amp;#20018;</span></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> [?a ?b ?c])</span> <span class="comment">;; &amp;#8658; "abc" ;; &amp;#21521;&amp;#37327;&amp;#36716;&amp;#23383;&amp;#31526;&amp;#20018;</span></span><br><span class="line"><span class="list">(<span class="keyword">vconcat</span> <span class="string">"abc"</span>)</span> <span class="comment">;; &amp;#8658; [97 98 99] ;; &amp;#23383;&amp;#31526;&amp;#20018;&amp;#36716;&amp;#21521;&amp;#37327;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> <span class="string">"abc"</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; (97 98 99) ;; &amp;#23383;&amp;#31526;&amp;#20018;&amp;#36716;&amp;#21015;&amp;#34920;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -749,20 +749,20 @@ ELisp 中使用 <code>substring</code> 函数可以截取已有字符串的一�
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">downcase</span> <span class="string">"THe cAt IN thE HaT"</span>)</span> <span class="comment">;; &#8658; "the cat in the hat"</span></span><br><span class="line"><span class="list">(<span class="keyword">downcase</span> ?A)</span> <span class="comment">;; &#8658; 97 ;; a</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> <span class="string">"thE cAt in thE HaT"</span>)</span> <span class="comment">;; &#8658; "THE CAT IN THE HAT"</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> ?a)</span> <span class="comment">;; &#8658; 65 ;; A</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> <span class="string">"tHe caT iN thE Hat"</span>)</span> <span class="comment">;; &#8658; "The Cat In The Hat"</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> ?a)</span> <span class="comment">;; &#8658; 65 ;; A</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> <span class="string">"tHe caT in thE hAT"</span>)</span> <span class="comment">;; &#8658; "THe CaT In ThE HAT"</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> ?a)</span> <span class="comment">;; &#8658; 65 ;; A</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">downcase</span> <span class="string">"THe cAt IN thE HaT"</span>)</span> <span class="comment">;; &amp;#8658; "the cat in the hat"</span></span><br><span class="line"><span class="list">(<span class="keyword">downcase</span> ?A)</span> <span class="comment">;; &amp;#8658; 97 ;; a</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> <span class="string">"thE cAt in thE HaT"</span>)</span> <span class="comment">;; &amp;#8658; "THE CAT IN THE HAT"</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> ?a)</span> <span class="comment">;; &amp;#8658; 65 ;; A</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> <span class="string">"tHe caT iN thE Hat"</span>)</span> <span class="comment">;; &amp;#8658; "The Cat In The Hat"</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> ?a)</span> <span class="comment">;; &amp;#8658; 65 ;; A</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> <span class="string">"tHe caT in thE hAT"</span>)</span> <span class="comment">;; &amp;#8658; "THe CaT In ThE HAT"</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> ?a)</span> <span class="comment">;; &amp;#8658; 65 ;; A</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcfbc05c" class="outline-2">
-<h2 id="orgcfbc05c"><span class="section-number-2">6</span> 附录</h2>
+<div id="outline-container-org867c189" class="outline-2">
+<h2 id="org867c189"><span class="section-number-2">6</span> 附录</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><p>
 函数列表
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#27979;&#35797;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> OBJECT)</span></span><br><span class="line"><span class="comment">;; &#26500;&#24314;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">make-string</span> LENGTH INIT)</span></span><br><span class="line"><span class="list">(<span class="keyword">string</span> <span class="keyword">&amp</span><span class="comment">;rest CHARACTERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> STRING FROM <span class="keyword">&amp</span><span class="comment">;optional TO)</span></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="keyword">&amp</span><span class="comment">;rest SEQUENCES)</span></span><br><span class="line"><span class="comment">;; &#27604;&#36739;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">char-equal</span> C1 C2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string=</span> S1 S2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-equal</span> S1 S2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string&lt</span><span class="comment">; S1 S2)</span></span><br><span class="line"><span class="comment">;; &#36716;&#25442;&#20989;&#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">char-to-string</span> CHAR)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-char</span> STRING)</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> STRING <span class="keyword">&amp</span><span class="comment">;optional BASE)</span></span><br><span class="line"><span class="list">(<span class="keyword">downcase</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">format</span> STRING <span class="keyword">&amp</span><span class="comment">;rest OBJECTS)</span></span><br><span class="line"><span class="comment">;; &#26597;&#25214;&#19982;&#26367;&#25442;</span></span><br><span class="line"><span class="list">(<span class="keyword">string-match</span> REGEXP STRING <span class="keyword">&amp</span><span class="comment">;optional START)</span></span><br><span class="line"><span class="list">(<span class="keyword">replace-match</span> NEWTEXT <span class="keyword">&amp</span><span class="comment">;optional FIXEDCASE LITERAL STRING SUBEXP)</span></span><br><span class="line"><span class="list">(<span class="keyword">replace-regexp-in-string</span> REGEXP REP STRING <span class="keyword">&amp</span><span class="comment">;optional FIXEDCASE LITERAL SUBEXP START)</span></span><br><span class="line"><span class="list">(<span class="keyword">subst-char-in-string</span> FROMCHAR TOCHAR STRING <span class="keyword">&amp</span><span class="comment">;optional INPLACE)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &amp;#27979;&amp;#35797;&amp;#20989;&amp;#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">stringp</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-or-null-p</span> OBJECT)</span></span><br><span class="line"><span class="list">(<span class="keyword">char-or-string-p</span> OBJECT)</span></span><br><span class="line"><span class="comment">;; &amp;#26500;&amp;#24314;&amp;#20989;&amp;#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">make-string</span> LENGTH INIT)</span></span><br><span class="line"><span class="list">(<span class="keyword">string</span> <span class="keyword">&amp;amp</span><span class="comment">;rest CHARACTERS)</span></span><br><span class="line"><span class="list">(<span class="keyword">substring</span> STRING FROM <span class="keyword">&amp;amp</span><span class="comment">;optional TO)</span></span><br><span class="line"><span class="list">(<span class="keyword">concat</span> <span class="keyword">&amp;amp</span><span class="comment">;rest SEQUENCES)</span></span><br><span class="line"><span class="comment">;; &amp;#27604;&amp;#36739;&amp;#20989;&amp;#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">char-equal</span> C1 C2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string=</span> S1 S2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-equal</span> S1 S2)</span></span><br><span class="line"><span class="list">(<span class="keyword">string&amp;lt</span><span class="comment">; S1 S2)</span></span><br><span class="line"><span class="comment">;; &amp;#36716;&amp;#25442;&amp;#20989;&amp;#25968;</span></span><br><span class="line"><span class="list">(<span class="keyword">char-to-string</span> CHAR)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-char</span> STRING)</span></span><br><span class="line"><span class="list">(<span class="keyword">number-to-string</span> NUMBER)</span></span><br><span class="line"><span class="list">(<span class="keyword">string-to-number</span> STRING <span class="keyword">&amp;amp</span><span class="comment">;optional BASE)</span></span><br><span class="line"><span class="list">(<span class="keyword">downcase</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">capitalize</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">upcase-initials</span> OBJ)</span></span><br><span class="line"><span class="list">(<span class="keyword">format</span> STRING <span class="keyword">&amp;amp</span><span class="comment">;rest OBJECTS)</span></span><br><span class="line"><span class="comment">;; &amp;#26597;&amp;#25214;&amp;#19982;&amp;#26367;&amp;#25442;</span></span><br><span class="line"><span class="list">(<span class="keyword">string-match</span> REGEXP STRING <span class="keyword">&amp;amp</span><span class="comment">;optional START)</span></span><br><span class="line"><span class="list">(<span class="keyword">replace-match</span> NEWTEXT <span class="keyword">&amp;amp</span><span class="comment">;optional FIXEDCASE LITERAL STRING SUBEXP)</span></span><br><span class="line"><span class="list">(<span class="keyword">replace-regexp-in-string</span> REGEXP REP STRING <span class="keyword">&amp;amp</span><span class="comment">;optional FIXEDCASE LITERAL SUBEXP START)</span></span><br><span class="line"><span class="list">(<span class="keyword">subst-char-in-string</span> FROMCHAR TOCHAR STRING <span class="keyword">&amp;amp</span><span class="comment">;optional INPLACE)</span></span><br><span class="line"><span class="comment">;;</span></span></span></span></span></span></span></span></span></span></span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
@@ -836,7 +836,7 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orge87077c"><span class="toc-text">1 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org25b58ff"><span class="toc-text">1.1 字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#orgbb48f16"><span class="toc-text">1.2 字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org137c39e"><span class="toc-text">1.2.1 获取字符相对应的那个整数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgeafca81"><span class="toc-text">2 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgfc6cbd4"><span class="toc-text">3 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org9755bae"><span class="toc-text">4 比较函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgacaf9ae"><span class="toc-text">5 转换函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgcfbc05c"><span class="toc-text">6 附录</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgdaf770a"><span class="toc-text">1 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#org326e785"><span class="toc-text">1.1 字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#org5a7582f"><span class="toc-text">1.2 字符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#org0d8c25e"><span class="toc-text">1.2.1 获取字符相对应的那个整数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orga74236b"><span class="toc-text">2 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgbd7db61"><span class="toc-text">3 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org40301cb"><span class="toc-text">4 比较函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgd5e790a"><span class="toc-text">5 转换函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org867c189"><span class="toc-text">6 附录</span></a></li></ol>
         
     </div>
     <style>
@@ -1001,6 +1001,27 @@ Last Updated 2017-02-21 Tue 20:34.<br>Render by <a href="https://github.com/Code
 
 
 
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <div class="scroll" id="scroll">

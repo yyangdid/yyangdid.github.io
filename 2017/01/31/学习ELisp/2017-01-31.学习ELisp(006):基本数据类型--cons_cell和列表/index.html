@@ -62,7 +62,7 @@
 <meta property="og:image" content="http://yyangdid.github.io/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-last_2017-02-04_20-39-46.png">
 <meta property="og:image" content="http://yyangdid.github.io/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-butlast_2017-02-04_20-45-47.png">
 <meta property="og:image" content="http://yyangdid.github.io/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-setcar&setcdr_2017-02-04_21-11-40.png">
-<meta property="og:updated_time" content="2017-02-22T02:50:52.043Z">
+<meta property="og:updated_time" content="2017-02-22T02:50:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习ELisp(006):基本数据类型--cons_cell和列表">
 <meta name="twitter:description" content="Table of Contents
@@ -364,11 +364,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org78d05cb">1. cons cell</a></li>
-<li><a href="#org7286e28">2. 列表</a></li>
-<li><a href="#org52f796a">3. 测试函数</a></li>
-<li><a href="#org6e720e4">4. 构造函数</a></li>
-<li><a href="#org7709f83">5. 把列表当成数组用</a></li>
+<li><a href="#org5de8892">1. cons cell</a></li>
+<li><a href="#org7341727">2. 列表</a></li>
+<li><a href="#org9040989">3. 测试函数</a></li>
+<li><a href="#orgb5c3a22">4. 构造函数</a></li>
+<li><a href="#org5ff9d83">5. 把列表当成数组用</a></li>
 </ul>
 </div>
 </div>
@@ -384,8 +384,8 @@
 </blockquote>
 <a id="more"></a>
 
-<div id="outline-container-org78d05cb" class="outline-2">
-<h2 id="org78d05cb"><span class="section-number-2">1</span> cons cell</h2>
+<div id="outline-container-org5de8892" class="outline-2">
+<h2 id="org5de8892"><span class="section-number-2">1</span> cons cell</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 个人把 <code>cons cell</code> 理解为只有两个元素的列表，第一个是 <i>CAR</i> ，第一个是 <i>CDR</i> 。
@@ -395,12 +395,12 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span> <span class="comment">;; &#8658; (1 . 2)</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> . <span class="string">"a"</span>)</span> <span class="comment">;; &#8658; (1 . "a")</span></span><br><span class="line"><span class="quoted">'(nil . <span class="number">1</span>)</span> <span class="comment">;; &#8658; (nil . 1)</span></span><br><span class="line"><span class="quoted">'(nil . nil)</span> <span class="comment">;; &#8658; (nil)</span></span><br><span class="line"><span class="comment">;; &#31526;&#21495; ' &#31561;&#20215;&#20110; (quote )</span></span><br><span class="line"><span class="quoted">(<span class="keyword">quote</span> (<span class="number">1</span> . <span class="number">2</span>))</span> <span class="comment">;; &#8658; (1 . 2)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">read</span> <span class="string">"(1 . 2)"</span>)</span> <span class="comment">;; &#8658; (1 . 2)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span> <span class="comment">;; &amp;#8658; (1 . 2)</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> . <span class="string">"a"</span>)</span> <span class="comment">;; &amp;#8658; (1 . "a")</span></span><br><span class="line"><span class="quoted">'(nil . <span class="number">1</span>)</span> <span class="comment">;; &amp;#8658; (nil . 1)</span></span><br><span class="line"><span class="quoted">'(nil . nil)</span> <span class="comment">;; &amp;#8658; (nil)</span></span><br><span class="line"><span class="comment">;; &amp;#31526;&amp;#21495; ' &amp;#31561;&amp;#20215;&amp;#20110; (quote )</span></span><br><span class="line"><span class="quoted">(<span class="keyword">quote</span> (<span class="number">1</span> . <span class="number">2</span>))</span> <span class="comment">;; &amp;#8658; (1 . 2)</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">read</span> <span class="string">"(1 . 2)"</span>)</span> <span class="comment">;; &amp;#8658; (1 . 2)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
-<div id="outline-container-org7286e28" class="outline-2">
-<h2 id="org7286e28"><span class="section-number-2">2</span> 列表</h2>
+<div id="outline-container-org7341727" class="outline-2">
+<h2 id="org7341727"><span class="section-number-2">2</span> 列表</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 列表包含了 <code>cons cell</code> ，列表可以包含多个元素，列表有一个特殊的元素 &#x2013; 空表 <code>nil</code> 。
@@ -415,7 +415,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'()</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">car</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'()</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">car</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <p>
@@ -433,13 +433,13 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; (1 2 3) ;; &#30495;&#21015;&#34920;</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> . <span class="number">4</span>)</span> <span class="comment">;; &#8658; (1 2 3 .4) ;; &#28857;&#21015;&#34920;</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> . #1=(<span class="number">2</span> <span class="number">3</span> . #1#))</span> <span class="comment">;; &#8658; (1 2 3 . #1) ;; &#29615;&#24418;&#21015;&#34920;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; (1 2 3) ;; &amp;#30495;&amp;#21015;&amp;#34920;</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> . <span class="number">4</span>)</span> <span class="comment">;; &amp;#8658; (1 2 3 .4) ;; &amp;#28857;&amp;#21015;&amp;#34920;</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> . #1=(<span class="number">2</span> <span class="number">3</span> . #1#))</span> <span class="comment">;; &amp;#8658; (1 2 3 . #1) ;; &amp;#29615;&amp;#24418;&amp;#21015;&amp;#34920;</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org52f796a" class="outline-2">
-<h2 id="org52f796a"><span class="section-number-2">3</span> 测试函数</h2>
+<div id="outline-container-org9040989" class="outline-2">
+<h2 id="org9040989"><span class="section-number-2">3</span> 测试函数</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 测试一个对象是否是 cons cell 用 <code>consp</code> 函数，是否是列表用 <code>listp</code> 函数，是否
@@ -450,12 +450,12 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="quoted">'(<span class="number">1</span> . (<span class="number">2</span> . <span class="literal">nil</span>))</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="quoted">'(<span class="number">1</span> . (<span class="number">2</span> . <span class="literal">nil</span>))</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">null</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">null</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span>)</span>)</span> <span class="comment">;; &#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="quoted">'(<span class="number">1</span> . (<span class="number">2</span> . <span class="literal">nil</span>))</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">consp</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="quoted">'(<span class="number">1</span> . <span class="number">2</span>)</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="quoted">'(<span class="number">1</span> . (<span class="number">2</span> . <span class="literal">nil</span>))</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">listp</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"></span><br><span class="line"><span class="list">(<span class="keyword">null</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; t</span></span><br><span class="line"><span class="list">(<span class="keyword">null</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span>)</span>)</span> <span class="comment">;; &amp;#8658; nil</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 </div>
 </div>
-<div id="outline-container-org6e720e4" class="outline-2">
-<h2 id="org6e720e4"><span class="section-number-2">4</span> 构造函数</h2>
+<div id="outline-container-orgb5c3a22" class="outline-2">
+<h2 id="orgb5c3a22"><span class="section-number-2">4</span> 构造函数</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li><p>
@@ -466,7 +466,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; (1 . 2)</span></span><br><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="number">1</span> <span class="quoted">'()</span>)</span> <span class="comment">;; &#8658; (1)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="comment">;; &amp;#8658; (1 . 2)</span></span><br><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="number">1</span> <span class="quoted">'()</span>)</span> <span class="comment">;; &amp;#8658; (1)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 <code>cons</code> 函数也可在列表前面增加元素：
@@ -476,7 +476,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> list001 <span class="quoted">'(a b)</span>)</span> <span class="comment">;; &#8658; (a b)</span></span><br><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="quoted">'x</span> list001)</span> <span class="comment">;; &#8658; (x a b)</span></span><br><span class="line">list001 <span class="comment">;; &#8658; (a b)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> list001 <span class="quoted">'(a b)</span>)</span> <span class="comment">;; &amp;#8658; (a b)</span></span><br><span class="line"><span class="list">(<span class="keyword">cons</span> <span class="quoted">'x</span> list001)</span> <span class="comment">;; &amp;#8658; (x a b)</span></span><br><span class="line">list001 <span class="comment">;; &amp;#8658; (a b)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 <p>
 使用 <code>cons</code> 函数在列表前面添加元素并不会改变列表本身的值，使用 <code>push</code> 函数可
@@ -487,7 +487,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">push</span> <span class="quoted">'x</span> list001)</span> <span class="comment">;; &#8658; (x a b)</span></span><br><span class="line">list001 <span class="comment">;; &#8658; (x a b)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">push</span> <span class="quoted">'x</span> list001)</span> <span class="comment">;; &amp;#8658; (x a b)</span></span><br><span class="line">list001 <span class="comment">;; &amp;#8658; (x a b)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -498,7 +498,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">list</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; (1 2 3)</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; (1 2 3)</span></span><br><span class="line"><span class="quoted">'((+ <span class="number">1</span> <span class="number">2</span>) <span class="number">3</span>)</span> <span class="comment">;; &#8658; ((+ 1 2) 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">list</span> <span class="list">(<span class="keyword">+</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="number">3</span>)</span> <span class="comment">;; &#8658; (3 3)</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">list</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; (1 2 3)</span></span><br><span class="line"><span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; (1 2 3)</span></span><br><span class="line"><span class="quoted">'((+ <span class="number">1</span> <span class="number">2</span>) <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; ((+ 1 2) 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">list</span> <span class="list">(<span class="keyword">+</span> <span class="number">1</span> <span class="number">2</span>)</span> <span class="number">3</span>)</span> <span class="comment">;; &amp;#8658; (3 3)</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 
 <li><p>
@@ -509,14 +509,14 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &#20351;&#29992; append &#36861;&#21152;&#21015;&#34920;</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> list002 <span class="quoted">'(a b)</span>)</span> <span class="comment">;; &#8658; (a b)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'(c)</span>)</span> <span class="comment">;; &#8658; (a b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'(c)</span> <span class="quoted">'(d)</span> <span class="quoted">'(e)</span>)</span> <span class="comment">;; &#8658; (a b c d e)</span></span><br><span class="line">list002 <span class="comment">;; &#8658; (a b)</span></span><br><span class="line"><span class="comment">;; &#20351;&#29992; append &#36861;&#21152;&#23545;&#35937;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'c</span>)</span> <span class="comment">;; &#8658; (a b . c) ;; &#27492;&#26102;&#21015;&#34920;&#23601;&#19981;&#26159;&#30495;&#21015;&#34920;&#20102;&#65292;&#22914;&#20877;&#36827;&#34892; append &#25805;&#20316;&#20250;&#25253;&#38169;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> [a b] <span class="string">"cd"</span> <span class="literal">nil</span>)</span> <span class="comment">;; &#8658; (a b 99 100)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> [a b] <span class="string">"cd"</span>)</span> <span class="comment">;; &#8658; (a b . "cd")</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="comment">;; &amp;#20351;&amp;#29992; append &amp;#36861;&amp;#21152;&amp;#21015;&amp;#34920;</span></span><br><span class="line"><span class="list">(<span class="keyword">setq</span> list002 <span class="quoted">'(a b)</span>)</span> <span class="comment">;; &amp;#8658; (a b)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'(c)</span>)</span> <span class="comment">;; &amp;#8658; (a b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'(c)</span> <span class="quoted">'(d)</span> <span class="quoted">'(e)</span>)</span> <span class="comment">;; &amp;#8658; (a b c d e)</span></span><br><span class="line">list002 <span class="comment">;; &amp;#8658; (a b)</span></span><br><span class="line"><span class="comment">;; &amp;#20351;&amp;#29992; append &amp;#36861;&amp;#21152;&amp;#23545;&amp;#35937;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> list002 <span class="quoted">'c</span>)</span> <span class="comment">;; &amp;#8658; (a b . c) ;; &amp;#27492;&amp;#26102;&amp;#21015;&amp;#34920;&amp;#23601;&amp;#19981;&amp;#26159;&amp;#30495;&amp;#21015;&amp;#34920;&amp;#20102;&amp;#65292;&amp;#22914;&amp;#20877;&amp;#36827;&amp;#34892; append &amp;#25805;&amp;#20316;&amp;#20250;&amp;#25253;&amp;#38169;</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> [a b] <span class="string">"cd"</span> <span class="literal">nil</span>)</span> <span class="comment">;; &amp;#8658; (a b 99 100)</span></span><br><span class="line"><span class="list">(<span class="keyword">append</span> [a b] <span class="string">"cd"</span>)</span> <span class="comment">;; &amp;#8658; (a b . "cd")</span></span><br><span class="line">      <span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7709f83" class="outline-2">
-<h2 id="org7709f83"><span class="section-number-2">5</span> 把列表当成数组用</h2>
+<div id="outline-container-org5ff9d83" class="outline-2">
+<h2 id="org5ff9d83"><span class="section-number-2">5</span> 把列表当成数组用</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 使用 <code>car</code> 和 <code>cdr</code> 获取列表的第一个元素和剩余元素， <code>cdr</code> 获取的返回值是一个列表。
@@ -526,7 +526,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">car</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &#8658; (2 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span>)</span> <span class="comment">;; &#8658; (3)</span></span><br><span class="line"><span class="list">(<span class="keyword">car</span> <span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span>)</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">car</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &amp;#8658; 1</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &amp;#8658; (2 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span>)</span> <span class="comment">;; &amp;#8658; (3)</span></span><br><span class="line"><span class="list">(<span class="keyword">car</span> <span class="list">(<span class="keyword">cdr</span> <span class="list">(<span class="keyword">cdr</span> <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span>)</span>)</span> <span class="comment">;; &amp;#8658; 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <ul class="org-ul">
@@ -538,7 +538,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">nth</span> <span class="number">3</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span>)</span> <span class="comment">;; &#8658; 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">nth</span> <span class="number">3</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span>)</span> <span class="comment">;; &amp;#8658; 3</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <div class="figure">
@@ -554,7 +554,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">nthcdr</span> <span class="number">3</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span>)</span> <span class="comment">;; &#8658; (3 4 5)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">nthcdr</span> <span class="number">3</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span>)</span> <span class="comment">;; &amp;#8658; (3 4 5)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <div class="figure">
@@ -570,7 +570,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">last</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; (4 5)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">last</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span> <span class="number">2</span>)</span> <span class="comment">;; &amp;#8658; (4 5)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <div class="figure">
@@ -586,7 +586,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">butlast</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span> <span class="number">2</span>)</span> <span class="comment">;; &#8658; (0 1 2 3)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">butlast</span> <span class="quoted">'(<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span> <span class="number">2</span>)</span> <span class="comment">;; &amp;#8658; (0 1 2 3)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <div class="figure">
@@ -609,11 +609,11 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> foo1 <span class="quoted">'(a b c)</span>)</span> <span class="comment">;; &#8658; (a b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> foo1 <span class="quoted">'x</span>)</span> <span class="comment">;; &#8658; x</span></span><br><span class="line">foo1 <span class="comment">;; &#8658; (x b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcdr</span> foo1 <span class="quoted">'(y z)</span>)</span> <span class="comment">;; &#8658; (y z)</span></span><br><span class="line">foo1 <span class="comment">;; &#8658; (x y z)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> foo1 <span class="quoted">'(a b c)</span>)</span> <span class="comment">;; &amp;#8658; (a b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> foo1 <span class="quoted">'x</span>)</span> <span class="comment">;; &amp;#8658; x</span></span><br><span class="line">foo1 <span class="comment">;; &amp;#8658; (x b c)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcdr</span> foo1 <span class="quoted">'(y z)</span>)</span> <span class="comment">;; &amp;#8658; (y z)</span></span><br><span class="line">foo1 <span class="comment">;; &amp;#8658; (x y z)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div>
 
 <div class="figure">
-<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-setcar&setcdr_2017-02-04_21-11-40.png" alt="(点击图片可放大)" width="300px">
+<p><img src="/2017/01/31/学习ELisp/2017-01-31.学习ELisp(006):基本数据类型--cons_cell和列表/ELisp-list-setcar&amp;setcdr_2017-02-04_21-11-40.png" alt="(点击图片可放大)" width="300px">
 </p>
 </div></li>
 
@@ -625,7 +625,7 @@
 例：
 </p>
 <div class="org-src-container">
-<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> foo2 <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &#8658; (1 2 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> foo2 <span class="quoted">'a</span>)</span> <span class="comment">;; &#8658; a</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> <span class="list">(<span class="keyword">cdr</span> foo2)</span> <span class="quoted">'b</span>)</span> <span class="comment">;; &#8658; b</span></span><br><span class="line">foo2 <span class="comment">;; &#8658; (a b 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> <span class="list">(<span class="keyword">nthcdr</span> <span class="number">2</span> foo2)</span> <span class="quoted">'c</span>)</span> <span class="comment">;; &#8658; c</span></span><br><span class="line">foo2 <span class="comment">;; &#8658; (a b c)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line"><span class="list">(<span class="keyword">setq</span> foo2 <span class="quoted">'(<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>)</span>)</span> <span class="comment">;; &amp;#8658; (1 2 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> foo2 <span class="quoted">'a</span>)</span> <span class="comment">;; &amp;#8658; a</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> <span class="list">(<span class="keyword">cdr</span> foo2)</span> <span class="quoted">'b</span>)</span> <span class="comment">;; &amp;#8658; b</span></span><br><span class="line">foo2 <span class="comment">;; &amp;#8658; (a b 3)</span></span><br><span class="line"><span class="list">(<span class="keyword">setcar</span> <span class="list">(<span class="keyword">nthcdr</span> <span class="number">2</span> foo2)</span> <span class="quoted">'c</span>)</span> <span class="comment">;; &amp;#8658; c</span></span><br><span class="line">foo2 <span class="comment">;; &amp;#8658; (a b c)</span></span><br><span class="line"><span class="comment">;;</span></span><br></pre></td></tr></table></figure>
 </div></li>
 </ul>
 </div>
@@ -699,7 +699,7 @@ Last Updated 2017-02-22 Wed 10:50.<br>Render by <a href="https://github.com/Code
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org78d05cb"><span class="toc-text">1 cons cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org7286e28"><span class="toc-text">2 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org52f796a"><span class="toc-text">3 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org6e720e4"><span class="toc-text">4 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org7709f83"><span class="toc-text">5 把列表当成数组用</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org5de8892"><span class="toc-text">1 cons cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org7341727"><span class="toc-text">2 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org9040989"><span class="toc-text">3 测试函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#orgb5c3a22"><span class="toc-text">4 构造函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#org5ff9d83"><span class="toc-text">5 把列表当成数组用</span></a></li></ol>
         
     </div>
     <style>
@@ -864,6 +864,27 @@ Last Updated 2017-02-22 Wed 10:50.<br>Render by <a href="https://github.com/Code
 
 
 
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <div class="scroll" id="scroll">
